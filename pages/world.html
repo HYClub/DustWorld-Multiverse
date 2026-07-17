@@ -1,0 +1,116 @@
+<div class="page world-detail-page" id="world-detail-page">
+  <div class="page-header">
+    <button class="back-btn" data-action="back">←</button>
+    <h1 class="page-title world-name" id="world-name">世界名称</h1>
+    <button class="btn-icon tooltip like-btn" id="world-like-btn" data-tooltip="点赞">❤</button>
+    <button class="btn-icon tooltip share-btn" id="world-share-btn" data-tooltip="分享">↗</button>
+  </div>
+
+  <div class="world-map-container" id="world-map-container">
+    <canvas id="world-map-canvas"></canvas>
+  </div>
+
+  <div class="world-status-bar">
+    <span>第 <strong id="world-year">0</strong> 年</span>
+    <span>·</span>
+    <span>时代：<strong><span class="tag tag-era" id="world-era-tag" data-era="primitive">原始时代</span></strong></span>
+    <span>·</span>
+    <span>创建者：<strong id="world-creator">—</strong></span>
+  </div>
+
+  <div class="stat-cards-row" id="stat-cards-row">
+    <div class="stat-card">
+      <div class="stat-card-number" id="stat-settlements">0</div>
+      <div class="stat-card-label">存活聚落</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-card-number" id="stat-population">0</div>
+      <div class="stat-card-label">总人口</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-card-number" id="stat-wars">0</div>
+      <div class="stat-card-label">战争次数</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-card-number" id="stat-tech">0</div>
+      <div class="stat-card-label">技术突破</div>
+    </div>
+  </div>
+
+  <div class="world-events">
+    <h3 class="world-events-title">最近事件</h3>
+    <div class="world-events-list" id="world-events-list"></div>
+  </div>
+
+  <div class="world-tabs">
+    <div class="tab-bar">
+      <span class="tab-item active" data-tab="timeline">世界历史时间线</span>
+      <span class="tab-item" data-tab="settlements">聚落详情</span>
+      <span class="tab-item" data-tab="intervene">干预</span>
+    </div>
+    <div class="tab-content active" id="tab-timeline">
+      <div class="timeline-section">
+        <div class="timeline-controls">
+          <select id="timeline-era-filter">
+            <option value="all">全部时代</option>
+            <option value="primitive">原始时代</option>
+            <option value="agriculture">农耕时代</option>
+            <option value="bronze">青铜时代</option>
+            <option value="iron">铁器时代</option>
+            <option value="steam">蒸汽时代</option>
+            <option value="electric">电气时代</option>
+            <option value="info">信息时代</option>
+          </select>
+          <select id="timeline-type-filter">
+            <option value="all">全部类型</option>
+            <option value="war">战争</option>
+            <option value="disaster">灾害</option>
+            <option value="breakthrough">技术突破</option>
+            <option value="culture">文化事件</option>
+            <option value="plague">瘟疫</option>
+          </select>
+        </div>
+        <div id="timeline-list"></div>
+      </div>
+    </div>
+    <div class="tab-content" id="tab-settlements">
+      <div id="settlements-list"></div>
+    </div>
+    <div class="tab-content" id="tab-intervene">
+      <div class="empty-state" id="intervene-empty">
+        <div class="empty-state-icon">🔮</div>
+        <div class="empty-state-text">登录后可以干预这个世界</div>
+      </div>
+      <div id="intervene-content" style="display:none;">
+        <p style="color:var(--text-secondary);font-size:14px;margin-bottom:var(--spacing-md);">
+          本周剩余干预次数：<strong id="intervene-remaining" style="color:var(--color-primary-light);font-family:var(--font-mono);">0</strong>
+        </p>
+        <div class="world-intervene-btn">
+          <button class="btn btn-primary" id="open-intervene-modal">执行干预</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="world-intervene-modal-body" style="display:none;">
+  <div class="intervention-form">
+    <div>
+      <label class="form-label">选择干预类型</label>
+      <div class="intervention-types" id="intervention-types">
+        <button class="intervention-type-btn" data-type="bless">🌿 降下恩赐</button>
+        <button class="intervention-type-btn" data-type="plague">⚡ 降下灾祸</button>
+        <button class="intervention-type-btn" data-type="discover">🔍 引导探索</button>
+        <button class="intervention-type-btn" data-type="enlighten">💡 启迪智慧</button>
+        <button class="intervention-type-btn" data-type="shelter">🛡️ 庇护之地</button>
+        <button class="intervention-type-btn" data-type="sow">🌱 播种文明</button>
+      </div>
+    </div>
+    <div>
+      <label class="form-label">选择目标聚落</label>
+      <select class="form-select" id="intervene-target-select">
+        <option value="">选择聚落...</option>
+      </select>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,58 @@
+<div class="page user-page" id="user-page">
+  <div class="page-header">
+    <button class="back-btn" data-action="back">←</button>
+    <h1 class="page-title">我的宇宙</h1>
+  </div>
+
+  <div class="user-profile">
+    <div class="user-avatar">
+      <div class="user-avatar-placeholder" id="user-avatar-placeholder">?</div>
+      <img id="user-avatar-img" src="" alt="" style="display:none;">
+    </div>
+    <div class="user-info">
+      <div class="user-name" id="user-name">未登录</div>
+      <div class="user-stats">
+        <span class="user-stat">创建了 <span class="user-stat-value" id="user-created-count">0</span> 个世界</span>
+        <span class="user-stat">点赞了 <span class="user-stat-value" id="user-liked-count">0</span> 个世界</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="user-tabs">
+    <div class="tab-bar">
+      <span class="tab-item active" data-tab="my-worlds">我的世界</span>
+      <span class="tab-item" data-tab="liked-worlds">我的点赞</span>
+      <span class="tab-item" data-tab="interventions">干预历史</span>
+    </div>
+
+    <div class="tab-content active" id="tab-my-worlds">
+      <div class="world-grid" id="my-worlds-grid">
+        <div class="world-card-create" id="create-new-world-card" data-action="navigate" data-page="create">
+          <div class="world-card-create-icon">+</div>
+          <div class="world-card-create-text">创建新世界</div>
+        </div>
+      </div>
+      <div class="empty-state" id="my-worlds-empty" style="display:none;">
+        <div class="empty-state-icon">🌌</div>
+        <div class="empty-state-text">你还没有创建过世界</div>
+        <button class="btn btn-primary" data-action="navigate" data-page="create">创建第一个世界</button>
+      </div>
+    </div>
+
+    <div class="tab-content" id="tab-liked-worlds">
+      <div class="world-grid" id="liked-worlds-grid"></div>
+      <div class="empty-state" id="liked-worlds-empty" style="display:none;">
+        <div class="empty-state-icon">❤️</div>
+        <div class="empty-state-text">你还没有点赞过任何世界</div>
+      </div>
+    </div>
+
+    <div class="tab-content" id="tab-interventions">
+      <div id="intervention-history-list"></div>
+      <div class="empty-state" id="interventions-empty" style="display:none;">
+        <div class="empty-state-icon">🔮</div>
+        <div class="empty-state-text">还没有干预历史记录</div>
+      </div>
+    </div>
+  </div>
+</div>

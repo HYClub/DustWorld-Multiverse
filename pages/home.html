@@ -1,0 +1,47 @@
+<div class="page home-page" id="home-page">
+  <div class="home-hero">
+    <h1>✦ 微尘世界：多元宇宙</h1>
+    <p>创建、观察、干预你的微型宇宙。每个世界都在 GitHub Actions 中自主演化。</p>
+    <div class="home-actions">
+      <button class="btn btn-primary" id="create-world-btn">✨ 创建新世界</button>
+      <button class="btn btn-secondary" id="my-worlds-btn">👤 我的世界</button>
+    </div>
+  </div>
+
+  <div class="home-sort-bar" id="sort-bar">
+    <button class="sort-btn active" data-sort="likes">🔥 热门</button>
+    <button class="sort-btn" data-sort="newest">🆕 最新</button>
+    <button class="sort-btn" data-sort="oldest">🏛️ 最古老</button>
+    <button class="sort-btn" data-sort="active">⚡ 最活跃</button>
+    <div class="home-search">
+      <span class="home-search-icon">🔍</span>
+      <input type="text" id="search-input" placeholder="搜索世界..." autocomplete="off">
+    </div>
+  </div>
+
+  <div class="skeleton-container" id="skeleton-container" style="display:none;">
+    <div class="world-grid">
+      <div class="card"><div class="skeleton" style="height:140px;border-radius:12px 12px 0 0;"></div><div style="padding:16px;"><div class="skeleton" style="height:20px;width:60%;margin-bottom:8px;"></div><div class="skeleton" style="height:14px;width:40%;margin-bottom:8px;"></div><div class="skeleton" style="height:14px;width:80%;"></div></div></div>
+      <div class="card"><div class="skeleton" style="height:140px;border-radius:12px 12px 0 0;"></div><div style="padding:16px;"><div class="skeleton" style="height:20px;width:60%;margin-bottom:8px;"></div><div class="skeleton" style="height:14px;width:40%;margin-bottom:8px;"></div><div class="skeleton" style="height:14px;width:80%;"></div></div></div>
+      <div class="card"><div class="skeleton" style="height:140px;border-radius:12px 12px 0 0;"></div><div style="padding:16px;"><div class="skeleton" style="height:20px;width:60%;margin-bottom:8px;"></div><div class="skeleton" style="height:14px;width:40%;margin-bottom:8px;"></div><div class="skeleton" style="height:14px;width:80%;"></div></div></div>
+    </div>
+  </div>
+
+  <div class="world-grid" id="world-grid"></div>
+
+  <div class="empty-state" id="empty-state" style="display:none;">
+    <div class="empty-state-icon">🌌</div>
+    <div class="empty-state-text">还没有世界，创建第一个世界吧！</div>
+    <button class="btn btn-primary" onclick="window.location.hash='#/create'">创建第一个世界</button>
+  </div>
+
+  <div class="empty-state" id="error-state" style="display:none;">
+    <div class="empty-state-icon">⚠️</div>
+    <div class="empty-state-text">加载失败，请检查网络后重试</div>
+    <button class="btn btn-primary" id="retry-btn">重新加载</button>
+  </div>
+
+  <div class="home-load-more" id="load-more-container">
+    <button class="btn btn-secondary" id="load-more-btn">加载更多</button>
+  </div>
+</div>

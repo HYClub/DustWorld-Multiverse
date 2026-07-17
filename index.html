@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="微尘世界：多元宇宙 - 一个基于Web的自演化虚拟世界集群平台">
+  <meta name="theme-color" content="#0a0a1a">
+  <title>微尘世界：多元宇宙</title>
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/pages/home.css">
+  <link rel="stylesheet" href="assets/css/pages/world.css">
+  <link rel="stylesheet" href="assets/css/pages/create.css">
+  <link rel="stylesheet" href="assets/css/pages/user.css">
+  <style>
+    .app-loading {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg-primary);
+      z-index: 9999;
+      transition: opacity 0.5s ease;
+    }
+    .app-loading.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .app-loading-icon {
+      width: 48px;
+      height: 48px;
+      border: 3px solid rgba(108, 92, 231, 0.15);
+      border-top-color: var(--color-primary-light);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-bottom: 16px;
+    }
+    .app-loading-text {
+      color: var(--text-muted);
+      font-size: 14px;
+      font-family: var(--font-mono);
+    }
+  </style>
+</head>
+<body>
+  <div class="app-loading" id="app-loading">
+    <div class="app-loading-icon"></div>
+    <div class="app-loading-text">宇宙初始化中...</div>
+  </div>
+
+  <nav class="navbar" id="navbar">
+    <a class="navbar-logo" href="#" data-nav="home">
+      <span class="navbar-logo-icon">✦</span>
+      <span class="navbar-logo-text">微尘世界</span>
+    </a>
+    <div class="navbar-links">
+      <a class="navbar-link active" href="#" data-nav="home">
+        <span>🌌</span>
+        <span class="navbar-link-text">首页</span>
+      </a>
+      <a class="navbar-link" href="#" data-nav="create">
+        <span>✨</span>
+        <span class="navbar-link-text">创造</span>
+      </a>
+      <a class="navbar-link" href="#" data-nav="user">
+        <span>👤</span>
+        <span class="navbar-link-text">我的</span>
+      </a>
+    </div>
+    <button class="btn btn-primary nav-login-btn" id="login-btn" style="padding: 8px 16px; font-size: 13px;">
+      登录 GitHub
+    </button>
+  </nav>
+
+  <main id="app"></main>
+
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal-content" id="modal-content">
+      <div class="modal-header">
+        <span class="modal-title" id="modal-title"></span>
+        <button class="modal-close" id="modal-close">✕</button>
+      </div>
+      <div class="modal-body" id="modal-body"></div>
+      <div class="modal-footer" id="modal-footer"></div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <!-- Core -->
+  <script src="assets/js/router.js"></script>
+  <script src="assets/js/utils/helpers.js"></script>
+  <script src="assets/js/utils/storage.js"></script>
+  <script src="assets/js/utils/auth.js"></script>
+  <!-- API -->
+  <script src="assets/js/api/github.js"></script>
+  <script src="assets/js/api/data.js"></script>
+  <script src="assets/js/api/demo-data.js"></script>
+  <!-- Engine -->
+  <script src="assets/js/engine/terrain.js"></script>
+  <script src="assets/js/engine/settlement.js"></script>
+  <script src="assets/js/engine/tech.js"></script>
+  <script src="assets/js/engine/events.js"></script>
+  <script src="assets/js/engine/world.js"></script>
+  <!-- Components -->
+  <script src="assets/js/components/world-card.js"></script>
+  <script src="assets/js/components/world-map.js"></script>
+  <script src="assets/js/components/timeline.js"></script>
+  <script src="assets/js/components/modal.js"></script>
+  <script src="assets/js/components/toast.js"></script>
+  <!-- Pages -->
+  <script src="assets/js/pages/home.js"></script>
+  <script src="assets/js/pages/world.js"></script>
+  <script src="assets/js/pages/create.js"></script>
+  <script src="assets/js/pages/user.js"></script>
+  <!-- App Entry -->
+  <script src="assets/js/app.js"></script>
+
+  <script>
+    (function() {
+      var params = new URLSearchParams(window.location.search);
+      var code = params.get('code');
+      if (code) {
+        localStorage.setItem('github_oauth_code', code);
+        window.history.replaceState({}, document.title, window.location.pathname + window.location.hash);
+      }
+    })();
+
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        document.getElementById('app-loading').classList.add('hidden');
+      }, 600);
+    });
+  </script>
+</body>
+</html>
