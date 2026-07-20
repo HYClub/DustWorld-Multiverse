@@ -32,7 +32,7 @@
   function WorldEngine(config, state) {
     this.config = config || {};
     this.state = state || this._createState();
-    this.history = [];
+    if (!this.state.history) this.state.history = [];
     this._pendingNotifications = [];
     this._milestones = {};
     this._initialized = false;
@@ -592,9 +592,9 @@
   };
   WorldEngine.prototype._notify = function(title, desc, type) {
     this._pendingNotifications.push({ title: title, description: desc, type: type || 'info', year: this.state.year });
-    if (!this.history) this.history = [];
-    this.history.push({ year: this.state.year, type: type || 'info', title: title, description: desc });
-    if (this.history.length > 500) this.history = this.history.slice(-500);
+    if (!this.state.history) this.state.history = [];
+    this.state.history.push({ year: this.state.year, type: type || 'info', title: title, description: desc });
+    if (this.state.history.length > 500) this.state.history = this.state.history.slice(-500);
   };
   WorldEngine.prototype.getNotifications = function() { var n = this._pendingNotifications.slice(); this._pendingNotifications = []; return n; };
   WorldEngine.prototype.getState = function() { return this.state; };
