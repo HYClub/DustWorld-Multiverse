@@ -93,11 +93,16 @@
       if (this.emptyState) this.emptyState.style.display = 'none';
       if (this.loadMoreBtn) this.loadMoreBtn.disabled = true;
 
+      // Timeout after 15 seconds to prevent infinite loading
+      var timeoutPromise = new Promise(function (_, reject) {
+        setTimeout(function () { reject(new Error('加载超时')); }, 15000);
+      });
+
       try {
         var dm = window.DataManager;
         var data = { worlds: [], has_more: false };
         if (dm && typeof dm.getWorlds === 'function') {
-          data = await dm.getWorlds({ sort: this.currentSort, page: this.page, limit: 12 });
+          data = await Promise.race([dm.getWorlds({ sort: this.currentSort, page: this.page, limit: 12 }), timeoutPromise]);
         }
 
         var worlds = data && data.worlds ? data.worlds : [];
