@@ -305,6 +305,10 @@
         worldData.creator_avatar = user.avatar_url || '';
       }
 
+      var firstEntry = this._createFirstChronicle(config, civ);
+      if (!worldData.history) worldData.history = [];
+      worldData.history.unshift(firstEntry);
+
       var dm = window.DataManager;
       if (!dm || typeof dm.createWorld !== 'function') {
         btn.disabled = false;
@@ -325,6 +329,74 @@
         btn.textContent = '✦ 创世';
         window.Toast.error('创建失败: ' + (e.message || '云端保存失败'));
       });
+    }
+
+    _createFirstChronicle(config, civ) {
+      var labels = {
+        world_shape: { continent: '一片广袤的大陆', archipelago: '星罗棋布的群岛', pangaea: '一块巨大的泛大陆', islands: '散布的岛屿' },
+        latitude: { tropical: '热带', temperate: '温带', arctic: '寒带' },
+        climate_type: { tropical: '湿热', arid: '干燥', temperate: '温和', continental: '大陆性', polar: '寒冷' },
+        temperature: { hot: '炎热的', warm: '温暖的', moderate: '宜人的', cool: '凉爽的', cold: '寒冷的' },
+        rainfall: { none: '极度干旱', low: '少雨', moderate: '雨量适中', high: '多雨', constant: '终年降雨' },
+        map_size: { small: '方寸之地', medium: '广阔天地', large: '浩瀚世界' },
+        government_type: { chiefdom: '酋长部落', theocracy: '神权统治', oligarchy: '寡头议会', democracy: '民主萌芽', autocracy: '独裁专制' },
+        economic_system: { primitive: '原始共产', barter: '以物易物', mercantile: '重商主义', capitalist: '资本主义萌芽' },
+        religion_type: { animist: '万物有灵', polytheist: '多神信仰', monotheist: '一神信仰', secular: '世俗主义' },
+        war_tendency: { peaceful: '爱好和平', defensive: '注重防守', balanced: '务实稳健', aggressive: '崇尚武力' }
+      };
+
+      var parts = [];
+
+      var shape = labels.world_shape[config.world_shape] || '一片未知的大陆';
+      var lat = labels.latitude[config.latitude] || '温和';
+      var temp = labels.temperature[config.temperature] || '宜人';
+      var rain = labels.rainfall[config.rainfall] || '雨量适中';
+      var size = labels.map_size[config.map_size] || '广阔';
+
+      var climateDesc = temp + '、' + rain + '的' + lat + lat + '气候';
+      parts.push('在' + size + '上，' + shape + '铺展开来。' + climateDesc + '笼罩着这片土地');
+
+      var gov = labels.government_type[config.government_type] || '原始部落';
+      var econ = labels.economic_system[config.economic_system] || '原始经济';
+      parts.push(civ.name + '文明在' + gov + '制度下崛起，以' + econ + '方式维系着生存');
+
+      if (civ.leader_name) {
+        parts.push('领袖' + civ.leader_name + '带领着人民，在这片土地上开始了漫长的征程');
+      }
+
+      if (civ.ability) {
+        parts.push('这个民族以「' + civ.ability.split('—')[0].trim() + '」著称');
+      }
+
+      if (config.religion_type && config.religion_type !== 'secular') {
+        var rel = labels.religion_type[config.religion_type] || '';
+        if (rel) parts.push(rel + '的信仰在人们心中扎根');
+      }
+
+      if (config.ocean_ratio > 60) {
+        parts.push('海洋占据了这片世界的大部分面积');
+      } else if (config.ocean_ratio < 30) {
+        parts.push('陆地辽阔，海洋只是点缀');
+      }
+
+      if (config.resource_abundance === 'rich' || config.resource_abundance === 'abundant') {
+        parts.push('大自然是慷慨的——资源丰富，万物丰饶');
+      } else if (config.resource_abundance === 'scarce') {
+        parts.push('生存是艰难的——资源匮乏，每一步都如履薄冰');
+      }
+
+      if (config.war_tendency === 'aggressive') {
+        parts.push('武力的阴影笼罩着这片土地，冲突一触即发');
+      } else if (config.war_tendency === 'peaceful') {
+        parts.push('和平的曙光普照大地，文明将在安宁中繁荣');
+      }
+
+      var startTech = parseInt(config.starting_tech || 0);
+      if (startTech > 0) {
+        parts.push('一些部落已掌握了初步的技术');
+      }
+
+      return { year: 0, type: 'milestone', title: '创世记', description: parts.join('。') + '。' };
     }
 
     destroy() {}
