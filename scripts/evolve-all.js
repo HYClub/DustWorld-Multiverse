@@ -7,7 +7,7 @@ const BRANCH = 'master';
 const TOKEN = process.env.GITHUB_TOKEN || '';
 const API = 'https://api.github.com';
 const SECONDS_PER_YEAR = 864;
-const MAX_YEARS = 50;
+const MAX_YEARS = 1;
 
 function api(method, endpoint, body) {
   return new Promise((resolve, reject) => {
