@@ -88,22 +88,18 @@
     }
 
     renderProfile(user) {
-      if (this.userName) this.userName.textContent = user.username || '未知用户';
+      var displayName = user.login || user.name || user.username || '未知用户';
+      if (this.userName) this.userName.textContent = displayName;
 
       if (user.avatar_url && this.userAvatarImg) {
         this.userAvatarImg.src = user.avatar_url;
         this.userAvatarImg.style.display = 'block';
         if (this.userAvatarPlaceholder) this.userAvatarPlaceholder.style.display = 'none';
       } else if (this.userAvatarPlaceholder) {
-        this.userAvatarPlaceholder.textContent = (user.username || '?')[0].toUpperCase();
+        this.userAvatarPlaceholder.textContent = (displayName || '?')[0].toUpperCase();
         this.userAvatarPlaceholder.style.display = 'flex';
         if (this.userAvatarImg) this.userAvatarImg.style.display = 'none';
       }
-
-      var created = user.worlds_created ? user.worlds_created.length : 0;
-      var liked = user.worlds_liked ? user.worlds_liked.length : 0;
-      if (this.createdCount) this.createdCount.textContent = created;
-      if (this.likedCount) this.likedCount.textContent = liked;
     }
 
     async loadCreatedWorlds() {
@@ -117,6 +113,8 @@
       } catch (e) {
         console.warn('loadCreatedWorlds error, falling back to demo', e);
       }
+
+      if (this.createdCount) this.createdCount.textContent = worlds.length;
 
       if (!worlds || worlds.length === 0) {
         if (this.myWorldsGrid) this.myWorldsGrid.style.display = 'none';
@@ -153,6 +151,8 @@
       } catch (e) {
         console.warn('loadLikedWorlds error, falling back to demo', e);
       }
+
+      if (this.likedCount) this.likedCount.textContent = worlds.length;
 
       if (!worlds || worlds.length === 0) {
         if (this.likedWorldsGrid) this.likedWorldsGrid.style.display = 'none';

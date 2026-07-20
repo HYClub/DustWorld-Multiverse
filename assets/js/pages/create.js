@@ -299,6 +299,11 @@
       var worldData = engine.getState();
       worldData.world_id = id;
       worldData.config = config;
+      var user = auth.getUser && auth.getUser();
+      if (user) {
+        worldData.creator = user.login || user.name;
+        worldData.creator_avatar = user.avatar_url || '';
+      }
 
       var dm = window.DataManager;
       if (!dm || typeof dm.createWorld !== 'function') {
