@@ -2,7 +2,7 @@
   "world_id": "world_mrszl5je_9ju4",
   "name": "地球",
   "era": "antiquity",
-  "year": 50,
+  "year": 55,
   "civilization": {
     "antiquity": {
       "civ": "han",
@@ -3876,10 +3876,10 @@
       "x": 35,
       "y": 56,
       "level": 3,
-      "population": 308,
+      "population": 324,
       "max_population": 500,
       "tech_level": 3,
-      "culture": 630,
+      "culture": 680,
       "influence": 0,
       "health": 0.8,
       "stability": 0.7,
@@ -3905,38 +3905,17 @@
       "trade_partners": []
     }
   ],
-  "active_events": [
-    {
-      "id": "EVT26467",
-      "type": "cultural_boom",
-      "participants": [
-        "SET001"
-      ],
-      "remaining_years": 1,
-      "duration": 7,
-      "description": "绿野镇迎来文化繁荣。"
-    },
-    {
-      "id": "EVT54189",
-      "type": "cultural_boom",
-      "participants": [
-        "SET001"
-      ],
-      "remaining_years": 3,
-      "duration": 8,
-      "description": "绿野镇迎来文化繁荣。"
-    }
-  ],
+  "active_events": [],
   "trade_routes": [],
   "legacy": {
     "military": 0.7,
     "economic": 0,
-    "cultural": 14.200000000000003,
-    "scientific": 4.750000000000004
+    "cultural": 16.700000000000003,
+    "scientific": 5.500000000000006
   },
   "milestones": [],
   "stats": {
-    "total_population": 308,
+    "total_population": 324,
     "total_settlements": 1,
     "extinct_settlements": 0,
     "total_wars": 0,
@@ -3945,7 +3924,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T08:52:39.627Z",
-  "updated_at": "2026-07-20T20:52:41.838Z",
+  "updated_at": "2026-07-20T22:15:15.717Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -3985,7 +3964,7 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-07-20T20:52:39.627Z",
+  "last_evolved_at": "2026-07-20T22:04:39.627Z",
   "history": [
     {
       "year": 2,
@@ -4196,6 +4175,30 @@
       "type": "cultural_boom",
       "title": "新事件",
       "description": "绿野镇迎来文化繁荣。"
+    },
+    {
+      "year": 51,
+      "type": "event",
+      "title": "事件结束",
+      "description": "绿野镇迎来文化繁荣。 结束。"
+    },
+    {
+      "year": 51,
+      "type": "cultural_boom",
+      "title": "新事件",
+      "description": "绿野镇迎来文化繁荣。"
+    },
+    {
+      "year": 53,
+      "type": "event",
+      "title": "事件结束",
+      "description": "绿野镇迎来文化繁荣。 结束。"
+    },
+    {
+      "year": 55,
+      "type": "event",
+      "title": "事件结束",
+      "description": "绿野镇迎来文化繁荣。 结束。"
     }
   ]
 }
