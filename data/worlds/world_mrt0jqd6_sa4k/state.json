@@ -2,7 +2,7 @@
   "world_id": "world_mrt0jqd6_sa4k",
   "name": "魔法",
   "era": "exploration",
-  "year": 52,
+  "year": 53,
   "civilization": {
     "antiquity": {
       "civ": "insectoids",
@@ -3822,7 +3822,7 @@
         "type": "wood",
         "x": 47,
         "y": 54,
-        "amount": 36.259999999999984
+        "amount": 28.739999999999984
       },
       {
         "type": "wood",
@@ -3846,7 +3846,7 @@
       "x": 44,
       "y": 41,
       "level": 2,
-      "population": 90,
+      "population": 89,
       "max_population": 200,
       "tech_level": 2,
       "culture": 0,
@@ -3858,7 +3858,7 @@
         "wood": 30,
         "ore": 8,
         "water": 0,
-        "gold": 150
+        "gold": 153
       },
       "buildings": [],
       "specialization": null,
@@ -3882,7 +3882,7 @@
       "x": 33,
       "y": 32,
       "level": 3,
-      "population": 205,
+      "population": 204,
       "max_population": 500,
       "tech_level": 4,
       "culture": 480,
@@ -3894,7 +3894,7 @@
         "wood": 30,
         "ore": 8,
         "water": 0,
-        "gold": 150
+        "gold": 153
       },
       "buildings": [],
       "specialization": "agriculture",
@@ -3917,16 +3917,16 @@
       "x": 50,
       "y": 57,
       "level": 2,
-      "population": 142,
+      "population": 159,
       "max_population": 200,
-      "tech_level": 1,
-      "culture": 90,
+      "tech_level": 2,
+      "culture": 120,
       "influence": 0,
       "health": 0.7,
       "stability": 0.6,
       "resources": {
         "food": 0,
-        "wood": 96.74000000000001,
+        "wood": 105.26,
         "ore": 5,
         "water": 0,
         "gold": 0
@@ -3955,7 +3955,7 @@
       "participants": [
         "SET003"
       ],
-      "remaining_years": 4,
+      "remaining_years": 3,
       "duration": 10,
       "description": "风语村迎来文化繁荣。"
     },
@@ -3965,7 +3965,7 @@
       "participants": [
         "SET003"
       ],
-      "remaining_years": 7,
+      "remaining_years": 6,
       "duration": 9,
       "description": "风语村进入黄金时代！"
     }
@@ -3979,9 +3979,9 @@
   ],
   "legacy": {
     "military": 0,
-    "economic": 39.49999999999997,
-    "cultural": 48.90000000000001,
-    "scientific": 60.19999999999998
+    "economic": 39.54999999999997,
+    "cultural": 49.20000000000001,
+    "scientific": 60.54999999999998
   },
   "milestones": [
     {
@@ -4038,19 +4038,29 @@
       "id": "era_exploration",
       "name": "远洋",
       "year": 51
+    },
+    {
+      "id": "setts_3",
+      "name": "扩张",
+      "year": 53
+    },
+    {
+      "id": "era_exploration",
+      "name": "远洋",
+      "year": 53
     }
   ],
   "stats": {
-    "total_population": 437,
+    "total_population": 452,
     "total_settlements": 3,
     "extinct_settlements": 0,
     "total_wars": 0,
-    "tech_breakthroughs": 6,
+    "tech_breakthroughs": 7,
     "golden_ages": 3,
     "dark_ages": 0
   },
   "created_at": "2026-07-20T09:19:32.922Z",
-  "updated_at": "2026-07-20T21:49:31.715Z",
+  "updated_at": "2026-07-20T22:15:14.716Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -4297,9 +4307,27 @@
       "type": "milestone",
       "title": "里程碑",
       "description": "达成: 远洋"
+    },
+    {
+      "year": 53,
+      "type": "tech",
+      "title": "科技突破",
+      "description": "风语村进入青铜！"
+    },
+    {
+      "year": 53,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 扩张"
+    },
+    {
+      "year": 53,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 远洋"
     }
   ],
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-07-20T21:48:20.922Z"
+  "last_evolved_at": "2026-07-20T22:02:44.922Z"
 }
