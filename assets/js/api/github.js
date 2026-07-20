@@ -89,13 +89,32 @@
       .catch(function () { return []; });
   };
 
+  GitHubAPI.prototype._decodeContent = function (content) {
+    try {
+      var raw = atob(content.replace(/\s/g, ''));
+      var bytes = new Uint8Array(raw.length);
+      for (var i = 0; i < raw.length; i++) bytes[i] = raw.charCodeAt(i);
+      return new TextDecoder().decode(bytes);
+    } catch (e) {
+      return null;
+    }
+  };
+
+  GitHubAPI.prototype._encodeContent = function (str) {
+    var bytes = new TextEncoder().encode(str);
+    var binary = '';
+    for (var i = 0; i < bytes.length; i++) binary += String.fromCharCode(bytes[i]);
+    return btoa(binary);
+  };
+
   GitHubAPI.prototype.getWorldState = function (worldId) {
     var self = this;
     return this.request('/repos/' + this.owner + '/' + this.repo + '/contents/data/worlds/' + worldId + '/state.json')
       .then(function (data) {
         if (data && data.content) {
           try {
-            return JSON.parse(atob(data.content.replace(/\s/g, '')));
+            var decoded = self._decodeContent(data.content);
+            return decoded ? JSON.parse(decoded) : null;
           } catch (e) {
             return null;
           }
@@ -111,7 +130,8 @@
       .then(function (data) {
         if (data && data.content) {
           try {
-            return JSON.parse(atob(data.content.replace(/\s/g, '')));
+            var decoded = self._decodeContent(data.content);
+            return decoded ? JSON.parse(decoded) : null;
           } catch (e) {
             return null;
           }
@@ -127,7 +147,8 @@
       .then(function (data) {
         if (data && data.content) {
           try {
-            return JSON.parse(atob(data.content.replace(/\s/g, '')));
+            var decoded = self._decodeContent(data.content);
+            return decoded ? JSON.parse(decoded) : [];
           } catch (e) {
             return [];
           }
@@ -196,11 +217,11 @@
     worldData.liked_by = worldData.liked_by || [];
     worldData.likes = worldData.likes || 0;
     var statePath = 'data/worlds/' + worldId + '/state.json';
-    var stateContent = btoa(unescape(encodeURIComponent(JSON.stringify(worldData, null, 2))));
+    var stateContent = this._encodeContent(JSON.stringify(worldData, null, 2));
 
     var configPath = 'data/worlds/' + worldId + '/config.json';
     var configObj = worldData.config || {};
-    var configContent = btoa(unescape(encodeURIComponent(JSON.stringify(configObj, null, 2))));
+    var configContent = this._encodeContent(JSON.stringify(configObj, null, 2));
 
     var msg = '创建世界: ' + (worldData.name || worldId);
     var self = this;
@@ -212,7 +233,7 @@
   GitHubAPI.prototype.updateWorldState = function (worldId, worldData) {
     if (!this._hasToken()) return Promise.reject(new Error('Not authenticated'));
     var statePath = 'data/worlds/' + worldId + '/state.json';
-    var content = btoa(unescape(encodeURIComponent(JSON.stringify(worldData, null, 2))));
+    var content = this._encodeContent(JSON.stringify(worldData, null, 2));
     var self = this;
     return this._getFileSha(statePath).then(function (sha) {
       return self._putFile(statePath, content, '更新世界: ' + (worldData.name || worldId), sha);
