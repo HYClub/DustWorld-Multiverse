@@ -124,6 +124,12 @@ class WorldCard extends HTMLElement {
       els.eraTrackFill.style.background = this._getEraColor(eraKey);
     }
     // Start countdown timer for evolution
+    this._nextRefresh = null;
+    this._countdownTimer = null;
+    if (this._refreshRetryTimer) {
+      clearTimeout(this._refreshRetryTimer);
+      this._refreshRetryTimer = null;
+    }
     this._startCountdown();
     if (els.settlements) els.settlements.textContent = this._formatNum(d.settlements);
     if (els.population) els.population.textContent = this._formatNum(d.population);
@@ -240,13 +246,16 @@ class WorldCard extends HTMLElement {
   _startCountdown() {
     if (this._countdownTimer) return;
     if (this._nextRefresh && Date.now() < this._nextRefresh) {
-      // Still in cooldown, restart timer to check again later
-      var remaining = Math.ceil((this._nextRefresh - Date.now()) / 1000);
+      var cooldown = Math.ceil((this._nextRefresh - Date.now()) / 1000);
+      if (this._els && this._els.countdown) {
+        this._els.countdown.textContent = '⏳ ' + cooldown + 's';
+        this._els.countdown.style.color = '';
+      }
       var self = this;
       this._countdownTimer = setTimeout(function () {
         self._countdownTimer = null;
         self._startCountdown();
-      }, Math.min(remaining * 1000, 60000));
+      }, Math.min(cooldown * 1000, 60000));
       return;
     }
     this._lastEvo = new Date(this._data.lastEvolvedAt || Date.now()).getTime();
@@ -267,11 +276,19 @@ class WorldCard extends HTMLElement {
       clearInterval(this._countdownTimer);
       this._countdownTimer = null;
       this._nextRefresh = Date.now() + 60000;
-      this._els.countdown.textContent = '⏳ 刷新中';
-      this._els.countdown.style.color = '#ff4757';
+      this._els.countdown.textContent = '';
       this.dispatchEvent(new CustomEvent('world-refresh', {
         bubbles: true, composed: true, detail: { worldId: this._data.worldId }
       }));
+      // If update() doesn't restart the timer (e.g., API failure), try again after 60s
+      if (!this._refreshRetryTimer) {
+        var self = this;
+        this._refreshRetryTimer = setTimeout(function () {
+          self._refreshRetryTimer = null;
+          self._countdownTimer = null;
+          self._startCountdown();
+        }, 60000);
+      }
       return;
     }
     this._els.countdown.style.color = '';

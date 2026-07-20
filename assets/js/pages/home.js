@@ -213,10 +213,7 @@
             world.year = meta.year;
             world.era = meta.era;
             world.lastEvolvedAt = meta.lastEvolvedAt;
-          }).catch(function () {
-            // Restart countdown even if API fails
-            card.update({});
-          });
+          }).catch(function () {});
         }
       });
 
