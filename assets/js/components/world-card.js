@@ -254,6 +254,8 @@ class WorldCard extends HTMLElement {
 
   _startCountdown() {
     if (this._countdownTimer) return;
+    // Fire an immediate refresh to get latest lastEvolvedAt from server
+    this._lastRefresh = 0;
     this._updateCountdown();
     var self = this;
     this._countdownTimer = setInterval(function () {
@@ -268,15 +270,19 @@ class WorldCard extends HTMLElement {
     var lastEvo = new Date(this._data.lastEvolvedAt || Date.now()).getTime();
     var nextEvo = lastEvo + SECONDS_PER_YEAR * 1000;
     var now = Date.now();
-    var remaining = Math.max(1, Math.ceil((nextEvo - now) / 1000));
+    var remaining = Math.ceil((nextEvo - now) / 1000);
 
     this._els.countdown.style.color = '';
     if (remaining > 3600) {
       this._els.countdown.textContent = '⏳ ' + Math.ceil(remaining / 3600) + 'h';
     } else if (remaining > 60) {
       this._els.countdown.textContent = '⏳ ' + Math.ceil(remaining / 60) + 'm';
-    } else {
+    } else if (remaining > 0) {
       this._els.countdown.textContent = '⏳ ' + remaining + 's';
+    } else {
+      // Overdue: show how many minutes past due
+      var overdue = Math.ceil(-remaining / 60);
+      this._els.countdown.textContent = '⏳ +' + overdue + 'm';
     }
 
     if (!this._pendingRefresh && (!this._lastRefresh || now - this._lastRefresh > 30000)) {

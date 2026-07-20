@@ -280,11 +280,25 @@
     });
   };
 
-  GitHubAPI.prototype._deleteFile = function (path, sha, message) {
-    return this.request('/repos/' + this.owner + '/' + this.repo + '/contents/' + path, {
-      method: 'DELETE',
-      body: { message: message || '删除文件', sha: sha, branch: 'master' }
-    });
+  GitHubAPI.prototype._deleteFile = function (path, sha, message, maxRetries) {
+    if (maxRetries === undefined) maxRetries = 3;
+    var self = this;
+    function tryDelete(sha, attempt) {
+      return self.request('/repos/' + self.owner + '/' + self.repo + '/contents/' + path, {
+        method: 'DELETE',
+        body: { message: message || '删除文件', sha: sha, branch: 'master' }
+      }).catch(function (err) {
+        if (attempt < maxRetries && err.message && err.message.indexOf('does not match') !== -1) {
+          // SHA conflict - get fresh SHA and retry
+          return self._getFileSha(path).then(function (newSha) {
+            if (!newSha) return;
+            return tryDelete(newSha, attempt + 1);
+          });
+        }
+        throw err;
+      });
+    }
+    return tryDelete(sha, 1);
   };
 
   GitHubAPI.prototype.deleteWorld = function (worldId) {
@@ -292,14 +306,14 @@
     var self = this;
     var statePath = 'data/worlds/' + worldId + '/state.json';
     var configPath = 'data/worlds/' + worldId + '/config.json';
-    return this._getFileSha(statePath).then(function (stateSha) {
-      if (!stateSha) return;
-      return self._getFileSha(configPath).then(function (configSha) {
-        var msg = '毁灭世界: ' + worldId;
-        return self._deleteFile(statePath, stateSha, msg).then(function () {
-          if (configSha) return self._deleteFile(configPath, configSha, msg);
-        });
-      });
+    var msg = '毁灭世界: ' + worldId;
+    return self._getFileSha(statePath).then(function (sha) {
+      if (!sha) return;
+      return self._deleteFile(statePath, sha, msg);
+    }).then(function () {
+      return self._getFileSha(configPath);
+    }).then(function (sha) {
+      if (sha) return self._deleteFile(configPath, sha, msg);
     });
   };
 
