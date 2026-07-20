@@ -360,7 +360,6 @@
         });
 
         modal.onConfirm(function () {
-          // Add destruction event to history
           var destEvent = {
             year: fullState.year || 0,
             type: 'milestone',
@@ -369,13 +368,28 @@
           };
           if (!fullState.history) fullState.history = [];
           fullState.history.push(destEvent);
-          // Update state with final entry
-          dm.updateWorld(world.world_id, fullState).then(function () {
-            // Now delete the world files
-            return dm.deleteWorld(world.world_id);
+          fullState.updated_at = new Date().toISOString();
+          // Write final state and delete files in one API call chain
+          // First get the SHA, then update with final entry, then delete both files
+          var statePath = 'data/worlds/' + world.world_id + '/state.json';
+          var configPath = 'data/worlds/' + world.world_id + '/config.json';
+          var api = dm.api;
+          api._getFileSha(statePath).then(function (sha) {
+            return api._putFile(statePath,
+              api._encodeContent(JSON.stringify(fullState, null, 2)),
+              '世界末日: ' + name, sha);
           }).then(function () {
+            return api._getFileSha(statePath);
+          }).then(function (sha) {
+            return api._deleteFile(statePath, sha, '毁灭世界: ' + name);
+          }).then(function () {
+            return api._getFileSha(configPath);
+          }).then(function (sha) {
+            if (sha) return api._deleteFile(configPath, sha, '毁灭世界: ' + name);
+          }).then(function () {
+            dm.invalidateCache('worldList');
+            dm.invalidateCache('world_' + world.world_id);
             window.Toast.success('世界「' + name + '」已毁灭', 4000);
-            // Refresh the list
             if (self.myWorldsGrid) {
               self.myWorldsGrid.innerHTML = '';
               var createCard = document.createElement('div');
