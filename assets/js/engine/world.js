@@ -499,13 +499,20 @@
       if (bigPop.length === 0) type = 'cultural_boom';
     }
     var target = s[Math.floor(this._rng() * s.length)];
-    var target2 = s.length > 1 ? s[Math.floor(this._rng() * s.length)] : target;
+    var target2 = target;
+    if (s.length > 1) {
+      do { target2 = s[Math.floor(this._rng() * s.length)]; } while (target2.id === target.id);
+    }
+    // Can't have war with only one settlement
+    if (type === 'war' && target2.id === target.id) {
+      type = this._rng() < 0.5 ? 'cultural_boom' : 'golden_age';
+    }
     var data = { id: 'EVT' + Math.floor(this._rng() * 100000), type: type, participants: [target.id], remaining_years: 3 + Math.floor(this._rng() * 8), duration: 3 + Math.floor(this._rng() * 8) };
     switch (type) {
       case 'war':
         data.participants.push(target2.id);
         data.description = target.name + '与' + target2.name + '爆发战争！';
-        if (target.id !== target2.id) this.state.stats.total_wars++;
+        this.state.stats.total_wars++;
         break;
       case 'natural_disaster': data.description = target.name + '遭受自然灾害。'; break;
       case 'plague': data.description = target.name + '爆发瘟疫。'; break;
