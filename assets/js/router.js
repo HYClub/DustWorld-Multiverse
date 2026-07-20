@@ -40,15 +40,6 @@
         }
       }
 
-      var loginBtn = document.getElementById('login-btn');
-      if (page === 'user') {
-        var authManager = window.AuthManager && window.AuthManager._instance;
-        if (!authManager || !authManager.isLoggedIn()) {
-          page = 'home';
-          if (loginBtn) loginBtn.style.display = '';
-        }
-      }
-
       this.currentPage = page;
       this.currentParams = params;
       this.loadPage(page, params);
@@ -57,14 +48,6 @@
     loadPage(page, params) {
       var appEl = document.getElementById('app');
       if (!appEl) return;
-
-      if (page === 'user') {
-        var authManager = window.AuthManager && window.AuthManager._instance;
-        if (!authManager || !authManager.isLoggedIn()) {
-          this.navigate('#/');
-          return;
-        }
-      }
 
       var self = this;
       var pagePath = 'pages/' + page + '.html';
@@ -101,7 +84,7 @@
       var Module = window[moduleName];
       // Try alternative names (e.g. WorldDetailPage for 'world')
       if (!Module) {
-        var altNames = { world: 'WorldDetailPage' };
+        var altNames = { world: 'WorldDetailPage', create: 'CreateWorldPage' };
         var alt = altNames[page];
         if (alt) Module = window[alt];
       }

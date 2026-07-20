@@ -13,13 +13,9 @@
     init() {
       if (this.initialized) return;
       this.initialized = true;
-
       var self = this;
-
       if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', function () {
-          self._initModules();
-        });
+        document.addEventListener('DOMContentLoaded', function () { self._initModules(); });
       } else {
         self._initModules();
       }
@@ -27,74 +23,56 @@
 
     _initModules() {
       var self = this;
-
       this.api = new window.GitHubAPI();
-      window.DataManager = new window.DataManager(this.api);
-      this.dataManager = window.DataManager;
+      this.dataManager = new window.DataManager(this.api);
+      window.DataManager = this.dataManager;
 
       this.authManager = new window.AuthManager();
       window.AuthManager._instance = this.authManager;
+      this.authManager.init();
+      this._setupGlobalEvents();
 
-      var githubClientId = localStorage.getItem('github_client_id') || null;
-      var oauthProxy = localStorage.getItem('github_oauth_proxy') || null;
-
-      this.authManager.init(githubClientId, undefined, oauthProxy);
-
-      var params = new URLSearchParams(window.location.search);
-      var code = params.get('code');
-      var state = params.get('state');
-
+      var code = localStorage.getItem('dustworld_oauth_code');
+      var state = localStorage.getItem('dustworld_oauth_state');
       if (code) {
-        this.authManager.handleCallback(code, state).catch(function () {
+        localStorage.removeItem('dustworld_oauth_code');
+        localStorage.removeItem('dustworld_oauth_state');
+        this.authManager.handleCallback(code, state).catch(function () {}).finally(function () {
           self._finishInit();
         });
+      } else {
+        this._finishInit();
       }
-
-      this._setupGlobalEvents();
-      this._finishInit();
     }
 
     _finishInit() {
       this.router = new window.Router();
       this.router.init();
-
       this._updateLoginButton();
       this._hideLoading();
+      this._redirectPendingCreate();
+    }
+
+    _redirectPendingCreate() {
+      if (!this.authManager.isLoggedIn()) return;
+      var hasPending = false;
+      try { hasPending = !!localStorage.getItem('dustworld_pending_create'); } catch (e) {}
+      if (hasPending) {
+        window.Toast.info('登录成功，正在进入创建页面…');
+        window.location.hash = '#/create';
+      }
     }
 
     _setupGlobalEvents() {
       var self = this;
-
       document.addEventListener('click', function (e) {
         var loginBtn = e.target.closest('#login-btn');
         if (loginBtn) {
           if (self.authManager.isLoggedIn()) {
             self.authManager.logout();
           } else {
-            self.authManager.loginWithPKCE();
+            self.authManager.login();
           }
-          return;
-        }
-
-        var navLink = e.target.closest('[data-nav]');
-        if (navLink) {
-          var nav = navLink.getAttribute('data-nav');
-          if (nav === 'home') self.router.navigate('#/');
-          else if (nav === 'create') self.router.navigate('#/create');
-          else if (nav === 'user') self.router.navigate('#/user');
-          return;
-        }
-
-        var navigateBtn = e.target.closest('[data-action="navigate"]');
-        if (navigateBtn) {
-          var page = navigateBtn.getAttribute('data-page');
-          if (page === 'create') self.router.navigate('#/create');
-          return;
-        }
-
-        var backBtn = e.target.closest('[data-action="back"]');
-        if (backBtn) {
-          window.history.back();
           return;
         }
       });
@@ -106,13 +84,12 @@
       if (this.authManager.isLoggedIn()) {
         var user = this.authManager.getUser();
         loginBtn.textContent = (user && user.login) ? user.login : '已登录';
-        loginBtn.classList.remove('btn-primary');
-        loginBtn.classList.add('btn-secondary');
+        loginBtn.className = 'btn btn-secondary nav-login-btn';
+        loginBtn.style.cssText = 'padding: 8px 16px; font-size: 13px;';
       } else {
         loginBtn.textContent = '登录 GitHub';
-        loginBtn.classList.add('btn-primary');
-        loginBtn.classList.remove('btn-secondary');
-        loginBtn.style.display = '';
+        loginBtn.className = 'btn btn-primary nav-login-btn';
+        loginBtn.style.cssText = 'padding: 8px 16px; font-size: 13px;';
       }
     }
 

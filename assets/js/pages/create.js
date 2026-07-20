@@ -3,501 +3,326 @@
 
   class CreateWorldPage {
     constructor() {
-      this.currentStep = 1;
-      this.totalSteps = 6;
-      this.formData = {};
-      this._bound = {};
+      this.step = 1;
+      this.total = 4;
+      this.data = { name: '', description: '' };
+      this._cards = [];
+      this.civs = [];
+      this.selectedCiv = null;
     }
 
     init() {
-      this.appEl = document.getElementById('app');
-      this.stepIndicator = document.getElementById('step-indicator');
-      this.formSections = this.appEl && this.appEl.querySelectorAll('.form-section');
-      this.prevBtn = document.getElementById('create-prev-btn');
-      this.nextBtn = document.getElementById('create-next-btn');
-      this.submitBtn = document.getElementById('create-submit-btn');
-      this.previewCanvas = document.getElementById('preview-map-canvas');
-      this.previewSize = document.getElementById('preview-size');
-      this.previewOcean = document.getElementById('preview-ocean');
-      this.previewContinents = document.getElementById('preview-continents');
-      this.previewTime = document.getElementById('preview-time');
-
-      this._bindRadioCards();
-      this._bindFormInputs();
-      this._bindButtons();
-      this._renderStepIndicator();
-      this.showStep(1);
+      this._cache();
+      this._bind();
+      this._loadCivilizations();
+      this._checkPending();
     }
 
-    _bindRadioCards() {
-      var groups = this.appEl && this.appEl.querySelectorAll('.radio-card-group');
-      if (!groups) return;
-      for (var g = 0; g < groups.length; g++) {
-        var cards = groups[g].querySelectorAll('.radio-card');
-        for (var i = 0; i < cards.length; i++) {
-          (function (card) {
-            card.addEventListener('click', function () {
-              var parent = card.parentNode;
-              var siblings = parent.querySelectorAll('.radio-card');
-              for (var j = 0; j < siblings.length; j++) {
-                siblings[j].classList.remove('selected');
-              }
-              card.classList.add('selected');
-              var radio = card.querySelector('input[type="radio"]');
-              if (radio) {
-                radio.checked = true;
-                radio.dispatchEvent(new Event('change', { bubbles: true }));
-              }
-            });
-          })(cards[i]);
-        }
-      }
-    }
-
-    _bindFormInputs() {
-      var self = this;
-
-      var nameInput = document.getElementById('world-name-input');
-      if (nameInput) {
-        nameInput.addEventListener('input', function () {
-          self.formData.name = this.value;
-          self.updatePreview();
-        });
-      }
-
-      var descInput = document.getElementById('world-desc-input');
-      if (descInput) {
-        descInput.addEventListener('input', function () {
-          self.formData.description = this.value;
-        });
-      }
-
-      var radioInputs = this.appEl && this.appEl.querySelectorAll('.form-section input[type="radio"]');
-      if (radioInputs) {
-        for (var i = 0; i < radioInputs.length; i++) {
-          (function (input) {
-            input.addEventListener('change', function () {
-              self.formData[this.name] = this.value;
-              self.updatePreview();
-            });
-          })(radioInputs[i]);
-        }
-      }
-
-      this._collectInitialFormData();
-    }
-
-    _collectInitialFormData() {
-      this.formData = {};
-      var inputs = this.appEl && this.appEl.querySelectorAll('.form-section input, .form-section textarea');
-      if (inputs) {
-        for (var i = 0; i < inputs.length; i++) {
-          var inp = inputs[i];
-          if (inp.type === 'radio' && inp.checked) {
-            this.formData[inp.name] = inp.value;
-          } else if (inp.type === 'text' || inp.type === 'textarea') {
-            this.formData[inp.name] = inp.value;
-          }
-        }
-      }
-    }
-
-    _bindButtons() {
-      var self = this;
-
-      if (this.prevBtn) {
-        this.prevBtn.addEventListener('click', function () { self.goPrev(); });
-      }
-
-      if (this.nextBtn) {
-        this.nextBtn.addEventListener('click', function () { self.goNext(); });
-      }
-
-      if (this.submitBtn) {
-        this.submitBtn.addEventListener('click', function () { self.onSubmit(); });
-      }
-
-      var backBtn = this.appEl && this.appEl.querySelector('[data-action="back"]');
-      if (backBtn) {
-        backBtn.addEventListener('click', function () { window.history.back(); });
-      }
-    }
-
-    _renderStepIndicator() {
-      if (!this.stepIndicator) return;
-      var stepLabels = ['基础', '地图', '环境', '时间', '事件', '规则'];
-      var html = '';
-      for (var i = 0; i < this.totalSteps; i++) {
-        if (i > 0) {
-          html += '<div class="step-line"></div>';
-        }
-        html += '<div class="step-item" data-step="' + (i + 1) + '">' +
-          '<span class="step-dot">' + (i + 1) + '</span>' +
-          '<span class="step-label">' + stepLabels[i] + '</span>' +
-          '</div>';
-      }
-      this.stepIndicator.innerHTML = html;
-    }
-
-    showStep(step) {
-      if (step < 1 || step > this.totalSteps) return;
-      this.currentStep = step;
-
-      if (this.formSections) {
-        for (var i = 0; i < this.formSections.length; i++) {
-          var section = this.formSections[i];
-          var s = parseInt(section.getAttribute('data-step'), 10);
-          section.classList.toggle('active', s === step);
-          if (s === step) {
-            section.style.display = '';
-            setTimeout(function (el) {
-              el.style.opacity = '1';
-            }, 10, section);
-            section.style.opacity = '0';
-          }
-        }
-      }
-
-      this._updateStepIndicator();
-      this._updateButtons();
-    }
-
-    _updateStepIndicator() {
-      if (!this.stepIndicator) return;
-      var items = this.stepIndicator.querySelectorAll('.step-item');
-      for (var i = 0; i < items.length; i++) {
-        var s = parseInt(items[i].getAttribute('data-step'), 10);
-        items[i].classList.toggle('completed', s < this.currentStep);
-        items[i].classList.toggle('active', s === this.currentStep);
-      }
-    }
-
-    _updateButtons() {
-      if (this.prevBtn) {
-        this.prevBtn.style.visibility = this.currentStep > 1 ? 'visible' : 'hidden';
-      }
-      if (this.nextBtn) {
-        this.nextBtn.style.display = this.currentStep < this.totalSteps ? '' : 'none';
-      }
-      if (this.submitBtn) {
-        this.submitBtn.style.display = this.currentStep === this.totalSteps ? '' : 'none';
-      }
-    }
-
-    validateStep(step) {
-      if (step === 1) {
-        var name = this.formData.name || '';
-        if (name.length < 2 || name.length > 20) {
-          var errEl = document.querySelector('.form-section[data-step="1"] .form-error');
-          if (errEl) errEl.style.display = 'block';
-          var input = document.getElementById('world-name-input');
-          if (input) input.classList.add('error');
-          return false;
-        }
-        var errEl2 = document.querySelector('.form-section[data-step="1"] .form-error');
-        if (errEl2) errEl2.style.display = 'none';
-        var input2 = document.getElementById('world-name-input');
-        if (input2) input2.classList.remove('error');
-        return true;
-      }
-
-      var stepSections = {
-        2: ['map_size', 'continents', 'ocean_ratio'],
-        3: ['resources', 'climate', 'initial_life'],
-        4: ['time_ratio', 'evo_frequency'],
-        5: ['disaster_freq', 'war_tendency', 'tech_speed', 'miracle_chance'],
-        6: ['creator_limit', 'allow_others', 'others_limit']
+    _readAllParams() {
+      var g = function(id, def) {
+        var el = document.getElementById(id);
+        return el ? el.value : (def || 'normal');
       };
+      return {
+        map_size: g('p-map-size', 'medium'),
+        world_shape: g('p-world-shape', 'continent'),
+        latitude: g('p-latitude', 'temperate'),
+        ocean_ratio: parseFloat(g('p-ocean', '50')),
+        climate_type: g('p-climate', 'varied'),
+        temperature: g('p-temperature', 'moderate'),
+        rainfall: g('p-rainfall', 'moderate'),
+        seasonality: g('p-seasonality', 'moderate'),
+        disaster_freq: g('p-disaster', 'medium'),
+        resource_abundance: g('p-resources', 'normal'),
+        strategic_resource_freq: g('p-strategic', 'normal'),
+        initial_population: parseInt(g('p-init-pop', '15')),
+        population_growth_rate: parseFloat(g('p-growth', '1.0')),
+        max_population_cap: g('p-pop-cap', 'normal'),
+        initial_settlements: parseInt(g('p-init-setts', '3')),
+        settlement_split_rate: parseFloat(g('p-split', '0.5')),
+        tech_speed: g('p-tech', 'normal'),
+        tech_diffusion: g('p-tech-diff', 'normal'),
+        starting_tech: parseInt(g('p-start-tech', '0')),
+        trade_openness: g('p-trade', 'normal'),
+        economic_system: g('p-economy', 'mercantile'),
+        tax_rate: g('p-tax', 'moderate'),
+        cultural_identity: g('p-culture-id', 'diverse'),
+        religion_type: g('p-religion', 'secular'),
+        religion_spread: g('p-religion-spread', 'normal'),
+        artistic_flourish: g('p-art', 'normal'),
+        government_type: g('p-government', 'chiefdom'),
+        war_tendency: g('p-war', 'normal'),
+        military_spending: g('p-military', 'normal'),
+        diplomacy_style: g('p-diplomacy', 'pragmatic')
+      };
+    }
 
-      var fields = stepSections[step];
-      if (fields) {
-        var missing = false;
-        for (var i = 0; i < fields.length; i++) {
-          if (!this.formData[fields[i]]) {
-            missing = true;
-            break;
+    _checkPending() {
+      var self = this;
+      var pendingData = null;
+      try { pendingData = JSON.parse(localStorage.getItem('dustworld_pending_create')); } catch(e) {}
+      if (!pendingData) return;
+      localStorage.removeItem('dustworld_pending_create');
+
+      var auth = window.AuthManager && window.AuthManager._instance;
+      if (!auth || !auth.isLoggedIn()) return;
+
+      // Restore data
+      this.data.name = pendingData.name || '';
+      this.data.description = pendingData.description || '';
+      if (this.nameInput) this.nameInput.value = this.data.name;
+      if (this.descInput) this.descInput.value = this.data.description;
+
+      if (pendingData.civ) {
+        this.selectedCiv = pendingData.civ;
+        // Highlight the civ card
+        var cards = this.civGrid ? this.civGrid.querySelectorAll('.civ-card') : [];
+        cards.forEach(function(c) {
+          if (c.dataset.civId === pendingData.civ.id) {
+            c.classList.add('selected');
+            self._showLeaderInfo(pendingData.civ);
           }
-        }
-        if (missing) {
-          window.Toast.warning('请完成所有选项');
-          return false;
+        });
+      }
+
+      // Restore params
+      if (pendingData.params) {
+        var paramMap = {
+          map_size: 'p-map-size', world_shape: 'p-world-shape', latitude: 'p-latitude', ocean_ratio: 'p-ocean',
+          climate_type: 'p-climate', temperature: 'p-temperature', rainfall: 'p-rainfall', seasonality: 'p-seasonality',
+          disaster_freq: 'p-disaster', resource_abundance: 'p-resources', strategic_resource_freq: 'p-strategic',
+          initial_population: 'p-init-pop', population_growth_rate: 'p-growth', max_population_cap: 'p-pop-cap',
+          initial_settlements: 'p-init-setts', settlement_split_rate: 'p-split',
+          tech_speed: 'p-tech', tech_diffusion: 'p-tech-diff', starting_tech: 'p-start-tech',
+          trade_openness: 'p-trade', economic_system: 'p-economy', tax_rate: 'p-tax',
+          cultural_identity: 'p-culture-id', religion_type: 'p-religion', religion_spread: 'p-religion-spread',
+          artistic_flourish: 'p-art',
+          government_type: 'p-government', war_tendency: 'p-war', military_spending: 'p-military', diplomacy_style: 'p-diplomacy'
+        };
+        for (var key in pendingData.params) {
+          var elId = paramMap[key];
+          if (elId) {
+            var el = document.getElementById(elId);
+            if (el) el.value = pendingData.params[key];
+          }
         }
       }
 
+      // Auto-submit after a brief delay
+      window.Toast.info('登录成功，正在创建世界...');
+      setTimeout(function() { self.submit(); }, 800);
+    }
+
+    _cache() {
+      this.el = document.getElementById('wizard-body');
+      this.panes = this.el && this.el.querySelectorAll('.ws-pane');
+      this.steps = document.getElementById('wizard-steps');
+      this.prevBtn = document.getElementById('wizard-prev');
+      this.nextBtn = document.getElementById('wizard-next');
+      this.createBtn = document.getElementById('wizard-create');
+      this.nameInput = document.getElementById('world-name-input');
+      this.descInput = document.getElementById('world-desc-input');
+      this._cards = [].slice.call(document.querySelectorAll('.wz-card'));
+      this.civGrid = document.getElementById('civ-grid');
+      this.leaderInfo = document.getElementById('leader-info');
+    }
+
+    _bind() {
+      var self = this;
+      if (this.prevBtn) this.prevBtn.addEventListener('click', function () { self.go(-1); });
+      if (this.nextBtn) this.nextBtn.addEventListener('click', function () { self.go(1); });
+      if (this.createBtn) this.createBtn.addEventListener('click', function () { self.submit(); });
+      if (this.nameInput) {
+        this.nameInput.addEventListener('input', function () { self.data.name = this.value; });
+      }
+      if (this.descInput) {
+        this.descInput.addEventListener('input', function () { self.data.description = this.value; });
+      }
+    }
+
+    _loadCivilizations() {
+      var self = this;
+      // Try to load civ data from inline or fetch
+      if (window.CIVILIZATIONS) {
+        self.civs = window.CIVILIZATIONS.antiquity || [];
+        self._renderCivGrid();
+        self.show(1);
+        return;
+      }
+      // Fetch from data file
+      fetch('data/civilizations.json').then(function(r) { return r.json(); }).then(function(data) {
+        window.CIVILIZATIONS = data;
+        if (window.CivEngine) window.CivEngine.setCivData(data);
+        self.civs = data.antiquity || [];
+        self._renderCivGrid();
+        self.show(1);
+      }).catch(function() {
+        self.civs = [];
+        self._renderCivGrid();
+        self.show(1);
+      });
+    }
+
+    _renderCivGrid() {
+      if (!this.civGrid) return;
+      var self = this;
+      this.civGrid.innerHTML = '';
+      this.civs.forEach(function(civ) {
+        var card = document.createElement('div');
+        card.className = 'civ-card';
+        card.dataset.civId = civ.id;
+        card.innerHTML =
+          '<div class="civ-card-name">' + civ.name + '</div>' +
+          '<div class="civ-card-leader">' + civ.leader_name + '</div>' +
+          '<div class="civ-card-ability">' + civ.ability.split('—')[0].trim() + '</div>' +
+          '<div class="civ-card-unit">' + civ.unique_unit.split('—')[0].trim() + '</div>';
+        card.addEventListener('click', function() {
+          self.civGrid.querySelectorAll('.civ-card').forEach(function(c) { c.classList.remove('selected'); });
+          card.classList.add('selected');
+          self.selectedCiv = civ;
+          self._showLeaderInfo(civ);
+        });
+        self.civGrid.appendChild(card);
+      });
+      if (this.civs.length > 0) {
+        this.civGrid.firstChild.click();
+      }
+    }
+
+    _showLeaderInfo(civ) {
+      if (!this.leaderInfo) return;
+      this.leaderInfo.innerHTML =
+        '<div class="leader-detail">' +
+        '<div class="leader-name">👑 ' + civ.leader_name + '</div>' +
+        '<div class="leader-civ">' + civ.name + '文明</div>' +
+        '<div class="leader-ability"><strong>文明能力:</strong> ' + civ.ability + '</div>' +
+        '<div class="leader-unit"><strong>特色单位:</strong> ' + civ.unique_unit + '</div>' +
+        '<div class="leader-building"><strong>特色建筑:</strong> ' + (civ.unique_building || '无') + '</div>' +
+        '<div class="leader-agenda"><strong>元首议程:</strong> ' + (civ.agenda ? civ.agenda.name : '标准') + '</div>' +
+        '</div>';
+    }
+
+    show(n) {
+      if (n < 1 || n > this.total) return;
+      this.step = n;
+      var panes = this.panes;
+      if (panes) {
+        for (var i = 0; i < panes.length; i++) {
+          panes[i].classList.toggle('active', parseInt(panes[i].getAttribute('data-step'), 10) === n);
+        }
+      }
+      var items = this.steps && this.steps.querySelectorAll('.ws-item');
+      if (items) {
+        items.forEach(function(it) {
+          var s = parseInt(it.getAttribute('data-step'), 10);
+          it.classList.toggle('active', s === n);
+          it.classList.toggle('completed', s < n);
+        });
+      }
+      if (this.prevBtn) this.prevBtn.style.visibility = n > 1 ? 'visible' : 'hidden';
+      if (this.nextBtn) this.nextBtn.style.display = n < this.total ? '' : 'none';
+      if (this.createBtn) this.createBtn.style.display = n === this.total ? '' : 'none';
+      if (this.nameInput && n === 1) {
+        var self = this;
+        setTimeout(function() { if (self.nameInput) self.nameInput.focus(); }, 100);
+      }
+      if (n === this.total) this._updateSummary();
+    }
+
+    go(dir) {
+      if (dir > 0 && !this._validate()) return;
+      this.show(this.step + dir);
+    }
+
+    _validate() {
+      if (this.step === 1) {
+        var name = (this.data.name || '').trim();
+        if (name.length < 2 || name.length > 20) {
+          window.Toast.warning('世界名称为2-20个字符');
+          if (this.nameInput) this.nameInput.focus();
+          return false;
+        }
+      }
+      if (this.step === 2 && !this.selectedCiv) {
+        window.Toast.warning('请选择一个文明');
+        return false;
+      }
       return true;
     }
 
-    updatePreview() {
-      var canvas = this.previewCanvas;
-      if (!canvas) return;
-
-      var container = canvas.parentNode;
-      var cw = container.clientWidth || 200;
-      var ch = container.clientHeight || 200;
-      var dpr = window.devicePixelRatio || 1;
-      canvas.width = cw * dpr;
-      canvas.height = ch * dpr;
-      canvas.style.width = cw + 'px';
-      canvas.style.height = ch + 'px';
-
-      var ctx = canvas.getContext('2d');
-      ctx.scale(dpr, dpr);
-
-      var mapSize = parseInt(this.formData.map_size || '20', 10);
-      var oceanRatio = parseInt(this.formData.ocean_ratio || '30', 10);
-      var continents = this.formData.continents || '1';
-
-      var tileSize = Math.floor(Math.min(cw, ch) / mapSize);
-      var offsetX = Math.floor((cw - tileSize * mapSize) / 2);
-      var offsetY = Math.floor((ch - tileSize * mapSize) / 2);
-
-      var tempSeed = Date.now();
-      var rng = this._seededRandom(tempSeed);
-
-      var terrainColors = ['#3a5a4a', '#6b8e5a', '#8a7a5a', '#5a6a7a', '#4a7a8a', '#2a4a6a'];
-      var oceanColor = '#1a2a4a';
-
-      for (var y = 0; y < mapSize; y++) {
-        for (var x = 0; x < mapSize; x++) {
-          var isWater = rng() * 100 < oceanRatio;
-          if (continents === 'archipelago') {
-            var cx = mapSize / 2, cy = mapSize / 2;
-            var dist = Math.sqrt(Math.pow(x - cx, 2) + Math.pow(y - cy, 2));
-            var archipelagoR = mapSize * 0.35;
-            var noiseVal = rng() * 60;
-            isWater = (dist > archipelagoR - 5 + noiseVal * 0.3) && rng() * 100 < (oceanRatio + 10);
-          } else if (continents === '2-3' || continents === '4-6') {
-            var numCenters = continents === '2-3' ? 3 : 5;
-            var centers = [];
-            for (var ci = 0; ci < numCenters; ci++) {
-              centers.push({
-                cx: 5 + rng() * (mapSize - 10),
-                cy: 5 + rng() * (mapSize - 10),
-                r: mapSize * (0.12 + rng() * 0.12)
-              });
-            }
-            var minDist = mapSize;
-            for (var cj = 0; cj < centers.length; cj++) {
-              var d = Math.sqrt(Math.pow(x - centers[cj].cx, 2) + Math.pow(y - centers[cj].cy, 2));
-              if (d < minDist) minDist = d;
-            }
-            var radiusSum = 0;
-            for (var ck = 0; ck < centers.length; ck++) {
-              radiusSum += centers[ck].r;
-            }
-            var avgR = radiusSum / centers.length;
-            isWater = minDist > avgR * (0.6 + rng() * 0.5);
-          } else {
-            var distFromCenter = Math.sqrt(Math.pow(x - mapSize / 2, 2) + Math.pow(y - mapSize / 2, 2));
-            var normalized = distFromCenter / (mapSize * 0.5);
-            isWater = (normalized > 0.7 - (100 - oceanRatio) * 0.004) || (normalized > 0.3 && rng() * 100 < oceanRatio * 0.3);
-          }
-
-          if (isWater) {
-            ctx.fillStyle = oceanColor;
-          } else {
-            var idx = Math.floor(rng() * terrainColors.length);
-            ctx.fillStyle = terrainColors[idx];
-          }
-          ctx.fillRect(offsetX + x * tileSize, offsetY + y * tileSize, tileSize, tileSize);
-        }
-      }
-
-      if (this.previewSize) {
-        this.previewSize.textContent = mapSize + '\u00D7' + mapSize;
-      }
-      if (this.previewOcean) {
-        this.previewOcean.textContent = oceanRatio + '%';
-      }
-      if (this.previewContinents) {
-        var continentLabels = { '1': '1块大陆', '2-3': '2-3块大陆', '4-6': '4-6块大陆', 'archipelago': '群岛' };
-        this.previewContinents.textContent = continentLabels[continents] || continents;
-      }
-      if (this.previewTime) {
-        this.previewTime.textContent = '1:' + (this.formData.time_ratio || '24');
-      }
-    }
-
-    _seededRandom(seed) {
-      return function () {
-        seed = (seed * 9301 + 49297) % 233280;
-        return seed / 233280;
+    _updateSummary() {
+      var civ = this.selectedCiv;
+      var setText = function(id, text) {
+        var el = document.getElementById(id);
+        if (el) el.textContent = text || '-';
       };
+      setText('summary-name', this.data.name || '未命名');
+      setText('summary-desc', this.data.description || '(无描述)');
+      setText('summary-civ', civ ? civ.name : '-');
+      setText('summary-leader', civ ? civ.leader_name : '-');
+      setText('summary-civ-ability', civ ? civ.ability.split('—')[0].trim() : '-');
+      setText('summary-civ-unit', civ ? civ.unique_unit.split('—')[0].trim() : '-');
+      setText('summary-civ-building', civ && civ.unique_building ? civ.unique_building.split('—')[0].trim() : '-');
+      var params = this._readAllParams();
+      setText('summary-map', params.map_size || 'medium');
+      setText('summary-ocean', (params.ocean_ratio || 50) + '%');
     }
 
-    goNext() {
-      if (!this.validateStep(this.currentStep)) return;
-      if (this.currentStep < this.totalSteps) {
-        this.showStep(this.currentStep + 1);
-      }
-    }
-
-    goPrev() {
-      if (this.currentStep > 1) {
-        this.showStep(this.currentStep - 1);
-      }
-    }
-
-    async onSubmit() {
-      if (!this.validateStep(this.currentStep)) return;
-
-      var self = this;
-      var worldId = 'world_' + Date.now().toString(36) + '_' + Math.random().toString(36).substr(2, 4);
-
-      var mapSize = parseInt(this.formData.map_size || '20', 10);
-
-      var rng = this._seededRandom(Date.now());
-
-      var tiles = [];
-      for (var y = 0; y < mapSize; y++) {
-        var row = [];
-        for (var x = 0; x < mapSize; x++) {
-          row.push(Math.floor(rng() * 5));
-        }
-        tiles.push(row);
-      }
-
-      var worldData = {
-        world_id: worldId,
-        name: this.formData.name || '未命名世界',
-        description: this.formData.description || '',
-        creator: 'anonymous',
-        creator_avatar: '',
-        year: 1,
-        era: 'primitive',
-        eraName: '原始时代',
-        map_size: { width: mapSize, height: mapSize },
-        terrain: {
-          tiles: tiles,
-          resources: this._generateResources(mapSize)
-        },
-        config: {
-          map_size: parseInt(this.formData.map_size || '20', 10),
-          continents: this.formData.continents || '1',
-          ocean_ratio: parseInt(this.formData.ocean_ratio || '30', 10),
-          resources: this.formData.resources || 'normal',
-          climate: this.formData.climate || 'mild',
-          initial_life: this.formData.initial_life || 'normal',
-          time_ratio: parseInt(this.formData.time_ratio || '24', 10),
-          evo_frequency: parseInt(this.formData.evo_frequency || '30', 10),
-          disaster_freq: this.formData.disaster_freq || 'medium',
-          war_tendency: this.formData.war_tendency || 'normal',
-          tech_speed: this.formData.tech_speed || 'normal',
-          miracle_chance: this.formData.miracle_chance || 'medium',
-          creator_limit: this.formData.creator_limit || '3',
-          allow_others: this.formData.allow_others || 'yes',
-          others_limit: parseInt(this.formData.others_limit || '1', 10)
-        },
-        settlements: this._generateInitialSettlements(mapSize, this.formData.initial_life || 'normal'),
-        active_events: [],
-        stats: {
-          total_population: 0,
-          total_settlements: 0,
-          extinct_settlements: 0,
-          total_wars: 0,
-          tech_breakthroughs: 0
-        },
-        likes: 0,
-        history: [
-          { year: 1, type: 'cultural_boom', description: this.formData.name + '诞生——一个全新的世界' }
-        ],
-        created_at: new Date().toISOString(),
-        updated_at: new Date().toISOString()
-      };
-
-      var pop = 0;
-      var settlements = worldData.settlements || [];
-      for (var i = 0; i < settlements.length; i++) {
-        pop += settlements[i].population || 0;
-      }
-      worldData.stats.total_population = pop;
-      worldData.stats.total_settlements = settlements.length;
+    submit() {
+      if (!this._validate()) return;
+      if (!this.selectedCiv) { window.Toast.warning('请选择文明'); return; }
 
       var auth = window.AuthManager && window.AuthManager._instance;
-      if (auth && auth.isLoggedIn()) {
-        var dm = window.DataManager;
-        if (dm && typeof dm.createWorld === 'function') {
-          try {
-            await dm.createWorld(worldData);
-          } catch (e) {
-            console.error('Failed to save via DataManager, using localStorage fallback', e);
-            this._saveToLocalStorage(worldData);
-          }
-        } else {
-          this._saveToLocalStorage(worldData);
-        }
-      } else {
-        this._saveToLocalStorage(worldData);
+      if (!auth || !auth.isLoggedIn()) {
+        var pending = { name: this.data.name, description: this.data.description, civ: this.selectedCiv, params: this._readAllParams() };
+        try { localStorage.setItem('dustworld_pending_create', JSON.stringify(pending)); } catch (e) {}
+        window.Toast.info('请先登录，登录后自动创建世界');
+        auth.login();
+        return;
       }
 
-      window.Toast.success('世界创建成功！');
+      var btn = this.createBtn;
+      btn.disabled = true;
+      btn.textContent = '创世中…';
 
-      setTimeout(function () {
-        window.location.hash = '#/world?id=' + worldId;
-      }, 500);
-    }
+      var id = 'world_' + Date.now().toString(36) + '_' + Math.random().toString(36).substr(2, 4);
+      var config = this._readAllParams();
+      config.name = this.data.name || '未命名世界';
+      config.description = this.data.description || '';
+      config.seed = Date.now();
+      var civ = this.selectedCiv;
 
-    _generateResources(mapSize) {
-      var types = ['wood', 'ore', 'food', 'water'];
-      var resources = [];
-      var count = 2 + Math.floor(Math.random() * 4);
-      for (var i = 0; i < count; i++) {
-        resources.push({
-          type: types[i % 4],
-          x: Math.floor(Math.random() * mapSize),
-          y: Math.floor(Math.random() * mapSize),
-          amount: 30 + Math.floor(Math.random() * 70)
-        });
-      }
-      return resources;
-    }
+      var engine = new window.WorldEngine(config);
+      engine.initialize();
+      engine.setCivilization('antiquity', civ.id, civ.leader, civ);
 
-    _generateInitialSettlements(mapSize, lifeSetting) {
-      var count;
-      switch (lifeSetting) {
-        case 'sparse': count = 1; break;
-        case 'abundant': count = 3 + Math.floor(Math.random() * 2); break;
-        default: count = 1 + Math.floor(Math.random() * 2); break;
+      var worldData = engine.getState();
+      worldData.world_id = id;
+      worldData.config = config;
+
+      var dm = window.DataManager;
+      if (!dm || typeof dm.createWorld !== 'function') {
+        btn.disabled = false;
+        btn.textContent = '✦ 创世';
+        window.Toast.error('数据服务不可用');
+        return;
       }
 
-      var settlements = [];
-      for (var i = 0; i < count; i++) {
-        var names = ['起始村', '黎明镇', '初生部落', '起源之地', '第一城'];
-        var statuses = ['发展', '繁荣', '发展'];
-        settlements.push({
-          id: 'SET_' + (i + 1).toString().padStart(3, '0'),
-          name: names[i % names.length] + (count > 1 ? ' ' + (i + 1) : ''),
-          x: Math.floor(Math.random() * (mapSize - 4)) + 2,
-          y: Math.floor(Math.random() * (mapSize - 4)) + 2,
-          population: 10 + Math.floor(Math.random() * 40),
-          tech_level: 0,
-          status: statuses[i % statuses.length],
-          resources: { food: 30 + Math.floor(Math.random() * 30), wood: 20 + Math.floor(Math.random() * 30), ore: 5 + Math.floor(Math.random() * 15) },
-          resource_bonus: 0, bonus_duration: 0, disaster_risk: 1, curse_duration: 0,
-          discovery_bonus: 0, exploration_duration: 0, tech_bonus: 0, inspiration_duration: 0,
-          immune: false, sanctuary_duration: 0
-        });
-      }
-      return settlements;
+      dm.createWorld(worldData).then(function () {
+        btn.disabled = false;
+        btn.textContent = '✦ 创世';
+        window.Toast.success('世界已创建，文明崛起！');
+        setTimeout(function () {
+          window.location.hash = '#/world?id=' + id;
+        }, 500);
+      }).catch(function (e) {
+        btn.disabled = false;
+        btn.textContent = '✦ 创世';
+        window.Toast.error('创建失败: ' + (e.message || '云端保存失败'));
+      });
     }
 
-    _saveToLocalStorage(worldData) {
-      try {
-        var existing = JSON.parse(localStorage.getItem('dustworld_local_worlds') || '[]');
-        existing.unshift(worldData);
-        localStorage.setItem('dustworld_local_worlds', JSON.stringify(existing));
-
-        if (window.DEMO_WORLDS) {
-          window.DEMO_WORLDS.unshift(worldData);
-        }
-      } catch (e) {
-        console.error('localStorage save failed:', e);
-      }
-    }
-
-    destroy() {
-      this._bound = {};
-    }
+    destroy() {}
   }
 
   window.CreateWorldPage = CreateWorldPage;

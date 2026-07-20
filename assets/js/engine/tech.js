@@ -103,9 +103,9 @@
     };
 
     if (typeof window !== 'undefined') {
-        window.TechEvolver = TechEvolver;
+        globalThis.TechEvolver = TechEvolver;
     }
-    window.TechEvolver = TechEvolver;
+    globalThis.TechEvolver = TechEvolver;
     if (typeof module !== 'undefined' && module.exports) {
         module.exports = TechEvolver;
     }

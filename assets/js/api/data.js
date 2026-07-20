@@ -19,13 +19,17 @@
         return parts[parts.length - 1];
       });
       var worldPromises = worldIds.map(function (id) {
-        return self.api.getDemoWorldById ? Promise.resolve(self.api.getDemoWorldById(id)) : self._fetchWorldMeta(id);
+        return self._fetchWorldMeta(id);
       });
       return Promise.all(worldPromises).then(function (worlds) {
         var valid = worlds.filter(function (w) { return w !== null && w !== undefined; });
         var merged = valid.map(function (w, i) {
-          if (typeof w === 'object' && w.id) return w;
-          return { id: worldIds[i], name: '未知世界 #' + worldIds[i], year: 0, era: 'primitive', settlements: 0, population: 0, likes: 0 };
+          if (typeof w === 'object' && (w.id || w.world_id)) {
+            if (!w.world_id) w.world_id = w.id;
+            if (!w.stats) w.stats = { total_population: w.population || 0, total_settlements: w.settlements || 0 };
+            return w;
+          }
+          return { id: worldIds[i], world_id: worldIds[i], name: '未知世界 #' + worldIds[i], year: 0, era: 'primitive', settlements: 0, population: 0, likes: 0, stats: { total_population: 0, total_settlements: 0 } };
         });
         self._setCached('worldList', merged);
         return merged;
@@ -39,6 +43,7 @@
       if (!state) return null;
       return {
         id: id,
+        world_id: id,
         name: state.name || id,
         creator: state.creator || '未知',
         creatorAvatar: state.creatorAvatar || '',
@@ -48,6 +53,7 @@
         settlements: state.settlements ? state.settlements.length : 0,
         population: state.population || 0,
         likes: state.likes || 0,
+        liked_by: state.liked_by || [],
         mapSize: state.mapSize || 40,
         techLevel: state.techLevel || 0,
         resources: state.resources || 'normal',
@@ -168,6 +174,70 @@
         pageSize: pageSize,
         totalPages: Math.ceil(sorted.length / pageSize)
       };
+    });
+  };
+
+  DataManager.prototype.updateWorld = function (worldId, worldData) {
+    if (!this.api) return Promise.reject(new Error('No API'));
+    return this.api.updateWorldState(worldId, worldData);
+  };
+
+  DataManager.prototype.createWorld = function (worldData) {
+    if (!this.api) return Promise.reject(new Error('No API'));
+    var self = this;
+    return this.api.createWorld(worldData).then(function (result) {
+      self.invalidateCache('worldList');
+      return result;
+    });
+  };
+
+  DataManager.prototype.getUserWorlds = function () {
+    var self = this;
+    return this.getWorldList().then(function (worlds) {
+      var auth = window.AuthManager && window.AuthManager._instance;
+      var user = auth && auth.getUser && auth.getUser();
+      var username = user && (user.login || user.name);
+      if (!username) return [];
+      return worlds.filter(function (w) { return w.creator === username; });
+    });
+  };
+
+  DataManager.prototype.getLikedWorlds = function () {
+    var self = this;
+    var auth = window.AuthManager && window.AuthManager._instance;
+    var user = auth && auth.getUser && auth.getUser();
+    var username = user && (user.login || user.name);
+    if (!username) return Promise.resolve([]);
+    return this.getWorldList().then(function (worlds) {
+      return worlds.filter(function (w) {
+        return w.liked_by && w.liked_by.indexOf(username) !== -1;
+      });
+    });
+  };
+
+  DataManager.prototype.toggleLike = function (worldId) {
+    var auth = window.AuthManager && window.AuthManager._instance;
+    var user = auth && auth.getUser && auth.getUser();
+    var username = user && (user.login || user.name);
+    if (!username) return Promise.reject(new Error('Not authenticated'));
+
+    var self = this;
+    return this.api.getWorldState(worldId).then(function (state) {
+      if (!state) throw new Error('World not found');
+      state.liked_by = state.liked_by || [];
+      var idx = state.liked_by.indexOf(username);
+      if (idx === -1) {
+        state.liked_by.push(username);
+        state.likes = (state.likes || 0) + 1;
+      } else {
+        state.liked_by.splice(idx, 1);
+        state.likes = Math.max(0, (state.likes || 0) - 1);
+      }
+      return self.api.updateWorldState(worldId, state).then(function () {
+        self.invalidateCache('worldList');
+        self.invalidateCache('world_' + worldId);
+        return { liked: idx === -1, likes: state.likes };
+      });
     });
   };
 

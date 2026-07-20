@@ -1,0 +1,311 @@
+{
+  "version": "1.0",
+  "based_on": "Sid Meier's Civilization VII",
+
+  "population": {
+    "base_growth": 2,
+    "growth_per_food_surplus": 1.5,
+    "max_population_by_level": [50, 200, 500, 1000, 3000, 8000, 20000],
+    "food_consumption_per_pop": 0.08,
+    "water_consumption_per_pop": 0.06,
+    "starvation_pop_loss": 0.5,
+    "growth_formula": "base + (food_surplus * growth_per_food_surplus) * civilization_bonus",
+    "max_pop_formula": "max_pop_by_level[settlement_level] * (1 + civilization_bonus)"
+  },
+
+  "resources": {
+    "map_resource_count": { "small": [8, 15], "medium": [15, 30], "large": [25, 50] },
+    "resource_types": ["food", "wood", "ore", "water", "luxury", "strategic"],
+    "gather_range": 6,
+    "base_harvest_per_pop": 0.03,
+    "regen_per_year": 2,
+    "resource_depletion": {
+      "min_amount": 0,
+      "max_amount": 100,
+      "depletion_warning_years": 3
+    }
+  },
+
+  "settlements": {
+    "levels": [
+      { "level": 1, "name": "营地", "max_pop": 50, "upgrade_pop": 35, "buildings": 0, "specialization": false },
+      { "level": 2, "name": "村落", "max_pop": 200, "upgrade_pop": 150, "buildings": 2, "specialization": false },
+      { "level": 3, "name": "城镇", "max_pop": 500, "upgrade_pop": 400, "buildings": 4, "specialization": true },
+      { "level": 4, "name": "城市", "max_pop": 1000, "upgrade_pop": 800, "buildings": 6, "specialization": true },
+      { "level": 5, "name": "大都会", "max_pop": 3000, "upgrade_pop": 2500, "buildings": 8, "specialization": true },
+      { "level": 6, "name": "核心城", "max_pop": 8000, "upgrade_pop": 6000, "buildings": 10, "specialization": true },
+      { "level": 7, "name": "巨型城市", "max_pop": 20000, "upgrade_pop": 15000, "buildings": 12, "specialization": true }
+    ],
+    "specializations": [
+      { "id": "agriculture", "name": "农业", "effect": { "food_multiply": 1.5 }, "unlock_level": 2 },
+      { "id": "mining", "name": "采矿", "effect": { "ore_multiply": 1.5 }, "unlock_level": 2 },
+      { "id": "trade", "name": "贸易", "effect": { "gold_multiply": 1.5, "influence_per_year": 2 }, "unlock_level": 3 },
+      { "id": "military", "name": "军事", "effect": { "defense_multiply": 1.5, "military_power": 10 }, "unlock_level": 3 },
+      { "id": "academy", "name": "学术", "effect": { "tech_speed_multiply": 1.3 }, "unlock_level": 4 },
+      { "id": "culture", "name": "文化", "effect": { "culture_multiply": 1.5, "great_person_rate": 1.3 }, "unlock_level": 4 },
+      { "id": "industry", "name": "工业", "effect": { "production_multiply": 1.5 }, "unlock_level": 5 },
+      { "id": "science", "name": "科技", "effect": { "tech_speed_multiply": 1.5 }, "unlock_level": 5 },
+      { "id": "diplomacy", "name": "外交", "effect": { "influence_per_year": 5 }, "unlock_level": 6 },
+      { "id": "information", "name": "信息", "effect": { "all_output_multiply": 1.2 }, "unlock_level": 7 }
+    ],
+    "split_threshold": 0.9,
+    "split_pop_ratio": 0.3,
+    "split_chance": 0.15
+  },
+
+  "technology": {
+    "eras": [
+      {
+        "id": "primitive",
+        "name": "原始时代",
+        "tech_level": 0,
+        "next_era": "agriculture",
+        "ascension_conditions": {
+          "population_min": 30,
+          "settlements_min": 1,
+          "discovery_chance": "0.10 + (population / 200) * 0.05"
+        },
+        "unlocks": ["基础工具", "用火", "语言"],
+        "max_pop_per_settlement": 50,
+        "upgrade_level_cap": 1
+      },
+      {
+        "id": "agriculture",
+        "name": "农耕时代",
+        "tech_level": 1,
+        "next_era": "bronze",
+        "ascension_conditions": {
+          "population_min": 150,
+          "settlements_min": 2,
+          "discovery_chance": "0.08 + (population / 500) * 0.05"
+        },
+        "unlocks": ["农业", "陶器", "纺织", "村落升级"],
+        "max_pop_per_settlement": 200,
+        "upgrade_level_cap": 2
+      },
+      {
+        "id": "bronze",
+        "name": "青铜时代",
+        "tech_level": 2,
+        "next_era": "iron",
+        "ascension_conditions": {
+          "population_min": 500,
+          "settlements_min": 3,
+          "discovery_chance": "0.06 + (population / 1000) * 0.04",
+          "require_trade": true
+        },
+        "unlocks": ["青铜工具", "贸易", "书写", "城镇升级"],
+        "max_pop_per_settlement": 500,
+        "upgrade_level_cap": 3
+      },
+      {
+        "id": "iron",
+        "name": "铁器时代",
+        "tech_level": 3,
+        "next_era": "steam",
+        "ascension_conditions": {
+          "population_min": 2000,
+          "settlements_min": 4,
+          "discovery_chance": "0.05 + (population / 5000) * 0.03",
+          "require_war": true
+        },
+        "unlocks": ["冶铁", "城墙", "金币", "城市升级"],
+        "max_pop_per_settlement": 1000,
+        "upgrade_level_cap": 4
+      },
+      {
+        "id": "steam",
+        "name": "蒸汽时代",
+        "tech_level": 4,
+        "next_era": "electric",
+        "ascension_conditions": {
+          "population_min": 10000,
+          "settlements_min": 5,
+          "discovery_chance": "0.04 + (population / 20000) * 0.02",
+          "require_ore_mine": true
+        },
+        "unlocks": ["蒸汽机", "工厂", "铁路", "大都会升级"],
+        "max_pop_per_settlement": 3000,
+        "upgrade_level_cap": 5
+      },
+      {
+        "id": "electric",
+        "name": "电力时代",
+        "tech_level": 5,
+        "next_era": "information",
+        "ascension_conditions": {
+          "population_min": 50000,
+          "settlements_min": 7,
+          "tech_breakthroughs_min": 5,
+          "discovery_chance": "0.03 + (population / 100000) * 0.02"
+        },
+        "unlocks": ["电力", "无线电", "汽车", "核心城升级"],
+        "max_pop_per_settlement": 8000,
+        "upgrade_level_cap": 6
+      },
+      {
+        "id": "information",
+        "name": "信息时代",
+        "tech_level": 6,
+        "next_era": null,
+        "ascension_conditions": {
+          "population_min": 200000,
+          "settlements_min": 10,
+          "tech_breakthroughs_min": 10,
+          "discovery_chance": "0.02 + (population / 500000) * 0.01"
+        },
+        "unlocks": ["计算机", "互联网", "人工智能", "巨型城市升级"],
+        "max_pop_per_settlement": 20000,
+        "upgrade_level_cap": 7
+      }
+    ],
+    "base_discovery_chance": 0.03,
+    "tech_speed_multipliers": { "slow": 0.5, "normal": 1.0, "fast": 1.5 },
+    "neighbor_bonus_per_tech_diff": 0.01
+  },
+
+  "era_transition": {
+    "antiquity_to_exploration": {
+      "conditions": {
+        "any_settlement_tech_level_min": 3,
+        "total_population_min": 300,
+        "settlements_min": 3
+      },
+      "legacy_bonus_conversion": {
+        "military": "military",
+        "economic": "economic",
+        "cultural": "cultural",
+        "scientific": "scientific"
+      }
+    },
+    "exploration_to_modern": {
+      "conditions": {
+        "any_settlement_tech_level_min": 5,
+        "total_population_min": 5000,
+        "settlements_min": 5,
+        "require_legacy_min": 50
+      },
+      "legacy_bonus_conversion": {
+        "military": "military",
+        "economic": "economic",
+        "cultural": "cultural",
+        "scientific": "scientific"
+      }
+    }
+  },
+
+  "events": {
+    "base_weights": {
+      "war": 5,
+      "natural_disaster": 5,
+      "plague": 3,
+      "cultural_boom": 3,
+      "golden_age": 1,
+      "tech_breakthrough": 2
+    },
+    "weight_multipliers": {
+      "war_tendency": { "peaceful": 0.3, "normal": 1.0, "aggressive": 2.0 },
+      "disaster_freq": { "low": 0.5, "medium": 1.0, "high": 2.0 },
+      "miracle_chance": { "none": 0, "low": 0.3, "medium": 1.0, "high": 2.0 }
+    },
+    "effects": {
+      "war": { "pop_loss_percent": [0.02, 0.05], "duration": [5, 20] },
+      "natural_disaster": { "pop_loss_percent": [0.05, 0.15], "duration": [1, 3] },
+      "plague": { "pop_loss_percent": [0.10, 0.20], "duration": [3, 10] },
+      "cultural_boom": { "pop_growth_bonus": [0.01, 0.03], "culture_gain": [5, 15], "duration": [10, 30] },
+      "golden_age": { "pop_growth_bonus": [0.02, 0.05], "all_output_bonus": 0.3, "duration": [20, 30] },
+      "tech_breakthrough": { "tech_level_gain": 1 }
+    },
+    "generation_chance_per_year": 0.3,
+    "max_active_events": 5
+  },
+
+  "legacy": {
+    "categories": {
+      "military": {
+        "name": "军事",
+        "icon": "⚔️",
+        "gain_per_war": 10,
+        "gain_per_extinction": 20,
+        "bonus_effects": { "military_multiply": 0.01, "defense_multiply": 0.01 }
+      },
+      "economic": {
+        "name": "经济",
+        "icon": "💰",
+        "gain_per_gold_1000": 5,
+        "gain_per_trade_route": 30,
+        "bonus_effects": { "gold_multiply": 0.01, "trade_income": 0.01 }
+      },
+      "cultural": {
+        "name": "文化",
+        "icon": "🎭",
+        "gain_per_cultural_boom": 40,
+        "gain_per_great_person": 50,
+        "bonus_effects": { "culture_multiply": 0.01, "great_person_rate": 0.01 }
+      },
+      "scientific": {
+        "name": "科学",
+        "icon": "🔬",
+        "gain_per_tech_breakthrough": 30,
+        "gain_per_max_tech_level": 50,
+        "bonus_effects": { "tech_speed_multiply": 0.01 }
+      }
+    },
+    "per_year_decay": 0.001,
+    "max_legacy": 1000
+  },
+
+  "civ_bonus_effects": {
+    "food_multiply": { "type": "multiply", "target": "food_production", "default": 1.0 },
+    "growth_rate": { "type": "multiply", "target": "population_growth", "default": 1.0 },
+    "culture_output": { "type": "multiply", "target": "culture_production", "default": 1.0 },
+    "tech_multiply": { "type": "multiply", "target": "tech_discovery_chance", "default": 1.0 },
+    "military_multiply": { "type": "multiply", "target": "military_power", "default": 1.0 },
+    "trade_income": { "type": "multiply", "target": "gold_from_trade", "default": 1.0 },
+    "influence": { "type": "add", "target": "influence_per_year", "default": 0 },
+    "great_person_rate": { "type": "multiply", "target": "great_person_chance", "default": 1.0 },
+    "industry_multiply": { "type": "multiply", "target": "production", "default": 1.0 },
+    "economy_multiply": { "type": "multiply", "target": "gold_output", "default": 1.0 },
+    "exploration_rate": { "type": "multiply", "target": "exploration_speed", "default": 1.0 },
+    "expansion_rate": { "type": "multiply", "target": "settlement_split_chance", "default": 1.0 },
+    "science_boost": { "type": "multiply", "target": "science_output", "default": 1.0 },
+    "stability": { "type": "add", "target": "stability", "default": 0 },
+    "health_bonus": { "type": "add", "target": "health", "default": 0 },
+    "max_pop_bonus": { "type": "multiply", "target": "max_population", "default": 1.0 },
+    "defense_bonus": { "type": "multiply", "target": "defense", "default": 1.0 },
+    "mountain_bonus": { "type": "multiply", "target": "mountain_production", "default": 1.0 },
+    "all_output_multiply": { "type": "multiply", "target": "all", "default": 1.0 }
+  },
+
+  "milestones": [
+    { "id": "first_settlement", "name": "初生", "condition": "settlements >= 1", "reward_desc": "文明的火种" },
+    { "id": "population_100", "name": "部落", "condition": "total_pop >= 100", "reward_desc": "人口破百" },
+    { "id": "population_1000", "name": "繁荣", "condition": "total_pop >= 1000", "reward_desc": "人口破千" },
+    { "id": "population_10000", "name": "城邦", "condition": "total_pop >= 10000", "reward_desc": "人口破万" },
+    { "id": "population_100000", "name": "王国", "condition": "total_pop >= 100000", "reward_desc": "人口破十万" },
+    { "id": "population_1000000", "name": "帝国", "condition": "total_pop >= 1000000", "reward_desc": "人口破百万" },
+    { "id": "settlements_3", "name": "扩张", "condition": "settlements >= 3", "reward_desc": "聚落达到三个" },
+    { "id": "settlements_10", "name": "联邦", "condition": "settlements >= 10", "reward_desc": "十大聚落" },
+    { "id": "tech_5", "name": "启蒙", "condition": "max_tech >= 5", "reward_desc": "科技达到电力时代" },
+    { "id": "tech_6", "name": "飞升", "condition": "max_tech >= 6", "reward_desc": "达到信息时代" },
+    { "id": "golden_age_3", "name": "黄金时代", "condition": "golden_ages >= 3", "reward_desc": "三次繁荣" },
+    { "id": "survive_1000", "name": "永恒", "condition": "years >= 1000", "reward_desc": "千年文明" },
+    { "id": "survive_3000", "name": "不朽", "condition": "years >= 3000", "reward_desc": "三千年史诗" }
+  ],
+
+  "game_balance": {
+    "initial_settlements": [1, 3],
+    "initial_population": [10, 30],
+    "initial_resources": { "food": 40, "wood": 20, "ore": 5, "water": 30, "gold": 0 },
+    "max_history_entries": 500,
+    "max_active_events": 5,
+    "split_search_range": [3, 10],
+    "resource_search_range": 6,
+    "max_settlements": 30,
+    "map_sizes": {
+      "small": { "width": 30, "height": 30, "settlements": [1, 2], "resources": [8, 15] },
+      "medium": { "width": 60, "height": 60, "settlements": [2, 3], "resources": [15, 30] },
+      "large": { "width": 80, "height": 80, "settlements": [2, 4], "resources": [25, 50] }
+    }
+  }
+}

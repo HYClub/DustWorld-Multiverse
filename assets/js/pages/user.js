@@ -70,8 +70,6 @@
       var auth = window.AuthManager && window.AuthManager._instance;
       if (auth && typeof auth.getUser === 'function') {
         user = auth.getUser();
-      } else {
-        user = window.DEMO_USER || null;
       }
 
       if (user) {
@@ -121,19 +119,6 @@
       }
 
       if (!worlds || worlds.length === 0) {
-        var user = window.DEMO_USER;
-        var createdIds = user ? (user.worlds_created || []) : [];
-        var demos = window.DEMO_WORLDS || [];
-        for (var i = 0; i < createdIds.length; i++) {
-          for (var j = 0; j < demos.length; j++) {
-            if (demos[j].world_id === createdIds[i]) {
-              worlds.push(demos[j]);
-            }
-          }
-        }
-      }
-
-      if (worlds.length === 0) {
         if (this.myWorldsGrid) this.myWorldsGrid.style.display = 'none';
         if (this.myWorldsEmpty) this.myWorldsEmpty.style.display = 'flex';
         return;
@@ -170,19 +155,6 @@
       }
 
       if (!worlds || worlds.length === 0) {
-        var user = window.DEMO_USER;
-        var likedIds = user ? (user.worlds_liked || []) : [];
-        var demos = window.DEMO_WORLDS || [];
-        for (var i = 0; i < likedIds.length; i++) {
-          for (var j = 0; j < demos.length; j++) {
-            if (demos[j].world_id === likedIds[i]) {
-              worlds.push(demos[j]);
-            }
-          }
-        }
-      }
-
-      if (worlds.length === 0) {
         if (this.likedWorldsGrid) this.likedWorldsGrid.style.display = 'none';
         if (this.likedWorldsEmpty) this.likedWorldsEmpty.style.display = 'flex';
         return;
@@ -210,10 +182,6 @@
       }
 
       if (!interventions || interventions.length === 0) {
-        interventions = window.DEMO_INTERVENTIONS || [];
-      }
-
-      if (interventions.length === 0) {
         if (this.interventionList) this.interventionList.style.display = 'none';
         if (this.interventionsEmpty) this.interventionsEmpty.style.display = 'flex';
         return;

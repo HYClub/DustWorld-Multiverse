@@ -1,332 +1,162 @@
 <div class="page create-page" id="create-page">
-  <div class="create-header">
-    <button class="back-btn" data-action="back">←</button>
-    <h1 class="create-title">创建新世界</h1>
-  </div>
+  <div class="wizard">
+    <div class="wizard-header">
+      <h1 class="wizard-title">✦ 创世纪</h1>
+      <p class="wizard-subtitle">选择文明，引领你的世界跨越千年</p>
+    </div>
 
-  <div class="create-step-indicator">
-    <div class="step-indicator" id="step-indicator"></div>
-  </div>
+    <div class="wizard-steps" id="wizard-steps">
+      <div class="ws-item" data-step="1"><span class="ws-dot">1</span><span class="ws-label">世界</span></div>
+      <div class="ws-line"></div>
+      <div class="ws-item" data-step="2"><span class="ws-dot">2</span><span class="ws-label">文明</span></div>
+      <div class="ws-line"></div>
+      <div class="ws-item" data-step="3"><span class="ws-dot">3</span><span class="ws-label">参数</span></div>
+      <div class="ws-line"></div>
+      <div class="ws-item" data-step="4"><span class="ws-dot">4</span><span class="ws-label">创世</span></div>
+    </div>
 
-  <div class="create-layout">
-    <div class="create-form-area">
-      <form id="create-form" novalidate>
-        <div class="form-section active" data-step="1">
-          <h2 class="form-section-title">基础设定</h2>
-          <p class="form-section-desc">为你的世界取一个名字，并描述它的故事</p>
-          <div class="form-group">
-            <label class="form-label" for="world-name-input">世界名称 <span style="color:var(--color-danger)">*</span></label>
-            <input class="form-input" id="world-name-input" type="text" placeholder="2-20个字符，例如：火焰荒原" maxlength="20" required>
-            <div class="form-error">名称长度需在2-20个字符之间</div>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="world-desc-input">世界描述</label>
-            <textarea class="form-textarea" id="world-desc-input" placeholder="简要描述你的世界背景故事（可选）" rows="3"></textarea>
-          </div>
+    <div class="wizard-body" id="wizard-body">
+      <!-- Step 1: World Name -->
+      <div class="ws-pane" data-step="1">
+        <div class="ws-pane-icon">📝</div>
+        <h2 class="ws-pane-title">世界之名</h2>
+        <p class="ws-pane-desc">为你的文明起一个名垂千古的名字</p>
+        <input class="wizard-input" id="world-name-input" type="text" placeholder="例如：永恒帝国、星辰之国…" maxlength="20" autofocus>
+        <div class="wizard-hint">2-20 个字符</div>
+        <div style="margin-top:20px;">
+          <p class="ws-pane-desc">世界背景（可选）</p>
+          <textarea class="wizard-textarea" id="world-desc-input" placeholder="简述这个世界的起源故事…" rows="2"></textarea>
         </div>
+      </div>
 
-        <div class="form-section" data-step="2">
-          <h2 class="form-section-title">地图参数</h2>
-          <p class="form-section-desc">设定世界的大小和地形格局</p>
-          <div class="form-group">
-            <label class="form-label">地图大小</label>
-            <div class="radio-card-group" id="map-size-group">
-              <div class="radio-card selected" data-value="20">
-                <input type="radio" name="map_size" value="20" checked>
-                <div class="radio-card-value">20×20</div>
-                <div class="radio-card-label">微型</div>
-              </div>
-              <div class="radio-card" data-value="40">
-                <input type="radio" name="map_size" value="40">
-                <div class="radio-card-value">40×40</div>
-                <div class="radio-card-label">小型</div>
-              </div>
-              <div class="radio-card" data-value="60">
-                <input type="radio" name="map_size" value="60">
-                <div class="radio-card-value">60×60</div>
-                <div class="radio-card-label">中型</div>
-              </div>
-              <div class="radio-card" data-value="80">
-                <input type="radio" name="map_size" value="80">
-                <div class="radio-card-value">80×80</div>
-                <div class="radio-card-label">大型</div>
-              </div>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="form-label">大陆数量</label>
-            <div class="radio-card-group" id="continents-group">
-              <div class="radio-card selected" data-value="1">
-                <input type="radio" name="continents" value="1" checked>
-                <div class="radio-card-value">1块</div>
-                <div class="radio-card-label">整块大陆</div>
-              </div>
-              <div class="radio-card" data-value="2-3">
-                <input type="radio" name="continents" value="2-3">
-                <div class="radio-card-value">2-3块</div>
-                <div class="radio-card-label">分离大陆</div>
-              </div>
-              <div class="radio-card" data-value="4-6">
-                <input type="radio" name="continents" value="4-6">
-                <div class="radio-card-value">4-6块</div>
-                <div class="radio-card-label">多块大陆</div>
-              </div>
-              <div class="radio-card" data-value="archipelago">
-                <input type="radio" name="continents" value="archipelago">
-                <div class="radio-card-value">群岛</div>
-                <div class="radio-card-label">岛屿散布</div>
-              </div>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="form-label">海洋比例</label>
-            <div class="radio-card-group" id="ocean-group">
-              <div class="radio-card selected" data-value="30">
-                <input type="radio" name="ocean_ratio" value="30" checked>
-                <div class="radio-card-value">30%</div>
-                <div class="radio-card-label">少海多陆</div>
-              </div>
-              <div class="radio-card" data-value="50">
-                <input type="radio" name="ocean_ratio" value="50">
-                <div class="radio-card-value">50%</div>
-                <div class="radio-card-label">海陆均衡</div>
-              </div>
-              <div class="radio-card" data-value="70">
-                <input type="radio" name="ocean_ratio" value="70">
-                <div class="radio-card-value">70%</div>
-                <div class="radio-card-label">汪洋大海</div>
-              </div>
-            </div>
-          </div>
+      <!-- Step 2: Choose Civilization -->
+      <div class="ws-pane" data-step="2">
+        <div class="ws-pane-icon">🏛️</div>
+        <h2 class="ws-pane-title">选择文明</h2>
+        <p class="ws-pane-desc">古典时代的先民将奠定你文明的根基</p>
+        <div class="civ-grid" id="civ-grid">
+          <!-- Civ cards rendered by JS -->
         </div>
+        <div id="leader-info" style="margin-top:12px;"></div>
+      </div>
 
-        <div class="form-section" data-step="3">
-          <h2 class="form-section-title">生存环境</h2>
-          <p class="form-section-desc">决定世界的资源分布和气候条件</p>
-          <div class="form-group">
-            <label class="form-label">资源丰度</label>
-            <div class="radio-card-group">
-              <div class="radio-card" data-value="scarce">
-                <input type="radio" name="resources" value="scarce">
-                <div class="radio-card-value">贫瘠</div>
-                <div class="radio-card-label">生存艰难</div>
-              </div>
-              <div class="radio-card selected" data-value="normal">
-                <input type="radio" name="resources" value="normal" checked>
-                <div class="radio-card-value">适中</div>
-                <div class="radio-card-label">标准模式</div>
-              </div>
-              <div class="radio-card" data-value="abundant">
-                <input type="radio" name="resources" value="abundant">
-                <div class="radio-card-value">富饶</div>
-                <div class="radio-card-label">物产丰富</div>
-              </div>
-              <div class="radio-card" data-value="random">
-                <input type="radio" name="resources" value="random">
-                <div class="radio-card-value">随机</div>
-                <div class="radio-card-label">听天由命</div>
-              </div>
+      <!-- Step 3: Parameters -->
+      <div class="ws-pane" data-step="3">
+        <div class="ws-pane-icon">⚙️</div>
+        <h2 class="ws-pane-title">世界参数</h2>
+        <p class="ws-pane-desc">全部 31 项参数，塑造独一无二的文明</p>
+        <div class="param-scroll">
+          <!-- Geography -->
+          <div class="param-group">
+            <div class="param-group-title" onclick="this.nextElementSibling.classList.toggle('open')">🗺️ 地理 <span style="color:var(--text-muted);font-size:10px">4项</span></div>
+            <div class="param-group-body open">
+              <div class="wz-sl"><label>地图大小</label><select id="p-map-size" class="wz-select"><option value="small">小型</option><option value="medium" selected>中型</option><option value="large">大型</option></select></div>
+              <div class="wz-sl"><label>大陆形状</label><select id="p-world-shape" class="wz-select"><option value="continent" selected>整块大陆</option><option value="archipelago">群岛</option><option value="pangaea">泛大陆</option><option value="fractal">碎裂</option></select></div>
+              <div class="wz-sl"><label>纬度</label><select id="p-latitude" class="wz-select"><option value="arctic">寒带</option><option value="cold">冷温带</option><option value="temperate" selected>温带</option><option value="tropical">热带</option><option value="random">随机</option></select></div>
+              <div class="wz-sl"><label>海洋比例</label><select id="p-ocean" class="wz-select"><option value="20">20% 少海</option><option value="35">35% 少海</option><option value="50" selected>50% 均衡</option><option value="65">65% 多海</option><option value="80">80% 汪洋</option></select></div>
             </div>
           </div>
-          <div class="form-group">
-            <label class="form-label">气候类型</label>
-            <div class="radio-card-group">
-              <div class="radio-card selected" data-value="mild">
-                <input type="radio" name="climate" value="mild" checked>
-                <div class="radio-card-value">温和</div>
-                <div class="radio-card-label">风调雨顺</div>
-              </div>
-              <div class="radio-card" data-value="harsh">
-                <input type="radio" name="climate" value="harsh">
-                <div class="radio-card-value">严酷</div>
-                <div class="radio-card-label">困难模式</div>
-              </div>
-              <div class="radio-card" data-value="varied">
-                <input type="radio" name="climate" value="varied">
-                <div class="radio-card-value">多变</div>
-                <div class="radio-card-label">充满挑战</div>
-              </div>
-              <div class="radio-card" data-value="random">
-                <input type="radio" name="climate" value="random">
-                <div class="radio-card-value">随机</div>
-                <div class="radio-card-label">未知领域</div>
-              </div>
+          <!-- Climate -->
+          <div class="param-group">
+            <div class="param-group-title" onclick="this.nextElementSibling.classList.toggle('open')">🌤️ 气候与环境 <span style="color:var(--text-muted);font-size:10px">5项</span></div>
+            <div class="param-group-body">
+              <div class="wz-sl"><label>气候基调</label><select id="p-climate" class="wz-select"><option value="mild">温和</option><option value="varied" selected>多变</option><option value="harsh">严酷</option><option value="random">随机</option></select></div>
+              <div class="wz-sl"><label>气温</label><select id="p-temperature" class="wz-select"><option value="cold">寒冷</option><option value="cool">凉爽</option><option value="moderate" selected>适中</option><option value="warm">温暖</option><option value="hot">炎热</option></select></div>
+              <div class="wz-sl"><label>降水</label><select id="p-rainfall" class="wz-select"><option value="arid">干旱</option><option value="dry">偏旱</option><option value="moderate" selected>适中</option><option value="wet">湿润</option><option value="tropical">热带雨林</option></select></div>
+              <div class="wz-sl"><label>季节变化</label><select id="p-seasonality" class="wz-select"><option value="none">无</option><option value="mild">轻微</option><option value="moderate" selected>适中</option><option value="extreme">极端</option></select></div>
+              <div class="wz-sl"><label>灾害频率</label><select id="p-disaster" class="wz-select"><option value="none">无</option><option value="low">低</option><option value="medium" selected>标准</option><option value="high">高</option><option value="constant">频繁</option></select></div>
             </div>
           </div>
-          <div class="form-group">
-            <label class="form-label">初始生命</label>
-            <div class="radio-card-group">
-              <div class="radio-card" data-value="sparse">
-                <input type="radio" name="initial_life" value="sparse">
-                <div class="radio-card-value">少量</div>
-                <div class="radio-card-label">地广人稀</div>
-              </div>
-              <div class="radio-card selected" data-value="normal">
-                <input type="radio" name="initial_life" value="normal" checked>
-                <div class="radio-card-value">正常</div>
-                <div class="radio-card-label">标准模式</div>
-              </div>
-              <div class="radio-card" data-value="abundant">
-                <input type="radio" name="initial_life" value="abundant">
-                <div class="radio-card-value">丰富</div>
-                <div class="radio-card-label">生机勃勃</div>
-              </div>
+          <!-- Resources -->
+          <div class="param-group">
+            <div class="param-group-title" onclick="this.nextElementSibling.classList.toggle('open')">⛏️ 资源 <span style="color:var(--text-muted);font-size:10px">2项</span></div>
+            <div class="param-group-body">
+              <div class="wz-sl"><label>资源丰度</label><select id="p-resources" class="wz-select"><option value="scarce">贫瘠</option><option value="normal" selected>标准</option><option value="abundant">富饶</option><option value="random">随机</option></select></div>
+              <div class="wz-sl"><label>战略资源</label><select id="p-strategic" class="wz-select"><option value="none">无</option><option value="low">少量</option><option value="normal" selected>标准</option><option value="high">丰富</option></select></div>
+            </div>
+          </div>
+          <!-- Population -->
+          <div class="param-group">
+            <div class="param-group-title" onclick="this.nextElementSibling.classList.toggle('open')">👥 人口 <span style="color:var(--text-muted);font-size:10px">3项</span></div>
+            <div class="param-group-body">
+              <div class="wz-sl"><label>初始人口</label><select id="p-init-pop" class="wz-select"><option value="5">极少</option><option value="15" selected>标准</option><option value="35">较多</option><option value="60">大量</option><option value="100">极多</option></select></div>
+              <div class="wz-sl"><label>增长率</label><select id="p-growth" class="wz-select"><option value="0.3">极慢</option><option value="0.6">慢</option><option value="1.0" selected>标准</option><option value="2.0">快</option><option value="4.0">极快</option></select></div>
+              <div class="wz-sl"><label>人口上限</label><select id="p-pop-cap" class="wz-select"><option value="low">低</option><option value="normal" selected>标准</option><option value="high">高</option><option value="unlimited">无限</option></select></div>
+            </div>
+          </div>
+          <!-- Settlements -->
+          <div class="param-group">
+            <div class="param-group-title" onclick="this.nextElementSibling.classList.toggle('open')">🏘️ 聚落 <span style="color:var(--text-muted);font-size:10px">2项</span></div>
+            <div class="param-group-body">
+              <div class="wz-sl"><label>初始聚落</label><select id="p-init-setts" class="wz-select"><option value="1">1</option><option value="2">2</option><option value="3" selected>3</option><option value="5">5</option><option value="8">8</option></select></div>
+              <div class="wz-sl"><label>分裂倾向</label><select id="p-split" class="wz-select"><option value="0.1">极低</option><option value="0.3">低</option><option value="0.5" selected>标准</option><option value="1.0">高</option><option value="2.0">极高</option></select></div>
+            </div>
+          </div>
+          <!-- Tech -->
+          <div class="param-group">
+            <div class="param-group-title" onclick="this.nextElementSibling.classList.toggle('open')">🔬 科技 <span style="color:var(--text-muted);font-size:10px">3项</span></div>
+            <div class="param-group-body">
+              <div class="wz-sl"><label>科技速度</label><select id="p-tech" class="wz-select"><option value="glacial">冰川</option><option value="slow">缓慢</option><option value="normal" selected>标准</option><option value="fast">快速</option><option value="instant">瞬间</option></select></div>
+              <div class="wz-sl"><label>科技传播</label><select id="p-tech-diff" class="wz-select"><option value="none">无</option><option value="low">慢</option><option value="normal" selected>标准</option><option value="high">快</option></select></div>
+              <div class="wz-sl"><label>初始科技</label><select id="p-start-tech" class="wz-select"><option value="0" selected>原始</option><option value="1">农耕</option><option value="2">青铜</option></select></div>
+            </div>
+          </div>
+          <!-- Economy -->
+          <div class="param-group">
+            <div class="param-group-title" onclick="this.nextElementSibling.classList.toggle('open')">💰 经济 <span style="color:var(--text-muted);font-size:10px">3项</span></div>
+            <div class="param-group-body">
+              <div class="wz-sl"><label>贸易开放度</label><select id="p-trade" class="wz-select"><option value="closed">封闭</option><option value="low">低</option><option value="normal" selected>标准</option><option value="high">高</option><option value="global">全球</option></select></div>
+              <div class="wz-sl"><label>经济体制</label><select id="p-economy" class="wz-select"><option value="barter">物物交换</option><option value="tributary">朝贡</option><option value="mercantile" selected>重商</option><option value="capitalist">资本主义</option><option value="planned">计划经济</option></select></div>
+              <div class="wz-sl"><label>税率</label><select id="p-tax" class="wz-select"><option value="none">无税</option><option value="low">低</option><option value="moderate" selected>适中</option><option value="high">高</option><option value="oppressive">压榨</option></select></div>
+            </div>
+          </div>
+          <!-- Culture -->
+          <div class="param-group">
+            <div class="param-group-title" onclick="this.nextElementSibling.classList.toggle('open')">🎭 文化 <span style="color:var(--text-muted);font-size:10px">4项</span></div>
+            <div class="param-group-body">
+              <div class="wz-sl"><label>文化认同</label><select id="p-culture-id" class="wz-select"><option value="isolated">封闭</option><option value="diverse" selected>多元</option><option value="melting_pot">熔炉</option><option value="cosmopolitan">世界主义</option></select></div>
+              <div class="wz-sl"><label>主流信仰</label><select id="p-religion" class="wz-select"><option value="animism">泛灵</option><option value="polytheism">多神</option><option value="monotheism">一神</option><option value="secular" selected>世俗</option><option value="random">随机</option></select></div>
+              <div class="wz-sl"><label>信仰传播</label><select id="p-religion-spread" class="wz-select"><option value="none">无</option><option value="slow">慢</option><option value="normal" selected>标准</option><option value="fast">快</option></select></div>
+              <div class="wz-sl"><label>文艺繁荣</label><select id="p-art" class="wz-select"><option value="none">无</option><option value="low">低</option><option value="normal" selected>标准</option><option value="high">高</option></select></div>
+            </div>
+          </div>
+          <!-- Politics -->
+          <div class="param-group">
+            <div class="param-group-title" onclick="this.nextElementSibling.classList.toggle('open')">🏛️ 政治 <span style="color:var(--text-muted);font-size:10px">4项</span></div>
+            <div class="param-group-body">
+              <div class="wz-sl"><label>政体</label><select id="p-government" class="wz-select"><option value="tribal">部落</option><option value="chiefdom" selected>酋邦</option><option value="kingdom">王国</option><option value="empire">帝国</option><option value="republic">共和</option><option value="democracy">民主</option><option value="theocracy">神权</option></select></div>
+              <div class="wz-sl"><label>战争倾向</label><select id="p-war" class="wz-select"><option value="pacifist">和平主义</option><option value="peaceful">爱好和平</option><option value="normal" selected>标准</option><option value="aggressive">好战</option><option value="conquest">征服</option></select></div>
+              <div class="wz-sl"><label>军费开支</label><select id="p-military" class="wz-select"><option value="none">无</option><option value="low">低</option><option value="normal" selected>标准</option><option value="high">高</option><option value="total">全部</option></select></div>
+              <div class="wz-sl"><label>外交风格</label><select id="p-diplomacy" class="wz-select"><option value="isolationist">孤立</option><option value="pragmatic" selected>务实</option><option value="diplomatic">外交</option><option value="expansionist">扩张</option></select></div>
             </div>
           </div>
         </div>
+      </div>
 
-        <div class="form-section" data-step="4">
-          <h2 class="form-section-title">时间流速</h2>
-          <p class="form-section-desc">设定世界的时间流逝速度和演化频率</p>
-          <div class="form-group">
-            <label class="form-label">时间比例</label>
-            <p style="font-size:12px;color:var(--text-muted);margin-bottom:var(--spacing-sm);">现实1天对应世界天数</p>
-            <div class="radio-card-group">
-              <div class="radio-card" data-value="12">
-                <input type="radio" name="time_ratio" value="12">
-                <div class="radio-card-value">1:12</div>
-                <div class="radio-card-label">快节奏</div>
-              </div>
-              <div class="radio-card selected" data-value="24">
-                <input type="radio" name="time_ratio" value="24" checked>
-                <div class="radio-card-value">1:24</div>
-                <div class="radio-card-label">标准</div>
-              </div>
-              <div class="radio-card" data-value="48">
-                <input type="radio" name="time_ratio" value="48">
-                <div class="radio-card-value">1:48</div>
-                <div class="radio-card-label">慢速</div>
-              </div>
-              <div class="radio-card" data-value="96">
-                <input type="radio" name="time_ratio" value="96">
-                <div class="radio-card-value">1:96</div>
-                <div class="radio-card-label">极慢</div>
-              </div>
-              <div class="radio-card" data-value="168">
-                <input type="radio" name="time_ratio" value="168">
-                <div class="radio-card-value">1:168</div>
-                <div class="radio-card-label">史诗</div>
-              </div>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="form-label">演化频率</label>
-            <p style="font-size:12px;color:var(--text-muted);margin-bottom:var(--spacing-sm);">每次演化触发的间隔时间</p>
-            <div class="radio-card-group">
-              <div class="radio-card selected" data-value="30">
-                <input type="radio" name="evo_frequency" value="30" checked>
-                <div class="radio-card-value">30分钟</div>
-                <div class="radio-card-label">快速演化</div>
-              </div>
-              <div class="radio-card" data-value="60">
-                <input type="radio" name="evo_frequency" value="60">
-                <div class="radio-card-value">1小时</div>
-                <div class="radio-card-label">标准</div>
-              </div>
-              <div class="radio-card" data-value="120">
-                <input type="radio" name="evo_frequency" value="120">
-                <div class="radio-card-value">2小时</div>
-                <div class="radio-card-label">慢速</div>
-              </div>
-              <div class="radio-card" data-value="360">
-                <input type="radio" name="evo_frequency" value="360">
-                <div class="radio-card-value">6小时</div>
-                <div class="radio-card-label">超慢</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="form-section" data-step="5">
-          <h2 class="form-section-title">事件倾向</h2>
-          <p class="form-section-desc">决定世界中各类事件的发生概率</p>
-          <div class="form-group">
-            <label class="form-label">灾害频率</label>
-            <div class="radio-card-group">
-              <div class="radio-card" data-value="low"><input type="radio" name="disaster_freq" value="low"><div class="radio-card-value">低</div><div class="radio-card-label">风平浪静</div></div>
-              <div class="radio-card selected" data-value="medium"><input type="radio" name="disaster_freq" value="medium" checked><div class="radio-card-value">中</div><div class="radio-card-label">标准</div></div>
-              <div class="radio-card" data-value="high"><input type="radio" name="disaster_freq" value="high"><div class="radio-card-value">高</div><div class="radio-card-label">多灾多难</div></div>
-              <div class="radio-card" data-value="random"><input type="radio" name="disaster_freq" value="random"><div class="radio-card-value">随机</div><div class="radio-card-label">未知</div></div>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="form-label">战争倾向</label>
-            <div class="radio-card-group">
-              <div class="radio-card" data-value="peaceful"><input type="radio" name="war_tendency" value="peaceful"><div class="radio-card-value">和平</div><div class="radio-card-label">热爱和平</div></div>
-              <div class="radio-card selected" data-value="normal"><input type="radio" name="war_tendency" value="normal" checked><div class="radio-card-value">正常</div><div class="radio-card-label">标准</div></div>
-              <div class="radio-card" data-value="aggressive"><input type="radio" name="war_tendency" value="aggressive"><div class="radio-card-value">好战</div><div class="radio-card-label">战争不断</div></div>
-              <div class="radio-card" data-value="random"><input type="radio" name="war_tendency" value="random"><div class="radio-card-value">随机</div><div class="radio-card-label">未知</div></div>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="form-label">技术速度</label>
-            <div class="radio-card-group">
-              <div class="radio-card" data-value="slow"><input type="radio" name="tech_speed" value="slow"><div class="radio-card-value">缓慢</div><div class="radio-card-label">千年不变</div></div>
-              <div class="radio-card selected" data-value="normal"><input type="radio" name="tech_speed" value="normal" checked><div class="radio-card-value">正常</div><div class="radio-card-label">标准</div></div>
-              <div class="radio-card" data-value="fast"><input type="radio" name="tech_speed" value="fast"><div class="radio-card-value">快速</div><div class="radio-card-label">日新月异</div></div>
-              <div class="radio-card" data-value="random"><input type="radio" name="tech_speed" value="random"><div class="radio-card-value">随机</div><div class="radio-card-label">未知</div></div>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="form-label">奇迹概率</label>
-            <div class="radio-card-group">
-              <div class="radio-card" data-value="very_low"><input type="radio" name="miracle_chance" value="very_low"><div class="radio-card-value">极低</div><div class="radio-card-label">现实世界</div></div>
-              <div class="radio-card" data-value="low"><input type="radio" name="miracle_chance" value="low"><div class="radio-card-value">低</div><div class="radio-card-label">偶尔奇迹</div></div>
-              <div class="radio-card selected" data-value="medium"><input type="radio" name="miracle_chance" value="medium" checked><div class="radio-card-value">中</div><div class="radio-card-label">标准</div></div>
-              <div class="radio-card" data-value="random"><input type="radio" name="miracle_chance" value="random"><div class="radio-card-value">随机</div><div class="radio-card-label">未知</div></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="form-section" data-step="6">
-          <h2 class="form-section-title">干预规则</h2>
-          <p class="form-section-desc">设定世界干预的权限和限制</p>
-          <div class="form-group">
-            <label class="form-label">创建者干预上限</label>
-            <div class="radio-card-group">
-              <div class="radio-card" data-value="unlimited"><input type="radio" name="creator_limit" value="unlimited"><div class="radio-card-value">无限制</div><div class="radio-card-label">随心所欲</div></div>
-              <div class="radio-card" data-value="5"><input type="radio" name="creator_limit" value="5"><div class="radio-card-value">每周5次</div><div class="radio-card-label">适度干预</div></div>
-              <div class="radio-card selected" data-value="3"><input type="radio" name="creator_limit" value="3" checked><div class="radio-card-value">每周3次</div><div class="radio-card-label">慎重干预</div></div>
-              <div class="radio-card" data-value="1"><input type="radio" name="creator_limit" value="1"><div class="radio-card-value">每周1次</div><div class="radio-card-label">极简干预</div></div>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="form-label">允许他人干预</label>
-            <div class="radio-card-group" style="grid-template-columns:repeat(2,1fr);">
-              <div class="radio-card selected" data-value="yes"><input type="radio" name="allow_others" value="yes" checked><div class="radio-card-value">是</div><div class="radio-card-label">开放世界</div></div>
-              <div class="radio-card" data-value="no"><input type="radio" name="allow_others" value="no"><div class="radio-card-value">否</div><div class="radio-card-label">私有世界</div></div>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="form-label">他人干预上限</label>
-            <div class="radio-card-group" style="grid-template-columns:repeat(3,1fr);">
-              <div class="radio-card selected" data-value="1"><input type="radio" name="others_limit" value="1" checked><div class="radio-card-value">每周1次</div><div class="radio-card-label">有限参与</div></div>
-              <div class="radio-card" data-value="3"><input type="radio" name="others_limit" value="3"><div class="radio-card-value">每周3次</div><div class="radio-card-label">积极干预</div></div>
-              <div class="radio-card" data-value="unlimited"><input type="radio" name="others_limit" value="unlimited"><div class="radio-card-value">无限制</div><div class="radio-card-label">完全开放</div></div>
-            </div>
-          </div>
-        </div>
-      </form>
-
-      <div class="create-actions">
-        <button class="btn btn-secondary" id="create-prev-btn" style="visibility:hidden;">上一步</button>
-        <div class="create-actions-right">
-          <button class="btn btn-primary" id="create-next-btn">下一步</button>
-          <button class="btn btn-primary" id="create-submit-btn" style="display:none;">确认创建</button>
+      <!-- Step 4: Summary -->
+      <div class="ws-pane" data-step="4">
+        <div class="ws-pane-icon">✅</div>
+        <h2 class="ws-pane-title">确认创世</h2>
+        <p class="ws-pane-desc">检查设定，见证文明的诞生</p>
+        <div class="wizard-summary" id="wizard-summary">
+          <div class="ws-row"><span>世界名称</span><span id="summary-name">-</span></div>
+          <div class="ws-row"><span>世界描述</span><span id="summary-desc">-</span></div>
+          <div class="ws-row" style="border-top:1px solid rgba(255,255,255,0.06);padding-top:8px;margin-top:4px;"><span style="font-weight:700;color:var(--color-primary-light)">🏛️ 文明</span><span id="summary-civ">-</span></div>
+          <div class="ws-row"><span>元首</span><span id="summary-leader">-</span></div>
+          <div class="ws-row"><span>文明能力</span><span id="summary-civ-ability">-</span></div>
+          <div class="ws-row"><span>特色单位</span><span id="summary-civ-unit">-</span></div>
+          <div class="ws-row"><span>特色建筑</span><span id="summary-civ-building">-</span></div>
+          <div class="ws-row"><span>地图大小</span><span id="summary-map">中型</span></div>
+          <div class="ws-row"><span>海洋比例</span><span id="summary-ocean">均衡</span></div>
         </div>
       </div>
     </div>
 
-    <div class="create-preview-panel">
-      <div class="create-preview-title">世界预览</div>
-      <div class="create-preview-map">
-        <canvas id="preview-map-canvas"></canvas>
-      </div>
-      <div class="create-preview-info" id="preview-info">
-        <span>🌍 <span id="preview-size">20×20</span></span>
-        <span>🌊 <span id="preview-ocean">30%</span></span>
-        <span>🏔️ <span id="preview-continents">1块大陆</span></span>
-        <span>⏱️ <span id="preview-time">1:24</span></span>
+    <div class="wizard-footer">
+      <button class="btn btn-secondary wizard-btn-prev" id="wizard-prev" style="visibility:hidden;">← 上一步</button>
+      <div class="wizard-footer-right">
+        <button class="btn btn-primary wizard-btn-next" id="wizard-next">下一步 →</button>
+        <button class="btn btn-primary wizard-btn-create" id="wizard-create" style="display:none;">✦ 创世</button>
       </div>
     </div>
   </div>

@@ -11,6 +11,7 @@
     }
 
     init() {
+      var self = this;
       this.appEl = document.getElementById('app');
       this.worldGrid = document.getElementById('world-grid');
       this.sortBar = document.getElementById('sort-bar');
@@ -43,6 +44,16 @@
       if (createBtn) {
         createBtn.addEventListener('click', function () {
           window.location.hash = '#/create';
+        });
+      }
+
+      var retryBtn = document.getElementById('retry-btn');
+      if (retryBtn) {
+        retryBtn.addEventListener('click', function () {
+          self.page = 1;
+          self.allWorlds = [];
+          if (self.worldGrid) self.worldGrid.innerHTML = '';
+          self.loadWorlds(false);
         });
       }
 
@@ -83,15 +94,13 @@
       if (this.loadMoreBtn) this.loadMoreBtn.disabled = true;
 
       try {
-        var dm = window.DataManager || window.DemoDataManager;
-        var data;
+        var dm = window.DataManager;
+        var data = { worlds: [], has_more: false };
         if (dm && typeof dm.getWorlds === 'function') {
           data = await dm.getWorlds({ sort: this.currentSort, page: this.page, limit: 12 });
-        } else {
-          data = this._getDemoWorlds(this.currentSort, this.page);
         }
 
-        var worlds = data && data.worlds ? data.worlds : (Array.isArray(data) ? data : []);
+        var worlds = data && data.worlds ? data.worlds : [];
 
         if (worlds.length === 0 && !append) {
           this._showEmpty();
@@ -123,46 +132,12 @@
         this.page++;
       } catch (err) {
         console.error('loadWorlds error:', err);
-        this._showError();
+        if (this.skeletonContainer) this.skeletonContainer.style.display = 'none';
+        this._showEmpty();
       } finally {
         this.loading = false;
         if (this.skeletonContainer) this.skeletonContainer.style.display = 'none';
       }
-    }
-
-    _getDemoWorlds(sort, page) {
-      var list = (window.DEMO_WORLDS || []).slice();
-      // Merge with locally created worlds
-      try {
-        var localWorlds = JSON.parse(localStorage.getItem('dustworld_local_worlds') || '[]');
-        for (var li = 0; li < localWorlds.length; li++) {
-          var exists = false;
-          for (var ei = 0; ei < list.length; ei++) {
-            if (list[ei].world_id === localWorlds[li].world_id) { exists = true; break; }
-          }
-          if (!exists) list.unshift(localWorlds[li]);
-        }
-      } catch (e) {}
-
-      switch (sort) {
-        case 'likes':
-          list.sort(function (a, b) { return (b.likes || 0) - (a.likes || 0); });
-          break;
-        case 'newest':
-          list.sort(function (a, b) { return new Date(b.created_at) - new Date(a.created_at); });
-          break;
-        case 'oldest':
-          list.sort(function (a, b) { return (a.year || 0) - (b.year || 0); });
-          break;
-        case 'active':
-          list.sort(function (a, b) { return new Date(b.updated_at) - new Date(a.updated_at); });
-          break;
-      }
-
-      var limit = 12;
-      var start = (page - 1) * limit;
-      var sliced = list.slice(start, start + limit);
-      return { worlds: sliced, has_more: start + limit < list.length };
     }
 
     _renderWorldCard(world) {
@@ -182,6 +157,11 @@
         if (world.terrain && world.terrain.tiles) {
           card.setAttribute('terrain', JSON.stringify(world.terrain.tiles));
         }
+        var auth = window.AuthManager && window.AuthManager._instance;
+        var user = auth && auth.getUser && auth.getUser();
+        var username = user && (user.login || user.name);
+        var isLiked = username && world.liked_by && world.liked_by.indexOf(username) !== -1;
+        card.setAttribute('is-liked', isLiked ? 'true' : 'false');
       }
 
       card.addEventListener('click', function (e) {
@@ -192,19 +172,24 @@
 
       card.addEventListener('like-toggle', function (e) {
         var detail = e.detail || {};
-        if (detail.liked !== undefined) {
-          var auth = window.AuthManager && window.AuthManager._instance;
-          if (!auth || !auth.isLoggedIn()) {
-            window.Toast.warning('请先登录后点赞');
-            e.preventDefault();
-            return;
-          }
-          var key = 'liked_' + world.world_id;
-          if (detail.liked) {
-            localStorage.setItem(key, '1');
-          } else {
-            localStorage.removeItem(key);
-          }
+        if (detail.liked === undefined || !detail.worldId) return;
+        var auth = window.AuthManager && window.AuthManager._instance;
+        if (!auth || !auth.isLoggedIn()) {
+          window.Toast.warning('请先登录后点赞');
+          return;
+        }
+        // Optimistic UI update
+        var newLikes = (parseInt(world.likes || 0, 10)) + (detail.liked ? 1 : -1);
+        card.update({ isLiked: detail.liked, likes: String(Math.max(0, newLikes)) });
+        var dm = window.DataManager;
+        if (dm && typeof dm.toggleLike === 'function') {
+          dm.toggleLike(detail.worldId).then(function (result) {
+            card.update({ isLiked: result.liked, likes: String(result.likes) });
+            world.likes = result.likes;
+          }).catch(function () {
+            window.Toast.error('点赞失败');
+            card.update({ isLiked: !detail.liked, likes: String(world.likes || 0) });
+          });
         }
       });
 
@@ -253,7 +238,7 @@
       }
 
       var q = query.trim().toLowerCase();
-      var filtered = (window.DEMO_WORLDS || []).filter(function (w) {
+      var filtered = (this.allWorlds || []).filter(function (w) {
         return w.name && w.name.toLowerCase().indexOf(q) !== -1;
       });
 

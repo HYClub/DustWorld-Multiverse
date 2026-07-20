@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "three-hex-map": "github:gunyakov/three-hex-map"
+  }
+}

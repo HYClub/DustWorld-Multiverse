@@ -1,80 +1,104 @@
 <div class="page world-detail-page" id="world-detail-page">
+  <!-- World Header -->
   <div class="page-header">
     <button class="back-btn" data-action="back">←</button>
-    <h1 class="page-title world-name" id="world-name">世界名称</h1>
-    <button class="btn-icon tooltip like-btn" id="world-like-btn" data-tooltip="点赞">❤</button>
+    <div class="world-title-group">
+      <h1 class="page-title world-name" id="world-name">世界名称</h1>
+      <div class="world-era-badge" id="world-era-badge">古典时代</div>
+    </div>
+    <button class="btn-icon tooltip like-btn" id="world-like-btn" data-tooltip="点赞">❤ <span class="like-count">0</span></button>
     <button class="btn-icon tooltip share-btn" id="world-share-btn" data-tooltip="分享">↗</button>
   </div>
 
-  <div class="world-map-container" id="world-map-container">
-    <canvas id="world-map-canvas"></canvas>
+  <div class="world-local-banner" id="world-local-banner" style="display:none;">
+    <span>💾</span>
+    <span>此世界仅保存在本地浏览器中。</span>
   </div>
 
-  <div class="world-status-bar">
-    <span>第 <strong id="world-year">0</strong> 年</span>
-    <span>·</span>
-    <span>时代：<strong><span class="tag tag-era" id="world-era-tag" data-era="primitive">原始时代</span></strong></span>
-    <span>·</span>
-    <span>创建者：<strong id="world-creator">—</strong></span>
+  <!-- Civilization Panel -->
+  <div class="world-civ-panel" id="world-civ-panel">
+    <div class="civ-panel-left">
+      <div class="civ-flag" id="civ-flag">🏛️</div>
+      <div>
+        <div class="civ-name" id="civ-name">—</div>
+        <div class="civ-leader" id="civ-leader">—</div>
+      </div>
+    </div>
+    <div class="civ-panel-right">
+      <div class="civ-stat"><span class="civ-stat-label">时代</span><span id="civ-era">古典</span></div>
+      <div class="civ-stat"><span class="civ-stat-label">年份</span><span id="civ-year">1</span></div>
+      <div class="civ-stat"><span class="civ-stat-label">传承</span><span id="civ-legacy">0</span></div>
+    </div>
   </div>
 
+  <!-- Legacy Bar -->
+  <div class="legacy-bar" id="legacy-bar">
+    <div class="legacy-item"><span class="legacy-label">⚔️ 军事</span><div class="legacy-track"><div class="legacy-fill" id="legacy-military" style="width:0%"></div></div><span class="legacy-val" id="legacy-military-val">0</span></div>
+    <div class="legacy-item"><span class="legacy-label">💰 经济</span><div class="legacy-track"><div class="legacy-fill" id="legacy-economic" style="width:0%"></div></div><span class="legacy-val" id="legacy-economic-val">0</span></div>
+    <div class="legacy-item"><span class="legacy-label">🎭 文化</span><div class="legacy-track"><div class="legacy-fill" id="legacy-cultural" style="width:0%"></div></div><span class="legacy-val" id="legacy-cultural-val">0</span></div>
+    <div class="legacy-item"><span class="legacy-label">🔬 科学</span><div class="legacy-track"><div class="legacy-fill" id="legacy-scientific" style="width:0%"></div></div><span class="legacy-val" id="legacy-scientific-val">0</span></div>
+  </div>
+
+  <!-- Stats Row -->
   <div class="stat-cards-row" id="stat-cards-row">
-    <div class="stat-card">
-      <div class="stat-card-number" id="stat-settlements">0</div>
-      <div class="stat-card-label">存活聚落</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-card-number" id="stat-population">0</div>
-      <div class="stat-card-label">总人口</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-card-number" id="stat-wars">0</div>
-      <div class="stat-card-label">战争次数</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-card-number" id="stat-tech">0</div>
-      <div class="stat-card-label">技术突破</div>
+    <div class="stat-card"><div class="stat-card-number" id="stat-settlements">0</div><div class="stat-card-label">聚落</div></div>
+    <div class="stat-card"><div class="stat-card-number" id="stat-population">0</div><div class="stat-card-label">人口</div></div>
+    <div class="stat-card"><div class="stat-card-number" id="stat-wars">0</div><div class="stat-card-label">战争</div></div>
+    <div class="stat-card"><div class="stat-card-number" id="stat-tech">0</div><div class="stat-card-label">科技突破</div></div>
+    <div class="stat-card"><div class="stat-card-number" id="stat-events">0</div><div class="stat-card-label">进行中事件</div></div>
+  </div>
+
+  <!-- Settlement Table -->
+  <div class="world-section">
+    <h3 class="world-section-title">🏘️ 聚落一览</h3>
+    <div class="settlement-table" id="settlement-table">
+      <div class="settlement-row settlement-header">
+        <span class="s-col-name">名称</span>
+        <span class="s-col-level">等级</span>
+        <span class="s-col-pop">人口</span>
+        <span class="s-col-tech">科技</span>
+        <span class="s-col-status">状态</span>
+      </div>
+      <div id="settlement-rows"></div>
     </div>
   </div>
 
-  <div class="world-events">
-    <h3 class="world-events-title">最近事件</h3>
-    <div class="world-events-list" id="world-events-list"></div>
+  <!-- Active Events -->
+  <div class="world-section" id="active-events-section">
+    <h3 class="world-section-title">⚡ 进行中事件</h3>
+    <div id="active-events-list"></div>
   </div>
 
+  <!-- Tabs -->
   <div class="world-tabs">
     <div class="tab-bar">
-      <span class="tab-item active" data-tab="timeline">世界历史时间线</span>
-      <span class="tab-item" data-tab="settlements">聚落详情</span>
-      <span class="tab-item" data-tab="intervene">干预</span>
+      <span class="tab-item active" data-tab="timeline">📜 编年史</span>
+      <span class="tab-item" data-tab="notifications">🔔 通知</span>
+      <span class="tab-item" data-tab="intervene">🔮 干预</span>
     </div>
     <div class="tab-content active" id="tab-timeline">
       <div class="timeline-section">
         <div class="timeline-controls">
           <select id="timeline-era-filter">
             <option value="all">全部时代</option>
-            <option value="primitive">原始时代</option>
-            <option value="agriculture">农耕时代</option>
-            <option value="bronze">青铜时代</option>
-            <option value="iron">铁器时代</option>
-            <option value="steam">蒸汽时代</option>
-            <option value="electric">电气时代</option>
-            <option value="info">信息时代</option>
+            <option value="antiquity">古典时代</option>
+            <option value="exploration">探索时代</option>
+            <option value="modern">现代时代</option>
           </select>
           <select id="timeline-type-filter">
             <option value="all">全部类型</option>
+            <option value="milestone">里程碑</option>
+            <option value="settlement">聚落</option>
+            <option value="tech">科技</option>
             <option value="war">战争</option>
-            <option value="disaster">灾害</option>
-            <option value="breakthrough">技术突破</option>
-            <option value="culture">文化事件</option>
-            <option value="plague">瘟疫</option>
+            <option value="event">事件</option>
           </select>
         </div>
         <div id="timeline-list"></div>
       </div>
     </div>
-    <div class="tab-content" id="tab-settlements">
-      <div id="settlements-list"></div>
+    <div class="tab-content" id="tab-notifications">
+      <div id="notifications-list"><div style="color:var(--text-muted);font-size:13px;padding:16px 0;text-align:center;">暂无通知</div></div>
     </div>
     <div class="tab-content" id="tab-intervene">
       <div class="empty-state" id="intervene-empty">
@@ -83,7 +107,7 @@
       </div>
       <div id="intervene-content" style="display:none;">
         <p style="color:var(--text-secondary);font-size:14px;margin-bottom:var(--spacing-md);">
-          本周剩余干预次数：<strong id="intervene-remaining" style="color:var(--color-primary-light);font-family:var(--font-mono);">0</strong>
+          本周剩余干预：<strong id="intervene-remaining" style="color:var(--color-primary-light);font-family:var(--font-mono);">0</strong>
         </p>
         <div class="world-intervene-btn">
           <button class="btn btn-primary" id="open-intervene-modal">执行干预</button>
@@ -96,7 +120,7 @@
 <div id="world-intervene-modal-body" style="display:none;">
   <div class="intervention-form">
     <div>
-      <label class="form-label">选择干预类型</label>
+      <label class="form-label">干预类型</label>
       <div class="intervention-types" id="intervention-types">
         <button class="intervention-type-btn" data-type="bless">🌿 降下恩赐</button>
         <button class="intervention-type-btn" data-type="plague">⚡ 降下灾祸</button>
@@ -107,7 +131,7 @@
       </div>
     </div>
     <div>
-      <label class="form-label">选择目标聚落</label>
+      <label class="form-label">目标聚落</label>
       <select class="form-select" id="intervene-target-select">
         <option value="">选择聚落...</option>
       </select>

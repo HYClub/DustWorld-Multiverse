@@ -220,10 +220,7 @@
         return { results: results, newSettlements: toAdd };
     };
 
-    if (typeof window !== 'undefined') {
-        window.SettlementEvolver = SettlementEvolver;
-    }
-    window.SettlementEvolver = SettlementEvolver;
+    globalThis.SettlementEvolver = SettlementEvolver;
     if (typeof module !== 'undefined' && module.exports) {
         module.exports = SettlementEvolver;
     }

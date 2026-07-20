@@ -1,0 +1,206 @@
+{
+  "antiquity": [
+    {
+      "id": "egypt",
+      "name": "埃及",
+      "leader": "cleopatra",
+      "leader_name": "克利奥帕特拉",
+      "ability": "尼罗河的馈赠 — 食物产出+30%，沿河聚落成长速度+20%",
+      "unique_unit": "战车射手 — 战斗力+5，远程攻击",
+      "unique_building": "金字塔 — 文化产出+50%，伟人出现率+25%",
+      "bonuses": { "food_multiply": 1.3, "growth_rate": 1.2, "culture_output": 1.5, "great_person_rate": 1.25 },
+      "agenda": { "name": "文化庇护", "weights": { "culture": 1.4, "war": 0.6 } }
+    },
+    {
+      "id": "greece",
+      "name": "希腊",
+      "leader": "pericles",
+      "leader_name": "伯里克利",
+      "ability": "智慧之城 — 文化产出+30%，科技研究+15%",
+      "unique_unit": "重装步兵 — 防御+10，方阵阵型",
+      "unique_building": "剧院 — 文化产出+40%，满意度+20%",
+      "bonuses": { "culture_multiply": 1.3, "tech_multiply": 1.15, "stability": 0.1 },
+      "agenda": { "name": "文化霸权", "weights": { "culture": 1.5, "diplomacy": 1.2 } }
+    },
+    {
+      "id": "rome",
+      "name": "罗马",
+      "leader": "trajan",
+      "leader_name": "图拉真",
+      "ability": "帝国之路 — 军事力量+30%，道路建设自动完成",
+      "unique_unit": "罗马军团 — 战斗力+8，可建造道路",
+      "unique_building": "水道 — 健康度+25%，人口增长+15%",
+      "bonuses": { "military_multiply": 1.3, "health_bonus": 0.25, "growth_rate": 1.15 },
+      "agenda": { "name": "帝国扩张", "weights": { "military": 1.4, "expansion": 1.3 } }
+    },
+    {
+      "id": "han",
+      "name": "汉朝",
+      "leader": "wu_han",
+      "leader_name": "汉武帝",
+      "ability": "丝绸之路 — 科技产出+25%，贸易路线收益+30%",
+      "unique_unit": "弩手 — 远程攻击，战斗力+6",
+      "unique_building": "太学 — 科技产出+40%，每10年自动获得一项科技",
+      "bonuses": { "tech_multiply": 1.25, "trade_income": 1.3, "tech_auto": 1 },
+      "agenda": { "name": "开拓进取", "weights": { "tech": 1.4, "expansion": 1.2 } }
+    },
+    {
+      "id": "persia",
+      "name": "波斯",
+      "leader": "darius",
+      "leader_name": "大流士一世",
+      "ability": "皇家御道 — 贸易收入+40%，影响力+20%",
+      "unique_unit": "长生军 — 战斗力+5，士气+20%",
+      "unique_building": "御道 — 贸易路线+2，金币产出+30%",
+      "bonuses": { "trade_income": 1.4, "influence": 1.2, "gold_output": 1.3 },
+      "agenda": { "name": "经济繁荣", "weights": { "economy": 1.5, "diplomacy": 1.2 } }
+    },
+    {
+      "id": "maya",
+      "name": "玛雅",
+      "leader": "lady_maya",
+      "leader_name": "日月神",
+      "ability": "星辰观测 — 科技产出+20%，天文相关研究速度+50%",
+      "unique_unit": "美洲虎战士 — 丛林战斗力+10",
+      "unique_building": "天文台 — 科技产出+30%，伟人出现率+35%",
+      "bonuses": { "tech_multiply": 1.2, "great_person_rate": 1.35, "science_boost": 1.5 },
+      "agenda": { "name": "知识追求", "weights": { "tech": 1.5, "culture": 1.1 } }
+    }
+  ],
+  "exploration": [
+    {
+      "id": "ming",
+      "name": "明朝",
+      "leader": "zheng_he",
+      "leader_name": "郑和",
+      "ability": "宝船远航 — 探索速度+60%，贸易收益+30%",
+      "unique_unit": "宝船 — 探索范围+2，贸易路线+2",
+      "unique_building": "紫禁城 — 文化产出+40%，影响力+30%",
+      "bonuses": { "exploration_rate": 1.6, "trade_income": 1.3, "culture_output": 1.4, "influence": 1.3 },
+      "agenda": { "name": "远洋开拓", "weights": { "exploration": 1.5, "economy": 1.3 } }
+    },
+    {
+      "id": "spain",
+      "name": "西班牙",
+      "leader": "isabella",
+      "leader_name": "伊莎贝拉",
+      "ability": "收复失地 — 探索速度+40%，军事力量+25%",
+      "unique_unit": "征服者 — 海外战斗力+15",
+      "unique_building": "传教堂 — 文化产出+30%，影响力+25%",
+      "bonuses": { "exploration_rate": 1.4, "military_multiply": 1.25, "culture_output": 1.3, "influence": 1.25 },
+      "agenda": { "name": "宗教扩张", "weights": { "exploration": 1.4, "military": 1.3 } }
+    },
+    {
+      "id": "mongolia",
+      "name": "蒙古",
+      "leader": "genghis",
+      "leader_name": "成吉思汗",
+      "ability": "草原帝国 — 军事力量+50%，单位移动速度+30%",
+      "unique_unit": "蒙古弓骑 — 移动+2，远程攻击+8",
+      "unique_building": "驿站 — 移动速度+30%，贸易路线+1",
+      "bonuses": { "military_multiply": 1.5, "movement_speed": 1.3, "trade_income": 1.1 },
+      "agenda": { "name": "征服世界", "weights": { "military": 1.6, "expansion": 1.5 } }
+    },
+    {
+      "id": "inca",
+      "name": "印加",
+      "leader": "pachacuti",
+      "leader_name": "帕查库蒂",
+      "ability": "山地文明 — 农业产出+40%，山地建筑成本-50%",
+      "unique_unit": "投石手 — 远程攻击+5",
+      "unique_building": "梯田 — 山地食物产出+60%，人口上限+25%",
+      "bonuses": { "food_multiply": 1.4, "mountain_bonus": 0.5, "max_pop_bonus": 1.25 },
+      "agenda": { "name": "帝国建设", "weights": { "economy": 1.3, "expansion": 1.2 } }
+    },
+    {
+      "id": "abbasid",
+      "name": "阿拔斯",
+      "leader": "harun",
+      "leader_name": "哈伦·拉希德",
+      "ability": "智慧之城 — 科技产出+30%，文化产出+20%",
+      "unique_unit": "马穆鲁克 — 战斗力+8，骑兵加成",
+      "unique_building": "智慧宫 — 科技产出+50%，文化+25%",
+      "bonuses": { "tech_multiply": 1.3, "culture_output": 1.2, "great_person_rate": 1.3 },
+      "agenda": { "name": "智慧追求", "weights": { "tech": 1.5, "culture": 1.3 } }
+    },
+    {
+      "id": "norman",
+      "name": "诺曼",
+      "leader": "william",
+      "leader_name": "威廉征服者",
+      "ability": "城堡防御 — 军事力量+30%，防御工事效果+50%",
+      "unique_unit": "诺曼骑士 — 冲锋战斗力+12",
+      "unique_building": "城堡 — 防御+50%，稳定度+20%",
+      "bonuses": { "military_multiply": 1.3, "defense_bonus": 1.5, "stability": 0.2 },
+      "agenda": { "name": "防御优先", "weights": { "military": 1.3, "stability": 1.4 } }
+    }
+  ],
+  "modern": [
+    {
+      "id": "america",
+      "name": "美国",
+      "leader": "roosevelt",
+      "leader_name": "罗斯福",
+      "ability": "自由女神 — 科技产出+35%，经济产出+25%",
+      "unique_unit": "航空母舰 — 制海权+20",
+      "unique_building": "摩天楼 — 经济产出+40%，影响力+30%",
+      "bonuses": { "tech_multiply": 1.35, "economy_multiply": 1.25, "influence": 1.3 },
+      "agenda": { "name": "世界领袖", "weights": { "economy": 1.4, "diplomacy": 1.4 } }
+    },
+    {
+      "id": "france",
+      "name": "法国",
+      "leader": "napoleon",
+      "leader_name": "拿破仑",
+      "ability": "光荣之路 — 文化产出+40%，军事力量+20%",
+      "unique_unit": "外籍兵团 — 战斗力+10",
+      "unique_building": "博物馆 — 文化产出+50%，伟人出现率+30%",
+      "bonuses": { "culture_multiply": 1.4, "military_multiply": 1.2, "great_person_rate": 1.3 },
+      "agenda": { "name": "欧洲霸权", "weights": { "military": 1.4, "culture": 1.3 } }
+    },
+    {
+      "id": "britain",
+      "name": "英国",
+      "leader": "victoria",
+      "leader_name": "维多利亚",
+      "ability": "日不落 — 经济产出+35%，探索速度+25%",
+      "unique_unit": "红衣军 — 远程战斗力+8",
+      "unique_building": "议会 — 经济产出+30%，影响力+35%",
+      "bonuses": { "economy_multiply": 1.35, "exploration_rate": 1.25, "influence": 1.35 },
+      "agenda": { "name": "日不落", "weights": { "economy": 1.4, "exploration": 1.3 } }
+    },
+    {
+      "id": "russia",
+      "name": "俄罗斯",
+      "leader": "catherine",
+      "leader_name": "叶卡捷琳娜",
+      "ability": "北方巨熊 — 文化产出+30%，领土扩张+35%",
+      "unique_unit": "哥萨克骑兵 — 战斗力+10，移动+1",
+      "unique_building": "剧院 — 文化产出+45%，影响力+25%",
+      "bonuses": { "culture_multiply": 1.3, "expansion_rate": 1.35, "influence": 1.25 },
+      "agenda": { "name": "文化之都", "weights": { "culture": 1.5, "expansion": 1.3 } }
+    },
+    {
+      "id": "prussia",
+      "name": "普鲁士",
+      "leader": "bismarck",
+      "leader_name": "俾斯麦",
+      "ability": "铁血政策 — 军事力量+40%，工业产出+30%",
+      "unique_unit": "总参谋部 — 战斗力+12，组织度+20%",
+      "unique_building": "军事学院 — 军事产出+50%，工业+25%",
+      "bonuses": { "military_multiply": 1.4, "industry_multiply": 1.3, "tech_multiply": 1.1 },
+      "agenda": { "name": "铁血政策", "weights": { "military": 1.5, "industry": 1.3 } }
+    },
+    {
+      "id": "meiji",
+      "name": "明治日本",
+      "leader": "meiji",
+      "leader_name": "明治天皇",
+      "ability": "富国强兵 — 科技产出+35%，工业产出+30%",
+      "unique_unit": "零式战机 — 空战+15",
+      "unique_building": "工业区 — 工业产出+50%，科技+20%",
+      "bonuses": { "tech_multiply": 1.35, "industry_multiply": 1.3, "economy_multiply": 1.15 },
+      "agenda": { "name": "富国强兵", "weights": { "tech": 1.4, "industry": 1.4, "military": 1.2 } }
+    }
+  ]
+}

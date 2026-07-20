@@ -3,3 +3,21 @@ node_modules/
 Thumbs.db
 *.log
 .env
+
+# Wrangler
+.wrangler/
+# Demo files
+hex-demo-files/
+three-hex-map/
+hex-demo.html
+three-demo.html
+tile-demo.html
+tile-classifier.html
+isometric-demo.html
+isometric-viewer.html
+assets/tiny-farm*
+assets/iso-64x64-*
+package-lock.json
+package.json
+CIVILIZATION_DESIGN.md
+GAME_RULES.md

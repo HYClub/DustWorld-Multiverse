@@ -376,10 +376,7 @@
         EVENT_COUNTER = val || 0;
     };
 
-    if (typeof window !== 'undefined') {
-        window.EventGenerator = EventGenerator;
-    }
-    window.EventGenerator = EventGenerator;
+    globalThis.EventGenerator = EventGenerator;
     if (typeof module !== 'undefined' && module.exports) {
         module.exports = EventGenerator;
     }

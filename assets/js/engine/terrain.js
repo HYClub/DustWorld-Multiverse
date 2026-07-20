@@ -410,10 +410,7 @@
         return this.seed;
     };
 
-    if (typeof window !== 'undefined') {
-        window.TerrainGenerator = TerrainGenerator;
-    }
-    window.TerrainGenerator = TerrainGenerator;
+    globalThis.TerrainGenerator = TerrainGenerator;
     if (typeof module !== 'undefined' && module.exports) {
         module.exports = TerrainGenerator;
     }
