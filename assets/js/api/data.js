@@ -283,6 +283,10 @@
     return this.api.submitIntervention(worldId, intervention);
   };
 
+  DataManager.prototype.getInterventions = function () {
+    return this.api.getInterventions();
+  };
+
   DataManager.prototype.refreshWorldMeta = function (worldId) {
     var self = this;
     self.invalidateCache('world_' + worldId);

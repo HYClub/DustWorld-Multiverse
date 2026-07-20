@@ -182,6 +182,27 @@
     });
   };
 
+  GitHubAPI.prototype.getInterventions = function () {
+    return this.request('/repos/' + this.owner + '/' + this.repo + '/issues?labels=intervention&state=all&per_page=50')
+      .then(function (issues) {
+        if (!Array.isArray(issues)) return [];
+        return issues.map(function (issue) {
+          var body = {};
+          try { body = JSON.parse(issue.body || '{}'); } catch (e) {}
+          return {
+            id: issue.number,
+            type: body.type || 'general',
+            target_settlement: body.settlementName || body.target || '',
+            target_world: issue.title.split(' - ')[0].replace('干预: ', ''),
+            status: issue.state === 'open' ? 'pending' : 'executed',
+            timestamp: issue.created_at,
+            issue_url: issue.html_url
+          };
+        });
+      })
+      .catch(function () { return []; });
+  };
+
   GitHubAPI.prototype._getFileSha = function (path) {
     return this.request('/repos/' + this.owner + '/' + this.repo + '/contents/' + path)
       .then(function (data) { return data && data.sha ? data.sha : null; })
