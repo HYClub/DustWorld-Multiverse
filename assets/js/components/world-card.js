@@ -128,13 +128,9 @@ class WorldCard extends HTMLElement {
       clearInterval(this._countdownTimer);
       this._countdownTimer = null;
     }
-    if (this._refreshRetryTimer) {
-      clearTimeout(this._refreshRetryTimer);
-      this._refreshRetryTimer = null;
-    }
-    // If lastEvolvedAt changed, clear cooldown so new countdown starts immediately
+    this._pendingRefresh = false;
     if (d.lastEvolvedAt && d.lastEvolvedAt !== this._lastEvolvedAt) {
-      this._nextRefresh = null;
+      this._lastEvo = new Date(d.lastEvolvedAt).getTime();
     }
     this._lastEvolvedAt = d.lastEvolvedAt || this._lastEvolvedAt;
     this._startCountdown();
@@ -252,23 +248,6 @@ class WorldCard extends HTMLElement {
 
   _startCountdown() {
     if (this._countdownTimer) return;
-    if (this._nextRefresh && Date.now() < this._nextRefresh) {
-      var self = this;
-      this._countdownTimer = setInterval(function () {
-        var remaining = Math.max(0, Math.ceil((self._nextRefresh - Date.now()) / 1000));
-        if (self._els && self._els.countdown) {
-          if (remaining <= 0) {
-            clearInterval(self._countdownTimer);
-            self._countdownTimer = null;
-            self._startCountdown();
-            return;
-          }
-          self._els.countdown.textContent = '⏳ ' + remaining + 's';
-          self._els.countdown.style.color = '';
-        }
-      }, 1000);
-      return;
-    }
     this._lastEvo = new Date(this._data.lastEvolvedAt || Date.now()).getTime();
     this._updateCountdown();
     var self = this;
@@ -282,28 +261,31 @@ class WorldCard extends HTMLElement {
     var SECONDS_PER_YEAR = 864;
     var now = Date.now();
     var elapsed = (now - this._lastEvo) / 1000;
-    var remaining = SECONDS_PER_YEAR - elapsed;
-    if (remaining <= 0) {
+    if (elapsed >= SECONDS_PER_YEAR) {
       clearInterval(this._countdownTimer);
       this._countdownTimer = null;
-      this._nextRefresh = Date.now() + 60000;
-      this._els.countdown.textContent = '';
+      if (this._pendingRefresh) return;
+      if (this._lastRefresh && now - this._lastRefresh < 30000) {
+        // Wait 30s before retrying
+        this._pendingRefresh = true;
+        var self = this;
+        this._countdownTimer = setTimeout(function () {
+          self._countdownTimer = null;
+          self._pendingRefresh = false;
+          self._startCountdown();
+        }, 30000 - (now - this._lastRefresh));
+        return;
+      }
+      this._lastRefresh = now;
+      this._pendingRefresh = true;
+      this._els.countdown.textContent = '⏳ 待演化';
       this.dispatchEvent(new CustomEvent('world-refresh', {
         bubbles: true, composed: true, detail: { worldId: this._data.worldId }
       }));
-      // If update() doesn't restart the timer (e.g., API failure), try again after 60s
-      if (!this._refreshRetryTimer) {
-        var self = this;
-        this._refreshRetryTimer = setTimeout(function () {
-          self._refreshRetryTimer = null;
-          self._countdownTimer = null;
-          self._startCountdown();
-        }, 60000);
-      }
       return;
     }
     this._els.countdown.style.color = '';
-    var s = Math.ceil(remaining);
+    var s = Math.ceil(SECONDS_PER_YEAR - elapsed);
     if (s > 3600) {
       this._els.countdown.textContent = '⏳ ' + Math.ceil(s / 3600) + 'h';
     } else if (s > 60) {

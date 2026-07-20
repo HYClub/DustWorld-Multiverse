@@ -206,19 +206,22 @@
         var dm = window.DataManager;
         if (dm && typeof dm.refreshWorldMeta === 'function') {
           dm.refreshWorldMeta(detail.worldId).then(function (meta) {
-            if (!meta) return;
             card.update({
-              year: String(meta.year || 0),
-              era: meta.era || 'primitive',
-              population: String((meta.stats && meta.stats.total_population) || meta.population || 0),
-              settlements: String((meta.stats && meta.stats.total_settlements) || meta.settlements || 0),
-              updatedAt: meta.updatedAt || '',
-              lastEvolvedAt: meta.lastEvolvedAt || ''
+              year: String((meta && meta.year) || 0),
+              era: (meta && meta.era) || 'primitive',
+              population: String((meta && ((meta.stats && meta.stats.total_population) || meta.population)) || 0),
+              settlements: String((meta && ((meta.stats && meta.stats.total_settlements) || meta.settlements)) || 0),
+              updatedAt: (meta && meta.updatedAt) || '',
+              lastEvolvedAt: (meta && meta.lastEvolvedAt) || ''
             });
-            world.year = meta.year;
-            world.era = meta.era;
-            world.lastEvolvedAt = meta.lastEvolvedAt;
-          }).catch(function () {});
+            if (meta) {
+              world.year = meta.year;
+              world.era = meta.era;
+              world.lastEvolvedAt = meta.lastEvolvedAt;
+            }
+          }).catch(function () {
+            card.update({});
+          });
         }
       });
 
