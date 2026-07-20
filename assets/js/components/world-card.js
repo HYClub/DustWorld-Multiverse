@@ -253,16 +253,20 @@ class WorldCard extends HTMLElement {
   _startCountdown() {
     if (this._countdownTimer) return;
     if (this._nextRefresh && Date.now() < this._nextRefresh) {
-      var cooldown = Math.ceil((this._nextRefresh - Date.now()) / 1000);
-      if (this._els && this._els.countdown) {
-        this._els.countdown.textContent = '⏳ ' + cooldown + 's';
-        this._els.countdown.style.color = '';
-      }
       var self = this;
-      this._countdownTimer = setTimeout(function () {
-        self._countdownTimer = null;
-        self._startCountdown();
-      }, Math.min(cooldown * 1000, 60000));
+      this._countdownTimer = setInterval(function () {
+        var remaining = Math.max(0, Math.ceil((self._nextRefresh - Date.now()) / 1000));
+        if (self._els && self._els.countdown) {
+          if (remaining <= 0) {
+            clearInterval(self._countdownTimer);
+            self._countdownTimer = null;
+            self._startCountdown();
+            return;
+          }
+          self._els.countdown.textContent = '⏳ ' + remaining + 's';
+          self._els.countdown.style.color = '';
+        }
+      }, 1000);
       return;
     }
     this._lastEvo = new Date(this._data.lastEvolvedAt || Date.now()).getTime();

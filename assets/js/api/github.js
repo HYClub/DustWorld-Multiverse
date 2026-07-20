@@ -172,33 +172,52 @@
   };
 
   GitHubAPI.prototype.submitIntervention = function (worldId, intervention) {
-    return this.request('/repos/' + this.owner + '/' + this.repo + '/issues', {
-      method: 'POST',
-      body: {
-        title: '干预: ' + worldId + ' - ' + (intervention.type || 'unknown'),
-        body: JSON.stringify(intervention, null, 2),
-        labels: ['intervention', 'world:' + worldId, intervention.type || 'general']
-      }
-    });
+    var path = 'data/interventions/history.json';
+    var self = this;
+    return this.request('/repos/' + this.owner + '/' + this.repo + '/contents/' + path)
+      .then(function (data) {
+        var history = [];
+        var sha = null;
+        if (data && data.content) {
+          try { history = JSON.parse(self._decodeContent(data.content) || '[]'); } catch (e) {}
+          sha = data.sha;
+        }
+        history.push({
+          id: Date.now().toString(36) + Math.random().toString(36).substr(2, 3),
+          world_id: worldId,
+          type: intervention.type,
+          target: intervention.target || '',
+          settlementName: intervention.settlementName || '',
+          timestamp: new Date().toISOString(),
+          status: 'pending'
+        });
+        return self._putFile(path, self._encodeContent(JSON.stringify(history, null, 2)),
+          '干预: ' + worldId + ' - ' + (intervention.type || 'unknown'), sha);
+      })
+      .catch(function () {
+        // File doesn't exist yet, create it
+        var history = [{
+          id: Date.now().toString(36) + Math.random().toString(36).substr(2, 3),
+          world_id: worldId,
+          type: intervention.type,
+          target: intervention.target || '',
+          settlementName: intervention.settlementName || '',
+          timestamp: new Date().toISOString(),
+          status: 'pending'
+        }];
+        return self._putFile(path, self._encodeContent(JSON.stringify(history, null, 2)),
+          '干预: ' + worldId + ' - ' + (intervention.type || 'unknown'));
+      });
   };
 
   GitHubAPI.prototype.getInterventions = function () {
-    return this.request('/repos/' + this.owner + '/' + this.repo + '/issues?labels=intervention&state=all&per_page=50')
-      .then(function (issues) {
-        if (!Array.isArray(issues)) return [];
-        return issues.map(function (issue) {
-          var body = {};
-          try { body = JSON.parse(issue.body || '{}'); } catch (e) {}
-          return {
-            id: issue.number,
-            type: body.type || 'general',
-            target_settlement: body.settlementName || body.target || '',
-            target_world: issue.title.split(' - ')[0].replace('干预: ', ''),
-            status: issue.state === 'open' ? 'pending' : 'executed',
-            timestamp: issue.created_at,
-            issue_url: issue.html_url
-          };
-        });
+    var path = 'data/interventions/history.json';
+    var self = this;
+    return this.request('/repos/' + this.owner + '/' + this.repo + '/contents/' + path)
+      .then(function (data) {
+        if (!data || !data.content) return [];
+        var decoded = self._decodeContent(data.content);
+        return JSON.parse(decoded || '[]');
       })
       .catch(function () { return []; });
   };
