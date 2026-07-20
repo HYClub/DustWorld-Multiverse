@@ -5,6 +5,10 @@ on:
     - cron: '*/14 * * * *'
   workflow_dispatch:
 
+permissions:
+  contents: write
+  issues: read
+
 jobs:
   evolve:
     runs-on: ubuntu-latest
