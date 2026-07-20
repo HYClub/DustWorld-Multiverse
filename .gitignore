@@ -21,3 +21,6 @@ package-lock.json
 package.json
 CIVILIZATION_DESIGN.md
 GAME_RULES.md
+
+# Runtime world data - created via GitHub API, not by git
+data/worlds/
