@@ -2,7 +2,7 @@
   "world_id": "world_mrszl5je_9ju4",
   "name": "地球",
   "era": "antiquity",
-  "year": 48,
+  "year": 50,
   "civilization": {
     "antiquity": {
       "civ": "han",
@@ -3876,10 +3876,10 @@
       "x": 35,
       "y": 56,
       "level": 3,
-      "population": 299,
+      "population": 308,
       "max_population": 500,
       "tech_level": 3,
-      "culture": 600,
+      "culture": 630,
       "influence": 0,
       "health": 0.8,
       "stability": 0.7,
@@ -3912,8 +3912,18 @@
       "participants": [
         "SET001"
       ],
-      "remaining_years": 3,
+      "remaining_years": 1,
       "duration": 7,
+      "description": "绿野镇迎来文化繁荣。"
+    },
+    {
+      "id": "EVT54189",
+      "type": "cultural_boom",
+      "participants": [
+        "SET001"
+      ],
+      "remaining_years": 3,
+      "duration": 8,
       "description": "绿野镇迎来文化繁荣。"
     }
   ],
@@ -3921,12 +3931,12 @@
   "legacy": {
     "military": 0.7,
     "economic": 0,
-    "cultural": 13.200000000000003,
-    "scientific": 4.450000000000004
+    "cultural": 14.200000000000003,
+    "scientific": 4.750000000000004
   },
   "milestones": [],
   "stats": {
-    "total_population": 299,
+    "total_population": 308,
     "total_settlements": 1,
     "extinct_settlements": 0,
     "total_wars": 0,
@@ -3935,7 +3945,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T08:52:39.627Z",
-  "updated_at": "2026-07-20T20:24:16.534Z",
+  "updated_at": "2026-07-20T20:52:41.838Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -3975,7 +3985,7 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-07-20T20:23:51.627Z",
+  "last_evolved_at": "2026-07-20T20:52:39.627Z",
   "history": [
     {
       "year": 2,
@@ -4180,6 +4190,12 @@
       "type": "event",
       "title": "事件结束",
       "description": "绿野镇迎来文化繁荣。 结束。"
+    },
+    {
+      "year": 49,
+      "type": "cultural_boom",
+      "title": "新事件",
+      "description": "绿野镇迎来文化繁荣。"
     }
   ]
 }
