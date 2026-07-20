@@ -2,7 +2,7 @@
   "world_id": "world_mrt0jqd6_sa4k",
   "name": "魔法",
   "era": "exploration",
-  "year": 46,
+  "year": 48,
   "civilization": {
     "antiquity": {
       "civ": "insectoids",
@@ -3822,7 +3822,7 @@
         "type": "wood",
         "x": 47,
         "y": 54,
-        "amount": 69.67999999999998
+        "amount": 59.619999999999976
       },
       {
         "type": "wood",
@@ -3846,7 +3846,7 @@
       "x": 44,
       "y": 41,
       "level": 2,
-      "population": 96,
+      "population": 94,
       "max_population": 200,
       "tech_level": 2,
       "culture": 0,
@@ -3854,11 +3854,11 @@
       "health": 0.8,
       "stability": 0.7,
       "resources": {
-        "food": 23.281089510766428,
+        "food": 7.2560202264747975,
         "wood": 30,
         "ore": 8,
         "water": 0,
-        "gold": 132
+        "gold": 138
       },
       "buildings": [],
       "specialization": null,
@@ -3882,7 +3882,7 @@
       "x": 33,
       "y": 32,
       "level": 3,
-      "population": 211,
+      "population": 209,
       "max_population": 500,
       "tech_level": 4,
       "culture": 480,
@@ -3890,11 +3890,11 @@
       "health": 0.8,
       "stability": 0.7,
       "resources": {
-        "food": 2.220918227038249,
+        "food": 0,
         "wood": 30,
         "ore": 8,
         "water": 0,
-        "gold": 132
+        "gold": 138
       },
       "buildings": [],
       "specialization": "agriculture",
@@ -3917,16 +3917,16 @@
       "x": 50,
       "y": 57,
       "level": 2,
-      "population": 101,
+      "population": 106,
       "max_population": 200,
       "tech_level": 1,
-      "culture": 0,
+      "culture": 10,
       "influence": 0,
       "health": 0.7,
       "stability": 0.6,
       "resources": {
-        "food": 24.740004027477806,
-        "wood": 57.31999999999999,
+        "food": 5.6357948661803965,
+        "wood": 69.38,
         "ore": 5,
         "water": 0,
         "gold": 0
@@ -3948,7 +3948,18 @@
       "id": "SET003"
     }
   ],
-  "active_events": [],
+  "active_events": [
+    {
+      "id": "EVT49744",
+      "type": "cultural_boom",
+      "participants": [
+        "SET003"
+      ],
+      "remaining_years": 8,
+      "duration": 10,
+      "description": "风语村迎来文化繁荣。"
+    }
+  ],
   "trade_routes": [
     {
       "from": "SET001",
@@ -3958,9 +3969,9 @@
   ],
   "legacy": {
     "military": 0,
-    "economic": 39.19999999999999,
-    "cultural": 47.40000000000001,
-    "scientific": 58.4
+    "economic": 39.29999999999998,
+    "cultural": 47.80000000000002,
+    "scientific": 58.99999999999999
   },
   "milestones": [
     {
@@ -3987,10 +3998,20 @@
       "id": "era_exploration",
       "name": "远洋",
       "year": 44
+    },
+    {
+      "id": "setts_3",
+      "name": "扩张",
+      "year": 47
+    },
+    {
+      "id": "era_exploration",
+      "name": "远洋",
+      "year": 47
     }
   ],
   "stats": {
-    "total_population": 408,
+    "total_population": 409,
     "total_settlements": 3,
     "extinct_settlements": 0,
     "total_wars": 0,
@@ -3999,7 +4020,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T09:19:32.922Z",
-  "updated_at": "2026-07-20T20:24:19.209Z",
+  "updated_at": "2026-07-20T20:52:44.166Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -4198,9 +4219,27 @@
       "type": "event",
       "title": "事件结束",
       "description": "河畔城遭受自然灾害。 结束。"
+    },
+    {
+      "year": 47,
+      "type": "cultural_boom",
+      "title": "新事件",
+      "description": "风语村迎来文化繁荣。"
+    },
+    {
+      "year": 47,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 扩张"
+    },
+    {
+      "year": 47,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 远洋"
     }
   ],
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-07-20T20:21:56.922Z"
+  "last_evolved_at": "2026-07-20T20:50:44.922Z"
 }
