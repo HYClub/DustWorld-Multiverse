@@ -2,7 +2,7 @@
   "world_id": "world_mrszl5je_9ju4",
   "name": "地球",
   "era": "antiquity",
-  "year": 27,
+  "year": 32,
   "civilization": {
     "antiquity": {
       "civ": "han",
@@ -3786,13 +3786,13 @@
         "type": "food",
         "x": 44,
         "y": 25,
-        "amount": 84
+        "amount": 89
       },
       {
         "type": "food",
         "x": 56,
         "y": 58,
-        "amount": 82
+        "amount": 87
       },
       {
         "type": "wood",
@@ -3822,7 +3822,7 @@
         "type": "water",
         "x": 7,
         "y": 11,
-        "amount": 91
+        "amount": 96
       },
       {
         "type": "food",
@@ -3834,19 +3834,19 @@
         "type": "food",
         "x": 45,
         "y": 10,
-        "amount": 98
+        "amount": 100
       },
       {
         "type": "water",
         "x": 19,
         "y": 11,
-        "amount": 88
+        "amount": 93
       },
       {
         "type": "strategic",
         "x": 27,
         "y": 9,
-        "amount": 97
+        "amount": 100
       },
       {
         "type": "ore",
@@ -3858,7 +3858,7 @@
         "type": "ore",
         "x": 17,
         "y": 19,
-        "amount": 97
+        "amount": 100
       },
       {
         "type": "water",
@@ -3876,10 +3876,10 @@
       "x": 35,
       "y": 56,
       "level": 3,
-      "population": 184,
+      "population": 205,
       "max_population": 500,
       "tech_level": 2,
-      "culture": 300,
+      "culture": 370,
       "influence": 0,
       "health": 0.8,
       "stability": 0.7,
@@ -3907,33 +3907,23 @@
   ],
   "active_events": [
     {
-      "id": "EVT44730",
-      "type": "plague",
+      "id": "EVT52061",
+      "type": "golden_age",
       "participants": [
         "SET001"
       ],
       "remaining_years": 1,
-      "duration": 6,
-      "description": "绿野镇爆发瘟疫。"
+      "duration": 10,
+      "description": "绿野镇进入黄金时代！"
     },
     {
-      "id": "EVT70529",
-      "type": "natural_disaster",
-      "participants": [
-        "SET001"
-      ],
-      "remaining_years": 3,
-      "duration": 4,
-      "description": "绿野镇遭受自然灾害。"
-    },
-    {
-      "id": "EVT26467",
+      "id": "EVT90078",
       "type": "cultural_boom",
       "participants": [
         "SET001"
       ],
-      "remaining_years": 3,
-      "duration": 7,
+      "remaining_years": 8,
+      "duration": 6,
       "description": "绿野镇迎来文化繁荣。"
     }
   ],
@@ -3941,21 +3931,21 @@
   "legacy": {
     "military": 0.7,
     "economic": 0,
-    "cultural": 4.399999999999999,
-    "scientific": 2.150000000000001
+    "cultural": 6.199999999999999,
+    "scientific": 2.6500000000000012
   },
   "milestones": [],
   "stats": {
-    "total_population": 184,
+    "total_population": 205,
     "total_settlements": 1,
     "extinct_settlements": 0,
     "total_wars": 0,
     "tech_breakthroughs": 2,
-    "golden_ages": 3,
+    "golden_ages": 4,
     "dark_ages": 0
   },
   "created_at": "2026-07-20T08:52:39.627Z",
-  "updated_at": "2026-07-20T15:33:01.489Z",
+  "updated_at": "2026-07-20T16:47:05.536Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -3995,7 +3985,7 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-07-20T15:21:27.627Z",
+  "last_evolved_at": "2026-07-20T16:33:27.627Z",
   "history": [
     {
       "year": 2,
@@ -4095,6 +4085,36 @@
     },
     {
       "year": 26,
+      "type": "cultural_boom",
+      "title": "新事件",
+      "description": "绿野镇迎来文化繁荣。"
+    },
+    {
+      "year": 28,
+      "type": "event",
+      "title": "事件结束",
+      "description": "绿野镇爆发瘟疫。 结束。"
+    },
+    {
+      "year": 30,
+      "type": "event",
+      "title": "事件结束",
+      "description": "绿野镇遭受自然灾害。 结束。"
+    },
+    {
+      "year": 30,
+      "type": "event",
+      "title": "事件结束",
+      "description": "绿野镇迎来文化繁荣。 结束。"
+    },
+    {
+      "year": 30,
+      "type": "golden_age",
+      "title": "新事件",
+      "description": "绿野镇进入黄金时代！"
+    },
+    {
+      "year": 31,
       "type": "cultural_boom",
       "title": "新事件",
       "description": "绿野镇迎来文化繁荣。"
