@@ -309,6 +309,11 @@
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
+.form-select option {
+  background: #1a1a30;
+  color: #e0e0e0;
+}
+
 .form-input:focus,
 .form-textarea:focus,
 .form-select:focus {

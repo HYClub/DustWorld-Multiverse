@@ -347,6 +347,11 @@
   outline: none;
 }
 
+.wz-select option {
+  background: #1a1a30;
+  color: #e0e0e0;
+}
+
 @media (max-width: 640px) {
   .wizard { padding: var(--spacing-md); }
   .wizard-grid-5 { grid-template-columns: repeat(3, 1fr); }
