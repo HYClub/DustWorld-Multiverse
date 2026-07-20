@@ -195,26 +195,24 @@
         }
       });
 
-      card.addEventListener('world-evolve', function (e) {
+      card.addEventListener('world-refresh', function (e) {
         var detail = e.detail || {};
         if (!detail.worldId) return;
         var dm = window.DataManager;
-        if (dm && typeof dm.evolveWorld === 'function') {
-          card._clearCountdown();
-          dm.evolveWorld(detail.worldId).then(function (result) {
+        if (dm && typeof dm.refreshWorldMeta === 'function') {
+          dm.refreshWorldMeta(detail.worldId).then(function (meta) {
+            if (!meta) return;
             card.update({
-              year: String(result.year),
-              era: result.era,
-              population: String(result.population || 0),
-              settlements: String(result.settlements || 0),
-              updatedAt: result.updatedAt || '',
-              lastEvolvedAt: result.lastEvolvedAt || ''
+              year: String(meta.year || 0),
+              era: meta.era || 'primitive',
+              population: String((meta.stats && meta.stats.total_population) || meta.population || 0),
+              settlements: String((meta.stats && meta.stats.total_settlements) || meta.settlements || 0),
+              updatedAt: meta.updatedAt || '',
+              lastEvolvedAt: meta.lastEvolvedAt || ''
             });
-            world.year = result.year;
-            world.era = result.era;
-            world.lastEvolvedAt = result.lastEvolvedAt;
-          }).catch(function () {
-            card._clearCountdown();
+            world.year = meta.year;
+            world.era = meta.era;
+            world.lastEvolvedAt = meta.lastEvolvedAt;
           });
         }
       });

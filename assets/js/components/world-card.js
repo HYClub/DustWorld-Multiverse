@@ -263,7 +263,7 @@ class WorldCard extends HTMLElement {
       this._els.countdown.style.color = '#ff4757';
       clearInterval(this._countdownTimer);
       this._countdownTimer = null;
-      this.dispatchEvent(new CustomEvent('world-evolve', {
+      this.dispatchEvent(new CustomEvent('world-refresh', {
         bubbles: true, composed: true, detail: { worldId: this._data.worldId }
       }));
       return;

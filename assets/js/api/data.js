@@ -283,6 +283,19 @@
     return this.api.submitIntervention(worldId, intervention);
   };
 
+  DataManager.prototype.refreshWorldMeta = function (worldId) {
+    var self = this;
+    self.invalidateCache('world_' + worldId);
+    return this.getWorldMeta(worldId).then(function (meta) {
+      if (meta) self.invalidateCache('worldList');
+      return meta;
+    });
+  };
+
+  DataManager.prototype.getWorldMeta = function (worldId) {
+    return this._fetchWorldMeta(worldId);
+  };
+
   DataManager.prototype.invalidateCache = function (key) {
     if (key) {
       delete this.cache[key];
