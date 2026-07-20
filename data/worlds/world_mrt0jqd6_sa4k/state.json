@@ -2,7 +2,7 @@
   "world_id": "world_mrt0jqd6_sa4k",
   "name": "魔法",
   "era": "antiquity",
-  "year": 16,
+  "year": 19,
   "civilization": {
     "antiquity": {
       "civ": "insectoids",
@@ -3786,7 +3786,7 @@
         "type": "wood",
         "x": 17,
         "y": 9,
-        "amount": 98
+        "amount": 100
       },
       {
         "type": "ore",
@@ -3804,13 +3804,13 @@
         "type": "water",
         "x": 9,
         "y": 40,
-        "amount": 84
+        "amount": 87
       },
       {
         "type": "luxury",
         "x": 52,
         "y": 36,
-        "amount": 88
+        "amount": 91
       },
       {
         "type": "food",
@@ -3822,19 +3822,19 @@
         "type": "wood",
         "x": 47,
         "y": 54,
-        "amount": 90
+        "amount": 93
       },
       {
         "type": "wood",
         "x": 51,
         "y": 31,
-        "amount": 81
+        "amount": 84
       },
       {
         "type": "ore",
         "x": 20,
         "y": 27,
-        "amount": 87
+        "amount": 90
       }
     ],
     "foodFactor": 0.85
@@ -3846,7 +3846,7 @@
       "x": 44,
       "y": 41,
       "level": 2,
-      "population": 106,
+      "population": 103,
       "max_population": 200,
       "tech_level": 2,
       "culture": 0,
@@ -3858,7 +3858,7 @@
         "wood": 30,
         "ore": 8,
         "water": 0,
-        "gold": 42
+        "gold": 51
       },
       "buildings": [],
       "specialization": null,
@@ -3882,10 +3882,10 @@
       "x": 33,
       "y": 32,
       "level": 3,
-      "population": 204,
+      "population": 233,
       "max_population": 500,
       "tech_level": 2,
-      "culture": 200,
+      "culture": 260,
       "influence": 0,
       "health": 0.8,
       "stability": 0.7,
@@ -3894,7 +3894,7 @@
         "wood": 30,
         "ore": 8,
         "water": 0,
-        "gold": 42
+        "gold": 51
       },
       "buildings": [],
       "specialization": "agriculture",
@@ -3920,7 +3920,7 @@
       "participants": [
         "SET002"
       ],
-      "remaining_years": 8,
+      "remaining_years": 5,
       "duration": 9,
       "description": "河畔城进入黄金时代！"
     }
@@ -3934,13 +3934,13 @@
   ],
   "legacy": {
     "military": 0,
-    "economic": 0.7000000000000001,
-    "cultural": 1.4,
-    "scientific": 2.15
+    "economic": 0.8500000000000002,
+    "cultural": 1.9999999999999998,
+    "scientific": 2.7500000000000004
   },
   "milestones": [],
   "stats": {
-    "total_population": 310,
+    "total_population": 336,
     "total_settlements": 2,
     "extinct_settlements": 0,
     "total_wars": 0,
@@ -3949,7 +3949,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T09:19:32.922Z",
-  "updated_at": "2026-07-20T13:14:06.810Z",
+  "updated_at": "2026-07-20T13:59:39.638Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -4050,5 +4050,5 @@
   ],
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-07-20T13:09:56.922Z"
+  "last_evolved_at": "2026-07-20T13:53:08.922Z"
 }
