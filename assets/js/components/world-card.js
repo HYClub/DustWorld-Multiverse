@@ -124,12 +124,19 @@ class WorldCard extends HTMLElement {
       els.eraTrackFill.style.background = this._getEraColor(eraKey);
     }
     // Start countdown timer for evolution
-    this._nextRefresh = null;
-    this._countdownTimer = null;
+    if (this._countdownTimer) {
+      clearInterval(this._countdownTimer);
+      this._countdownTimer = null;
+    }
     if (this._refreshRetryTimer) {
       clearTimeout(this._refreshRetryTimer);
       this._refreshRetryTimer = null;
     }
+    // If lastEvolvedAt changed, clear cooldown so new countdown starts immediately
+    if (d.lastEvolvedAt && d.lastEvolvedAt !== this._lastEvolvedAt) {
+      this._nextRefresh = null;
+    }
+    this._lastEvolvedAt = d.lastEvolvedAt || this._lastEvolvedAt;
     this._startCountdown();
     if (els.settlements) els.settlements.textContent = this._formatNum(d.settlements);
     if (els.population) els.population.textContent = this._formatNum(d.population);
