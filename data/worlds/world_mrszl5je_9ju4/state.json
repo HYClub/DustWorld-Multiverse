@@ -2,7 +2,7 @@
   "world_id": "world_mrszl5je_9ju4",
   "name": "地球",
   "era": "antiquity",
-  "year": 35,
+  "year": 42,
   "civilization": {
     "antiquity": {
       "civ": "han",
@@ -3786,13 +3786,13 @@
         "type": "food",
         "x": 44,
         "y": 25,
-        "amount": 92
+        "amount": 99
       },
       {
         "type": "food",
         "x": 56,
         "y": 58,
-        "amount": 90
+        "amount": 97
       },
       {
         "type": "wood",
@@ -3822,7 +3822,7 @@
         "type": "water",
         "x": 7,
         "y": 11,
-        "amount": 99
+        "amount": 100
       },
       {
         "type": "food",
@@ -3840,7 +3840,7 @@
         "type": "water",
         "x": 19,
         "y": 11,
-        "amount": 96
+        "amount": 100
       },
       {
         "type": "strategic",
@@ -3876,10 +3876,10 @@
       "x": 35,
       "y": 56,
       "level": 3,
-      "population": 225,
+      "population": 259,
       "max_population": 500,
       "tech_level": 2,
-      "culture": 420,
+      "culture": 500,
       "influence": 0,
       "health": 0.8,
       "stability": 0.7,
@@ -3905,38 +3905,17 @@
       "trade_partners": []
     }
   ],
-  "active_events": [
-    {
-      "id": "EVT90078",
-      "type": "cultural_boom",
-      "participants": [
-        "SET001"
-      ],
-      "remaining_years": 5,
-      "duration": 6,
-      "description": "绿野镇迎来文化繁荣。"
-    },
-    {
-      "id": "EVT54189",
-      "type": "cultural_boom",
-      "participants": [
-        "SET001"
-      ],
-      "remaining_years": 2,
-      "duration": 8,
-      "description": "绿野镇迎来文化繁荣。"
-    }
-  ],
+  "active_events": [],
   "trade_routes": [],
   "legacy": {
     "military": 0.7,
     "economic": 0,
-    "cultural": 7.4,
-    "scientific": 2.9500000000000015
+    "cultural": 10.200000000000003,
+    "scientific": 3.650000000000002
   },
   "milestones": [],
   "stats": {
-    "total_population": 225,
+    "total_population": 259,
     "total_settlements": 1,
     "extinct_settlements": 0,
     "total_wars": 0,
@@ -3945,7 +3924,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T08:52:39.627Z",
-  "updated_at": "2026-07-20T17:27:15.620Z",
+  "updated_at": "2026-07-20T19:06:27.346Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -3985,7 +3964,7 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-07-20T17:16:39.627Z",
+  "last_evolved_at": "2026-07-20T18:57:27.627Z",
   "history": [
     {
       "year": 2,
@@ -4130,6 +4109,30 @@
       "type": "cultural_boom",
       "title": "新事件",
       "description": "绿野镇迎来文化繁荣。"
+    },
+    {
+      "year": 37,
+      "type": "event",
+      "title": "事件结束",
+      "description": "绿野镇迎来文化繁荣。 结束。"
+    },
+    {
+      "year": 37,
+      "type": "cultural_boom",
+      "title": "新事件",
+      "description": "绿野镇迎来文化繁荣。"
+    },
+    {
+      "year": 40,
+      "type": "event",
+      "title": "事件结束",
+      "description": "绿野镇迎来文化繁荣。 结束。"
+    },
+    {
+      "year": 41,
+      "type": "event",
+      "title": "事件结束",
+      "description": "绿野镇迎来文化繁荣。 结束。"
     }
   ]
 }
