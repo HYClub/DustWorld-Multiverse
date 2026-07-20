@@ -63,6 +63,18 @@
       if (backBtn) {
         backBtn.addEventListener('click', function () { window.history.back(); });
       }
+
+      var navigateBtns = this.appEl && this.appEl.querySelectorAll('[data-action="navigate"]');
+      if (navigateBtns) {
+        for (var ni = 0; ni < navigateBtns.length; ni++) {
+          (function (btn) {
+            btn.addEventListener('click', function () {
+              var page = btn.getAttribute('data-page');
+              if (page) window.location.hash = '#/' + page;
+            });
+          })(navigateBtns[ni]);
+        }
+      }
     }
 
     _loadProfile() {
