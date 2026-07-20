@@ -506,6 +506,7 @@
       }
 
       worldData.world_id = id;
+      worldData.last_evolved_at = new Date().toISOString();
       var user = auth.getUser && auth.getUser();
       if (user) {
         worldData.creator = user.login || user.name;

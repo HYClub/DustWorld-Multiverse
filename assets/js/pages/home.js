@@ -155,6 +155,7 @@
         card.setAttribute('likes', String(world.likes || 0));
         card.setAttribute('description', world.description || '');
         card.setAttribute('updated-at', world.updatedAt || '');
+        card.setAttribute('last-evolved-at', world.lastEvolvedAt || '');
         if (world.terrain && world.terrain.tiles) {
           card.setAttribute('terrain', JSON.stringify(world.terrain.tiles));
         }
@@ -206,10 +207,12 @@
               era: result.era,
               population: String(result.population || 0),
               settlements: String(result.settlements || 0),
-              updatedAt: result.updatedAt || ''
+              updatedAt: result.updatedAt || '',
+              lastEvolvedAt: result.lastEvolvedAt || ''
             });
             world.year = result.year;
             world.era = result.era;
+            world.lastEvolvedAt = result.lastEvolvedAt;
           }).catch(function () {
             card._clearCountdown();
           });

@@ -58,7 +58,8 @@
         techLevel: state.techLevel || 0,
         resources: state.resources || 'normal',
         climate: state.climate || 'mild',
-        updatedAt: state.updated_at || state.created_at || ''
+        updatedAt: state.updated_at || state.created_at || '',
+        lastEvolvedAt: state.last_evolved_at || state.created_at || ''
       };
     });
   };
@@ -243,16 +244,26 @@
   };
 
   DataManager.prototype.evolveWorld = function (worldId) {
+    var SECONDS_PER_YEAR = 864;
+    var MAX_YEARS = 50;
     var self = this;
     return this.api.getWorldState(worldId).then(function (state) {
       if (!state) throw new Error('World not found');
       var config = state.config || {};
+      var lastEvolved = state.last_evolved_at ? new Date(state.last_evolved_at).getTime() : new Date(state.created_at).getTime();
+      var now = Date.now();
+      var elapsed = (now - lastEvolved) / 1000;
+      var yearsToAdvance = Math.min(MAX_YEARS, Math.floor(elapsed / SECONDS_PER_YEAR));
+      if (yearsToAdvance < 1) throw new Error('Not enough time elapsed');
+
       var engine = new window.WorldEngine(config, state);
       engine._initialized = true;
-      var steps = 1 + Math.floor(Math.random() * 3);
-      for (var i = 0; i < steps; i++) engine.evolve();
+      for (var i = 0; i < yearsToAdvance; i++) engine.evolve();
+
       var newState = engine.getState();
       newState.config = config;
+      newState.last_evolved_at = new Date(lastEvolved + yearsToAdvance * SECONDS_PER_YEAR * 1000).toISOString();
+
       return self.api.updateWorldState(worldId, newState).then(function () {
         self.invalidateCache('worldList');
         self.invalidateCache('world_' + worldId);
@@ -261,7 +272,8 @@
           era: newState.era,
           population: newState.stats.total_population,
           settlements: newState.stats.total_settlements,
-          updatedAt: newState.updated_at
+          updatedAt: newState.updated_at,
+          lastEvolvedAt: newState.last_evolved_at
         };
       });
     });

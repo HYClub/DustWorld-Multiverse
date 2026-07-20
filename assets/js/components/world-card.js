@@ -73,7 +73,8 @@ class WorldCard extends HTMLElement {
       population: this.getAttribute('population') || '0',
       likes: this.getAttribute('likes') || '0',
       isLiked: this.getAttribute('is-liked') === 'true',
-      updatedAt: this.getAttribute('updated-at') || ''
+      updatedAt: this.getAttribute('updated-at') || '',
+      lastEvolvedAt: this.getAttribute('last-evolved-at') || ''
     };
     this.update(data);
   }
@@ -242,33 +243,40 @@ class WorldCard extends HTMLElement {
   }
 
   _startCountdown() {
-    var self = this;
     if (this._countdownTimer) return;
-    this._countdownSeconds = 20 + Math.floor(Math.random() * 40);
+    this._lastEvo = new Date(this._data.lastEvolvedAt || Date.now()).getTime();
     this._updateCountdown();
+    var self = this;
     this._countdownTimer = setInterval(function () {
-      self._countdownSeconds--;
       self._updateCountdown();
-      if (self._countdownSeconds <= 0) {
-        clearInterval(self._countdownTimer);
-        self._countdownTimer = null;
-        self.dispatchEvent(new CustomEvent('world-evolve', {
-          bubbles: true, composed: true, detail: { worldId: self._data.worldId }
-        }));
-      }
     }, 1000);
   }
 
   _updateCountdown() {
-    if (this._els && this._els.countdown) {
-      var s = this._countdownSeconds || 0;
-      if (s <= 5) {
-        this._els.countdown.textContent = '⚡ ' + s + 's';
-        this._els.countdown.style.color = '#ff4757';
-      } else {
-        this._els.countdown.textContent = '⏳ ' + s + 's';
-        this._els.countdown.style.color = '';
-      }
+    if (!this._els || !this._els.countdown) return;
+    var SECONDS_PER_YEAR = 864;
+    var now = Date.now();
+    var elapsed = (now - this._lastEvo) / 1000;
+    var remaining = SECONDS_PER_YEAR - elapsed;
+    if (remaining <= 0) {
+      this._els.countdown.textContent = '⚡ 演化中';
+      this._els.countdown.style.color = '#ff4757';
+      clearInterval(this._countdownTimer);
+      this._countdownTimer = null;
+      this.dispatchEvent(new CustomEvent('world-evolve', {
+        bubbles: true, composed: true, detail: { worldId: this._data.worldId }
+      }));
+      return;
+    }
+    this._els.countdown.style.color = '';
+    var s = Math.ceil(remaining);
+    if (s > 3600) {
+      this._els.countdown.textContent = '⏳ ' + Math.ceil(s / 3600) + 'h';
+    } else if (s > 60) {
+      this._els.countdown.textContent = '⏳ ' + Math.ceil(s / 60) + 'm';
+    } else {
+      if (s <= 10) this._els.countdown.style.color = '#ff4757';
+      this._els.countdown.textContent = '⏳ ' + s + 's';
     }
   }
 
