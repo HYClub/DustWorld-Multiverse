@@ -27,10 +27,8 @@
       fetch('data/origins.json').then(function(r) { return r.json(); }).then(function(data) {
         self.origins = data;
         self._renderOriginGrid();
-        self.show(1);
       }).catch(function() {
         self.origins = {};
-        self.show(1);
       });
     }
 
@@ -221,6 +219,7 @@
       if (window.CIVILIZATIONS) {
         self.civs = window.CIVILIZATIONS.antiquity || [];
         self._renderCivGrid();
+        self.show(1);
         return;
       }
       fetch('data/civilizations.json').then(function(r) { return r.json(); }).then(function(data) {
@@ -228,9 +227,11 @@
         if (window.CivEngine) window.CivEngine.setCivData(data);
         self.civs = data.antiquity || [];
         self._renderCivGrid();
+        self.show(1);
       }).catch(function() {
         self.civs = [];
         self._renderCivGrid();
+        self.show(1);
       });
     }
 
@@ -323,6 +324,11 @@
     show(n) {
       if (n < 1 || n > this.total) return;
       this.step = n;
+
+      // Render origin grid if on step 2 and loaded
+      if (n === 2 && Object.keys(this.origins).length > 0 && this.originGrid && this.originGrid.children.length === 0) {
+        this._renderOriginGrid();
+      }
 
       // Update step 3 based on origin
       if (n === 3 && this.selectedOrigin) {
