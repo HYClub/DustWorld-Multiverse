@@ -262,26 +262,14 @@ class WorldCard extends HTMLElement {
     var now = Date.now();
     var elapsed = (now - this._lastEvo) / 1000;
     if (elapsed >= SECONDS_PER_YEAR) {
-      clearInterval(this._countdownTimer);
-      this._countdownTimer = null;
-      if (this._pendingRefresh) return;
-      if (this._lastRefresh && now - this._lastRefresh < 30000) {
-        // Wait 30s before retrying
+      this._els.countdown.textContent = '⏳ 0s';
+      if (!this._pendingRefresh && (!this._lastRefresh || now - this._lastRefresh > 30000)) {
+        this._lastRefresh = now;
         this._pendingRefresh = true;
-        var self = this;
-        this._countdownTimer = setTimeout(function () {
-          self._countdownTimer = null;
-          self._pendingRefresh = false;
-          self._startCountdown();
-        }, 30000 - (now - this._lastRefresh));
-        return;
+        this.dispatchEvent(new CustomEvent('world-refresh', {
+          bubbles: true, composed: true, detail: { worldId: this._data.worldId }
+        }));
       }
-      this._lastRefresh = now;
-      this._pendingRefresh = true;
-      this._els.countdown.textContent = '⏳ 待演化';
-      this.dispatchEvent(new CustomEvent('world-refresh', {
-        bubbles: true, composed: true, detail: { worldId: this._data.worldId }
-      }));
       return;
     }
     this._els.countdown.style.color = '';
