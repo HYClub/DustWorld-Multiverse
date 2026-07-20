@@ -2,7 +2,7 @@
   "world_id": "world_mrszl5je_9ju4",
   "name": "地球",
   "era": "antiquity",
-  "year": 14,
+  "year": 24,
   "civilization": {
     "antiquity": {
       "civ": "han",
@@ -3786,79 +3786,79 @@
         "type": "food",
         "x": 44,
         "y": 25,
-        "amount": 71
+        "amount": 81
       },
       {
         "type": "food",
         "x": 56,
         "y": 58,
-        "amount": 69
+        "amount": 79
       },
       {
         "type": "wood",
         "x": 35,
         "y": 53,
-        "amount": 51.12
+        "amount": 0
       },
       {
         "type": "wood",
         "x": 30,
         "y": 24,
-        "amount": 87
+        "amount": 97
       },
       {
         "type": "ore",
         "x": 7,
         "y": 6,
-        "amount": 99
+        "amount": 100
       },
       {
         "type": "water",
         "x": 4,
         "y": 35,
-        "amount": 95
+        "amount": 100
       },
       {
         "type": "water",
         "x": 7,
         "y": 11,
-        "amount": 78
+        "amount": 88
       },
       {
         "type": "food",
         "x": 38,
         "y": 57,
-        "amount": 19.120000000000005
+        "amount": 0
       },
       {
         "type": "food",
         "x": 45,
         "y": 10,
-        "amount": 85
+        "amount": 95
       },
       {
         "type": "water",
         "x": 19,
         "y": 11,
-        "amount": 75
+        "amount": 85
       },
       {
         "type": "strategic",
         "x": 27,
         "y": 9,
-        "amount": 84
+        "amount": 94
       },
       {
         "type": "ore",
         "x": 20,
         "y": 28,
-        "amount": 91
+        "amount": 100
       },
       {
         "type": "ore",
         "x": 17,
         "y": 19,
-        "amount": 84
+        "amount": 94
       },
       {
         "type": "water",
@@ -3875,23 +3875,23 @@
       "name": "绿野镇",
       "x": 35,
       "y": 56,
-      "level": 2,
-      "population": 136,
-      "max_population": 200,
+      "level": 3,
+      "population": 187,
+      "max_population": 500,
       "tech_level": 2,
-      "culture": 90,
+      "culture": 290,
       "influence": 0,
       "health": 0.8,
       "stability": 0.7,
       "resources": {
-        "food": 22.273098816579797,
-        "wood": 89.88,
+        "food": 0,
+        "wood": 145.44,
         "ore": 8,
         "water": 0,
         "gold": 0
       },
       "buildings": [],
-      "specialization": null,
+      "specialization": "mining",
       "bonus_duration": 0,
       "curse_duration": 0,
       "discovery_bonus": 0,
@@ -3907,35 +3907,45 @@
   ],
   "active_events": [
     {
-      "id": "EVT54842",
-      "type": "golden_age",
+      "id": "EVT44730",
+      "type": "plague",
       "participants": [
         "SET001"
       ],
-      "remaining_years": 7,
-      "duration": 3,
-      "description": "绿野镇进入黄金时代！"
+      "remaining_years": 4,
+      "duration": 6,
+      "description": "绿野镇爆发瘟疫。"
+    },
+    {
+      "id": "EVT70529",
+      "type": "natural_disaster",
+      "participants": [
+        "SET001"
+      ],
+      "remaining_years": 6,
+      "duration": 4,
+      "description": "绿野镇遭受自然灾害。"
     }
   ],
   "trade_routes": [],
   "legacy": {
     "military": 0.7,
     "economic": 0,
-    "cultural": 0.7,
-    "scientific": 0.8499999999999999
+    "cultural": 3.499999999999999,
+    "scientific": 1.8500000000000005
   },
   "milestones": [],
   "stats": {
-    "total_population": 136,
+    "total_population": 187,
     "total_settlements": 1,
     "extinct_settlements": 0,
     "total_wars": 0,
     "tech_breakthroughs": 2,
-    "golden_ages": 2,
+    "golden_ages": 3,
     "dark_ages": 0
   },
   "created_at": "2026-07-20T08:52:39.627Z",
-  "updated_at": "2026-07-20T12:26:33.401Z",
+  "updated_at": "2026-07-20T14:50:44.605Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -3975,7 +3985,7 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-07-20T12:14:15.627Z",
+  "last_evolved_at": "2026-07-20T14:38:15.627Z",
   "history": [
     {
       "year": 2,
@@ -4024,6 +4034,54 @@
       "type": "golden_age",
       "title": "新事件",
       "description": "绿野镇进入黄金时代！"
+    },
+    {
+      "year": 17,
+      "type": "golden_age",
+      "title": "新事件",
+      "description": "绿野镇进入黄金时代！"
+    },
+    {
+      "year": 18,
+      "type": "settlement",
+      "title": "聚落升级",
+      "description": "绿野镇升级为城镇(mining)"
+    },
+    {
+      "year": 19,
+      "type": "cultural_boom",
+      "title": "新事件",
+      "description": "绿野镇迎来文化繁荣。"
+    },
+    {
+      "year": 20,
+      "type": "event",
+      "title": "事件结束",
+      "description": "绿野镇进入黄金时代！ 结束。"
+    },
+    {
+      "year": 21,
+      "type": "event",
+      "title": "事件结束",
+      "description": "绿野镇进入黄金时代！ 结束。"
+    },
+    {
+      "year": 21,
+      "type": "plague",
+      "title": "新事件",
+      "description": "绿野镇爆发瘟疫。"
+    },
+    {
+      "year": 24,
+      "type": "event",
+      "title": "事件结束",
+      "description": "绿野镇迎来文化繁荣。 结束。"
+    },
+    {
+      "year": 24,
+      "type": "natural_disaster",
+      "title": "新事件",
+      "description": "绿野镇遭受自然灾害。"
     }
   ]
 }
