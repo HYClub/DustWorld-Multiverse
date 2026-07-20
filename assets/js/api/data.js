@@ -57,7 +57,8 @@
         mapSize: state.mapSize || 40,
         techLevel: state.techLevel || 0,
         resources: state.resources || 'normal',
-        climate: state.climate || 'mild'
+        climate: state.climate || 'mild',
+        updatedAt: state.updated_at || state.created_at || ''
       };
     });
   };

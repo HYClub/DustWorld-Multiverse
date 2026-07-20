@@ -154,6 +154,7 @@
         card.setAttribute('settlements', String((world.stats && world.stats.total_settlements) || 0));
         card.setAttribute('likes', String(world.likes || 0));
         card.setAttribute('description', world.description || '');
+        card.setAttribute('updated-at', world.updatedAt || '');
         if (world.terrain && world.terrain.tiles) {
           card.setAttribute('terrain', JSON.stringify(world.terrain.tiles));
         }
