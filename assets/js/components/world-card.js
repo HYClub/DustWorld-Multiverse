@@ -1,6 +1,6 @@
-var STYLES = '\n    :host {\n      display: block;\n    }\n    .card {\n      background: var(--bg-card, rgba(20, 20, 40, 0.8));\n      border-radius: var(--radius-lg, 12px);\n      box-shadow: var(--shadow-sm, 0 2px 8px rgba(0,0,0,0.3));\n      backdrop-filter: blur(10px);\n      -webkit-backdrop-filter: blur(10px);\n      border: 1px solid rgba(255,255,255,0.04);\n      transition: all 0.3s ease;\n      overflow: hidden;\n      cursor: pointer;\n      position: relative;\n    }\n    .card:hover {\n      transform: translateY(-4px);\n      box-shadow: var(--shadow-md, 0 4px 16px rgba(0,0,0,0.4));\n      background: var(--bg-card-hover, rgba(30, 30, 60, 0.9));\n    }\n    .thumbnail {\n      width: 100%;\n      height: 140px;\n      background: var(--bg-secondary, #141428);\n      position: relative;\n      overflow: hidden;\n    }\n    .thumbnail canvas {\n      width: 100%;\n      height: 100%;\n      image-rendering: pixelated;\n      transition: transform 0.3s ease;\n    }\n    .card:hover .thumbnail canvas {\n      transform: scale(1.05);\n    }\n    .thumbnail-placeholder {\n      width: 100%;\n      height: 100%;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      font-size: 48px;\n      opacity: 0.3;\n    }\n    .body {\n      padding: var(--spacing-md, 16px);\n    }\n    .name {\n      font-size: 18px;\n      font-weight: 700;\n      color: var(--text-primary, #e0e0e0);\n      margin-bottom: var(--spacing-xs, 4px);\n      overflow: hidden;\n      text-overflow: ellipsis;\n      white-space: nowrap;\n    }\n    .creator {\n      display: flex;\n      align-items: center;\n      gap: var(--spacing-xs, 4px);\n      font-size: 13px;\n      color: var(--text-secondary, #8888aa);\n      margin-bottom: var(--spacing-xs, 4px);\n    }\n    .creator-avatar {\n      width: 18px;\n      height: 18px;\n      border-radius: 50%;\n      background: var(--text-muted, #555577);\n      overflow: hidden;\n      flex-shrink: 0;\n    }\n    .creator-avatar img {\n      width: 100%;\n      height: 100%;\n      object-fit: cover;\n    }\n    .meta {\n      display: flex;\n      align-items: center;\n      justify-content: space-between;\n      font-size: 13px;\n      color: var(--text-secondary, #8888aa);\n      margin: var(--spacing-xs, 4px) 0;\n    }\n    .era-track {\n      width: 100%;\n      height: 3px;\n      background: rgba(255,255,255,0.06);\n      border-radius: 2px;\n      margin-bottom: var(--spacing-xs, 4px);\n      overflow: hidden;\n    }\n    .era-track-fill {\n      height: 100%;\n      border-radius: 2px;\n      transition: width 0.5s ease;\n    }\n    .era-tag {\n      padding: 2px 10px;\n      border-radius: 10px;\n      font-size: 12px;\n      font-weight: 600;\n      color: #fff;\n    }\n    .stats {\n      display: flex;\n      align-items: center;\n      gap: var(--spacing-md, 16px);\n      margin-top: var(--spacing-xs, 4px);\n      font-size: 14px;\n      color: var(--text-secondary, #8888aa);\n    }\n    .like-btn {\n      margin-left: auto;\n      background: none;\n      border: none;\n      cursor: pointer;\n      color: var(--text-muted, #555577);\n      font-size: 14px;\n      padding: 4px 8px;\n      border-radius: 6px;\n      transition: all 0.2s;\n      display: flex;\n      align-items: center;\n      gap: 4px;\n    }\n    .like-btn:hover {\n      background: rgba(255, 100, 100, 0.1);\n    }\n    .like-btn.liked {\n      color: #ff4757;\n    }\n    .heart-icon {\n      font-size: 16px;\n    }\n    .stat-item {\n      display: flex;\n      align-items: center;\n      gap: 4px;\n    }\n  ';
+var STYLES = '\n    :host {\n      display: block;\n    }\n    .card {\n      background: var(--bg-card, rgba(20, 20, 40, 0.8));\n      border-radius: var(--radius-lg, 12px);\n      box-shadow: var(--shadow-sm, 0 2px 8px rgba(0,0,0,0.3));\n      backdrop-filter: blur(10px);\n      -webkit-backdrop-filter: blur(10px);\n      border: 1px solid rgba(255,255,255,0.04);\n      transition: all 0.3s ease;\n      overflow: hidden;\n      cursor: pointer;\n      position: relative;\n    }\n    .card:hover {\n      transform: translateY(-4px);\n      box-shadow: var(--shadow-md, 0 4px 16px rgba(0,0,0,0.4));\n      background: var(--bg-card-hover, rgba(30, 30, 60, 0.9));\n    }\n    .thumbnail {\n      width: 100%;\n      height: 140px;\n      background: var(--bg-secondary, #141428);\n      position: relative;\n      overflow: hidden;\n    }\n    .thumbnail canvas {\n      width: 100%;\n      height: 100%;\n      image-rendering: pixelated;\n      transition: transform 0.3s ease;\n    }\n    .card:hover .thumbnail canvas {\n      transform: scale(1.05);\n    }\n    .thumbnail-placeholder {\n      width: 100%;\n      height: 100%;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      font-size: 48px;\n      opacity: 0.3;\n    }\n    .body {\n      padding: var(--spacing-md, 16px);\n    }\n    .name {\n      font-size: 18px;\n      font-weight: 700;\n      color: var(--text-primary, #e0e0e0);\n      margin-bottom: var(--spacing-xs, 4px);\n      overflow: hidden;\n      text-overflow: ellipsis;\n      white-space: nowrap;\n    }\n    .creator {\n      display: flex;\n      align-items: center;\n      gap: var(--spacing-xs, 4px);\n      font-size: 13px;\n      color: var(--text-secondary, #8888aa);\n      margin-bottom: var(--spacing-xs, 4px);\n    }\n    .creator-avatar {\n      width: 18px;\n      height: 18px;\n      border-radius: 50%;\n      background: var(--text-muted, #555577);\n      overflow: hidden;\n      flex-shrink: 0;\n    }\n    .creator-avatar img {\n      width: 100%;\n      height: 100%;\n      object-fit: cover;\n    }\n    .meta {\n      display: flex;\n      align-items: center;\n      justify-content: space-between;\n      font-size: 13px;\n      color: var(--text-secondary, #8888aa);\n      margin: var(--spacing-xs, 4px) 0;\n    }\n    .era-track {\n      width: 100%;\n      height: 3px;\n      background: rgba(255,255,255,0.06);\n      border-radius: 2px;\n      margin-bottom: var(--spacing-xs, 4px);\n      overflow: hidden;\n    }\n    .era-track-fill {\n      height: 100%;\n      border-radius: 2px;\n      transition: width 0.5s ease;\n    }\n    .countdown {\n      font-size: 11px;\n      color: var(--color-primary-light, #6c5ce7);\n      font-family: var(--font-mono, monospace);\n      white-space: nowrap;\n      margin-right: 8px;\n    }\n    .era-tag {\n      padding: 2px 10px;\n      border-radius: 10px;\n      font-size: 12px;\n      font-weight: 600;\n      color: #fff;\n    }\n    .stats {\n      display: flex;\n      align-items: center;\n      gap: var(--spacing-md, 16px);\n      margin-top: var(--spacing-xs, 4px);\n      font-size: 14px;\n      color: var(--text-secondary, #8888aa);\n    }\n    .like-btn {\n      margin-left: auto;\n      background: none;\n      border: none;\n      cursor: pointer;\n      color: var(--text-muted, #555577);\n      font-size: 14px;\n      padding: 4px 8px;\n      border-radius: 6px;\n      transition: all 0.2s;\n      display: flex;\n      align-items: center;\n      gap: 4px;\n    }\n    .like-btn:hover {\n      background: rgba(255, 100, 100, 0.1);\n    }\n    .like-btn.liked {\n      color: #ff4757;\n    }\n    .heart-icon {\n      font-size: 16px;\n    }\n    .stat-item {\n      display: flex;\n      align-items: center;\n      gap: 4px;\n    }\n  ';
 
-var TEMPLATE = '\n    <div class="card">\n      <div class="thumbnail" id="thumbnail">\n        <div class="thumbnail-placeholder" id="placeholder">&#x1f30d;</div>\n        <canvas id="map-canvas" style="display:none;"></canvas>\n      </div>\n      <div class="body">\n        <div class="name" id="card-name">\u2014</div>\n        <div class="creator">\n          <div class="creator-avatar"><img id="creator-img" src="" alt=""></div>\n          <span id="creator-name">\u2014</span>\n        </div>\n        <div class="meta">\n          <span id="card-year">\u7b2c 0 \u5e74</span>\n          <span class="era-tag" id="card-era-tag">\u539f\u59cb\u65f6\u4ee3</span>\n        </div>\n        <div class="era-track">\n          <div class="era-track-fill" id="era-track-fill" style="width:0%"></div>\n        </div>\n        <div class="stats">\n          <span class="stat-item">&#x1f3d8;&#xfe0f; <span id="card-settlements">0</span></span>\n          <span class="stat-item">&#x1f465; <span id="card-population">0</span></span>\n          <span class="updated-at" id="card-updated"></span>\n          <button class="like-btn" id="like-btn">\n            <span class="heart-icon" id="heart-icon">&#x2764;</span>\n            <span id="like-count">0</span>\n          </button>\n        </div>\n      </div>\n    </div>\n  ';
+var TEMPLATE = '\n    <div class="card">\n      <div class="thumbnail" id="thumbnail">\n        <div class="thumbnail-placeholder" id="placeholder">&#x1f30d;</div>\n        <canvas id="map-canvas" style="display:none;"></canvas>\n      </div>\n      <div class="body">\n        <div class="name" id="card-name">\u2014</div>\n        <div class="creator">\n          <div class="creator-avatar"><img id="creator-img" src="" alt=""></div>\n          <span id="creator-name">\u2014</span>\n        </div>\n        <div class="meta">\n          <span id="card-year">\u7b2c 0 \u5e74</span>\n          <span class="era-tag" id="card-era-tag">\u539f\u59cb\u65f6\u4ee3</span>\n        </div>\n        <div class="era-track">\n          <div class="era-track-fill" id="era-track-fill" style="width:0%"></div>\n        </div>\n        <div class="stats">\n          <span class="stat-item">&#x1f3d8;&#xfe0f; <span id="card-settlements">0</span></span>\n          <span class="stat-item">&#x1f465; <span id="card-population">0</span></span>\n          <span class="countdown" id="card-countdown"></span>\n          <span class="updated-at" id="card-updated"></span>\n          <button class="like-btn" id="like-btn">\n            <span class="heart-icon" id="heart-icon">&#x2764;</span>\n            <span id="like-count">0</span>\n          </button>\n        </div>\n      </div>\n    </div>\n  ';
 
 class WorldCard extends HTMLElement {
   constructor() {
@@ -17,6 +17,7 @@ class WorldCard extends HTMLElement {
 
   disconnectedCallback() {
     this._removeEvents();
+    this._clearCountdown();
   }
 
   _render() {
@@ -52,6 +53,7 @@ class WorldCard extends HTMLElement {
       eraTrackFill: shadow.getElementById('era-track-fill'),
       settlements: shadow.getElementById('card-settlements'),
       population: shadow.getElementById('card-population'),
+      countdown: shadow.getElementById('card-countdown'),
       updated: shadow.getElementById('card-updated'),
       likeBtn: shadow.getElementById('like-btn'),
       heartIcon: shadow.getElementById('heart-icon'),
@@ -125,6 +127,8 @@ class WorldCard extends HTMLElement {
     if (els.updated && d.updatedAt) {
       els.updated.textContent = this._relativeTime(d.updatedAt);
     }
+    // Start countdown timer for evolution
+    this._startCountdown();
     if (els.settlements) els.settlements.textContent = this._formatNum(d.settlements);
     if (els.population) els.population.textContent = this._formatNum(d.population);
     var likes = parseInt(d.likes, 10) || 0;
@@ -235,6 +239,47 @@ class WorldCard extends HTMLElement {
       iron: '#708090', steam: '#B0C4DE', electric: '#FFD700', info: '#00CED1'
     };
     return colors[key] || '#8B7355';
+  }
+
+  _startCountdown() {
+    var self = this;
+    if (this._countdownTimer) return;
+    this._countdownSeconds = 20 + Math.floor(Math.random() * 40);
+    this._updateCountdown();
+    this._countdownTimer = setInterval(function () {
+      self._countdownSeconds--;
+      self._updateCountdown();
+      if (self._countdownSeconds <= 0) {
+        clearInterval(self._countdownTimer);
+        self._countdownTimer = null;
+        self.dispatchEvent(new CustomEvent('world-evolve', {
+          bubbles: true, composed: true, detail: { worldId: self._data.worldId }
+        }));
+      }
+    }, 1000);
+  }
+
+  _updateCountdown() {
+    if (this._els && this._els.countdown) {
+      var s = this._countdownSeconds || 0;
+      if (s <= 5) {
+        this._els.countdown.textContent = '⚡ ' + s + 's';
+        this._els.countdown.style.color = '#ff4757';
+      } else {
+        this._els.countdown.textContent = '⏳ ' + s + 's';
+        this._els.countdown.style.color = '';
+      }
+    }
+  }
+
+  _clearCountdown() {
+    if (this._countdownTimer) {
+      clearInterval(this._countdownTimer);
+      this._countdownTimer = null;
+    }
+    if (this._els && this._els.countdown) {
+      this._els.countdown.textContent = '';
+    }
   }
 
   _attachEvents() {

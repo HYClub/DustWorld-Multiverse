@@ -194,6 +194,28 @@
         }
       });
 
+      card.addEventListener('world-evolve', function (e) {
+        var detail = e.detail || {};
+        if (!detail.worldId) return;
+        var dm = window.DataManager;
+        if (dm && typeof dm.evolveWorld === 'function') {
+          card._clearCountdown();
+          dm.evolveWorld(detail.worldId).then(function (result) {
+            card.update({
+              year: String(result.year),
+              era: result.era,
+              population: String(result.population || 0),
+              settlements: String(result.settlements || 0),
+              updatedAt: result.updatedAt || ''
+            });
+            world.year = result.year;
+            world.era = result.era;
+          }).catch(function () {
+            card._clearCountdown();
+          });
+        }
+      });
+
       return card;
     }
 

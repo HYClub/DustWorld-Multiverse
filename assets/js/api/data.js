@@ -242,6 +242,31 @@
     });
   };
 
+  DataManager.prototype.evolveWorld = function (worldId) {
+    var self = this;
+    return this.api.getWorldState(worldId).then(function (state) {
+      if (!state) throw new Error('World not found');
+      var config = state.config || {};
+      var engine = new window.WorldEngine(config, state);
+      engine._initialized = true;
+      var steps = 1 + Math.floor(Math.random() * 3);
+      for (var i = 0; i < steps; i++) engine.evolve();
+      var newState = engine.getState();
+      newState.config = config;
+      return self.api.updateWorldState(worldId, newState).then(function () {
+        self.invalidateCache('worldList');
+        self.invalidateCache('world_' + worldId);
+        return {
+          year: newState.year,
+          era: newState.era,
+          population: newState.stats.total_population,
+          settlements: newState.stats.total_settlements,
+          updatedAt: newState.updated_at
+        };
+      });
+    });
+  };
+
   DataManager.prototype.submitIntervention = function (worldId, intervention) {
     return this.api.submitIntervention(worldId, intervention);
   };
