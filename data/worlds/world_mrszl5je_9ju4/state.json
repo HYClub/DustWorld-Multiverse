@@ -2,7 +2,7 @@
   "world_id": "world_mrszl5je_9ju4",
   "name": "地球",
   "era": "antiquity",
-  "year": 8,
+  "year": 11,
   "civilization": {
     "antiquity": {
       "civ": "han",
@@ -3786,79 +3786,79 @@
         "type": "food",
         "x": 44,
         "y": 25,
-        "amount": 65
+        "amount": 68
       },
       {
         "type": "food",
         "x": 56,
         "y": 58,
-        "amount": 63
+        "amount": 66
       },
       {
         "type": "wood",
         "x": 35,
         "y": 53,
-        "amount": 84.18
+        "amount": 71.7
       },
       {
         "type": "wood",
         "x": 30,
         "y": 24,
-        "amount": 81
+        "amount": 84
       },
       {
         "type": "ore",
         "x": 7,
         "y": 6,
-        "amount": 93
+        "amount": 96
       },
       {
         "type": "water",
         "x": 4,
         "y": 35,
-        "amount": 89
+        "amount": 92
       },
       {
         "type": "water",
         "x": 7,
         "y": 11,
-        "amount": 72
+        "amount": 75
       },
       {
         "type": "food",
         "x": 38,
         "y": 57,
-        "amount": 52.18
+        "amount": 39.7
       },
       {
         "type": "food",
         "x": 45,
         "y": 10,
-        "amount": 79
+        "amount": 82
       },
       {
         "type": "water",
         "x": 19,
         "y": 11,
-        "amount": 69
+        "amount": 72
       },
       {
         "type": "strategic",
         "x": 27,
         "y": 9,
-        "amount": 78
+        "amount": 81
       },
       {
         "type": "ore",
         "x": 20,
         "y": 28,
-        "amount": 85
+        "amount": 88
       },
       {
         "type": "ore",
         "x": 17,
         "y": 19,
-        "amount": 78
+        "amount": 81
       },
       {
         "type": "water",
@@ -3876,18 +3876,18 @@
       "x": 35,
       "y": 56,
       "level": 2,
-      "population": 77,
+      "population": 121,
       "max_population": 200,
-      "tech_level": 1,
-      "culture": 0,
+      "tech_level": 2,
+      "culture": 50,
       "influence": 0,
       "health": 0.8,
       "stability": 0.7,
       "resources": {
-        "food": 47.221667357630594,
-        "wood": 50.82,
+        "food": 35.41809760619023,
+        "wood": 66.3,
         "ore": 8,
-        "water": 22.649999999999995,
+        "water": 9.749999999999993,
         "gold": 0
       },
       "buildings": [],
@@ -3905,26 +3905,47 @@
       "trade_partners": []
     }
   ],
-  "active_events": [],
+  "active_events": [
+    {
+      "id": "EVT54189",
+      "type": "golden_age",
+      "participants": [
+        "SET001"
+      ],
+      "remaining_years": 2,
+      "duration": 8,
+      "description": "绿野镇进入黄金时代！"
+    },
+    {
+      "id": "EVT35703",
+      "type": "cultural_boom",
+      "participants": [
+        "SET001"
+      ],
+      "remaining_years": 3,
+      "duration": 3,
+      "description": "绿野镇迎来文化繁荣。"
+    }
+  ],
   "trade_routes": [],
   "legacy": {
     "military": 0.7,
     "economic": 0,
-    "cultural": 0,
-    "scientific": 0.35
+    "cultural": 0.30000000000000004,
+    "scientific": 0.5499999999999999
   },
   "milestones": [],
   "stats": {
-    "total_population": 77,
+    "total_population": 121,
     "total_settlements": 1,
     "extinct_settlements": 0,
     "total_wars": 0,
-    "tech_breakthroughs": 1,
-    "golden_ages": 0,
+    "tech_breakthroughs": 2,
+    "golden_ages": 1,
     "dark_ages": 0
   },
   "created_at": "2026-07-20T08:52:39.627Z",
-  "updated_at": "2026-07-20T10:55:42.599Z",
+  "updated_at": "2026-07-20T11:35:46.301Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -3964,7 +3985,7 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-07-20T10:47:51.627Z",
+  "last_evolved_at": "2026-07-20T11:31:03.627Z",
   "history": [
     {
       "year": 2,
@@ -3977,6 +3998,24 @@
       "type": "milestone",
       "title": "世界末日",
       "description": "因高维度未知力量于 2026/7/20 19:00:46 被毁灭。"
+    },
+    {
+      "year": 9,
+      "type": "golden_age",
+      "title": "新事件",
+      "description": "绿野镇进入黄金时代！"
+    },
+    {
+      "year": 10,
+      "type": "cultural_boom",
+      "title": "新事件",
+      "description": "绿野镇迎来文化繁荣。"
+    },
+    {
+      "year": 11,
+      "type": "tech",
+      "title": "科技突破",
+      "description": "绿野镇进入青铜！"
     }
   ]
 }
