@@ -280,11 +280,32 @@
     });
   };
 
+  GitHubAPI.prototype._deleteFile = function (path, sha, message) {
+    return this.request('/repos/' + this.owner + '/' + this.repo + '/contents/' + path, {
+      method: 'DELETE',
+      body: { message: message || '删除文件', sha: sha, branch: 'master' }
+    });
+  };
+
+  GitHubAPI.prototype.deleteWorld = function (worldId) {
+    if (!this._hasToken()) return Promise.reject(new Error('Not authenticated'));
+    var self = this;
+    var statePath = 'data/worlds/' + worldId + '/state.json';
+    var configPath = 'data/worlds/' + worldId + '/config.json';
+    return this._getFileSha(statePath).then(function (stateSha) {
+      if (!stateSha) return;
+      return self._getFileSha(configPath).then(function (configSha) {
+        var msg = '毁灭世界: ' + worldId;
+        return self._deleteFile(statePath, stateSha, msg).then(function () {
+          if (configSha) return self._deleteFile(configPath, configSha, msg);
+        });
+      });
+    });
+  };
+
   GitHubAPI.prototype.getWorldListFromDirectory = function () {
     return this.getWorldList();
   };
-
-  /* getDemo* stubs removed */
 
   window.GitHubAPI = GitHubAPI;
 })();

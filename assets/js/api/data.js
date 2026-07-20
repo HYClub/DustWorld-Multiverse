@@ -194,6 +194,15 @@
     });
   };
 
+  DataManager.prototype.deleteWorld = function (worldId) {
+    if (!this.api) return Promise.reject(new Error('No API'));
+    var self = this;
+    return this.api.deleteWorld(worldId).then(function () {
+      self.invalidateCache('worldList');
+      self.invalidateCache('world_' + worldId);
+    });
+  };
+
   DataManager.prototype.getUserWorlds = function () {
     var self = this;
     return this.getWorldList().then(function (worlds) {

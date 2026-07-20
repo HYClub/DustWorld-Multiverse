@@ -140,9 +140,25 @@
       var createCard = this.myWorldsGrid && this.myWorldsGrid.querySelector('.world-card-create');
       if (createCard) createCard.remove();
 
+      var self = this;
       for (var k = 0; k < worlds.length; k++) {
         var card = this._createWorldCardElement(worlds[k]);
-        if (this.myWorldsGrid) this.myWorldsGrid.appendChild(card);
+        var wrapper = document.createElement('div');
+        wrapper.className = 'world-card-wrapper';
+        wrapper.appendChild(card);
+        // Delete button
+        var delBtn = document.createElement('button');
+        delBtn.className = 'world-card-delete-btn';
+        delBtn.textContent = '✕';
+        delBtn.title = '毁灭世界';
+        (function (w) {
+          delBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            self._confirmDeleteWorld(w);
+          });
+        })(worlds[k]);
+        wrapper.appendChild(delBtn);
+        if (this.myWorldsGrid) this.myWorldsGrid.appendChild(wrapper);
       }
 
       var newCard = document.createElement('div');
@@ -294,6 +310,88 @@
           }
         });
       }
+    }
+
+    _confirmDeleteWorld(world) {
+      var self = this;
+      var dm = window.DataManager;
+      if (!dm || typeof dm.getWorld !== 'function') { window.Toast.error('数据服务不可用'); return; }
+
+      dm.getWorld(world.world_id).then(function (fullState) {
+        if (!fullState) { window.Toast.error('无法读取世界数据'); return; }
+
+        var name = fullState.name || world.name || '未知世界';
+        var year = fullState.year || 0;
+        var era = fullState.era || 'primitive';
+        var eraName = ({ antiquity: '古典', exploration: '探索', modern: '现代' })[era] || era;
+        var pop = fullState.stats ? fullState.stats.total_population : 0;
+        var setts = fullState.settlements ? fullState.settlements.length : 0;
+        var wars = fullState.stats ? fullState.stats.total_wars : 0;
+        var techs = fullState.stats ? fullState.stats.tech_breakthroughs : 0;
+        var historyCount = fullState.history ? fullState.history.length : 0;
+        var extinct = fullState.stats ? fullState.stats.extinct_settlements : 0;
+        var created = fullState.created_at ? new Date(fullState.created_at).toLocaleString('zh-CN') : '未知';
+        var destroyed = new Date().toLocaleString('zh-CN');
+
+        var summary =
+          '<div style="text-align:left;font-size:14px;line-height:1.8;">' +
+          '<p style="font-size:18px;font-weight:700;text-align:center;margin-bottom:12px;color:var(--color-danger);">⚠️ 即将毁灭 ' + name + '</p>' +
+          '<div style="background:rgba(255,255,255,0.03);border-radius:8px;padding:12px;margin-bottom:12px;">' +
+          '<div style="display:flex;justify-content:space-between;padding:2px 0;"><span style="color:var(--text-muted);">时代</span><span>' + eraName + '</span></div>' +
+          '<div style="display:flex;justify-content:space-between;padding:2px 0;"><span style="color:var(--text-muted);">年份</span><span>' + year + '年</span></div>' +
+          '<div style="display:flex;justify-content:space-between;padding:2px 0;"><span style="color:var(--text-muted);">总人口</span><span>' + (window.helpers.formatNumber ? window.helpers.formatNumber(pop) : pop) + '</span></div>' +
+          '<div style="display:flex;justify-content:space-between;padding:2px 0;"><span style="color:var(--text-muted);">聚落</span><span>' + setts + '</span></div>' +
+          '<div style="display:flex;justify-content:space-between;padding:2px 0;"><span style="color:var(--text-muted);">战争</span><span>' + wars + ' 次</span></div>' +
+          '<div style="display:flex;justify-content:space-between;padding:2px 0;"><span style="color:var(--text-muted);">科技突破</span><span>' + techs + ' 项</span></div>' +
+          '<div style="display:flex;justify-content:space-between;padding:2px 0;"><span style="color:var(--text-muted);">灭绝聚落</span><span>' + extinct + '</span></div>' +
+          '<div style="display:flex;justify-content:space-between;padding:2px 0;"><span style="color:var(--text-muted);">编年史条目</span><span>' + historyCount + ' 条</span></div>' +
+          '<div style="display:flex;justify-content:space-between;padding:2px 0;"><span style="color:var(--text-muted);">创世时间</span><span>' + created + '</span></div>' +
+          '</div>' +
+          '<p style="text-align:center;color:var(--color-danger);font-size:15px;font-weight:600;padding:8px;">因高维度未知力量 于 ' + destroyed + ' 被毁灭</p>' +
+          '<p style="text-align:center;color:var(--text-muted);font-size:12px;">此操作不可撤销</p>' +
+          '</div>';
+
+        var modal = window.Modal.show({
+          title: '确认毁灭',
+          content: summary,
+          confirmText: '确认毁灭',
+          cancelText: '取消',
+          width: '480px'
+        });
+
+        modal.onConfirm(function () {
+          // Add destruction event to history
+          var destEvent = {
+            year: fullState.year || 0,
+            type: 'milestone',
+            title: '世界末日',
+            description: '因高维度未知力量于 ' + destroyed + ' 被毁灭。'
+          };
+          if (!fullState.history) fullState.history = [];
+          fullState.history.push(destEvent);
+          // Update state with final entry
+          dm.updateWorld(world.world_id, fullState).then(function () {
+            // Now delete the world files
+            return dm.deleteWorld(world.world_id);
+          }).then(function () {
+            window.Toast.success('世界「' + name + '」已毁灭', 4000);
+            // Refresh the list
+            if (self.myWorldsGrid) {
+              self.myWorldsGrid.innerHTML = '';
+              var createCard = document.createElement('div');
+              createCard.className = 'world-card-create';
+              createCard.innerHTML = '<div class="world-card-create-icon">+</div><div class="world-card-create-text">创建新世界</div>';
+              createCard.addEventListener('click', function () { window.location.hash = '#/create'; });
+              self.myWorldsGrid.appendChild(createCard);
+            }
+            self.loadCreatedWorlds();
+          }).catch(function (e) {
+            window.Toast.error('毁灭失败: ' + (e.message || '未知错误'));
+          });
+        });
+      }).catch(function (e) {
+        window.Toast.error('无法读取世界数据: ' + (e.message || '未知错误'));
+      });
     }
 
     destroy() {
