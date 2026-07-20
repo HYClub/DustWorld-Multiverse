@@ -10,15 +10,33 @@ permissions:
   issues: read
 
 jobs:
-  evolve:
+  list-worlds:
     runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.get-worlds.outputs.matrix }}
     steps:
       - uses: actions/checkout@v4
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: List worlds
+        id: get-worlds
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          WORLDS=$(gh api repos/${{ github.repository }}/contents/data/worlds --jq '[.[].name]' 2>/dev/null || echo '[]')
+          echo "matrix={\"world\":$WORLDS}" >> "$GITHUB_OUTPUT"
+          echo "Found $(echo $WORLDS | jq 'length') worlds"
+
+  evolve:
+    needs: list-worlds
+    if: ${{ fromJSON(needs.list-worlds.outputs.matrix).world[0] != '' }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix: ${{ fromJSON(needs.list-worlds.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - name: Run evolution
-        run: node scripts/evolve-all.js
+      - name: Evolve ${{ matrix.world }}
+        run: node scripts/evolve-one.js ${{ matrix.world }}
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}
