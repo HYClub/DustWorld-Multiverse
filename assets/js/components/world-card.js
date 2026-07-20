@@ -185,6 +185,12 @@ class WorldCard extends HTMLElement {
     }
     els.canvas.style.display = '';
     if (els.placeholder) els.placeholder.style.display = 'none';
+    if (els.thumbnail) {
+      var t = this._data.name || '';
+      var pop = parseInt(this._data.population, 10) || 0;
+      var setts = parseInt(this._data.settlements, 10) || 0;
+      els.thumbnail.title = t + ' | 👥 ' + this._formatNum(pop) + ' 🏘️ ' + setts;
+    }
   }
 
   _getSeededRandom(seed) {
