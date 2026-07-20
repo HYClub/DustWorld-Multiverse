@@ -8,11 +8,13 @@
     <div class="wizard-steps" id="wizard-steps">
       <div class="ws-item" data-step="1"><span class="ws-dot">1</span><span class="ws-label">世界</span></div>
       <div class="ws-line"></div>
-      <div class="ws-item" data-step="2"><span class="ws-dot">2</span><span class="ws-label">文明</span></div>
+      <div class="ws-item" data-step="2"><span class="ws-dot">2</span><span class="ws-label">起源</span></div>
       <div class="ws-line"></div>
-      <div class="ws-item" data-step="3"><span class="ws-dot">3</span><span class="ws-label">参数</span></div>
+      <div class="ws-item" data-step="3"><span class="ws-dot">3</span><span class="ws-label">物种</span></div>
       <div class="ws-line"></div>
-      <div class="ws-item" data-step="4"><span class="ws-dot">4</span><span class="ws-label">创世</span></div>
+      <div class="ws-item" data-step="4"><span class="ws-dot">4</span><span class="ws-label">参数</span></div>
+      <div class="ws-line"></div>
+      <div class="ws-item" data-step="5"><span class="ws-dot">5</span><span class="ws-label">创世</span></div>
     </div>
 
     <div class="wizard-body" id="wizard-body">
@@ -29,19 +31,26 @@
         </div>
       </div>
 
-      <!-- Step 2: Choose Civilization -->
+      <!-- Step 2: Choose Origin -->
       <div class="ws-pane" data-step="2">
-        <div class="ws-pane-icon">🏛️</div>
-        <h2 class="ws-pane-title">选择文明</h2>
-        <p class="ws-pane-desc">古典时代的先民将奠定你文明的根基</p>
-        <div class="civ-grid" id="civ-grid">
-          <!-- Civ cards rendered by JS -->
-        </div>
+        <div class="ws-pane-icon">🌌</div>
+        <h2 class="ws-pane-title">创世起源</h2>
+        <p class="ws-pane-desc">你的世界从何开始？不同的起点通向不同的命运</p>
+        <div class="origin-grid" id="origin-grid"></div>
+        <div id="origin-detail" style="margin-top:12px;"></div>
+      </div>
+
+      <!-- Step 3: Choose Civilization / Species -->
+      <div class="ws-pane" data-step="3">
+        <div class="ws-pane-icon" id="step3-icon">🏛️</div>
+        <h2 class="ws-pane-title" id="step3-title">选择文明</h2>
+        <p class="ws-pane-desc" id="step3-desc">古典时代的先民将奠定你文明的根基</p>
+        <div class="civ-grid" id="civ-grid"></div>
         <div id="leader-info" style="margin-top:12px;"></div>
       </div>
 
-      <!-- Step 3: Parameters -->
-      <div class="ws-pane" data-step="3">
+      <!-- Step 4: Parameters -->
+      <div class="ws-pane" data-step="4">
         <div class="ws-pane-icon">⚙️</div>
         <h2 class="ws-pane-title">世界参数</h2>
         <p class="ws-pane-desc">全部 31 项参数，塑造独一无二的文明</p>
@@ -133,14 +142,15 @@
         </div>
       </div>
 
-      <!-- Step 4: Summary -->
-      <div class="ws-pane" data-step="4">
+      <!-- Step 5: Summary -->
+      <div class="ws-pane" data-step="5">
         <div class="ws-pane-icon">✅</div>
         <h2 class="ws-pane-title">确认创世</h2>
         <p class="ws-pane-desc">检查设定，见证文明的诞生</p>
         <div class="wizard-summary" id="wizard-summary">
           <div class="ws-row"><span>世界名称</span><span id="summary-name">-</span></div>
           <div class="ws-row"><span>世界描述</span><span id="summary-desc">-</span></div>
+          <div class="ws-row"><span>创世起源</span><span id="summary-origin">-</span></div>
           <div class="ws-row" style="border-top:1px solid rgba(255,255,255,0.06);padding-top:8px;margin-top:4px;"><span style="font-weight:700;color:var(--color-primary-light)">🏛️ 文明</span><span id="summary-civ">-</span></div>
           <div class="ws-row"><span>元首</span><span id="summary-leader">-</span></div>
           <div class="ws-row"><span>文明能力</span><span id="summary-civ-ability">-</span></div>

@@ -1,0 +1,253 @@
+{
+  "history": {
+    "id": "history",
+    "name": "历史",
+    "icon": "📜",
+    "description": "从古典时代起，18 种真实文明沿着历史的轨迹发展。从华夏的丝绸之路到罗马的帝国扩张，每个文明都有自己的领袖、能力和命运。",
+    "unlocked": true,
+    "species": [],
+    "default_params": {},
+    "skip_civ_selection": false,
+    "first_chronicle": "{civ_name}文明在{leader}的带领下，于{year}年在{world_desc}上崛起。历史从此书写。"
+  },
+  "evolution": {
+    "id": "evolution",
+    "name": "自然演化",
+    "icon": "🧬",
+    "description": "从原始汤中的第一个分子开始，亿万年的自然选择塑造出不可思议的智慧物种。环境决定命运，适者生存。",
+    "unlocked": true,
+    "skip_civ_selection": true,
+    "extra_params": {
+      "evo_speed": { "label": "演化速度", "options": ["slow", "normal", "fast"], "default": "normal" },
+      "env_harshness": { "label": "环境严酷度", "options": ["mild", "moderate", "harsh"], "default": "moderate" }
+    },
+    "first_chronicle": "在原始的海洋中，第一个能够自我复制的分子诞生了。经过了亿万年的自然选择，{species_name}这个物种最终站了起来，开始书写自己的历史。",
+    "species": [
+      {
+        "id": "human_evo",
+        "name": "人类",
+        "icon": "🧑",
+        "desc": "均衡发展的智慧物种，适应力强，没有明显短板。",
+        "bonuses": { "growth_rate": 1.1, "stability": 0.05 },
+        "flavor": {
+          "settlement_suffix": "城",
+          "leader_title": "首领",
+          "tech_names": ["石器", "青铜", "铁器", "蒸汽", "电力", "原子", "信息"]
+        }
+      },
+      {
+        "id": "lizardfolk",
+        "name": "蜥蜴人",
+        "icon": "🦎",
+        "desc": "冷血的生存专家，在严酷环境中磨练出强大的战斗力。",
+        "bonuses": { "military_multiply": 1.4, "health_bonus": 0.2, "stability": 0.1, "culture_multiply": 0.8, "tech_multiply": 0.9 },
+        "flavor": {
+          "settlement_suffix": "巢",
+          "leader_title": "酋长",
+          "tech_names": ["燧石", "铜爪", "钢鳞", "蒸汽机", "内燃", "等离子", "基因"]
+        }
+      },
+      {
+        "id": "avians",
+        "name": "鸟人",
+        "icon": "🕊️",
+        "desc": "翱翔于天际的艺术家，视野广阔，文化繁荣。",
+        "bonuses": { "culture_multiply": 1.4, "trade_income": 1.3, "military_multiply": 0.8, "population_growth": 0.85 },
+        "flavor": {
+          "settlement_suffix": "巢",
+          "leader_title": "长老",
+          "tech_names": ["枝编", "羽书", "风帆", "天文", "航空", "轨道", "星际"]
+        }
+      },
+      {
+        "id": "insectoids",
+        "name": "昆虫族",
+        "icon": "🐜",
+        "desc": "数量即力量。极高的繁殖力和组织度，个体的牺牲换来集体的繁荣。",
+        "bonuses": { "population_growth": 1.6, "growth_rate": 1.5, "tech_multiply": 0.8, "culture_multiply": 0.85 },
+        "flavor": {
+          "settlement_suffix": "穴",
+          "leader_title": "女王",
+          "tech_names": ["信息素", "蜂蜡", "巢室", "化学", "生物电", "神经网络", "集体意识"]
+        }
+      }
+    ]
+  },
+  "awakening": {
+    "id": "awakening",
+    "name": "灵智觉醒",
+    "icon": "🧠",
+    "description": "某种动物因环境剧变获得了智慧。它们以原生物种的身体为基础，却走出了完全不同的道路。",
+    "unlocked": true,
+    "skip_civ_selection": true,
+    "extra_params": {
+      "awakening_cause": { "label": "觉醒原因", "options": ["meteor", "radiation", "disease", "gift"], "default": "meteor" }
+    },
+    "first_chronicle": "一场{awakening_cause_desc}改变了这颗星球的命运。{species_name}的智慧在剧变中觉醒，它们用全新的方式感知世界。",
+    "species": [
+      {
+        "id": "corvids",
+        "name": "鸦科",
+        "icon": "🐦‍⬛",
+        "desc": "工具大师，解决问题的能力极强。善于学习和创新。",
+        "bonuses": { "tech_multiply": 1.4, "trade_income": 1.2, "military_multiply": 0.85, "population_growth": 0.9 },
+        "flavor": {
+          "settlement_suffix": "栖",
+          "leader_title": "智者",
+          "tech_names": ["枝石", "编织", "冶炼", "机械", "蒸汽", "电力", "信息"]
+        }
+      },
+      {
+        "id": "cephalopods",
+        "name": "头足类",
+        "icon": "🐙",
+        "desc": "伪装大师，善于交流和文化创造。身体柔软却充满智慧。",
+        "bonuses": { "culture_multiply": 1.5, "diplomacy_bonus": 0.3, "stability": -0.1, "health_bonus": 0.15 },
+        "flavor": {
+          "settlement_suffix": "渊",
+          "leader_title": "墨者",
+          "tech_names": ["墨印", "珊瑚", "潮汐", "声呐", "液压", "生物光", "量子"]
+        }
+      },
+      {
+        "id": "proboscideans",
+        "name": "象类",
+        "icon": "🐘",
+        "desc": "记忆力超群，代代相传的智慧积淀深厚。稳重而坚定。",
+        "bonuses": { "stability": 0.3, "culture_multiply": 1.2, "growth_rate": 0.8, "military_multiply": 1.15 },
+        "flavor": {
+          "settlement_suffix": "林",
+          "leader_title": "长者",
+          "tech_names": ["骨刻", "草编", "木构", "灌溉", "天文", "蒸汽", "电气"]
+        }
+      },
+      {
+        "id": "primates",
+        "name": "灵长类",
+        "icon": "🐒",
+        "desc": "高度社会化的智慧，社交能力和群体协作是最大的优势。",
+        "bonuses": { "trade_income": 1.3, "diplomacy_bonus": 0.2, "tech_multiply": 1.1, "military_multiply": 0.9 },
+        "flavor": {
+          "settlement_suffix": "寨",
+          "leader_title": "族长",
+          "tech_names": ["藤编", "石刻", "青铜", "铁器", "蒸汽", "电力", "信息"]
+        }
+      }
+    ]
+  },
+  "xeno": {
+    "id": "xeno",
+    "name": "异种起源",
+    "icon": "🔮",
+    "description": "完全不同的生命形式。不是碳基，不是 DNA。它们的生物学基础决定了截然不同的社会形态和文明路径。",
+    "unlocked": true,
+    "skip_civ_selection": true,
+    "extra_params": {
+      "environment_medium": { "label": "环境介质", "options": ["high_temp", "cold", "vacuum", "high_pressure"], "default": "high_temp" },
+      "energy_source": { "label": "能量来源", "options": ["stellar", "geothermal", "chemical", "lightning"], "default": "stellar" }
+    },
+    "first_chronicle": "在{environment_desc}的环境中，{species_name}诞生了。它们不以我们理解的方式生存，却同样构建了辉煌的{settlement_type}。",
+    "species": [
+      {
+        "id": "silicoids",
+        "name": "硅晶生命",
+        "icon": "💎",
+        "desc": "以晶体结构为基础的生命形式，极端稳定，科技发展迅速。但生长缓慢，个体稀少。",
+        "bonuses": { "tech_multiply": 1.5, "stability": 0.3, "growth_rate": 0.7, "population_growth": 0.8, "culture_multiply": 0.8 },
+        "flavor": {
+          "settlement_suffix": "晶塔",
+          "leader_title": "核心",
+          "tech_names": ["晶格", "谐振", "光导", "量子", "等离子", "空间", "维度"]
+        }
+      },
+      {
+        "id": "fungoids",
+        "name": "真菌网络",
+        "icon": "🍄",
+        "desc": "庞大的地下菌丝网络连接着每一个个体。信息共享，集体决策，文化高度统一。",
+        "bonuses": { "culture_multiply": 1.5, "stability": 0.2, "health_bonus": 0.3, "tech_multiply": 0.85, "military_multiply": 0.8 },
+        "flavor": {
+          "settlement_suffix": "菌落",
+          "leader_title": "主脑",
+          "tech_names": ["菌丝", "孢子", "共生", "发酵", "生物电", "神经", "意识"]
+        }
+      },
+      {
+        "id": "energoids",
+        "name": "能量体",
+        "icon": "⚡",
+        "desc": "纯粹的能量形态，不受物理形态束缚。外交灵活，但难以理解物质文明。",
+        "bonuses": { "trade_income": 1.4, "diplomacy_bonus": 0.4, "tech_multiply": 1.1, "stability": -0.1, "military_multiply": 0.7 },
+        "flavor": {
+          "settlement_suffix": "场域",
+          "leader_title": "共振者",
+          "tech_names": ["波动", "频率", "谐振", "相位", "维度", "弦论", "超空间"]
+        }
+      },
+      {
+        "id": "gasbags",
+        "name": "气态生命",
+        "icon": "🌀",
+        "desc": "在巨行星的大气层中漂浮的智慧气体团。思维方式完全不同，往往产生出乎意料的突破。",
+        "bonuses": { "tech_multiply": 1.2, "culture_multiply": 1.1, "stability": -0.15, "growth_rate": 0.9, "diplomacy_bonus": 0.15 },
+        "flavor": {
+          "settlement_suffix": "云层",
+          "leader_title": "气流",
+          "tech_names": ["气流", "气压", "温差", "电磁", "气象", "轨道", "恒星"]
+        }
+      }
+    ]
+  },
+  "arrival": {
+    "id": "arrival",
+    "name": "天外降临",
+    "icon": "🚀",
+    "description": "来自星空的访客。飞船坠毁在陌生的星球上，幸存者必须在废墟上重建文明。他们携带着故土的记忆，却要在这颗星球上开创未来。",
+    "unlocked": true,
+    "skip_civ_selection": true,
+    "extra_params": {
+      "tech_legacy": { "label": "科技遗产", "options": ["low", "medium", "high"], "default": "medium" },
+      "survivors": { "label": "幸存者规模", "options": ["few", "some", "many"], "default": "some" },
+      "home_diff": { "label": "与母星环境差异", "options": ["similar", "different", "extreme"], "default": "different" }
+    },
+    "first_chronicle": "一艘来自{origin_desc}的飞船穿越星海，却坠毁在这片陌生的土地上。{survivors_desc}幸存者从残骸中走出，面对未知的世界，他们必须重建一切。",
+    "species": [
+      {
+        "id": "synths",
+        "name": "机械生命",
+        "icon": "🤖",
+        "desc": "以机械和电路为基础的生命形式。精准、高效、永不停歇。生产的效率和科技的进步无可匹敌。",
+        "bonuses": { "production_bonus": 1.4, "tech_multiply": 1.3, "culture_multiply": 0.7, "diplomacy_bonus": -0.2, "health_bonus": 0.5 },
+        "flavor": {
+          "settlement_suffix": "基地",
+          "leader_title": "核心处理器",
+          "tech_names": ["电路", "合金", "蒸汽", "内燃", "电子", "AI", "纳米"]
+        }
+      },
+      {
+        "id": "bioengineers",
+        "name": "基因工程师",
+        "icon": "🧪",
+        "desc": "他们曾掌握改变生命密码的技术。坠落之后，基因知识成了最宝贵的遗产。适应力极强。",
+        "bonuses": { "health_bonus": 0.4, "growth_rate": 1.3, "stability": 0.1, "military_multiply": 0.85, "culture_multiply": 0.9 },
+        "flavor": {
+          "settlement_suffix": "温室",
+          "leader_title": "基因祭司",
+          "tech_names": ["育种", "发酵", "基因", "克隆", "改造", "进化", "超越"]
+        }
+      },
+      {
+        "id": "symbiotes",
+        "name": "共生体",
+        "icon": "🫂",
+        "desc": "一个多物种共生的集体意识。每个个体都保留独立意识，但通过共生网络紧密相连。同化能力惊人。",
+        "bonuses": { "diplomacy_bonus": 0.35, "trade_income": 1.3, "population_growth": 1.2, "stability": 0.15, "military_multiply": 0.8 },
+        "flavor": {
+          "settlement_suffix": "群落",
+          "leader_title": "和声",
+          "tech_names": ["共生", "网络", "合金", "超导", "AI", "纳米", "意识"]
+        }
+      }
+    ]
+  }
+}

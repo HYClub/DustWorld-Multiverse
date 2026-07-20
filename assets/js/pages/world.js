@@ -87,11 +87,6 @@
           self._renderTimelineFiltered();
         });
       }
-      if (this.openInterveneBtn) {
-        this.openInterveneBtn.addEventListener('click', function () {
-          self._openInterveneModal();
-        });
-      }
     }
 
     async loadWorldData(worldId) {
@@ -350,6 +345,26 @@
           this.interveneTargetSelect.appendChild(opt);
         }
       }
+      var self = this;
+      this._selectedInterventionType = null;
+      var typeCards = this.appEl && this.appEl.querySelectorAll('.intervene-type-card');
+      if (typeCards) {
+        typeCards.forEach(function(card) {
+          card.addEventListener('click', function() {
+            typeCards.forEach(function(c) { c.classList.remove('selected'); });
+            card.classList.add('selected');
+            self._selectedInterventionType = card.getAttribute('data-type');
+          });
+        });
+      }
+      var confirmBtn = document.getElementById('confirm-intervene-tab');
+      if (confirmBtn) {
+        confirmBtn.addEventListener('click', function() {
+          if (!self._selectedInterventionType) { window.Toast.warning('请选择干预类型'); return; }
+          if (!self.interveneTargetSelect || !self.interveneTargetSelect.value) { window.Toast.warning('请选择目标聚落'); return; }
+          self._submitIntervention(self._selectedInterventionType, self.interveneTargetSelect.value);
+        });
+      }
     }
 
     _getInterventionQuota(world) {
@@ -358,49 +373,6 @@
         var used = parseInt(localStorage.getItem(key) || '0', 10);
         return Math.max(0, 3 - used);
       } catch (e) { return 3; }
-    }
-
-    _openInterveneModal() {
-      var world = this.worldData;
-      if (!world) return;
-      var modal = window.Modal;
-      if (!modal) return;
-      var modalBody = document.getElementById('world-intervene-modal-body');
-      var bodyHtml = modalBody ? modalBody.innerHTML : '';
-      var footerHtml = '<button class="btn btn-secondary" data-action="modal-close">取消</button>' +
-        '<button class="btn btn-primary" id="confirm-intervene">确认干预</button>';
-      modal.show({ title: '执行干预', body: bodyHtml, footer: footerHtml });
-
-      var selectedType = null;
-      var typeBtns = document.querySelectorAll('.intervention-type-btn');
-      typeBtns.forEach(function(btn) {
-        btn.addEventListener('click', function() {
-          typeBtns.forEach(function(b) { b.classList.remove('selected'); });
-          btn.classList.add('selected');
-          selectedType = btn.getAttribute('data-type');
-        });
-      });
-
-      var targetSelect = document.getElementById('intervene-target-select');
-      if (targetSelect) {
-        targetSelect.innerHTML = '<option value="">选择聚落...</option>';
-        var settlements = world.settlements || [];
-        settlements.forEach(function(s) {
-          var opt = document.createElement('option');
-          opt.value = s.id || '';
-          opt.textContent = s.name || '';
-          targetSelect.appendChild(opt);
-        });
-      }
-      var confirmBtn = document.getElementById('confirm-intervene');
-      if (confirmBtn) {
-        confirmBtn.addEventListener('click', function() {
-          if (!selectedType) { window.Toast.warning('请选择干预类型'); return; }
-          if (!targetSelect || !targetSelect.value) { window.Toast.warning('请选择目标聚落'); return; }
-          self._submitIntervention(selectedType, targetSelect.value);
-          modal.hide();
-        });
-      }
     }
 
     _submitIntervention(type, targetSettlementId) {

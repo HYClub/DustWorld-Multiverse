@@ -236,3 +236,71 @@
 .s-col-pop { flex: 1; text-align: center; }
 .s-col-tech { flex: 1; text-align: center; }
 .s-col-status { flex: 1; text-align: right; }
+
+.intervene-status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: rgba(108,92,231,0.08);
+  border: 1px solid rgba(108,92,231,0.15);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--spacing-md);
+}
+
+.intervene-status-label {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.intervene-status-count {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--color-primary-light);
+  font-family: var(--font-mono);
+}
+
+.intervene-types-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: var(--spacing-md);
+}
+
+.intervene-type-card {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--radius-md);
+  padding: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.intervene-type-card:hover {
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(255,255,255,0.12);
+}
+
+.intervene-type-card.selected {
+  background: rgba(108,92,231,0.12);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 8px rgba(108,92,231,0.15);
+}
+
+.intervene-type-icon {
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+.intervene-type-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 3px;
+}
+
+.intervene-type-desc {
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.4;
+}

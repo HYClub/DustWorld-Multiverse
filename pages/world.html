@@ -106,35 +106,54 @@
         <div class="empty-state-text">登录后可以干预这个世界</div>
       </div>
       <div id="intervene-content" style="display:none;">
-        <p style="color:var(--text-secondary);font-size:14px;margin-bottom:var(--spacing-md);">
-          本周剩余干预：<strong id="intervene-remaining" style="color:var(--color-primary-light);font-family:var(--font-mono);">0</strong>
-        </p>
-        <div class="world-intervene-btn">
-          <button class="btn btn-primary" id="open-intervene-modal">执行干预</button>
+        <div class="intervene-status">
+          <span class="intervene-status-label">本周剩余干预次数</span>
+          <span class="intervene-status-count" id="intervene-remaining">0</span>
+        </div>
+        <div class="intervene-types-grid" id="intervene-types-grid">
+          <div class="intervene-type-card" data-type="bless">
+            <div class="intervene-type-icon">🌿</div>
+            <div class="intervene-type-name">降下恩赐</div>
+            <div class="intervene-type-desc">赐予选定聚落丰收与繁荣，人口和资源产出大幅提升</div>
+          </div>
+          <div class="intervene-type-card" data-type="plague">
+            <div class="intervene-type-icon">⚡</div>
+            <div class="intervene-type-name">降下灾祸</div>
+            <div class="intervene-type-desc">在目标区域引发灾难，考验文明的韧性与应对能力</div>
+          </div>
+          <div class="intervene-type-card" data-type="discover">
+            <div class="intervene-type-icon">🔍</div>
+            <div class="intervene-type-name">引导探索</div>
+            <div class="intervene-type-desc">派遣探险队开拓未知疆域，发现新资源和贸易路线</div>
+          </div>
+          <div class="intervene-type-card" data-type="enlighten">
+            <div class="intervene-type-icon">💡</div>
+            <div class="intervene-type-name">启迪智慧</div>
+            <div class="intervene-type-desc">加速目标聚落的科技研发，带来突破性的技术进步</div>
+          </div>
+          <div class="intervene-type-card" data-type="shelter">
+            <div class="intervene-type-icon">🛡️</div>
+            <div class="intervene-type-name">庇护之地</div>
+            <div class="intervene-type-desc">在选定聚落建立庇护所，稳定民心，抵御外部威胁</div>
+          </div>
+          <div class="intervene-type-card" data-type="sow">
+            <div class="intervene-type-icon">🌱</div>
+            <div class="intervene-type-name">播种文明</div>
+            <div class="intervene-type-desc">在目标位置建立新的聚落，播下文明的种子</div>
+          </div>
+        </div>
+        <div style="margin-top:12px;">
+          <label class="form-label">目标聚落</label>
+          <select class="form-select" id="intervene-target-select">
+            <option value="">选择聚落...</option>
+          </select>
+        </div>
+        <div style="margin-top:12px;display:flex;gap:8px;justify-content:flex-end;">
+          <button class="btn btn-primary" id="confirm-intervene-tab">确认干预</button>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<div id="world-intervene-modal-body" style="display:none;">
-  <div class="intervention-form">
-    <div>
-      <label class="form-label">干预类型</label>
-      <div class="intervention-types" id="intervention-types">
-        <button class="intervention-type-btn" data-type="bless">🌿 降下恩赐</button>
-        <button class="intervention-type-btn" data-type="plague">⚡ 降下灾祸</button>
-        <button class="intervention-type-btn" data-type="discover">🔍 引导探索</button>
-        <button class="intervention-type-btn" data-type="enlighten">💡 启迪智慧</button>
-        <button class="intervention-type-btn" data-type="shelter">🛡️ 庇护之地</button>
-        <button class="intervention-type-btn" data-type="sow">🌱 播种文明</button>
-      </div>
-    </div>
-    <div>
-      <label class="form-label">目标聚落</label>
-      <select class="form-select" id="intervene-target-select">
-        <option value="">选择聚落...</option>
-      </select>
-    </div>
-  </div>
-</div>
+

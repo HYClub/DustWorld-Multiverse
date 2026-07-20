@@ -352,6 +352,110 @@
   color: #e0e0e0;
 }
 
+.origin-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin: 16px 0;
+}
+
+.origin-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius-md);
+  padding: 16px 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.origin-card:hover {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.15);
+  transform: translateY(-2px);
+}
+
+.origin-card.selected {
+  background: rgba(108,92,231,0.15);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 12px rgba(108,92,231,0.2);
+}
+
+.origin-card-icon {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.origin-card-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.origin-card-desc {
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.origin-detail-box {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  margin-top: 8px;
+}
+
+.origin-detail-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-primary-light);
+  margin-bottom: 6px;
+}
+
+.origin-detail-desc {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.origin-species-list {
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.origin-species-tag {
+  display: inline-block;
+  padding: 2px 8px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 10px;
+  margin: 2px 3px;
+  font-size: 12px;
+}
+
+.civ-card-icon-large {
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+.species-bonuses {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 8px;
+}
+
+@media (max-width: 640px) {
+  .origin-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 400px) {
+  .origin-grid { grid-template-columns: 1fr; }
+}
+
 @media (max-width: 640px) {
   .wizard { padding: var(--spacing-md); }
   .wizard-grid-5 { grid-template-columns: repeat(3, 1fr); }
