@@ -254,7 +254,6 @@ class WorldCard extends HTMLElement {
 
   _startCountdown() {
     if (this._countdownTimer) return;
-    this._lastEvo = new Date(this._data.lastEvolvedAt || Date.now()).getTime();
     this._updateCountdown();
     var self = this;
     this._countdownTimer = setInterval(function () {
@@ -264,11 +263,18 @@ class WorldCard extends HTMLElement {
 
   _updateCountdown() {
     if (!this._els || !this._els.countdown) return;
+
     var SECONDS_PER_YEAR = 864;
+    var lastEvo = new Date(this._data.lastEvolvedAt || Date.now()).getTime();
+    var nextEvo = lastEvo + SECONDS_PER_YEAR * 1000;
     var now = Date.now();
-    var elapsed = (now - this._lastEvo) / 1000;
-    if (elapsed >= SECONDS_PER_YEAR) {
+
+    var remaining = Math.ceil((nextEvo - now) / 1000);
+
+    if (remaining <= 0) {
+      // Overdue: show "⏳ 0s" and check for updates every 30s
       this._els.countdown.textContent = '⏳ 0s';
+      this._els.countdown.style.color = '';
       if (!this._pendingRefresh && (!this._lastRefresh || now - this._lastRefresh > 30000)) {
         this._lastRefresh = now;
         this._pendingRefresh = true;
@@ -278,15 +284,15 @@ class WorldCard extends HTMLElement {
       }
       return;
     }
+
     this._els.countdown.style.color = '';
-    var s = Math.ceil(SECONDS_PER_YEAR - elapsed);
-    if (s > 3600) {
-      this._els.countdown.textContent = '⏳ ' + Math.ceil(s / 3600) + 'h';
-    } else if (s > 60) {
-      this._els.countdown.textContent = '⏳ ' + Math.ceil(s / 60) + 'm';
+    if (remaining > 3600) {
+      this._els.countdown.textContent = '⏳ ' + Math.ceil(remaining / 3600) + 'h';
+    } else if (remaining > 60) {
+      this._els.countdown.textContent = '⏳ ' + Math.ceil(remaining / 60) + 'm';
     } else {
-      if (s <= 10) this._els.countdown.style.color = '#ff4757';
-      this._els.countdown.textContent = '⏳ ' + s + 's';
+      if (remaining <= 10) this._els.countdown.style.color = '#ff4757';
+      this._els.countdown.textContent = '⏳ ' + remaining + 's';
     }
   }
 

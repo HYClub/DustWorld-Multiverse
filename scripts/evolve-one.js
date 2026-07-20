@@ -5,7 +5,7 @@ const OWNER = 'HYClub';
 const REPO = 'DustWorld-Multiverse';
 const BRANCH = 'master';
 const SECONDS_PER_YEAR = 864;
-const MAX_YEARS = 1;
+const MAX_YEARS = 10;
 const worldId = process.argv[2];
 
 if (!worldId) { console.error('Usage: node evolve-one.js <worldId>'); process.exit(1); }
