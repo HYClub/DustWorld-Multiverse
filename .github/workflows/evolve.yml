@@ -1,66 +1,20 @@
-name: World Evolution
+name: Evolve Worlds
 
 on:
   schedule:
-    - cron: '*/30 * * * *'
+    - cron: '*/14 * * * *'
   workflow_dispatch:
-    inputs:
-      world_id:
-        description: 'World ID to evolve (leave empty for all)'
-        required: false
-        type: string
-      iterations:
-        description: 'Number of evolution iterations'
-        required: false
-        default: '1'
-        type: string
-  issues:
-    types: [opened, labeled]
 
 jobs:
   evolve:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      issues: read
-
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          fetch-depth: 0
-
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-
-      - name: Install dependencies
-        run: |
-          npm init -y
-          npm install canvas node-fetch@2
-
-      - name: Process intervention queue
-        run: node scripts/process-interventions.js
+          node-version: 20
+      - name: Run evolution
+        run: node scripts/evolve-all.js
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_REPO: ${{ github.repository }}
-
-      - name: Run world evolution
-        run: node scripts/evolve.js
-        env:
-          WORLD_ID: ${{ github.event.inputs.world_id }}
-          ITERATIONS: ${{ github.event.inputs.iterations || '1' }}
-
-      - name: Render world maps
-        run: node scripts/render-maps.js
-        env:
-          WORLD_ID: ${{ github.event.inputs.world_id }}
-
-      - name: Update README
-        run: node scripts/update-readme.js
-
-      - name: Commit and push changes
-        run: |
-          git config --global user.name 'World Evolution Bot'
-          git config --global user.email 'bot@dust-world.dev'
-          git add data/ README.md
-          git diff --cached --quiet || (git commit -m ":earth_asia: World evolution at $(date +'%Y-%m-%d %H:%M')" && git push)
