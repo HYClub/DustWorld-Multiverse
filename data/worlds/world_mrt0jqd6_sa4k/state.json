@@ -2,7 +2,7 @@
   "world_id": "world_mrt0jqd6_sa4k",
   "name": "魔法",
   "era": "antiquity",
-  "year": 0,
+  "year": 1,
   "civilization": {
     "antiquity": {
       "civ": "insectoids",
@@ -3780,61 +3780,61 @@
         "type": "food",
         "x": 43,
         "y": 41,
-        "amount": 52
+        "amount": 52.04
       },
       {
         "type": "wood",
         "x": 17,
         "y": 9,
-        "amount": 82
+        "amount": 83
       },
       {
         "type": "ore",
         "x": 20,
         "y": 50,
-        "amount": 89
+        "amount": 90
       },
       {
         "type": "ore",
         "x": 27,
         "y": 17,
-        "amount": 96
+        "amount": 97
       },
       {
         "type": "water",
         "x": 9,
         "y": 40,
-        "amount": 68
+        "amount": 69
       },
       {
         "type": "luxury",
         "x": 52,
         "y": 36,
-        "amount": 72
+        "amount": 73
       },
       {
         "type": "food",
         "x": 34,
         "y": 31,
-        "amount": 52
+        "amount": 52.1
       },
       {
         "type": "wood",
         "x": 47,
         "y": 54,
-        "amount": 74
+        "amount": 75
       },
       {
         "type": "wood",
         "x": 51,
         "y": 31,
-        "amount": 65
+        "amount": 66
       },
       {
         "type": "ore",
         "x": 20,
         "y": 27,
-        "amount": 71
+        "amount": 72
       }
     ],
     "foodFactor": 0.85
@@ -3846,18 +3846,18 @@
       "x": 44,
       "y": 41,
       "level": 1,
-      "population": 16,
+      "population": 27,
       "max_population": 50,
-      "tech_level": 0,
+      "tech_level": 1,
       "culture": 0,
       "influence": 0,
       "health": 0.8,
       "stability": 0.7,
       "resources": {
-        "food": 60,
+        "food": 52.25785692231358,
         "wood": 30,
         "ore": 8,
-        "water": 40,
+        "water": 39.2,
         "gold": 0
       },
       "buildings": [],
@@ -3880,7 +3880,7 @@
       "x": 33,
       "y": 32,
       "level": 1,
-      "population": 15,
+      "population": 28,
       "max_population": 50,
       "tech_level": 0,
       "culture": 0,
@@ -3888,10 +3888,10 @@
       "health": 0.8,
       "stability": 0.7,
       "resources": {
-        "food": 60,
+        "food": 59.28525282866322,
         "wood": 30,
         "ore": 8,
-        "water": 40,
+        "water": 39.25,
         "gold": 0
       },
       "buildings": [],
@@ -3909,26 +3909,37 @@
       "trade_partners": []
     }
   ],
-  "active_events": [],
+  "active_events": [
+    {
+      "id": "EVT57142",
+      "type": "cultural_boom",
+      "participants": [
+        "SET002"
+      ],
+      "remaining_years": 3,
+      "duration": 7,
+      "description": "河畔城迎来文化繁荣。"
+    }
+  ],
   "trade_routes": [],
   "legacy": {
     "military": 0,
     "economic": 0,
     "cultural": 0,
-    "scientific": 0
+    "scientific": 0.05
   },
   "milestones": [],
   "stats": {
-    "total_population": 31,
+    "total_population": 55,
     "total_settlements": 2,
     "extinct_settlements": 0,
     "total_wars": 0,
-    "tech_breakthroughs": 0,
+    "tech_breakthroughs": 1,
     "golden_ages": 0,
     "dark_ages": 0
   },
   "created_at": "2026-07-20T09:19:32.922Z",
-  "updated_at": "2026-07-20T09:19:32.922Z",
+  "updated_at": "2026-07-20T10:18:11.600Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -4004,5 +4015,6 @@
     }
   ],
   "liked_by": [],
-  "likes": 0
+  "likes": 0,
+  "last_evolved_at": "2026-07-20T09:33:56.922Z"
 }
