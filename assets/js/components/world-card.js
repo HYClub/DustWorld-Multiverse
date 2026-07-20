@@ -264,35 +264,36 @@ class WorldCard extends HTMLElement {
   _updateCountdown() {
     if (!this._els || !this._els.countdown) return;
 
-    var SECONDS_PER_YEAR = 864;
-    var lastEvo = new Date(this._data.lastEvolvedAt || Date.now()).getTime();
-    var nextEvo = lastEvo + SECONDS_PER_YEAR * 1000;
     var now = Date.now();
-
-    var remaining = Math.ceil((nextEvo - now) / 1000);
-
-    if (remaining <= 0) {
-      // Overdue: show "⏳ 0s" and check for updates every 30s
-      this._els.countdown.textContent = '⏳ 0s';
-      this._els.countdown.style.color = '';
-      if (!this._pendingRefresh && (!this._lastRefresh || now - this._lastRefresh > 30000)) {
-        this._lastRefresh = now;
-        this._pendingRefresh = true;
-        this.dispatchEvent(new CustomEvent('world-refresh', {
-          bubbles: true, composed: true, detail: { worldId: this._data.worldId }
-        }));
-      }
-      return;
+    var d = new Date(now);
+    var min = d.getMinutes();
+    // Next cron trigger is at one of these minute marks
+    var targets = [0, 14, 28, 42, 56];
+    var nextTarget = 14;
+    for (var ti = 0; ti < targets.length; ti++) {
+      if (min < targets[ti]) { nextTarget = targets[ti]; break; }
     }
+    var nextCron = new Date(d);
+    nextCron.setMinutes(nextTarget);
+    nextCron.setSeconds(5);
+    if (nextCron <= now) nextCron.setMinutes(nextTarget + 14);
+    var remaining = Math.ceil((nextCron - now) / 1000);
+    if (remaining < 0) remaining = 0;
 
     this._els.countdown.style.color = '';
-    if (remaining > 3600) {
-      this._els.countdown.textContent = '⏳ ' + Math.ceil(remaining / 3600) + 'h';
-    } else if (remaining > 60) {
+    if (remaining > 60) {
       this._els.countdown.textContent = '⏳ ' + Math.ceil(remaining / 60) + 'm';
     } else {
-      if (remaining <= 10) this._els.countdown.style.color = '#ff4757';
+      if (remaining <= 10 && remaining > 0) this._els.countdown.style.color = '#ff4757';
       this._els.countdown.textContent = '⏳ ' + remaining + 's';
+    }
+
+    if (!this._pendingRefresh && (!this._lastRefresh || now - this._lastRefresh > 30000)) {
+      this._lastRefresh = now;
+      this._pendingRefresh = true;
+      this.dispatchEvent(new CustomEvent('world-refresh', {
+        bubbles: true, composed: true, detail: { worldId: this._data.worldId }
+      }));
     }
   }
 
