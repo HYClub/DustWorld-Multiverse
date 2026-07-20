@@ -527,10 +527,10 @@
       dm.createWorld(worldData).then(function () {
         btn.disabled = false;
         btn.textContent = '✦ 创世';
-        window.Toast.success('世界已创建，文明崛起！');
+        window.Toast.success('世界已创建，文明崛起！', 6000);
         setTimeout(function () {
           window.location.hash = '#/world?id=' + id;
-        }, 500);
+        }, 2000);
       }).catch(function (e) {
         btn.disabled = false;
         btn.textContent = '✦ 创世';

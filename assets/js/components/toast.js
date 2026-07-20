@@ -8,8 +8,8 @@
     container = document.createElement('div');
     container.className = 'toast-container';
     container.style.cssText =
-      'position:fixed;bottom:24px;right:24px;z-index:3000;display:flex;flex-direction:column;' +
-      'gap:8px;pointer-events:none;max-width:360px;width:auto;';
+      'position:fixed;top:70px;left:50%;transform:translateX(-50%);z-index:3000;display:flex;flex-direction:column;' +
+      'gap:8px;pointer-events:none;max-width:420px;width:90%;';
 
     var existing = document.querySelector('.toast-container');
     if (existing) {
@@ -20,7 +20,7 @@
     document.body.appendChild(container);
 
     var style = document.createElement('style');
-    style.textContent = '\n      .toast-item {\n        padding: 12px 20px;\n        border-radius: var(--radius-md, 8px);\n        font-size: 14px;\n        color: #fff;\n        box-shadow: var(--shadow-md, 0 4px 16px rgba(0,0,0,0.4));\n        backdrop-filter: blur(10px);\n        -webkit-backdrop-filter: blur(10px);\n        transform: translateX(120%);\n        transition: transform 0.3s ease-out, opacity 0.3s ease-out;\n        pointer-events: auto;\n        display: flex;\n        align-items: center;\n        gap: 8px;\n        max-width: 100%;\n        word-break: break-word;\n        line-height: 1.4;\n      }\n      .toast-item.show {\n        transform: translateX(0);\n      }\n      .toast-item.hiding {\n        transform: translateX(120%);\n        opacity: 0;\n      }\n      .toast-item.success {\n        background: rgba(0, 184, 148, 0.92);\n      }\n      .toast-item.error {\n        background: rgba(225, 112, 85, 0.92);\n      }\n      .toast-item.warning {\n        background: rgba(253, 203, 110, 0.92);\n        color: #1a1a2e;\n      }\n      .toast-item.info {\n        background: rgba(116, 185, 255, 0.92);\n      }\n      .toast-close {\n        background: none;\n        border: none;\n        color: inherit;\n        cursor: pointer;\n        padding: 0;\n        font-size: 16px;\n        opacity: 0.7;\n        flex-shrink: 0;\n        line-height: 1;\n        margin-left: auto;\n      }\n      .toast-close:hover {\n        opacity: 1;\n      }\n    ';
+    style.textContent = '\n      .toast-item {\n        padding: 14px 22px;\n        border-radius: var(--radius-md, 8px);\n        font-size: 15px;\n        color: #fff;\n        box-shadow: 0 6px 24px rgba(0,0,0,0.5);\n        border: 1px solid rgba(255,255,255,0.1);\n        opacity: 0;\n        transform: translateY(-20px);\n        transition: transform 0.3s ease-out, opacity 0.3s ease-out;\n        pointer-events: auto;\n        display: flex;\n        align-items: center;\n        gap: 10px;\n        max-width: 100%;\n        word-break: break-word;\n        line-height: 1.5;\n        text-shadow: 0 1px 3px rgba(0,0,0,0.3);\n      }\n      .toast-item.show {\n        opacity: 1;\n        transform: translateY(0);\n      }\n      .toast-item.hiding {\n        opacity: 0;\n        transform: translateY(-10px);\n      }\n      .toast-item.success {\n        background: rgba(0, 184, 148, 0.92);\n      }\n      .toast-item.error {\n        background: rgba(225, 112, 85, 0.92);\n      }\n      .toast-item.warning {\n        background: rgba(253, 203, 110, 0.92);\n        color: #1a1a2e;\n      }\n      .toast-item.info {\n        background: rgba(116, 185, 255, 0.92);\n      }\n      .toast-close {\n        background: none;\n        border: none;\n        color: inherit;\n        cursor: pointer;\n        padding: 0;\n        font-size: 16px;\n        opacity: 0.7;\n        flex-shrink: 0;\n        line-height: 1;\n        margin-left: auto;\n      }\n      .toast-close:hover {\n        opacity: 1;\n      }\n    ';
     document.head.appendChild(style);
 
     return container;
