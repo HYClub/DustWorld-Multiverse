@@ -251,72 +251,7 @@
     }
 
     _createWorldCardElement(world) {
-      var card = document.createElement('world-card');
-      if (card.setAttribute) {
-        card.setAttribute('world-id', world.world_id || '');
-        card.setAttribute('name', world.name || '');
-        card.setAttribute('creator', world.creator || '');
-        card.setAttribute('creator-avatar', world.creator_avatar || '');
-        card.setAttribute('year', String(world.year || 0));
-        card.setAttribute('era', world.era || 'primitive');
-        card.setAttribute('era-name', world.eraName || world.era || '原始时代');
-        card.setAttribute('population', String((world.stats && world.stats.total_population) || 0));
-        card.setAttribute('settlements', String((world.stats && world.stats.total_settlements) || 0));
-        card.setAttribute('likes', String(world.likes || 0));
-        card.setAttribute('description', world.description || '');
-        card.setAttribute('updated-at', world.updatedAt || '');
-        card.setAttribute('last-evolved-at', world.lastEvolvedAt || '');
-        if (world.terrain && world.terrain.tiles) {
-          card.setAttribute('terrain', JSON.stringify(world.terrain.tiles));
-        }
-      }
-
-      card.addEventListener('click', function (e) {
-        var likeBtn = card.shadowRoot ? card.shadowRoot.querySelector('.like-btn') : null;
-        if (likeBtn && likeBtn.contains(e.target)) return;
-        window.location.hash = '#/world?id=' + (world.world_id || '');
-      });
-
-      card.addEventListener('like-toggle', function (e) {
-        var detail = e.detail || {};
-        if (detail.liked === undefined || !detail.worldId) return;
-        var auth = window.AuthManager && window.AuthManager._instance;
-        if (!auth || !auth.isLoggedIn()) { return; }
-        var dm = window.DataManager;
-        if (dm && typeof dm.toggleLike === 'function') {
-          dm.toggleLike(detail.worldId).then(function (result) {
-            card.update({ isLiked: result.liked, likes: String(result.likes) });
-            world.likes = result.likes;
-          }).catch(function () {});
-        }
-      });
-
-      card.addEventListener('world-refresh', function (e) {
-        var detail = e.detail || {};
-        if (!detail.worldId) return;
-        var dm = window.DataManager;
-        if (dm && typeof dm.refreshWorldMeta === 'function') {
-          dm.refreshWorldMeta(detail.worldId).then(function (meta) {
-            card.update({
-              year: String((meta && meta.year) || 0),
-              era: (meta && meta.era) || 'primitive',
-              population: String((meta && ((meta.stats && meta.stats.total_population) || meta.population)) || 0),
-              settlements: String((meta && ((meta.stats && meta.stats.total_settlements) || meta.settlements)) || 0),
-              updatedAt: (meta && meta.updatedAt) || '',
-              lastEvolvedAt: (meta && meta.lastEvolvedAt) || ''
-            });
-            if (meta) {
-              world.year = meta.year;
-              world.era = meta.era;
-              world.lastEvolvedAt = meta.lastEvolvedAt;
-            }
-          }).catch(function () {
-            card.update({});
-          });
-        }
-      });
-
-      return card;
+      return window.helpers.createWorldCard(world);
     }
 
     switchTab(tab) {
