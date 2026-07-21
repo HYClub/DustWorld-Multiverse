@@ -254,8 +254,6 @@ class WorldCard extends HTMLElement {
 
   _startCountdown() {
     if (this._countdownTimer) return;
-    // Fire an immediate refresh to get latest lastEvolvedAt from server
-    this._lastRefresh = 0;
     this._updateCountdown();
     var self = this;
     this._countdownTimer = setInterval(function () {
@@ -284,17 +282,15 @@ class WorldCard extends HTMLElement {
       this._els.countdown.textContent = '⏳ +' + overdue + 'm';
     }
 
-    // Refresh when countdown first hits 0 or overdue
-    var justExpired = this._prevRemaining !== undefined && this._prevRemaining > 0 && remaining <= 0;
-    this._prevRemaining = remaining;
-
-    if (justExpired || (!this._pendingRefresh && (!this._lastRefresh || now - this._lastRefresh > 30000))) {
+    // Fire refresh when countdown first hits 0
+    if (this._prevRemaining !== undefined && this._prevRemaining > 0 && remaining <= 0) {
       this._lastRefresh = now;
       this._pendingRefresh = true;
       this.dispatchEvent(new CustomEvent('world-refresh', {
         bubbles: true, composed: true, detail: { worldId: this._data.worldId }
       }));
     }
+    this._prevRemaining = remaining;
   }
 
   _clearCountdown() {
