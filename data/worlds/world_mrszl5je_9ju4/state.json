@@ -2,7 +2,7 @@
   "world_id": "world_mrszl5je_9ju4",
   "name": "地球",
   "era": "antiquity",
-  "year": 89,
+  "year": 90,
   "civilization": {
     "antiquity": {
       "civ": "han",
@@ -3876,7 +3876,7 @@
       "x": 35,
       "y": 56,
       "level": 3,
-      "population": 355,
+      "population": 354,
       "max_population": 500,
       "tech_level": 3,
       "culture": 1040,
@@ -3909,7 +3909,7 @@
       "x": 6,
       "y": 5,
       "level": 2,
-      "population": 94,
+      "population": 93,
       "max_population": 200,
       "tech_level": 2,
       "culture": 120,
@@ -3947,7 +3947,7 @@
       "participants": [
         "SET002"
       ],
-      "remaining_years": 2,
+      "remaining_years": 1,
       "duration": 8,
       "description": "风语村爆发瘟疫。"
     }
@@ -3956,12 +3956,12 @@
   "legacy": {
     "military": 1.8000000000000003,
     "economic": 0,
-    "cultural": 39.80000000000003,
-    "scientific": 10.600000000000017
+    "cultural": 40.500000000000036,
+    "scientific": 10.750000000000018
   },
   "milestones": [],
   "stats": {
-    "total_population": 449,
+    "total_population": 447,
     "total_settlements": 2,
     "extinct_settlements": 0,
     "total_wars": 2,
@@ -3970,7 +3970,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T08:52:39.627Z",
-  "updated_at": "2026-07-21T06:15:06.098Z",
+  "updated_at": "2026-07-21T06:29:10.017Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -4010,7 +4010,7 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-07-21T06:14:15.627Z",
+  "last_evolved_at": "2026-07-21T06:28:39.627Z",
   "history": [
     {
       "year": 2,
