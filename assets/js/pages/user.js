@@ -114,22 +114,6 @@
       }
     }
 
-    _tryTriggerEvo(worlds) {
-      var SECONDS_PER_YEAR = 864;
-      var now = Date.now();
-      for (var i = 0; i < worlds.length; i++) {
-        var w = worlds[i];
-        var lastEvo = w.lastEvolvedAt ? new Date(w.lastEvolvedAt).getTime() : null;
-        if (lastEvo && (now - lastEvo) / 1000 > SECONDS_PER_YEAR + 120) {
-          var dm = window.DataManager;
-          if (dm && typeof dm.triggerEvolution === 'function') {
-            dm.triggerEvolution();
-          }
-          break;
-        }
-      }
-    }
-
     async loadCreatedWorlds() {
       var worlds = [];
 
@@ -141,8 +125,6 @@
       } catch (e) {
         console.warn('loadCreatedWorlds error, falling back to demo', e);
       }
-
-      this._tryTriggerEvo(worlds);
 
       if (this.createdCount) this.createdCount.textContent = worlds.length;
 

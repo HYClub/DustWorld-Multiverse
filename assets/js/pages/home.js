@@ -126,13 +126,6 @@
           }
         }
 
-        // Check if any world is overdue and trigger server-side evolution
-        if (!append && this._evoCooldown !== undefined && Date.now() - this._evoCooldown > 300000) {
-          this._tryTriggerEvo(worlds);
-        } else if (!append && this._evoCooldown === undefined) {
-          this._tryTriggerEvo(worlds);
-        }
-
         if (this.loadMoreBtn) {
           var hasMore = data && data.has_more;
           if (hasMore === undefined) hasMore = worlds.length >= 12;
@@ -148,29 +141,6 @@
       } finally {
         this.loading = false;
         if (this.skeletonContainer) this.skeletonContainer.style.display = 'none';
-      }
-    }
-
-    _tryTriggerEvo(worlds) {
-      var SECONDS_PER_YEAR = 864;
-      var now = Date.now();
-      var overdue = false;
-      for (var i = 0; i < worlds.length; i++) {
-        var w = worlds[i];
-        var lastEvo = w.lastEvolvedAt ? new Date(w.lastEvolvedAt).getTime() : null;
-        if (lastEvo && (now - lastEvo) / 1000 > SECONDS_PER_YEAR + 120) {
-          overdue = true;
-          break;
-        }
-      }
-      if (overdue) {
-        this._evoCooldown = Date.now();
-        var dm = window.DataManager;
-        if (dm && typeof dm.triggerEvolution === 'function') {
-          dm.triggerEvolution().then(function (ok) {
-            if (ok) window.Toast && window.Toast.success('世界演化已触发，稍后自动更新');
-          });
-        }
       }
     }
 
