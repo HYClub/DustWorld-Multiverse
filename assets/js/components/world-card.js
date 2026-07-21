@@ -280,12 +280,15 @@ class WorldCard extends HTMLElement {
     } else if (remaining > 0) {
       this._els.countdown.textContent = '⏳ ' + remaining + 's';
     } else {
-      // Overdue: show how many minutes past due
       var overdue = Math.ceil(-remaining / 60);
       this._els.countdown.textContent = '⏳ +' + overdue + 'm';
     }
 
-    if (!this._pendingRefresh && (!this._lastRefresh || now - this._lastRefresh > 30000)) {
+    // Refresh when countdown first hits 0 or overdue
+    var justExpired = this._prevRemaining !== undefined && this._prevRemaining > 0 && remaining <= 0;
+    this._prevRemaining = remaining;
+
+    if (justExpired || (!this._pendingRefresh && (!this._lastRefresh || now - this._lastRefresh > 30000))) {
       this._lastRefresh = now;
       this._pendingRefresh = true;
       this.dispatchEvent(new CustomEvent('world-refresh', {
