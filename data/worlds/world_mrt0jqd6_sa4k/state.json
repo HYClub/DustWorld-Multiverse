@@ -2,7 +2,7 @@
   "world_id": "world_mrt0jqd6_sa4k",
   "name": "魔法",
   "era": "exploration",
-  "year": 62,
+  "year": 65,
   "civilization": {
     "antiquity": {
       "civ": "insectoids",
@@ -3846,7 +3846,7 @@
       "x": 44,
       "y": 41,
       "level": 2,
-      "population": 80,
+      "population": 77,
       "max_population": 200,
       "tech_level": 2,
       "culture": 0,
@@ -3858,7 +3858,7 @@
         "wood": 30,
         "ore": 8,
         "water": 0,
-        "gold": 180
+        "gold": 189
       },
       "buildings": [],
       "specialization": null,
@@ -3882,7 +3882,7 @@
       "x": 33,
       "y": 32,
       "level": 3,
-      "population": 195,
+      "population": 192,
       "max_population": 500,
       "tech_level": 5,
       "culture": 480,
@@ -3894,7 +3894,7 @@
         "wood": 30,
         "ore": 8,
         "water": 0,
-        "gold": 180
+        "gold": 189
       },
       "buildings": [],
       "specialization": "agriculture",
@@ -3917,10 +3917,10 @@
       "x": 50,
       "y": 57,
       "level": 3,
-      "population": 275,
+      "population": 303,
       "max_population": 500,
       "tech_level": 3,
-      "culture": 340,
+      "culture": 390,
       "influence": 0,
       "health": 0.7,
       "stability": 0.6,
@@ -3950,13 +3950,13 @@
   ],
   "active_events": [
     {
-      "id": "EVT84785",
+      "id": "EVT49744",
       "type": "cultural_boom",
       "participants": [
         "SET003"
       ],
-      "remaining_years": 1,
-      "duration": 5,
+      "remaining_years": 3,
+      "duration": 10,
       "description": "风语村迎来文化繁荣。"
     },
     {
@@ -3965,7 +3965,7 @@
       "participants": [
         "SET003"
       ],
-      "remaining_years": 6,
+      "remaining_years": 7,
       "duration": 10,
       "description": "风语村迎来文化繁荣。"
     }
@@ -3979,9 +3979,9 @@
   ],
   "legacy": {
     "military": 0,
-    "economic": 39.99999999999994,
-    "cultural": 51.899999999999984,
-    "scientific": 64.39999999999999
+    "economic": 40.149999999999935,
+    "cultural": 52.799999999999976,
+    "scientific": 65.75
   },
   "milestones": [
     {
@@ -4078,10 +4078,20 @@
       "id": "era_exploration",
       "name": "远洋",
       "year": 59
+    },
+    {
+      "id": "setts_3",
+      "name": "扩张",
+      "year": 63
+    },
+    {
+      "id": "era_exploration",
+      "name": "远洋",
+      "year": 63
     }
   ],
   "stats": {
-    "total_population": 550,
+    "total_population": 572,
     "total_settlements": 3,
     "extinct_settlements": 0,
     "total_wars": 0,
@@ -4090,7 +4100,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T09:19:32.922Z",
-  "updated_at": "2026-07-21T00:14:34.011Z",
+  "updated_at": "2026-07-21T00:58:04.701Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -4433,9 +4443,33 @@
       "type": "milestone",
       "title": "里程碑",
       "description": "达成: 远洋"
+    },
+    {
+      "year": 63,
+      "type": "event",
+      "title": "事件结束",
+      "description": "风语村迎来文化繁荣。 结束。"
+    },
+    {
+      "year": 63,
+      "type": "cultural_boom",
+      "title": "新事件",
+      "description": "风语村迎来文化繁荣。"
+    },
+    {
+      "year": 63,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 扩张"
+    },
+    {
+      "year": 63,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 远洋"
     }
   ],
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-07-21T00:12:20.922Z"
+  "last_evolved_at": "2026-07-21T00:55:32.922Z"
 }
