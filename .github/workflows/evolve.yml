@@ -3,6 +3,10 @@ name: Evolve Worlds
 on:
   schedule:
     - cron: '*/14 * * * *'
+  push:
+    branches: [master]
+    paths-ignore:
+      - 'data/worlds/**'
   workflow_dispatch:
 
 permissions:
