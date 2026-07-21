@@ -16,12 +16,7 @@ on:
 
 permissions:
   contents: write
-  actions: write
   issues: read
-
-concurrency:
-  group: evolve
-  cancel-in-progress: false
 
 jobs:
   list-worlds:
@@ -68,15 +63,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
 
-  reschedule:
-    needs: evolve
-    if: always()
-    runs-on: ubuntu-latest
-    steps:
-      - name: Wait and reschedule next run
-        run: |
-          sleep 60
-          gh api -X POST /repos/${{ github.repository }}/actions/workflows/evolve.yml/dispatches \
-            -f ref=master
-        env:
-          GH_TOKEN: ${{ github.token }}
+
