@@ -2,7 +2,7 @@
   "world_id": "world_mrszl5je_9ju4",
   "name": "地球",
   "era": "antiquity",
-  "year": 61,
+  "year": 67,
   "civilization": {
     "antiquity": {
       "civ": "han",
@@ -3810,7 +3810,7 @@
         "type": "ore",
         "x": 7,
         "y": 6,
-        "amount": 90.78
+        "amount": 73.44
       },
       {
         "type": "water",
@@ -3876,10 +3876,10 @@
       "x": 35,
       "y": 56,
       "level": 3,
-      "population": 285,
+      "population": 347,
       "max_population": 500,
       "tech_level": 3,
-      "culture": 770,
+      "culture": 900,
       "influence": 0,
       "health": 0.8,
       "stability": 0.7,
@@ -3909,7 +3909,7 @@
       "x": 6,
       "y": 5,
       "level": 2,
-      "population": 58,
+      "population": 67,
       "max_population": 200,
       "tech_level": 2,
       "culture": 0,
@@ -3917,10 +3917,10 @@
       "health": 0.7,
       "stability": 0.6,
       "resources": {
-        "food": 23.30536540354354,
+        "food": 0,
         "wood": 20,
-        "ore": 16.22,
-        "water": 15.649999999999999,
+        "ore": 39.559999999999995,
+        "water": 0,
         "gold": 0
       },
       "buildings": [],
@@ -3942,35 +3942,55 @@
   ],
   "active_events": [
     {
-      "id": "EVT41516",
+      "id": "EVT2446",
+      "type": "cultural_boom",
+      "participants": [
+        "SET001"
+      ],
+      "remaining_years": 4,
+      "duration": 10,
+      "description": "绿野镇迎来文化繁荣。"
+    },
+    {
+      "id": "EVT48166",
+      "type": "golden_age",
+      "participants": [
+        "SET001"
+      ],
+      "remaining_years": 4,
+      "duration": 3,
+      "description": "绿野镇进入黄金时代！"
+    },
+    {
+      "id": "EVT39066",
       "type": "natural_disaster",
       "participants": [
-        "SET002"
+        "SET001"
       ],
-      "remaining_years": 1,
-      "duration": 8,
-      "description": "风语村遭受自然灾害。"
+      "remaining_years": 7,
+      "duration": 4,
+      "description": "绿野镇遭受自然灾害。"
     }
   ],
   "trade_routes": [],
   "legacy": {
     "military": 0.7,
     "economic": 0,
-    "cultural": 20.30000000000001,
-    "scientific": 6.400000000000008
+    "cultural": 24.40000000000001,
+    "scientific": 7.3000000000000105
   },
   "milestones": [],
   "stats": {
-    "total_population": 343,
+    "total_population": 414,
     "total_settlements": 2,
     "extinct_settlements": 0,
     "total_wars": 0,
     "tech_breakthroughs": 3,
-    "golden_ages": 6,
+    "golden_ages": 7,
     "dark_ages": 0
   },
   "created_at": "2026-07-20T08:52:39.627Z",
-  "updated_at": "2026-07-20T23:44:52.895Z",
+  "updated_at": "2026-07-21T00:58:00.329Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -4010,7 +4030,7 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-07-20T23:31:03.627Z",
+  "last_evolved_at": "2026-07-21T00:57:27.627Z",
   "history": [
     {
       "year": 2,
@@ -4287,6 +4307,30 @@
       "type": "event",
       "title": "事件结束",
       "description": "绿野镇迎来文化繁荣。 结束。"
+    },
+    {
+      "year": 62,
+      "type": "event",
+      "title": "事件结束",
+      "description": "风语村遭受自然灾害。 结束。"
+    },
+    {
+      "year": 62,
+      "type": "cultural_boom",
+      "title": "新事件",
+      "description": "绿野镇迎来文化繁荣。"
+    },
+    {
+      "year": 63,
+      "type": "golden_age",
+      "title": "新事件",
+      "description": "绿野镇进入黄金时代！"
+    },
+    {
+      "year": 66,
+      "type": "natural_disaster",
+      "title": "新事件",
+      "description": "绿野镇遭受自然灾害。"
     }
   ]
 }
