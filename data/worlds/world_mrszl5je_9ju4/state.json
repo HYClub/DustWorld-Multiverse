@@ -2,7 +2,7 @@
   "world_id": "world_mrszl5je_9ju4",
   "name": "地球",
   "era": "antiquity",
-  "year": 78,
+  "year": 79,
   "civilization": {
     "antiquity": {
       "civ": "han",
@@ -3810,7 +3810,7 @@
         "type": "ore",
         "x": 7,
         "y": 6,
-        "amount": 26.24000000000001
+        "amount": 20.40000000000001
       },
       {
         "type": "water",
@@ -3876,7 +3876,7 @@
       "x": 35,
       "y": 56,
       "level": 3,
-      "population": 382,
+      "population": 381,
       "max_population": 500,
       "tech_level": 3,
       "culture": 1040,
@@ -3909,7 +3909,7 @@
       "x": 6,
       "y": 5,
       "level": 2,
-      "population": 114,
+      "population": 113,
       "max_population": 200,
       "tech_level": 2,
       "culture": 120,
@@ -3919,7 +3919,7 @@
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 97.76000000000002,
+        "ore": 104.60000000000002,
         "water": 0,
         "gold": 0
       },
@@ -3945,12 +3945,12 @@
   "legacy": {
     "military": 0.7,
     "economic": 0,
-    "cultural": 32.1,
-    "scientific": 8.950000000000014
+    "cultural": 32.800000000000004,
+    "scientific": 9.100000000000014
   },
   "milestones": [],
   "stats": {
-    "total_population": 496,
+    "total_population": 494,
     "total_settlements": 2,
     "extinct_settlements": 0,
     "total_wars": 0,
@@ -3959,7 +3959,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T08:52:39.627Z",
-  "updated_at": "2026-07-21T03:45:16.964Z",
+  "updated_at": "2026-07-21T03:52:30.971Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -3999,7 +3999,7 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-07-21T03:35:51.627Z",
+  "last_evolved_at": "2026-07-21T03:50:15.627Z",
   "history": [
     {
       "year": 2,
