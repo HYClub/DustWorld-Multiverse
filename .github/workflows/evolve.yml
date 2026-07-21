@@ -2,12 +2,17 @@ name: Evolve Worlds
 
 on:
   schedule:
-    - cron: '*/14 * * * *'
+    - cron: '13 * * * *'
   push:
     branches: [master]
     paths-ignore:
       - 'data/worlds/**'
   workflow_dispatch:
+    inputs:
+      worlds:
+        description: 'Comma-separated world IDs to evolve (empty = all)'
+        required: false
+        type: string
 
 permissions:
   contents: write
@@ -24,8 +29,21 @@ jobs:
         id: get-worlds
         env:
           GH_TOKEN: ${{ github.token }}
+          INPUT_WORLDS: ${{ github.event.inputs.worlds }}
         run: |
           WORLDS=$(gh api repos/${{ github.repository }}/contents/data/worlds --jq '[.[].name]' 2>/dev/null || echo '[]')
+          if [ -n "$INPUT_WORLDS" ]; then
+            FILTERED="[]"
+            IFS=',' read -ra IDS <<< "$INPUT_WORLDS"
+            for w in $(echo "$WORLDS" | jq -r '.[]'); do
+              for id in "${IDS[@]}"; do
+                if [ "$w" = "$id" ]; then
+                  FILTERED=$(echo "$FILTERED" | jq -c --arg w "$w" '. + [$w]')
+                fi
+              done
+            done
+            WORLDS="$FILTERED"
+          fi
           echo "matrix={\"world\":$WORLDS}" >> "$GITHUB_OUTPUT"
           echo "Found $(echo $WORLDS | jq 'length') worlds"
 

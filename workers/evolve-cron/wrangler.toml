@@ -3,7 +3,4 @@ main = "src/index.js"
 compatibility_date = "2025-04-01"
 
 [triggers]
-crons = ["*/14 * * * *"]
-
-[env.evolve]
-# Set GITHUB_PAT in Cloudflare Dashboard > Workers > dustworld-evolve-cron > Secrets
+crons = ["* * * * *"]
