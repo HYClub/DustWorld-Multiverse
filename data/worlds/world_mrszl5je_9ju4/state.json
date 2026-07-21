@@ -2,7 +2,7 @@
   "world_id": "world_mrszl5je_9ju4",
   "name": "地球",
   "era": "antiquity",
-  "year": 82,
+  "year": 88,
   "civilization": {
     "antiquity": {
       "civ": "han",
@@ -3810,7 +3810,7 @@
         "type": "ore",
         "x": 7,
         "y": 6,
-        "amount": 3.240000000000009
+        "amount": 0
       },
       {
         "type": "water",
@@ -3876,7 +3876,7 @@
       "x": 35,
       "y": 56,
       "level": 3,
-      "population": 378,
+      "population": 356,
       "max_population": 500,
       "tech_level": 3,
       "culture": 1040,
@@ -3909,7 +3909,7 @@
       "x": 6,
       "y": 5,
       "level": 2,
-      "population": 110,
+      "population": 95,
       "max_population": 200,
       "tech_level": 2,
       "culture": 120,
@@ -3942,38 +3942,37 @@
   ],
   "active_events": [
     {
-      "id": "EVT99196",
-      "type": "war",
-      "participants": [
-        "SET002",
-        "SET001"
-      ],
-      "remaining_years": 3,
-      "duration": 6,
-      "description": "风语村与绿野镇爆发战争！"
-    },
-    {
       "id": "EVT30970",
       "type": "war",
       "participants": [
         "SET002",
         "SET001"
       ],
-      "remaining_years": 7,
+      "remaining_years": 1,
       "duration": 3,
       "description": "风语村与绿野镇爆发战争！"
+    },
+    {
+      "id": "EVT64351",
+      "type": "plague",
+      "participants": [
+        "SET002"
+      ],
+      "remaining_years": 3,
+      "duration": 8,
+      "description": "风语村爆发瘟疫。"
     }
   ],
   "trade_routes": [],
   "legacy": {
-    "military": 1,
+    "military": 1.8000000000000003,
     "economic": 0,
-    "cultural": 34.90000000000001,
-    "scientific": 9.550000000000015
+    "cultural": 39.10000000000003,
+    "scientific": 10.450000000000017
   },
   "milestones": [],
   "stats": {
-    "total_population": 488,
+    "total_population": 451,
     "total_settlements": 2,
     "extinct_settlements": 0,
     "total_wars": 2,
@@ -3982,7 +3981,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T08:52:39.627Z",
-  "updated_at": "2026-07-21T04:42:11.563Z",
+  "updated_at": "2026-07-21T06:08:45.306Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -4022,7 +4021,7 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-07-21T04:33:27.627Z",
+  "last_evolved_at": "2026-07-21T05:59:51.627Z",
   "history": [
     {
       "year": 2,
@@ -4389,6 +4388,18 @@
       "type": "war",
       "title": "新事件",
       "description": "风语村与绿野镇爆发战争！"
+    },
+    {
+      "year": 85,
+      "type": "event",
+      "title": "事件结束",
+      "description": "风语村与绿野镇爆发战争！ 结束。"
+    },
+    {
+      "year": 87,
+      "type": "plague",
+      "title": "新事件",
+      "description": "风语村爆发瘟疫。"
     }
   ]
 }
