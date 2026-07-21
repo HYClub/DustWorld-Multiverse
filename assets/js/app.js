@@ -37,7 +37,9 @@
       if (code) {
         localStorage.removeItem('dustworld_oauth_code');
         localStorage.removeItem('dustworld_oauth_state');
-        this.authManager.handleCallback(code, state).catch(function () {}).finally(function () {
+        this.authManager.handleCallback(code, state).catch(function (e) {
+          window.Toast.error('登录失败: ' + (e.message || '认证交换失败'));
+        }).finally(function () {
           self._finishInit();
         });
       } else {
@@ -46,11 +48,12 @@
     }
 
     _finishInit() {
-      this.router = new window.Router();
-      this.router.init();
       this._updateLoginButton();
       this._hideLoading();
+      // Set pending hash first so router loads the right page in one go
       this._redirectPendingCreate();
+      this.router = new window.Router();
+      this.router.init();
     }
 
     _redirectPendingCreate() {
@@ -69,13 +72,78 @@
         var loginBtn = e.target.closest('#login-btn');
         if (loginBtn) {
           if (self.authManager.isLoggedIn()) {
-            self.authManager.logout();
+            self._toggleDropdown();
           } else {
             self.authManager.login();
           }
           return;
         }
+        var menuItem = e.target.closest('.nav-dropdown-item');
+        if (menuItem) {
+          var action = menuItem.getAttribute('data-action');
+          if (action === 'logout') {
+            self._confirmLogout();
+          } else if (action === 'user') {
+            window.location.hash = '#/user';
+            self._hideDropdown();
+          }
+          return;
+        }
+        // Click outside dropdown → close
+        var menu = document.getElementById('user-menu');
+        if (menu && !menu.contains(e.target)) {
+          self._hideDropdown();
+        }
       });
+    }
+
+    _toggleDropdown() {
+      var dd = document.getElementById('nav-dropdown');
+      if (!dd) return;
+      if (dd.style.display === 'none') {
+        this._updateDropdown();
+        dd.style.display = '';
+      } else {
+        dd.style.display = 'none';
+      }
+    }
+
+    _hideDropdown() {
+      var dd = document.getElementById('nav-dropdown');
+      if (dd) dd.style.display = 'none';
+    }
+
+    _updateDropdown() {
+      var user = this.authManager.getUser();
+      if (!user) return;
+      var nameEl = document.getElementById('dropdown-name');
+      if (nameEl) nameEl.textContent = user.login || user.name || '用户';
+      var avatarEl = document.getElementById('dropdown-avatar');
+      if (avatarEl && user.avatar_url) {
+        avatarEl.src = user.avatar_url;
+        avatarEl.style.display = '';
+      }
+    }
+
+    _confirmLogout() {
+      var self = this;
+      if (window.Modal && typeof window.Modal.show === 'function') {
+        var modal = window.Modal.show({
+          title: '退出登录',
+          content: '<p style="text-align:center;color:var(--text-secondary);">确定要退出登录吗？</p>',
+          confirmText: '退出',
+          cancelText: '取消'
+        });
+        modal.onConfirm(function () {
+          self._hideDropdown();
+          self.authManager.logout();
+        });
+      } else {
+        if (confirm('确定要退出登录吗？')) {
+          self._hideDropdown();
+          self.authManager.logout();
+        }
+      }
     }
 
     _updateLoginButton() {
@@ -83,7 +151,7 @@
       if (!loginBtn) return;
       if (this.authManager.isLoggedIn()) {
         var user = this.authManager.getUser();
-        loginBtn.textContent = (user && user.login) ? user.login : '已登录';
+        loginBtn.innerHTML = (user && user.login) ? (user.login + ' ▾') : '已登录 ▾';
         loginBtn.className = 'btn btn-secondary nav-login-btn';
         loginBtn.style.cssText = 'padding: 8px 16px; font-size: 13px;';
       } else {

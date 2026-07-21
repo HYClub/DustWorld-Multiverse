@@ -36,8 +36,6 @@
         }
         throw new Error(result.error || '交换失败');
       });
-    }).catch(function (err) {
-      window.Toast.error('登录失败: ' + err.message);
     });
   };
 

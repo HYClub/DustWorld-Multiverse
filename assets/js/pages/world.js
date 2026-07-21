@@ -49,6 +49,7 @@
       this.openInterveneBtn = document.getElementById('open-intervene-modal');
       this.likeBtn = document.getElementById('world-like-btn');
       this.likeCount = document.querySelector('.like-count');
+      this.refreshBtn = document.getElementById('world-refresh-btn');
       this.interveneTargetSelect = document.getElementById('intervene-target-select');
     }
 
@@ -62,6 +63,10 @@
       if (this.shareBtn) {
         this._bound.share = function () { self.onShare(); };
         this.shareBtn.addEventListener('click', this._bound.share);
+      }
+      if (this.refreshBtn) {
+        this._bound.refresh = function () { self.loadWorldData(self.worldId); };
+        this.refreshBtn.addEventListener('click', this._bound.refresh);
       }
       var backBtn = this.appEl && this.appEl.querySelector('[data-action="back"]');
       if (backBtn) {
@@ -96,7 +101,11 @@
         var hasApi = dm && typeof dm.getWorld === 'function';
         var world;
 
-        if (hasApi) world = await dm.getWorld(worldId);
+        if (hasApi) {
+          var configPromise = dm.getWorldConfig(worldId).catch(function () { return null; });
+          world = await dm.getWorld(worldId);
+          if (world && typeof world !== 'object') world = null;
+        }
         if (!world) {
           this._showError('世界不存在');
           return;
@@ -105,8 +114,9 @@
         this.worldData = world;
         this._showLoading(false);
 
-        // Initialize engine from existing state
-        this.engine = new window.WorldEngine(world.config || {}, world);
+        // Load config separately (might be embedded in state or stored as separate file)
+        var cfg = world.config || (await configPromise) || {};
+        this.engine = new window.WorldEngine(cfg, world);
         this.engine._initialized = true;
         this._renderAll();
       } catch (err) {
@@ -368,7 +378,7 @@
     }
 
     _getInterventionQuota(world) {
-      var key = 'interventions_used_' + world.world_id;
+      var key = 'interventions_used_' + this.worldId;
       try {
         var used = parseInt(localStorage.getItem(key) || '0', 10);
         return Math.max(0, 3 - used);
@@ -387,7 +397,7 @@
       var self = this;
 
       var recordLocally = function () {
-        var key = 'interventions_used_' + world.world_id;
+        var key = 'interventions_used_' + self.worldId;
         var used = 0;
         try { used = parseInt(localStorage.getItem(key) || '0', 10); } catch(e) {}
         used++;
@@ -404,8 +414,8 @@
 
       var dm = window.DataManager;
       if (dm && typeof dm.submitIntervention === 'function') {
-        dm.submitIntervention(world.world_id, { type: type, target: targetSettlementId, settlementName: settlementName }).then(recordLocally).catch(function () {
-          recordLocally();
+        dm.submitIntervention(this.worldId, { type: type, target: targetSettlementId, settlementName: settlementName }).then(recordLocally).catch(function () {
+          window.Toast.error('干预提交失败，请重试');
         });
       } else {
         recordLocally();
@@ -419,7 +429,7 @@
       var self = this;
       var dm = window.DataManager;
       if (dm && typeof dm.toggleLike === 'function') {
-        dm.toggleLike(this.worldData.world_id).then(function (result) {
+        dm.toggleLike(self.worldId).then(function (result) {
           self.likeBtn.classList.toggle('liked', result.liked);
           if (self.likeCount) self.likeCount.textContent = result.likes;
           if (self.worldData) self.worldData.likes = result.likes;

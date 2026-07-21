@@ -93,8 +93,8 @@
       if (this.emptyState) this.emptyState.style.display = 'none';
       if (this.loadMoreBtn) this.loadMoreBtn.disabled = true;
 
-      var timeoutPromise = new Promise(function (_, reject) {
-        setTimeout(function () { reject(new Error('加载超时')); }, 15000);
+      var timeoutId, timeoutPromise = new Promise(function (_, reject) {
+        timeoutId = setTimeout(function () { reject(new Error('加载超时')); }, 15000);
       });
 
       try {
@@ -103,6 +103,7 @@
         if (dm && typeof dm.getWorlds === 'function') {
           data = await Promise.race([dm.getWorlds({ sort: this.currentSort, page: this.page, limit: 12 }), timeoutPromise]);
         }
+        clearTimeout(timeoutId);
 
         var worlds = data && data.worlds ? data.worlds : [];
 
@@ -135,9 +136,13 @@
 
         this.page++;
       } catch (err) {
+        clearTimeout(timeoutId);
         console.error('loadWorlds error:', err);
-        if (this.skeletonContainer) this.skeletonContainer.style.display = 'none';
-        this._showEmpty();
+        if (err.message === '加载超时' && append && this.worldGrid && this.worldGrid.children.length > 0) {
+          window.Toast.warning('加载超时，请重试');
+        } else {
+          this._showEmpty();
+        }
       } finally {
         this.loading = false;
         if (this.skeletonContainer) this.skeletonContainer.style.display = 'none';
@@ -181,7 +186,7 @@
       this.loadWorlds(false);
     }
 
-    onSearch(query) {
+    async onSearch(query) {
       if (!query || !query.trim()) {
         if (this.worldGrid) this.worldGrid.innerHTML = '';
         this.page = 1;
@@ -190,24 +195,34 @@
       }
 
       var q = query.trim().toLowerCase();
-      var filtered = (this.allWorlds || []).filter(function (w) {
-        return w.name && w.name.toLowerCase().indexOf(q) !== -1;
-      });
+      var dm = window.DataManager;
 
-      if (this.worldGrid) this.worldGrid.innerHTML = '';
-      if (filtered.length === 0) {
-        this._showEmpty();
-        return;
+      // Search across ALL worlds via DataManager cache, not just loaded page
+      try {
+        var all = dm && typeof dm.getWorldList === 'function' ? await dm.getWorldList() : (this.allWorlds || []);
+        var filtered = all.filter(function (w) {
+          return (w.name && w.name.toLowerCase().indexOf(q) !== -1) ||
+                 (w.creator && w.creator.toLowerCase().indexOf(q) !== -1) ||
+                 (w.description && w.description.toLowerCase().indexOf(q) !== -1);
+        });
+
+        if (this.worldGrid) this.worldGrid.innerHTML = '';
+        if (filtered.length === 0) {
+          this._showEmpty();
+          return;
+        }
+
+        for (var i = 0; i < filtered.length; i++) {
+          var card = this._renderWorldCard(filtered[i]);
+          if (this.worldGrid) this.worldGrid.appendChild(card);
+        }
+
+        if (this.loadMoreBtn) this.loadMoreBtn.style.display = 'none';
+        if (this.emptyState) this.emptyState.style.display = 'none';
+        if (this.errorState) this.errorState.style.display = 'none';
+      } catch (e) {
+        console.warn('Search failed, fallback to local filter', e);
       }
-
-      for (var i = 0; i < filtered.length; i++) {
-        var card = this._renderWorldCard(filtered[i]);
-        if (this.worldGrid) this.worldGrid.appendChild(card);
-      }
-
-      if (this.loadMoreBtn) this.loadMoreBtn.style.display = 'none';
-      if (this.emptyState) this.emptyState.style.display = 'none';
-      if (this.errorState) this.errorState.style.display = 'none';
     }
 
     destroy() {

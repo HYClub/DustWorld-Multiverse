@@ -1,12 +1,6 @@
-name: Evolve Worlds
+name: Evolve Worlds (manual)
 
 on:
-  schedule:
-    - cron: '13 * * * *'
-  push:
-    branches: [master]
-    paths-ignore:
-      - 'data/worlds/**'
   workflow_dispatch:
     inputs:
       worlds:
@@ -16,7 +10,6 @@ on:
 
 permissions:
   contents: write
-  issues: read
 
 jobs:
   list-worlds:
@@ -31,10 +24,11 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           INPUT_WORLDS: ${{ github.event.inputs.worlds }}
         run: |
-          WORLDS=$(gh api repos/${{ github.repository }}/contents/data/worlds --jq '[.[].name]' 2>/dev/null || echo '[]')
+          WORLDS=$(gh api repos/${{ github.repository }}/contents/data/worlds --jq '[.[].name]' 2>/dev/null) || { echo "gh api failed, treating as empty"; WORLDS='[]'; }
           if [ -n "$INPUT_WORLDS" ]; then
             FILTERED="[]"
             IFS=',' read -ra IDS <<< "$INPUT_WORLDS"
+            for i in "${!IDS[@]}"; do IDS[$i]=$(echo "${IDS[$i]}" | xargs); done
             for w in $(echo "$WORLDS" | jq -r '.[]'); do
               for id in "${IDS[@]}"; do
                 if [ "$w" = "$id" ]; then
@@ -45,7 +39,8 @@ jobs:
             WORLDS="$FILTERED"
           fi
           echo "matrix={\"world\":$WORLDS}" >> "$GITHUB_OUTPUT"
-          echo "Found $(echo $WORLDS | jq 'length') worlds"
+          echo "Worlds: $(echo $WORLDS | jq -r 'join(\", \")')"
+          echo "Count: $(echo $WORLDS | jq 'length')"
 
   evolve:
     needs: list-worlds

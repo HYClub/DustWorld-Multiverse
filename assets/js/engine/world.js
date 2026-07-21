@@ -33,6 +33,7 @@
     this.config = config || {};
     this.state = state || this._createState();
     if (!this.state.history) this.state.history = [];
+    if (!this.state.stats) this.state.stats = { total_population: 0, total_settlements: 0, extinct_settlements: 0, total_wars: 0, tech_breakthroughs: 0, golden_ages: 0, dark_ages: 0 };
     this._pendingNotifications = [];
     this._milestones = {};
     this._initialized = false;
@@ -273,7 +274,6 @@
           if (Math.sqrt((s.x - r.x) * (s.x - r.x) + (s.y - r.y) * (s.y - r.y)) > 6) continue;
           var harvest = Math.min(r.amount, (s.population || 0) * 0.06);
           r.amount -= harvest;
-          if (r.amount <= 0) continue;
           var fb = (r.type === 'food') ? self.bonus('food_multiply', 1.0) : 1.0;
           var amt = harvest * fb;
           if (r.type === 'food') s.resources.food = (s.resources.food || 0) + amt;
@@ -535,18 +535,18 @@
     if (era === 'antiquity' && maxTech >= 3 && totalPop > 300 && sCount >= (isSmall ? 2 : 3)) {
       this.state.era = 'exploration';
       this._notify('时代飞升', '进入探索时代！', 'milestone');
-      this.state.legacy.military += this.state.stats.total_wars * 5;
+      this.state.legacy.military += (this.state.stats.total_wars || 0) * 5;
       this.state.legacy.economic += Math.floor(totalPop / 10);
       this.state.legacy.cultural += (this.state.stats.golden_ages || 0) * 20;
-      this.state.legacy.scientific += this.state.stats.tech_breakthroughs * 10;
+      this.state.legacy.scientific += (this.state.stats.tech_breakthroughs || 0) * 10;
       setts.forEach(function(s) { s.resources.food = (s.resources.food || 0) + 50; s.population = Math.min(s.max_population || 5000, (s.population || 0) + 20); });
     } else if (era === 'exploration' && maxTech >= 5 && totalPop > 5000 && sCount >= 5) {
       this.state.era = 'modern';
       this._notify('时代飞升', '进入现代时代！', 'milestone');
-      this.state.legacy.military += this.state.stats.total_wars * 3;
+      this.state.legacy.military += (this.state.stats.total_wars || 0) * 3;
       this.state.legacy.economic += Math.floor(totalPop / 20);
       this.state.legacy.cultural += (this.state.stats.golden_ages || 0) * 10;
-      this.state.legacy.scientific += this.state.stats.tech_breakthroughs * 5;
+      this.state.legacy.scientific += (this.state.stats.tech_breakthroughs || 0) * 5;
       setts.forEach(function(s) { s.resources.gold = (s.resources.gold || 0) + 100; s.population = Math.min(s.max_population || 5000, (s.population || 0) + 30); });
     }
   };

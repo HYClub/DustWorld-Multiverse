@@ -63,7 +63,12 @@
         headers['Content-Type'] = 'application/json';
       }
     }
+    var controller = new AbortController();
+    fetchOptions.signal = controller.signal;
+    var timeoutId = setTimeout(function () { controller.abort(); }, 30000);
+
     return fetch(url, fetchOptions).then(function (res) {
+      clearTimeout(timeoutId);
       if (!res.ok) {
         return res.json().then(function (err) {
           var error = new Error('GitHub API Error: ' + (err.message || res.statusText));
@@ -74,6 +79,10 @@
       }
       if (res.status === 204) return null;
       return res.json();
+    }).catch(function (err) {
+      clearTimeout(timeoutId);
+      if (err.name === 'AbortError') throw new Error('GitHub API timeout');
+      throw err;
     });
   };
 
@@ -174,6 +183,21 @@
   GitHubAPI.prototype.submitIntervention = function (worldId, intervention) {
     var path = 'data/interventions/history.json';
     var self = this;
+    var pushRecord = function (history, sha) {
+      history.push({
+        id: Date.now().toString(36) + Math.random().toString(36).substr(2, 3),
+        world_id: worldId,
+        type: intervention.type,
+        target: intervention.target || '',
+        settlementName: intervention.settlementName || '',
+        username: intervention.username || '',
+        timestamp: new Date().toISOString(),
+        status: 'pending'
+      });
+      return self._putFile(path, self._encodeContent(JSON.stringify(history, null, 2)),
+        '干预: ' + worldId + ' - ' + (intervention.type || 'unknown'), sha);
+    };
+
     return this.request('/repos/' + this.owner + '/' + this.repo + '/contents/' + path)
       .then(function (data) {
         var history = [];
@@ -182,39 +206,14 @@
           try { history = JSON.parse(self._decodeContent(data.content) || '[]'); } catch (e) {}
           sha = data.sha;
         }
-        history.push({
-          id: Date.now().toString(36) + Math.random().toString(36).substr(2, 3),
-          world_id: worldId,
-          type: intervention.type,
-          target: intervention.target || '',
-          settlementName: intervention.settlementName || '',
-          timestamp: new Date().toISOString(),
-          status: 'pending'
-        });
-        return self._putFile(path, self._encodeContent(JSON.stringify(history, null, 2)),
-          '干预: ' + worldId + ' - ' + (intervention.type || 'unknown'), sha);
+        return pushRecord(history, sha);
       })
-      .catch(function () {
-        // File doesn't exist yet, create it
-        var history = [{
-          id: Date.now().toString(36) + Math.random().toString(36).substr(2, 3),
-          world_id: worldId,
-          type: intervention.type,
-          target: intervention.target || '',
-          settlementName: intervention.settlementName || '',
-          timestamp: new Date().toISOString(),
-          status: 'pending'
-        }];
-        return self._putFile(path, self._encodeContent(JSON.stringify(history, null, 2)),
-          '干预: ' + worldId + ' - ' + (intervention.type || 'unknown'));
+      .catch(function (err) {
+        if (err && err.status === 404) {
+          return pushRecord([], null);
+        }
+        throw err;
       });
-  };
-
-  GitHubAPI.prototype.triggerEvolution = function () {
-    return this.request('/repos/' + this.owner + '/' + this.repo + '/actions/workflows/evolve.yml/dispatches', {
-      method: 'POST',
-      body: { ref: 'master' }
-    }).then(function () { return true; }).catch(function () { return false; });
   };
 
   GitHubAPI.prototype.getInterventions = function () {
@@ -246,9 +245,14 @@
       return self.request('/repos/' + self.owner + '/' + self.repo + '/contents/' + path, {
         method: 'PUT',
         body: body
+      }).then(function (resp) {
+        return resp && resp.content ? resp.content.sha : null;
       }).catch(function (err) {
         if (attempt < maxRetries) {
-          return new Promise(function (resolve) { setTimeout(resolve, attempt * 1000); }).then(tryPut);
+          return self._getFileSha(path).then(function (newSha) {
+            if (newSha) body.sha = newSha;
+            return new Promise(function (resolve) { setTimeout(resolve, attempt * 1000); }).then(tryPut);
+          });
         }
         throw err;
       });
@@ -266,15 +270,8 @@
     var statePath = 'data/worlds/' + worldId + '/state.json';
     var stateContent = this._encodeContent(JSON.stringify(worldData, null, 2));
 
-    var configPath = 'data/worlds/' + worldId + '/config.json';
-    var configObj = worldData.config || {};
-    var configContent = this._encodeContent(JSON.stringify(configObj, null, 2));
-
     var msg = '创建世界: ' + (worldData.name || worldId);
-    var self = this;
-    return this._putFile(statePath, stateContent, msg).then(function () {
-      return self._putFile(configPath, configContent, msg);
-    });
+    return this._putFile(statePath, stateContent, msg);
   };
 
   GitHubAPI.prototype.updateWorldState = function (worldId, worldData) {
@@ -314,13 +311,13 @@
     var statePath = 'data/worlds/' + worldId + '/state.json';
     var configPath = 'data/worlds/' + worldId + '/config.json';
     var msg = '毁灭世界: ' + worldId;
-    return self._getFileSha(statePath).then(function (sha) {
-      if (!sha) return;
-      return self._deleteFile(statePath, sha, msg);
+    // Delete config first (optional file), then state (always exists)
+    return self._getFileSha(configPath).then(function (sha) {
+      if (sha) return self._deleteFile(configPath, sha, msg + ' (config)');
     }).then(function () {
-      return self._getFileSha(configPath);
+      return self._getFileSha(statePath);
     }).then(function (sha) {
-      if (sha) return self._deleteFile(configPath, sha, msg);
+      if (sha) return self._deleteFile(statePath, sha, msg + ' (state)');
     });
   };
 

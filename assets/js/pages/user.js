@@ -378,14 +378,12 @@
             return api._putFile(statePath,
               api._encodeContent(JSON.stringify(fullState, null, 2)),
               '世界末日: ' + name, sha);
-          }).then(function () {
-            return api._getFileSha(statePath);
-          }).then(function (sha) {
-            return api._deleteFile(statePath, sha, '毁灭世界: ' + name);
+          }).then(function (newSha) {
+            return api._deleteFile(statePath, newSha, '毁灭世界: ' + name);
           }).then(function () {
             return api._getFileSha(configPath);
-          }).then(function (sha) {
-            if (sha) return api._deleteFile(configPath, sha, '毁灭世界: ' + name);
+          }).then(function (configSha) {
+            if (configSha) return api._deleteFile(configPath, configSha, '毁灭世界: ' + name);
           }).then(function () {
             dm.invalidateCache('worldList');
             dm.invalidateCache('world_' + world.world_id);

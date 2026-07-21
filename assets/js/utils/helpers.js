@@ -179,7 +179,7 @@
       card.setAttribute('world-id', world.world_id || '');
       card.setAttribute('name', world.name || '');
       card.setAttribute('creator', world.creator || '');
-      card.setAttribute('creator-avatar', world.creator_avatar || '');
+      card.setAttribute('creator-avatar', world.creatorAvatar || '');
       card.setAttribute('year', String(world.year || 0));
       card.setAttribute('era', world.era || 'primitive');
       card.setAttribute('era-name', world.eraName || world.era || '\u539f\u59cb\u65f6\u4ee3');
@@ -213,7 +213,9 @@
         dm.toggleLike(detail.worldId).then(function (result) {
           card.update({ isLiked: result.liked, likes: String(result.likes) });
           world.likes = result.likes;
-        }).catch(function () {});
+        }).catch(function () {
+          window.Toast.error('点赞失败');
+        });
       }
     });
     card.addEventListener('world-refresh', function (e) {
@@ -236,7 +238,7 @@
             world.era = meta.era;
             world.lastEvolvedAt = meta.lastEvolvedAt;
           }
-        }).catch(function () { card.update({}); });
+        }).catch(function () { console.warn('refreshWorldMeta failed for', detail.worldId); });
       }
     });
     return card;

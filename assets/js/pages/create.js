@@ -83,11 +83,13 @@
         var el = document.getElementById(id);
         return el ? el.value : (def || 'normal');
       };
+      var pFloat = function(id, def) { var v = parseFloat(g(id, def)); return isNaN(v) ? parseFloat(def) || 0 : v; };
+      var pInt = function(id, def) { var v = parseInt(g(id, def)); return isNaN(v) ? parseInt(def) || 0 : v; };
       var params = {
         map_size: g('p-map-size', 'medium'),
         world_shape: g('p-world-shape', 'continent'),
         latitude: g('p-latitude', 'temperate'),
-        ocean_ratio: parseFloat(g('p-ocean', '50')),
+        ocean_ratio: pFloat('p-ocean', '50'),
         climate_type: g('p-climate', 'varied'),
         temperature: g('p-temperature', 'moderate'),
         rainfall: g('p-rainfall', 'moderate'),
@@ -95,14 +97,14 @@
         disaster_freq: g('p-disaster', 'medium'),
         resource_abundance: g('p-resources', 'normal'),
         strategic_resource_freq: g('p-strategic', 'normal'),
-        initial_population: parseInt(g('p-init-pop', '15')),
-        population_growth_rate: parseFloat(g('p-growth', '1.0')),
+        initial_population: pInt('p-init-pop', '15'),
+        population_growth_rate: pFloat('p-growth', '1.0'),
         max_population_cap: g('p-pop-cap', 'normal'),
-        initial_settlements: parseInt(g('p-init-setts', '3')),
-        settlement_split_rate: parseFloat(g('p-split', '0.5')),
+        initial_settlements: pInt('p-init-setts', '3'),
+        settlement_split_rate: pFloat('p-split', '0.5'),
         tech_speed: g('p-tech', 'normal'),
         tech_diffusion: g('p-tech-diff', 'normal'),
-        starting_tech: parseInt(g('p-start-tech', '0')),
+        starting_tech: pInt('p-start-tech', '0'),
         trade_openness: g('p-trade', 'normal'),
         economic_system: g('p-economy', 'mercantile'),
         tax_rate: g('p-tax', 'moderate'),
@@ -129,10 +131,11 @@
       var pendingData = null;
       try { pendingData = JSON.parse(localStorage.getItem('dustworld_pending_create')); } catch(e) {}
       if (!pendingData) return;
-      localStorage.removeItem('dustworld_pending_create');
 
       var auth = window.AuthManager && window.AuthManager._instance;
       if (!auth || !auth.isLoggedIn()) return;
+
+      localStorage.removeItem('dustworld_pending_create');
 
       this.data.name = pendingData.name || '';
       this.data.description = pendingData.description || '';
@@ -337,8 +340,9 @@
           if (this.step3Title) this.step3Title.textContent = '选择文明';
           if (this.step3Desc) this.step3Desc.textContent = '古典时代的先民将奠定你文明的根基';
           // Show civ cards
-          var self = this;
-          this.civGrid.querySelectorAll('.civ-card').forEach(function(c) { c.style.display = ''; });
+          if (this.civGrid) {
+            this.civGrid.querySelectorAll('.civ-card').forEach(function(c) { c.style.display = ''; });
+          }
           this._renderCivGrid();
           if (this.civs.length > 0) this.civGrid.firstChild.click();
         } else {

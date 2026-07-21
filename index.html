@@ -71,7 +71,19 @@
         <span class="navbar-link-text">我的</span>
       </a>
     </div>
-    <button class="btn btn-primary nav-login-btn" id="login-btn" style="padding: 8px 16px; font-size: 13px;">登录 GitHub</button>
+    <div class="nav-user-menu" id="user-menu">
+      <button class="btn btn-primary nav-login-btn" id="login-btn" style="padding: 8px 16px; font-size: 13px;">登录 GitHub</button>
+      <div class="nav-dropdown" id="nav-dropdown" style="display:none;">
+        <div class="nav-dropdown-header">
+          <img class="nav-dropdown-avatar" id="dropdown-avatar" src="" alt="" style="display:none;">
+          <span id="dropdown-name">用户</span>
+        </div>
+        <div class="nav-dropdown-divider"></div>
+        <div class="nav-dropdown-item" data-action="user">🌌 我的世界</div>
+        <div class="nav-dropdown-divider"></div>
+        <div class="nav-dropdown-item nav-dropdown-item-danger" data-action="logout">🚪 退出登录</div>
+      </div>
+    </div>
   </nav>
 
   <main id="app"></main>

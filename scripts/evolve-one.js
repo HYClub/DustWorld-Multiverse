@@ -81,26 +81,49 @@ async function evolve(skipRetry) {
     console.log('EVOLVED ' + worldId + ': +' + years + 'y -> year ' + ns.year + ' pop=' + (ns.stats ? ns.stats.total_population : 0));
     return ns.year;
   } catch (e) {
-    if (!skipRetry && (e.message.indexOf('422') !== -1 || e.message.indexOf('409') !== -1)) {
-      console.log('RETRY ' + worldId + ': SHA conflict, re-reading...');
+    if (!skipRetry && (e.message.indexOf('422') !== -1 || e.message.indexOf('409') !== -1 || e.message.indexOf('Conflict') !== -1 || e.message.indexOf('SHA') !== -1)) {
+      console.log('RETRY ' + worldId + ': SHA conflict ("' + e.message + '"), re-reading...');
       return evolve(true);
     }
     throw e;
   }
 }
 
-async function main() {
-  const result = await evolve(false);
-  if (result === null) return;
-  // If there's still time elapsed after evolution, try again (catch-up)
-  const data2 = await api('GET', '/repos/' + OWNER + '/' + REPO + '/contents/data/worlds/' + worldId + '/state.json');
-  if (data2 && data2.content) {
-    const state2 = JSON.parse(Buffer.from(data2.content.replace(/\s/g, ''), 'base64').toString('utf-8'));
-    const lastEvo2 = state2.last_evolved_at ? new Date(state2.last_evolved_at).getTime() : Date.now();
-    if ((Date.now() - lastEvo2) / 1000 >= SECONDS_PER_YEAR) {
-      console.log('CATCHUP ' + worldId + ': more time elapsed, evolving again...');
-      await evolve(false);
+async function releaseLock() {
+  try {
+    const lockPath = 'data/locks/' + worldId;
+    const lockData = await api('GET', '/repos/' + OWNER + '/' + REPO + '/contents/' + lockPath);
+    if (lockData && lockData.sha) {
+      await api('DELETE', '/repos/' + OWNER + '/' + REPO + '/contents/' + lockPath, {
+        message: '🔓 Release lock ' + worldId,
+        sha: lockData.sha,
+        branch: BRANCH,
+      });
+      console.log('LOCK released for ' + worldId);
+    } else {
+      console.log('LOCK no file for ' + worldId + ', nothing to release');
     }
+  } catch (e) {
+    console.warn('releaseLock warn:', e.message);
+  }
+}
+
+async function main() {
+  try {
+    for (let pass = 0; pass < 10; pass++) {
+      const result = await evolve(false);
+      if (result === null) break;
+      // Catch-up: re-read fresh state and check if more time has elapsed
+      const fresh = await api('GET', '/repos/' + OWNER + '/' + REPO + '/contents/data/worlds/' + worldId + '/state.json');
+      if (!fresh || !fresh.content) { console.log('CATCHUP ' + worldId + ': no state.json, stop'); break; }
+      const s = JSON.parse(Buffer.from(fresh.content.replace(/\s/g, ''), 'base64').toString('utf-8'));
+      const lastEvo = s.last_evolved_at ? new Date(s.last_evolved_at).getTime()
+        : s.created_at ? new Date(s.created_at).getTime() : Date.now();
+      if ((Date.now() - lastEvo) / 1000 < SECONDS_PER_YEAR) break;
+      console.log('CATCHUP ' + worldId + ': more time elapsed, evolving again...');
+    }
+  } finally {
+    await releaseLock();
   }
 }
 

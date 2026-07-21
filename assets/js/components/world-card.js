@@ -128,11 +128,6 @@ class WorldCard extends HTMLElement {
       clearInterval(this._countdownTimer);
       this._countdownTimer = null;
     }
-    this._pendingRefresh = false;
-    if (d.lastEvolvedAt && d.lastEvolvedAt !== this._lastEvolvedAt) {
-      this._lastEvo = new Date(d.lastEvolvedAt).getTime();
-    }
-    this._lastEvolvedAt = d.lastEvolvedAt || this._lastEvolvedAt;
     this._startCountdown();
     if (els.settlements) els.settlements.textContent = this._formatNum(d.settlements);
     if (els.population) els.population.textContent = this._formatNum(d.population);
@@ -290,8 +285,7 @@ class WorldCard extends HTMLElement {
       shouldFire = true;
     }
     if (shouldFire) {
-      this._lastRefresh = now;
-      this._pendingRefresh = true;
+      console.log('[WORLD-CARD] world-refresh for', this._data.worldId, 'at', new Date(now).toISOString());
       this.dispatchEvent(new CustomEvent('world-refresh', {
         bubbles: true, composed: true, detail: { worldId: this._data.worldId }
       }));
@@ -344,5 +338,7 @@ class WorldCard extends HTMLElement {
   }
 }
 
-customElements.define('world-card', WorldCard);
+if (!customElements.get('world-card')) {
+  customElements.define('world-card', WorldCard);
+}
 window.WorldCard = WorldCard;

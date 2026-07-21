@@ -11,6 +11,17 @@
     var cached = this._getCached('worldList');
     if (cached) return Promise.resolve(cached);
 
+    // Try localStorage as persistent cache
+    try {
+      var ls = localStorage.getItem('dustworld_world_index');
+      if (ls) {
+        var parsed = JSON.parse(ls);
+        if (parsed && Array.isArray(parsed.data) && Date.now() - parsed.time < 300000) {
+          return Promise.resolve(parsed.data);
+        }
+      }
+    } catch (e) {}
+
     var self = this;
     return this.api.getWorldList().then(function (items) {
       if (!items || items.length === 0) return [];
@@ -32,6 +43,8 @@
           return { id: worldIds[i], world_id: worldIds[i], name: '未知世界 #' + worldIds[i], year: 0, era: 'primitive', settlements: 0, population: 0, likes: 0, stats: { total_population: 0, total_settlements: 0 } };
         });
         self._setCached('worldList', merged);
+        // Persist to localStorage (5 min TTL)
+        try { localStorage.setItem('dustworld_world_index', JSON.stringify({ data: merged, time: Date.now() })); } catch (e) {}
         return merged;
       });
     });
@@ -46,7 +59,7 @@
         world_id: id,
         name: state.name || id,
         creator: state.creator || '未知',
-        creatorAvatar: state.creatorAvatar || '',
+        creatorAvatar: state.creator_avatar || '',
         description: state.description || '',
         year: state.year || 0,
         era: state.era || 'primitive',
@@ -109,6 +122,9 @@
         break;
       case 'population':
         sorted.sort(function (a, b) { return (b.population || 0) - (a.population || 0); });
+        break;
+      case 'active':
+        sorted.sort(function (a, b) { return (b.lastEvolvedAt || b.updatedAt || '') > (a.lastEvolvedAt || a.updatedAt || '') ? 1 : -1; });
         break;
       default:
         sorted.sort(function (a, b) { return (b.likes || 0) - (a.likes || 0); });
@@ -182,7 +198,12 @@
 
   DataManager.prototype.updateWorld = function (worldId, worldData) {
     if (!this.api) return Promise.reject(new Error('No API'));
-    return this.api.updateWorldState(worldId, worldData);
+    var self = this;
+    return this.api.updateWorldState(worldId, worldData).then(function (result) {
+      self.invalidateCache('world_' + worldId);
+      self.invalidateCache('worldList');
+      return result;
+    });
   };
 
   DataManager.prototype.createWorld = function (worldData) {
@@ -228,10 +249,12 @@
   };
 
   DataManager.prototype.toggleLike = function (worldId) {
+    if (this._likingInProgress) return Promise.reject(new Error('Already in progress'));
+    this._likingInProgress = true;
     var auth = window.AuthManager && window.AuthManager._instance;
     var user = auth && auth.getUser && auth.getUser();
     var username = user && (user.login || user.name);
-    if (!username) return Promise.reject(new Error('Not authenticated'));
+    if (!username) { this._likingInProgress = false; return Promise.reject(new Error('Not authenticated')); }
 
     var self = this;
     return this.api.getWorldState(worldId).then(function (state) {
@@ -248,53 +271,33 @@
       return self.api.updateWorldState(worldId, state).then(function () {
         self.invalidateCache('worldList');
         self.invalidateCache('world_' + worldId);
+        self._likingInProgress = false;
         return { liked: idx === -1, likes: state.likes };
       });
+    }).catch(function (e) {
+      self._likingInProgress = false;
+      throw e;
     });
-  };
-
-  DataManager.prototype.evolveWorld = function (worldId) {
-    var SECONDS_PER_YEAR = 864;
-    var MAX_YEARS = 50;
-    var self = this;
-    return this.api.getWorldState(worldId).then(function (state) {
-      if (!state) throw new Error('World not found');
-      var config = state.config || {};
-      var lastEvolved = state.last_evolved_at ? new Date(state.last_evolved_at).getTime() : new Date(state.created_at).getTime();
-      var now = Date.now();
-      var elapsed = (now - lastEvolved) / 1000;
-      var yearsToAdvance = Math.min(MAX_YEARS, Math.floor(elapsed / SECONDS_PER_YEAR));
-      if (yearsToAdvance < 1) throw new Error('Not enough time elapsed');
-
-      var engine = new window.WorldEngine(config, state);
-      engine._initialized = true;
-      for (var i = 0; i < yearsToAdvance; i++) engine.evolve();
-
-      var newState = engine.getState();
-      newState.config = config;
-      newState.last_evolved_at = new Date(lastEvolved + yearsToAdvance * SECONDS_PER_YEAR * 1000).toISOString();
-
-      return self.api.updateWorldState(worldId, newState).then(function () {
-        self.invalidateCache('worldList');
-        self.invalidateCache('world_' + worldId);
-        return {
-          year: newState.year,
-          era: newState.era,
-          population: newState.stats.total_population,
-          settlements: newState.stats.total_settlements,
-          updatedAt: newState.updated_at,
-          lastEvolvedAt: newState.last_evolved_at
-        };
-      });
-    });
-  };
-
-  DataManager.prototype.triggerEvolution = function () {
-    return this.api.triggerEvolution();
   };
 
   DataManager.prototype.submitIntervention = function (worldId, intervention) {
-    return this.api.submitIntervention(worldId, intervention);
+    var auth = window.AuthManager && window.AuthManager._instance;
+    var user = auth && auth.getUser && auth.getUser();
+    var username = user && (user.login || user.name);
+    if (!username) return Promise.reject(new Error('Not authenticated'));
+
+    var self = this;
+    return this.api.getInterventions().then(function (history) {
+      var weekAgo = Date.now() - 7 * 24 * 60 * 60 * 1000;
+      var recent = history.filter(function (h) {
+        return h.username === username && new Date(h.timestamp).getTime() > weekAgo;
+      });
+      if (recent.length >= 3) {
+        throw new Error('本周干预次数已用完');
+      }
+      intervention.username = username;
+      return self.api.submitIntervention(worldId, intervention);
+    });
   };
 
   DataManager.prototype.getInterventions = function () {
@@ -317,8 +320,12 @@
   DataManager.prototype.invalidateCache = function (key) {
     if (key) {
       delete this.cache[key];
+      if (key === 'worldList') {
+        try { localStorage.removeItem('dustworld_world_index'); } catch (e) {}
+      }
     } else {
       this.cache = {};
+      try { localStorage.removeItem('dustworld_world_index'); } catch (e) {}
     }
   };
 
