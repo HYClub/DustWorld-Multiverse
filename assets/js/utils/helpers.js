@@ -220,22 +220,28 @@
       var detail = e.detail || {};
       if (!detail.worldId) return;
       var dm = window.DataManager;
-      if (dm && typeof dm.refreshWorldMeta === 'function') {
-        dm.refreshWorldMeta(detail.worldId).then(function (meta) {
-          card.update({
-            year: String((meta && meta.year) || 0),
-            era: (meta && meta.era) || 'primitive',
-            population: String((meta && ((meta.stats && meta.stats.total_population) || meta.population)) || 0),
-            settlements: String((meta && ((meta.stats && meta.stats.total_settlements) || meta.settlements)) || 0),
-            updatedAt: (meta && meta.updatedAt) || '',
-            lastEvolvedAt: (meta && meta.lastEvolvedAt) || ''
-          });
-          if (meta) {
-            world.year = meta.year;
-            world.era = meta.era;
-            world.lastEvolvedAt = meta.lastEvolvedAt;
+      if (!dm) return;
+      var updateCard = function (meta) {
+        card.update({
+          year: String((meta && meta.year) || 0),
+          era: (meta && meta.era) || 'primitive',
+          population: String((meta && ((meta.stats && meta.stats.total_population) || meta.population)) || 0),
+          settlements: String((meta && ((meta.stats && meta.stats.total_settlements) || meta.settlements)) || 0),
+          updatedAt: (meta && meta.updatedAt) || '',
+          lastEvolvedAt: (meta && meta.lastEvolvedAt) || ''
+        });
+        if (meta) {
+          world.year = meta.year;
+          world.era = meta.era;
+          world.lastEvolvedAt = meta.lastEvolvedAt;
+        }
+      };
+      if (typeof dm.evolveWorld === 'function') {
+        dm.evolveWorld(detail.worldId).then(updateCard).catch(function () {
+          if (typeof dm.refreshWorldMeta === 'function') {
+            dm.refreshWorldMeta(detail.worldId).then(updateCard).catch(function () {});
           }
-        }).catch(function () { card.update({}); });
+        });
       }
     });
     return card;
