@@ -210,6 +210,13 @@
       });
   };
 
+  GitHubAPI.prototype.triggerEvolution = function () {
+    return this.request('/repos/' + this.owner + '/' + this.repo + '/actions/workflows/evolve.yml/dispatches', {
+      method: 'POST',
+      body: { ref: 'master' }
+    }).then(function () { return true; }).catch(function () { return false; });
+  };
+
   GitHubAPI.prototype.getInterventions = function () {
     var path = 'data/interventions/history.json';
     var self = this;

@@ -289,6 +289,10 @@
     });
   };
 
+  DataManager.prototype.triggerEvolution = function () {
+    return this.api.triggerEvolution();
+  };
+
   DataManager.prototype.submitIntervention = function (worldId, intervention) {
     return this.api.submitIntervention(worldId, intervention);
   };
