@@ -2,7 +2,7 @@
   "world_id": "world_mrszl5je_9ju4",
   "name": "地球",
   "era": "antiquity",
-  "year": 79,
+  "year": 82,
   "civilization": {
     "antiquity": {
       "civ": "han",
@@ -3810,7 +3810,7 @@
         "type": "ore",
         "x": 7,
         "y": 6,
-        "amount": 20.40000000000001
+        "amount": 3.240000000000009
       },
       {
         "type": "water",
@@ -3876,7 +3876,7 @@
       "x": 35,
       "y": 56,
       "level": 3,
-      "population": 381,
+      "population": 378,
       "max_population": 500,
       "tech_level": 3,
       "culture": 1040,
@@ -3909,7 +3909,7 @@
       "x": 6,
       "y": 5,
       "level": 2,
-      "population": 113,
+      "population": 110,
       "max_population": 200,
       "tech_level": 2,
       "culture": 120,
@@ -3919,7 +3919,7 @@
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 104.60000000000002,
+        "ore": 124.76000000000002,
         "water": 0,
         "gold": 0
       },
@@ -3940,26 +3940,49 @@
       "id": "SET002"
     }
   ],
-  "active_events": [],
+  "active_events": [
+    {
+      "id": "EVT99196",
+      "type": "war",
+      "participants": [
+        "SET002",
+        "SET001"
+      ],
+      "remaining_years": 3,
+      "duration": 6,
+      "description": "风语村与绿野镇爆发战争！"
+    },
+    {
+      "id": "EVT30970",
+      "type": "war",
+      "participants": [
+        "SET002",
+        "SET001"
+      ],
+      "remaining_years": 7,
+      "duration": 3,
+      "description": "风语村与绿野镇爆发战争！"
+    }
+  ],
   "trade_routes": [],
   "legacy": {
-    "military": 0.7,
+    "military": 1,
     "economic": 0,
-    "cultural": 32.800000000000004,
-    "scientific": 9.100000000000014
+    "cultural": 34.90000000000001,
+    "scientific": 9.550000000000015
   },
   "milestones": [],
   "stats": {
-    "total_population": 494,
+    "total_population": 488,
     "total_settlements": 2,
     "extinct_settlements": 0,
-    "total_wars": 0,
+    "total_wars": 2,
     "tech_breakthroughs": 3,
     "golden_ages": 7,
     "dark_ages": 0
   },
   "created_at": "2026-07-20T08:52:39.627Z",
-  "updated_at": "2026-07-21T03:52:30.971Z",
+  "updated_at": "2026-07-21T04:42:11.563Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -3999,7 +4022,7 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-07-21T03:50:15.627Z",
+  "last_evolved_at": "2026-07-21T04:33:27.627Z",
   "history": [
     {
       "year": 2,
@@ -4354,6 +4377,18 @@
       "type": "event",
       "title": "事件结束",
       "description": "风语村迎来文化繁荣。 结束。"
+    },
+    {
+      "year": 81,
+      "type": "war",
+      "title": "新事件",
+      "description": "风语村与绿野镇爆发战争！"
+    },
+    {
+      "year": 82,
+      "type": "war",
+      "title": "新事件",
+      "description": "风语村与绿野镇爆发战争！"
     }
   ]
 }
