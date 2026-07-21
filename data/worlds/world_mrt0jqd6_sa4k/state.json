@@ -2,7 +2,7 @@
   "world_id": "world_mrt0jqd6_sa4k",
   "name": "魔法",
   "era": "exploration",
-  "year": 91,
+  "year": 92,
   "civilization": {
     "antiquity": {
       "civ": "insectoids",
@@ -3786,7 +3786,7 @@
         "type": "wood",
         "x": 17,
         "y": 9,
-        "amount": 39.82000000000001
+        "amount": 37.10000000000001
       },
       {
         "type": "ore",
@@ -3846,7 +3846,7 @@
       "x": 44,
       "y": 41,
       "level": 2,
-      "population": 50,
+      "population": 49,
       "max_population": 200,
       "tech_level": 3,
       "culture": 0,
@@ -3858,7 +3858,7 @@
         "wood": 30,
         "ore": 8,
         "water": 0,
-        "gold": 267
+        "gold": 270
       },
       "buildings": [],
       "specialization": null,
@@ -3882,7 +3882,7 @@
       "x": 33,
       "y": 32,
       "level": 3,
-      "population": 166,
+      "population": 165,
       "max_population": 500,
       "tech_level": 5,
       "culture": 480,
@@ -3894,7 +3894,7 @@
         "wood": 30,
         "ore": 8,
         "water": 0,
-        "gold": 267
+        "gold": 270
       },
       "buildings": [],
       "specialization": "agriculture",
@@ -3917,7 +3917,7 @@
       "x": 50,
       "y": 57,
       "level": 3,
-      "population": 281,
+      "population": 280,
       "max_population": 500,
       "tech_level": 3,
       "culture": 630,
@@ -3952,7 +3952,7 @@
       "x": 20,
       "y": 6,
       "level": 2,
-      "population": 62,
+      "population": 61,
       "max_population": 200,
       "tech_level": 2,
       "culture": 0,
@@ -3961,7 +3961,7 @@
       "stability": 0.6,
       "resources": {
         "food": 0,
-        "wood": 98.18,
+        "wood": 101.9,
         "ore": 5,
         "water": 0,
         "gold": 0
@@ -3983,19 +3983,7 @@
       "id": "SET004"
     }
   ],
-  "active_events": [
-    {
-      "id": "EVT41222",
-      "type": "war",
-      "participants": [
-        "SET002",
-        "SET001"
-      ],
-      "remaining_years": 1,
-      "duration": 4,
-      "description": "河畔城与碧水镇爆发战争！"
-    }
-  ],
+  "active_events": [],
   "trade_routes": [
     {
       "from": "SET001",
@@ -4005,9 +3993,9 @@
   ],
   "legacy": {
     "military": 0.7,
-    "economic": 41.44999999999986,
-    "cultural": 63.09999999999994,
-    "scientific": 78.45000000000002
+    "economic": 41.49999999999986,
+    "cultural": 63.499999999999936,
+    "scientific": 78.95000000000002
   },
   "milestones": [
     {
@@ -4234,10 +4222,20 @@
       "id": "era_exploration",
       "name": "远洋",
       "year": 91
+    },
+    {
+      "id": "setts_3",
+      "name": "扩张",
+      "year": 92
+    },
+    {
+      "id": "era_exploration",
+      "name": "远洋",
+      "year": 92
     }
   ],
   "stats": {
-    "total_population": 559,
+    "total_population": 555,
     "total_settlements": 4,
     "extinct_settlements": 0,
     "total_wars": 1,
@@ -4246,7 +4244,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T09:19:32.922Z",
-  "updated_at": "2026-07-21T07:11:06.044Z",
+  "updated_at": "2026-07-21T07:25:05.979Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -4817,9 +4815,27 @@
       "type": "milestone",
       "title": "里程碑",
       "description": "达成: 远洋"
+    },
+    {
+      "year": 92,
+      "type": "event",
+      "title": "事件结束",
+      "description": "河畔城与碧水镇爆发战争！ 结束。"
+    },
+    {
+      "year": 92,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 扩张"
+    },
+    {
+      "year": 92,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 远洋"
     }
   ],
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-07-21T07:09:56.922Z"
+  "last_evolved_at": "2026-07-21T07:24:20.922Z"
 }
