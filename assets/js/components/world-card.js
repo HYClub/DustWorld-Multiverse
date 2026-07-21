@@ -282,8 +282,14 @@ class WorldCard extends HTMLElement {
       this._els.countdown.textContent = '⏳ +' + overdue + 'm';
     }
 
-    // Fire refresh when countdown first hits 0
-    if (this._prevRemaining !== undefined && this._prevRemaining > 0 && remaining <= 0) {
+    // Fire refresh: on first load if overdue, or when crossing from positive to ≤0
+    var shouldFire = false;
+    if (this._prevRemaining === undefined) {
+      shouldFire = remaining <= 0;
+    } else if (this._prevRemaining > 0 && remaining <= 0) {
+      shouldFire = true;
+    }
+    if (shouldFire) {
       this._lastRefresh = now;
       this._pendingRefresh = true;
       this.dispatchEvent(new CustomEvent('world-refresh', {

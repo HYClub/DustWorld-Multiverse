@@ -42,10 +42,10 @@ function api(method, endpoint, body) {
   });
 }
 
-async function main() {
+async function evolve(skipRetry) {
   const p = 'data/worlds/' + worldId + '/state.json';
   const data = await api('GET', '/repos/' + OWNER + '/' + REPO + '/contents/' + p);
-  if (!data || !data.content) { console.log('SKIP: no data for ' + worldId); return; }
+  if (!data || !data.content) { console.log('SKIP: no data for ' + worldId); return null; }
 
   const json = Buffer.from(data.content.replace(/\s/g, ''), 'base64').toString('utf-8');
   const state = JSON.parse(json);
@@ -59,7 +59,7 @@ async function main() {
   if (years < 1) {
     const rem = Math.ceil(SECONDS_PER_YEAR - elapsed);
     console.log('SKIP ' + worldId + ': next in ' + rem + 's');
-    return;
+    return null;
   }
 
   const WorldEngine = require(path.join(__dirname, '..', 'assets', 'js', 'engine', 'world.js'));
@@ -73,11 +73,35 @@ async function main() {
   ns.updated_at = new Date().toISOString();
 
   const content = Buffer.from(JSON.stringify(ns, null, 2), 'utf-8').toString('base64');
-  await api('PUT', '/repos/' + OWNER + '/' + REPO + '/contents/' + p, {
-    message: '演化: ' + (state.name || worldId) + ' 第' + ns.year + '年',
-    content, sha, branch: BRANCH
-  });
-  console.log('EVOLVED ' + worldId + ': +' + years + 'y -> year ' + ns.year + ' pop=' + (ns.stats ? ns.stats.total_population : 0));
+  try {
+    await api('PUT', '/repos/' + OWNER + '/' + REPO + '/contents/' + p, {
+      message: '演化: ' + (state.name || worldId) + ' 第' + ns.year + '年',
+      content, sha, branch: BRANCH
+    });
+    console.log('EVOLVED ' + worldId + ': +' + years + 'y -> year ' + ns.year + ' pop=' + (ns.stats ? ns.stats.total_population : 0));
+    return ns.year;
+  } catch (e) {
+    if (!skipRetry && (e.message.indexOf('422') !== -1 || e.message.indexOf('409') !== -1)) {
+      console.log('RETRY ' + worldId + ': SHA conflict, re-reading...');
+      return evolve(true);
+    }
+    throw e;
+  }
+}
+
+async function main() {
+  const result = await evolve(false);
+  if (result === null) return;
+  // If there's still time elapsed after evolution, try again (catch-up)
+  const data2 = await api('GET', '/repos/' + OWNER + '/' + REPO + '/contents/data/worlds/' + worldId + '/state.json');
+  if (data2 && data2.content) {
+    const state2 = JSON.parse(Buffer.from(data2.content.replace(/\s/g, ''), 'base64').toString('utf-8'));
+    const lastEvo2 = state2.last_evolved_at ? new Date(state2.last_evolved_at).getTime() : Date.now();
+    if ((Date.now() - lastEvo2) / 1000 >= SECONDS_PER_YEAR) {
+      console.log('CATCHUP ' + worldId + ': more time elapsed, evolving again...');
+      await evolve(false);
+    }
+  }
 }
 
 main().catch(e => { console.error('FAILED ' + worldId + ': ' + e.message); process.exit(1); });
