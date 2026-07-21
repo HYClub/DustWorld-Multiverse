@@ -2,7 +2,7 @@
   "world_id": "world_mrt0jqd6_sa4k",
   "name": "魔法",
   "era": "exploration",
-  "year": 77,
+  "year": 80,
   "civilization": {
     "antiquity": {
       "civ": "insectoids",
@@ -3786,7 +3786,7 @@
         "type": "wood",
         "x": 17,
         "y": 9,
-        "amount": 83.96
+        "amount": 73.69999999999999
       },
       {
         "type": "ore",
@@ -3846,7 +3846,7 @@
       "x": 44,
       "y": 41,
       "level": 2,
-      "population": 65,
+      "population": 62,
       "max_population": 200,
       "tech_level": 3,
       "culture": 0,
@@ -3858,7 +3858,7 @@
         "wood": 30,
         "ore": 8,
         "water": 0,
-        "gold": 225
+        "gold": 234
       },
       "buildings": [],
       "specialization": null,
@@ -3882,7 +3882,7 @@
       "x": 33,
       "y": 32,
       "level": 3,
-      "population": 180,
+      "population": 177,
       "max_population": 500,
       "tech_level": 5,
       "culture": 480,
@@ -3894,7 +3894,7 @@
         "wood": 30,
         "ore": 8,
         "water": 0,
-        "gold": 225
+        "gold": 234
       },
       "buildings": [],
       "specialization": "agriculture",
@@ -3917,7 +3917,7 @@
       "x": 50,
       "y": 57,
       "level": 3,
-      "population": 295,
+      "population": 292,
       "max_population": 500,
       "tech_level": 3,
       "culture": 630,
@@ -3952,7 +3952,7 @@
       "x": 20,
       "y": 6,
       "level": 2,
-      "population": 72,
+      "population": 73,
       "max_population": 200,
       "tech_level": 2,
       "culture": 0,
@@ -3960,10 +3960,10 @@
       "health": 0.7,
       "stability": 0.6,
       "resources": {
-        "food": 9.458182999389258,
-        "wood": 40.04,
+        "food": 0,
+        "wood": 53.3,
         "ore": 5,
-        "water": 8.299999999999999,
+        "water": 0,
         "gold": 0
       },
       "buildings": [],
@@ -3990,7 +3990,7 @@
       "participants": [
         "SET003"
       ],
-      "remaining_years": 4,
+      "remaining_years": 1,
       "duration": 6,
       "description": "风语村爆发瘟疫。"
     }
@@ -4004,9 +4004,9 @@
   ],
   "legacy": {
     "military": 0,
-    "economic": 40.7499999999999,
-    "cultural": 57.49999999999996,
-    "scientific": 71.45000000000002
+    "economic": 40.89999999999989,
+    "cultural": 58.69999999999995,
+    "scientific": 72.95000000000002
   },
   "milestones": [
     {
@@ -4153,10 +4153,20 @@
       "id": "era_exploration",
       "name": "远洋",
       "year": 77
+    },
+    {
+      "id": "setts_3",
+      "name": "扩张",
+      "year": 78
+    },
+    {
+      "id": "era_exploration",
+      "name": "远洋",
+      "year": 78
     }
   ],
   "stats": {
-    "total_population": 612,
+    "total_population": 604,
     "total_settlements": 4,
     "extinct_settlements": 0,
     "total_wars": 0,
@@ -4165,7 +4175,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T09:19:32.922Z",
-  "updated_at": "2026-07-21T03:49:44.926Z",
+  "updated_at": "2026-07-21T04:42:09.494Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -4628,9 +4638,21 @@
       "type": "milestone",
       "title": "里程碑",
       "description": "达成: 远洋"
+    },
+    {
+      "year": 78,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 扩张"
+    },
+    {
+      "year": 78,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 远洋"
     }
   ],
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-07-21T03:48:20.922Z"
+  "last_evolved_at": "2026-07-21T04:31:32.922Z"
 }
