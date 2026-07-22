@@ -2,7 +2,7 @@
   "world_id": "world_mrszl5je_9ju4",
   "name": "地球",
   "era": "antiquity",
-  "year": 227,
+  "year": 228,
   "civilization": {
     "antiquity": {
       "civ": "han",
@@ -3810,7 +3810,7 @@
         "type": "ore",
         "x": 7,
         "y": 6,
-        "amount": 49.199999999999974
+        "amount": 50.13999999999997
       },
       {
         "type": "water",
@@ -3876,16 +3876,16 @@
       "x": 35,
       "y": 56,
       "level": 3,
-      "population": 345,
+      "population": 351,
       "max_population": 500,
       "tech_level": 3,
-      "culture": 1240,
+      "culture": 1250,
       "influence": 0,
       "health": 0.8,
       "stability": 0.7,
       "resources": {
         "food": 0,
-        "wood": 273.44,
+        "wood": 274.44,
         "ore": 8,
         "water": 0,
         "gold": 0
@@ -3919,7 +3919,7 @@
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 203.56000000000014,
+        "ore": 203.62000000000015,
         "water": 0,
         "gold": 0
       },
@@ -3947,7 +3947,7 @@
       "participants": [
         "SET001"
       ],
-      "remaining_years": 5,
+      "remaining_years": 4,
       "duration": 10,
       "description": "绿野镇迎来文化繁荣。"
     }
@@ -3956,12 +3956,12 @@
   "legacy": {
     "military": 1.8000000000000003,
     "economic": 0,
-    "cultural": 136.40000000000023,
-    "scientific": 31.299999999999883
+    "cultural": 137.10000000000022,
+    "scientific": 31.449999999999882
   },
   "milestones": [],
   "stats": {
-    "total_population": 346,
+    "total_population": 352,
     "total_settlements": 2,
     "extinct_settlements": 0,
     "total_wars": 2,
@@ -3970,7 +3970,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T08:52:39.627Z",
-  "updated_at": "2026-07-22T15:21:45.742Z",
+  "updated_at": "2026-07-22T15:36:45.742Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -4010,7 +4010,7 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-07-22T15:21:27.627Z",
+  "last_evolved_at": "2026-07-22T15:35:51.627Z",
   "history": [
     {
       "year": 2,
