@@ -2,7 +2,7 @@
   "world_id": "world_mrszl5je_9ju4",
   "name": "地球",
   "era": "antiquity",
-  "year": 177,
+  "year": 178,
   "civilization": {
     "antiquity": {
       "civ": "han",
@@ -3810,7 +3810,7 @@
         "type": "ore",
         "x": 7,
         "y": 6,
-        "amount": 3.1000000000000005
+        "amount": 3.7400000000000007
       },
       {
         "type": "water",
@@ -3876,16 +3876,16 @@
       "x": 35,
       "y": 56,
       "level": 3,
-      "population": 357,
+      "population": 363,
       "max_population": 500,
       "tech_level": 3,
-      "culture": 1180,
+      "culture": 1190,
       "influence": 0,
       "health": 0.8,
       "stability": 0.7,
       "resources": {
         "food": 0,
-        "wood": 223.44,
+        "wood": 224.44,
         "ore": 8,
         "water": 0,
         "gold": 0
@@ -3909,7 +3909,7 @@
       "x": 6,
       "y": 5,
       "level": 2,
-      "population": 6,
+      "population": 5,
       "max_population": 200,
       "tech_level": 2,
       "culture": 120,
@@ -3919,7 +3919,7 @@
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 199.66,
+        "ore": 200.02,
         "water": 0,
         "gold": 0
       },
@@ -3947,7 +3947,7 @@
       "participants": [
         "SET001"
       ],
-      "remaining_years": 3,
+      "remaining_years": 2,
       "duration": 10,
       "description": "绿野镇迎来文化繁荣。"
     }
@@ -3956,12 +3956,12 @@
   "legacy": {
     "military": 1.8000000000000003,
     "economic": 0,
-    "cultural": 101.40000000000028,
-    "scientific": 23.799999999999955
+    "cultural": 102.10000000000028,
+    "scientific": 23.949999999999953
   },
   "milestones": [],
   "stats": {
-    "total_population": 363,
+    "total_population": 368,
     "total_settlements": 2,
     "extinct_settlements": 0,
     "total_wars": 2,
@@ -3970,7 +3970,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T08:52:39.627Z",
-  "updated_at": "2026-07-22T03:21:45.786Z",
+  "updated_at": "2026-07-22T03:36:45.576Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -4010,7 +4010,7 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-07-22T03:21:27.627Z",
+  "last_evolved_at": "2026-07-22T03:35:51.627Z",
   "history": [
     {
       "year": 2,
