@@ -2,7 +2,7 @@
   "world_id": "world_mrt0jqd6_sa4k",
   "name": "魔法",
   "era": "exploration",
-  "year": 536,
+  "year": 537,
   "civilization": {
     "antiquity": {
       "civ": "insectoids",
@@ -3858,7 +3858,7 @@
         "wood": 30,
         "ore": 8,
         "water": 0,
-        "gold": 1602
+        "gold": 1605
       },
       "buildings": [],
       "specialization": null,
@@ -3894,7 +3894,7 @@
         "wood": 30,
         "ore": 8,
         "water": 0,
-        "gold": 1602
+        "gold": 1605
       },
       "buildings": [],
       "specialization": "agriculture",
@@ -3926,7 +3926,7 @@
       "stability": 0.6,
       "resources": {
         "food": 0,
-        "wood": 402.36000000000047,
+        "wood": 402.42000000000047,
         "ore": 5,
         "water": 0,
         "gold": 0
@@ -3961,7 +3961,7 @@
       "stability": 0.6,
       "resources": {
         "food": 0,
-        "wood": 215.1400000000009,
+        "wood": 215.2000000000009,
         "ore": 5,
         "water": 0,
         "gold": 0
@@ -3993,9 +3993,9 @@
   ],
   "legacy": {
     "military": 0.7,
-    "economic": 63.699999999998596,
-    "cultural": 241.10000000000244,
-    "scientific": 300.95000000000005
+    "economic": 63.74999999999859,
+    "cultural": 241.50000000000244,
+    "scientific": 301.45000000000005
   },
   "milestones": [
     {
@@ -8857,6 +8857,21 @@
       "id": "year_500",
       "name": "五百年",
       "year": 536
+    },
+    {
+      "id": "setts_3",
+      "name": "扩张",
+      "year": 537
+    },
+    {
+      "id": "era_exploration",
+      "name": "远洋",
+      "year": 537
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 537
     }
   ],
   "stats": {
@@ -8869,7 +8884,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T09:19:32.922Z",
-  "updated_at": "2026-07-25T17:58:21.566Z",
+  "updated_at": "2026-07-25T18:13:21.595Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -8938,24 +8953,6 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "history": [
     {
-      "year": 305,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 远洋"
-    },
-    {
-      "year": 306,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 扩张"
-    },
-    {
-      "year": 306,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 远洋"
-    },
-    {
       "year": 307,
       "type": "milestone",
       "title": "里程碑",
@@ -11933,6 +11930,24 @@
     },
     {
       "year": 536,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 537,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 扩张"
+    },
+    {
+      "year": 537,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 远洋"
+    },
+    {
+      "year": 537,
       "type": "milestone",
       "title": "里程碑",
       "description": "达成: 五百年"
@@ -11940,5 +11955,5 @@
   ],
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-07-25T17:57:56.922Z"
+  "last_evolved_at": "2026-07-25T18:12:20.922Z"
 }
