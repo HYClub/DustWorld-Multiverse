@@ -2,7 +2,7 @@
   "world_id": "world_mrszl5je_9ju4",
   "name": "地球",
   "era": "antiquity",
-  "year": 547,
+  "year": 548,
   "civilization": {
     "antiquity": {
       "civ": "han",
@@ -3876,7 +3876,7 @@
       "x": 35,
       "y": 56,
       "level": 3,
-      "population": 365,
+      "population": 364,
       "max_population": 500,
       "tech_level": 3,
       "culture": 1760,
@@ -3885,7 +3885,7 @@
       "stability": 0.7,
       "resources": {
         "food": 0,
-        "wood": 593.44,
+        "wood": 594.44,
         "ore": 8,
         "water": 0,
         "gold": 0
@@ -3919,7 +3919,7 @@
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 222.76000000000087,
+        "ore": 222.82000000000087,
         "water": 0,
         "gold": 0
       },
@@ -3945,8 +3945,8 @@
   "legacy": {
     "military": 1.8000000000000003,
     "economic": 0,
-    "cultural": 360.3999999999966,
-    "scientific": 79.30000000000015
+    "cultural": 361.0999999999966,
+    "scientific": 79.45000000000016
   },
   "milestones": [
     {
@@ -4188,10 +4188,15 @@
       "id": "year_500",
       "name": "五百年",
       "year": 547
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 548
     }
   ],
   "stats": {
-    "total_population": 366,
+    "total_population": 365,
     "total_settlements": 2,
     "extinct_settlements": 0,
     "total_wars": 2,
@@ -4200,7 +4205,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T08:52:39.627Z",
-  "updated_at": "2026-07-25T20:10:21.351Z",
+  "updated_at": "2026-07-25T20:24:21.521Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -4240,7 +4245,7 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-07-25T20:09:27.627Z",
+  "last_evolved_at": "2026-07-25T20:23:51.627Z",
   "history": [
     {
       "year": 2,
@@ -5024,6 +5029,12 @@
     },
     {
       "year": 547,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 548,
       "type": "milestone",
       "title": "里程碑",
       "description": "达成: 五百年"
