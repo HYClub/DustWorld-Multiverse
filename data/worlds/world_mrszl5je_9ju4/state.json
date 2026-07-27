@@ -2,7 +2,7 @@
   "world_id": "world_mrszl5je_9ju4",
   "name": "地球",
   "era": "antiquity",
-  "year": 702,
+  "year": 703,
   "civilization": {
     "antiquity": {
       "civ": "han",
@@ -3876,7 +3876,7 @@
       "x": 35,
       "y": 56,
       "level": 3,
-      "population": 366,
+      "population": 365,
       "max_population": 500,
       "tech_level": 3,
       "culture": 2000,
@@ -3885,7 +3885,7 @@
       "stability": 0.7,
       "resources": {
         "food": 0,
-        "wood": 748.44,
+        "wood": 749.44,
         "ore": 8,
         "water": 0,
         "gold": 0
@@ -3919,7 +3919,7 @@
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 232.06000000000122,
+        "ore": 232.12000000000123,
         "water": 0,
         "gold": 0
       },
@@ -3945,8 +3945,8 @@
   "legacy": {
     "military": 1.8000000000000003,
     "economic": 0,
-    "cultural": 468.89999999999486,
-    "scientific": 102.55000000000103
+    "cultural": 469.59999999999485,
+    "scientific": 102.70000000000104
   },
   "milestones": [
     {
@@ -4963,10 +4963,15 @@
       "id": "year_500",
       "name": "五百年",
       "year": 702
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 703
     }
   ],
   "stats": {
-    "total_population": 367,
+    "total_population": 366,
     "total_settlements": 2,
     "extinct_settlements": 0,
     "total_wars": 2,
@@ -4975,7 +4980,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T08:52:39.627Z",
-  "updated_at": "2026-07-27T09:22:00.004Z",
+  "updated_at": "2026-07-27T09:36:00.500Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -5015,7 +5020,7 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-07-27T09:21:27.627Z",
+  "last_evolved_at": "2026-07-27T09:35:51.627Z",
   "history": [
     {
       "year": 2,
@@ -6765,6 +6770,12 @@
     },
     {
       "year": 702,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 703,
       "type": "milestone",
       "title": "里程碑",
       "description": "达成: 五百年"
