@@ -2,7 +2,7 @@
   "world_id": "world_mrszl5je_9ju4",
   "name": "地球",
   "era": "antiquity",
-  "year": 795,
+  "year": 796,
   "civilization": {
     "antiquity": {
       "civ": "han",
@@ -3876,16 +3876,16 @@
       "x": 35,
       "y": 56,
       "level": 3,
-      "population": 325,
+      "population": 327,
       "max_population": 500,
       "tech_level": 3,
-      "culture": 2080,
+      "culture": 2090,
       "influence": 0,
       "health": 0.8,
       "stability": 0.7,
       "resources": {
         "food": 0,
-        "wood": 841.44,
+        "wood": 842.44,
         "ore": 8,
         "water": 0,
         "gold": 0
@@ -3919,7 +3919,7 @@
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 237.64000000000144,
+        "ore": 237.70000000000144,
         "water": 0,
         "gold": 0
       },
@@ -3947,7 +3947,7 @@
       "participants": [
         "SET001"
       ],
-      "remaining_years": 9,
+      "remaining_years": 8,
       "duration": 10,
       "description": "绿野镇迎来文化繁荣。"
     }
@@ -3956,8 +3956,8 @@
   "legacy": {
     "military": 1.8000000000000003,
     "economic": 0,
-    "cultural": 533.9999999999956,
-    "scientific": 116.50000000000156
+    "cultural": 534.6999999999956,
+    "scientific": 116.65000000000157
   },
   "milestones": [
     {
@@ -5439,10 +5439,15 @@
       "id": "year_500",
       "name": "五百年",
       "year": 795
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 796
     }
   ],
   "stats": {
-    "total_population": 326,
+    "total_population": 328,
     "total_settlements": 2,
     "extinct_settlements": 0,
     "total_wars": 2,
@@ -5451,7 +5456,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T08:52:39.627Z",
-  "updated_at": "2026-07-28T07:40:59.819Z",
+  "updated_at": "2026-07-28T07:55:58.944Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -5491,7 +5496,7 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-07-28T07:40:39.627Z",
+  "last_evolved_at": "2026-07-28T07:55:03.627Z",
   "history": [
     {
       "year": 2,
@@ -7817,6 +7822,12 @@
     },
     {
       "year": 795,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 796,
       "type": "milestone",
       "title": "里程碑",
       "description": "达成: 五百年"
