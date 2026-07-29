@@ -2,7 +2,7 @@
   "world_id": "world_mrt0jqd6_sa4k",
   "name": "魔法",
   "era": "exploration",
-  "year": 902,
+  "year": 903,
   "civilization": {
     "antiquity": {
       "civ": "insectoids",
@@ -3858,7 +3858,7 @@
         "wood": 30,
         "ore": 8,
         "water": 0,
-        "gold": 2700
+        "gold": 2703
       },
       "buildings": [],
       "specialization": null,
@@ -3894,7 +3894,7 @@
         "wood": 30,
         "ore": 8,
         "water": 0,
-        "gold": 2700
+        "gold": 2703
       },
       "buildings": [],
       "specialization": "agriculture",
@@ -3926,7 +3926,7 @@
       "stability": 0.6,
       "resources": {
         "food": 0,
-        "wood": 424.3200000000013,
+        "wood": 424.3800000000013,
         "ore": 5,
         "water": 0,
         "gold": 0
@@ -3961,7 +3961,7 @@
       "stability": 0.6,
       "resources": {
         "food": 0,
-        "wood": 237.10000000000173,
+        "wood": 237.16000000000173,
         "ore": 5,
         "water": 0,
         "gold": 0
@@ -3983,19 +3983,7 @@
       "id": "SET004"
     }
   ],
-  "active_events": [
-    {
-      "id": "EVT41222",
-      "type": "war",
-      "participants": [
-        "SET002",
-        "SET001"
-      ],
-      "remaining_years": 1,
-      "duration": 4,
-      "description": "河畔城与碧水镇爆发战争！"
-    }
-  ],
+  "active_events": [],
   "trade_routes": [
     {
       "from": "SET001",
@@ -4005,9 +3993,9 @@
   ],
   "legacy": {
     "military": 2.1000000000000005,
-    "economic": 81.99999999999756,
-    "cultural": 387.49999999999517,
-    "scientific": 484.6500000000002
+    "economic": 82.04999999999755,
+    "cultural": 387.89999999999515,
+    "scientific": 485.2500000000002
   },
   "milestones": [
     {
@@ -14074,6 +14062,21 @@
       "id": "year_500",
       "name": "五百年",
       "year": 893
+    },
+    {
+      "id": "setts_3",
+      "name": "扩张",
+      "year": 903
+    },
+    {
+      "id": "era_exploration",
+      "name": "远洋",
+      "year": 903
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 903
     }
   ],
   "stats": {
@@ -14086,7 +14089,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T09:19:32.922Z",
-  "updated_at": "2026-07-29T09:53:25.581Z",
+  "updated_at": "2026-07-29T10:03:26.161Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -14154,30 +14157,6 @@
   "creator": "HYClub",
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "history": [
-    {
-      "year": 719,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 扩张"
-    },
-    {
-      "year": 719,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 远洋"
-    },
-    {
-      "year": 719,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 720,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 扩张"
-    },
     {
       "year": 720,
       "type": "milestone",
@@ -17153,9 +17132,33 @@
       "type": "tech",
       "title": "科技突破",
       "description": "风语村进入电力！"
+    },
+    {
+      "year": 903,
+      "type": "event",
+      "title": "事件结束",
+      "description": "河畔城与碧水镇爆发战争！ 结束。"
+    },
+    {
+      "year": 903,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 扩张"
+    },
+    {
+      "year": 903,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 远洋"
+    },
+    {
+      "year": 903,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
     }
   ],
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-07-29T09:48:20.922Z"
+  "last_evolved_at": "2026-07-29T10:02:44.922Z"
 }
