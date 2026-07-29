@@ -2,7 +2,7 @@
   "world_id": "world_mrszl5je_9ju4",
   "name": "地球",
   "era": "antiquity",
-  "year": 943,
+  "year": 944,
   "civilization": {
     "antiquity": {
       "civ": "han",
@@ -3876,16 +3876,16 @@
       "x": 35,
       "y": 56,
       "level": 4,
-      "population": 488,
+      "population": 496,
       "max_population": 1000,
       "tech_level": 3,
-      "culture": 2760,
+      "culture": 2780,
       "influence": 0,
       "health": 0.8,
       "stability": 0.7,
       "resources": {
         "food": 0,
-        "wood": 989.44,
+        "wood": 990.44,
         "ore": 8,
         "water": 0,
         "gold": 0
@@ -3919,7 +3919,7 @@
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 246.52000000000177,
+        "ore": 246.58000000000177,
         "water": 0,
         "gold": 0
       },
@@ -3947,7 +3947,7 @@
       "participants": [
         "SET001"
       ],
-      "remaining_years": 4,
+      "remaining_years": 3,
       "duration": 10,
       "description": "绿野镇迎来文化繁荣。"
     },
@@ -3957,7 +3957,7 @@
       "participants": [
         "SET001"
       ],
-      "remaining_years": 8,
+      "remaining_years": 7,
       "duration": 10,
       "description": "绿野镇迎来文化繁荣。"
     }
@@ -3966,8 +3966,8 @@
   "legacy": {
     "military": 3.700000000000002,
     "economic": 0,
-    "cultural": 641.7999999999985,
-    "scientific": 139.15000000000225
+    "cultural": 642.5999999999984,
+    "scientific": 139.35000000000224
   },
   "milestones": [
     {
@@ -6084,10 +6084,15 @@
       "id": "year_500",
       "name": "五百年",
       "year": 943
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 944
     }
   ],
   "stats": {
-    "total_population": 489,
+    "total_population": 497,
     "total_settlements": 2,
     "extinct_settlements": 0,
     "total_wars": 6,
@@ -6096,7 +6101,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T08:52:39.627Z",
-  "updated_at": "2026-07-29T19:12:26.416Z",
+  "updated_at": "2026-07-29T19:26:26.105Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -6136,14 +6141,8 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-07-29T19:11:51.627Z",
+  "last_evolved_at": "2026-07-29T19:26:15.627Z",
   "history": [
-    {
-      "year": 60,
-      "type": "event",
-      "title": "事件结束",
-      "description": "绿野镇进入黄金时代！ 结束。"
-    },
     {
       "year": 61,
       "type": "event",
@@ -9134,6 +9133,12 @@
     },
     {
       "year": 943,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 944,
       "type": "milestone",
       "title": "里程碑",
       "description": "达成: 五百年"
