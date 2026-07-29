@@ -2,7 +2,7 @@
   "world_id": "world_mrszl5je_9ju4",
   "name": "地球",
   "era": "antiquity",
-  "year": 946,
+  "year": 948,
   "civilization": {
     "antiquity": {
       "civ": "han",
@@ -3876,16 +3876,16 @@
       "x": 35,
       "y": 56,
       "level": 4,
-      "population": 512,
+      "population": 528,
       "max_population": 1000,
       "tech_level": 3,
-      "culture": 2820,
+      "culture": 2850,
       "influence": 0,
       "health": 0.8,
       "stability": 0.7,
       "resources": {
         "food": 0,
-        "wood": 992.44,
+        "wood": 994.44,
         "ore": 8,
         "water": 0,
         "gold": 0
@@ -3919,7 +3919,7 @@
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 246.70000000000178,
+        "ore": 246.82000000000178,
         "water": 0,
         "gold": 0
       },
@@ -3947,7 +3947,7 @@
       "participants": [
         "SET001"
       ],
-      "remaining_years": 1,
+      "remaining_years": 3,
       "duration": 10,
       "description": "绿野镇迎来文化繁荣。"
     },
@@ -3957,17 +3957,27 @@
       "participants": [
         "SET001"
       ],
-      "remaining_years": 5,
+      "remaining_years": 8,
       "duration": 10,
       "description": "绿野镇迎来文化繁荣。"
+    },
+    {
+      "id": "EVT48166",
+      "type": "golden_age",
+      "participants": [
+        "SET001"
+      ],
+      "remaining_years": 8,
+      "duration": 3,
+      "description": "绿野镇进入黄金时代！"
     }
   ],
   "trade_routes": [],
   "legacy": {
     "military": 3.700000000000002,
     "economic": 0,
-    "cultural": 644.1999999999983,
-    "scientific": 139.75000000000222
+    "cultural": 645.8999999999983,
+    "scientific": 140.1500000000022
   },
   "milestones": [
     {
@@ -6099,19 +6109,24 @@
       "id": "year_500",
       "name": "五百年",
       "year": 946
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 947
     }
   ],
   "stats": {
-    "total_population": 513,
+    "total_population": 529,
     "total_settlements": 2,
     "extinct_settlements": 0,
     "total_wars": 6,
     "tech_breakthroughs": 4,
-    "golden_ages": 8,
+    "golden_ages": 9,
     "dark_ages": 0
   },
   "created_at": "2026-07-20T08:52:39.627Z",
-  "updated_at": "2026-07-29T19:55:26.368Z",
+  "updated_at": "2026-07-29T20:28:25.807Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -6151,32 +6166,8 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-07-29T19:55:03.627Z",
+  "last_evolved_at": "2026-07-29T20:23:51.627Z",
   "history": [
-    {
-      "year": 62,
-      "type": "cultural_boom",
-      "title": "新事件",
-      "description": "绿野镇迎来文化繁荣。"
-    },
-    {
-      "year": 63,
-      "type": "golden_age",
-      "title": "新事件",
-      "description": "绿野镇进入黄金时代！"
-    },
-    {
-      "year": 66,
-      "type": "natural_disaster",
-      "title": "新事件",
-      "description": "绿野镇遭受自然灾害。"
-    },
-    {
-      "year": 68,
-      "type": "cultural_boom",
-      "title": "新事件",
-      "description": "风语村迎来文化繁荣。"
-    },
     {
       "year": 69,
       "type": "cultural_boom",
@@ -9152,6 +9143,30 @@
       "type": "milestone",
       "title": "里程碑",
       "description": "达成: 五百年"
+    },
+    {
+      "year": 947,
+      "type": "event",
+      "title": "事件结束",
+      "description": "绿野镇迎来文化繁荣。 结束。"
+    },
+    {
+      "year": 947,
+      "type": "cultural_boom",
+      "title": "新事件",
+      "description": "绿野镇迎来文化繁荣。"
+    },
+    {
+      "year": 947,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 948,
+      "type": "golden_age",
+      "title": "新事件",
+      "description": "绿野镇进入黄金时代！"
     }
   ]
 }
