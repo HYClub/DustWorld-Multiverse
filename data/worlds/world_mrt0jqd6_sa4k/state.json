@@ -2,7 +2,7 @@
   "world_id": "world_mrt0jqd6_sa4k",
   "name": "魔法",
   "era": "exploration",
-  "year": 1006,
+  "year": 1007,
   "civilization": {
     "antiquity": {
       "civ": "insectoids",
@@ -3780,7 +3780,7 @@
         "type": "food",
         "x": 43,
         "y": 41,
-        "amount": 98.92
+        "amount": 98.48
       },
       {
         "type": "wood",
@@ -3846,10 +3846,10 @@
       "x": 44,
       "y": 41,
       "level": 2,
-      "population": 24,
+      "population": 30,
       "max_population": 200,
       "tech_level": 3,
-      "culture": 50,
+      "culture": 60,
       "influence": 0,
       "health": 0.8,
       "stability": 0.7,
@@ -3858,7 +3858,7 @@
         "wood": 30,
         "ore": 8,
         "water": 0,
-        "gold": 3012
+        "gold": 3015
       },
       "buildings": [],
       "specialization": null,
@@ -3894,7 +3894,7 @@
         "wood": 30,
         "ore": 8,
         "water": 0,
-        "gold": 3012
+        "gold": 3015
       },
       "buildings": [],
       "specialization": "agriculture",
@@ -3926,7 +3926,7 @@
       "stability": 0.6,
       "resources": {
         "food": 0,
-        "wood": 430.56000000000154,
+        "wood": 430.62000000000154,
         "ore": 5,
         "water": 0,
         "gold": 0
@@ -3961,7 +3961,7 @@
       "stability": 0.6,
       "resources": {
         "food": 0,
-        "wood": 243.34000000000196,
+        "wood": 243.40000000000197,
         "ore": 5,
         "water": 0,
         "gold": 0
@@ -3990,7 +3990,7 @@
       "participants": [
         "SET001"
       ],
-      "remaining_years": 3,
+      "remaining_years": 2,
       "duration": 6,
       "description": "碧水镇迎来文化繁荣。"
     }
@@ -4004,9 +4004,9 @@
   ],
   "legacy": {
     "military": 2.1000000000000005,
-    "economic": 87.19999999999726,
-    "cultural": 429.0999999999928,
-    "scientific": 547.0500000000026
+    "economic": 87.24999999999726,
+    "cultural": 429.4999999999928,
+    "scientific": 547.6500000000026
   },
   "milestones": [
     {
@@ -15138,10 +15138,30 @@
       "id": "year_1000",
       "name": "千年",
       "year": 1006
+    },
+    {
+      "id": "setts_3",
+      "name": "扩张",
+      "year": 1007
+    },
+    {
+      "id": "era_exploration",
+      "name": "远洋",
+      "year": 1007
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 1007
+    },
+    {
+      "id": "year_1000",
+      "name": "千年",
+      "year": 1007
     }
   ],
   "stats": {
-    "total_population": 27,
+    "total_population": 33,
     "total_settlements": 4,
     "extinct_settlements": 0,
     "total_wars": 3,
@@ -15150,7 +15170,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T09:19:32.922Z",
-  "updated_at": "2026-07-30T10:46:26.071Z",
+  "updated_at": "2026-07-30T11:00:26.825Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -15218,30 +15238,6 @@
   "creator": "HYClub",
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "history": [
-    {
-      "year": 790,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 791,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 扩张"
-    },
-    {
-      "year": 791,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 远洋"
-    },
-    {
-      "year": 791,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
     {
       "year": 792,
       "type": "milestone",
@@ -18217,9 +18213,33 @@
       "type": "milestone",
       "title": "里程碑",
       "description": "达成: 千年"
+    },
+    {
+      "year": 1007,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 扩张"
+    },
+    {
+      "year": 1007,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 远洋"
+    },
+    {
+      "year": 1007,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 1007,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 千年"
     }
   ],
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-07-30T10:45:56.922Z"
+  "last_evolved_at": "2026-07-30T11:00:20.922Z"
 }
