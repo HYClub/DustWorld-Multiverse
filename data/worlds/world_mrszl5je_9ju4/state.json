@@ -2,7 +2,7 @@
   "world_id": "world_mrszl5je_9ju4",
   "name": "地球",
   "era": "antiquity",
-  "year": 970,
+  "year": 971,
   "civilization": {
     "antiquity": {
       "civ": "han",
@@ -3876,7 +3876,7 @@
       "x": 35,
       "y": 56,
       "level": 4,
-      "population": 605,
+      "population": 604,
       "max_population": 1000,
       "tech_level": 3,
       "culture": 3080,
@@ -3885,7 +3885,7 @@
       "stability": 0.7,
       "resources": {
         "food": 0,
-        "wood": 1016.44,
+        "wood": 1017.44,
         "ore": 8,
         "water": 0,
         "gold": 0
@@ -3919,7 +3919,7 @@
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 248.14000000000183,
+        "ore": 248.20000000000184,
         "water": 0,
         "gold": 0
       },
@@ -3945,8 +3945,8 @@
   "legacy": {
     "military": 3.700000000000002,
     "economic": 0,
-    "cultural": 665.6999999999978,
-    "scientific": 144.55000000000194
+    "cultural": 666.5999999999977,
+    "scientific": 144.75000000000193
   },
   "milestones": [
     {
@@ -6173,10 +6173,15 @@
       "id": "year_500",
       "name": "五百年",
       "year": 970
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 971
     }
   ],
   "stats": {
-    "total_population": 606,
+    "total_population": 605,
     "total_settlements": 2,
     "extinct_settlements": 0,
     "total_wars": 6,
@@ -6185,7 +6190,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T08:52:39.627Z",
-  "updated_at": "2026-07-30T01:42:25.625Z",
+  "updated_at": "2026-07-30T02:01:25.728Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -6225,14 +6230,8 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-07-30T01:40:39.627Z",
+  "last_evolved_at": "2026-07-30T01:55:03.627Z",
   "history": [
-    {
-      "year": 284,
-      "type": "event",
-      "title": "事件结束",
-      "description": "绿野镇迎来文化繁荣。 结束。"
-    },
     {
       "year": 327,
       "type": "cultural_boom",
@@ -9223,6 +9222,12 @@
     },
     {
       "year": 970,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 971,
       "type": "milestone",
       "title": "里程碑",
       "description": "达成: 五百年"
