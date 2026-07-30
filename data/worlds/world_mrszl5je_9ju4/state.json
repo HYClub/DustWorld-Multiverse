@@ -2,7 +2,7 @@
   "world_id": "world_mrszl5je_9ju4",
   "name": "地球",
   "era": "antiquity",
-  "year": 994,
+  "year": 995,
   "civilization": {
     "antiquity": {
       "civ": "han",
@@ -3876,7 +3876,7 @@
       "x": 35,
       "y": 56,
       "level": 4,
-      "population": 581,
+      "population": 580,
       "max_population": 1000,
       "tech_level": 5,
       "culture": 3080,
@@ -3885,7 +3885,7 @@
       "stability": 0.7,
       "resources": {
         "food": 0,
-        "wood": 1040.44,
+        "wood": 1041.44,
         "ore": 8,
         "water": 0,
         "gold": 0
@@ -3919,7 +3919,7 @@
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 249.5800000000019,
+        "ore": 249.6400000000019,
         "water": 0,
         "gold": 0
       },
@@ -3945,8 +3945,8 @@
   "legacy": {
     "military": 3.700000000000002,
     "economic": 0,
-    "cultural": 687.2999999999972,
-    "scientific": 149.9000000000018
+    "cultural": 688.1999999999972,
+    "scientific": 150.2000000000018
   },
   "milestones": [
     {
@@ -6248,10 +6248,15 @@
       "id": "year_500",
       "name": "五百年",
       "year": 990
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 995
     }
   ],
   "stats": {
-    "total_population": 582,
+    "total_population": 581,
     "total_settlements": 2,
     "extinct_settlements": 0,
     "total_wars": 6,
@@ -6260,7 +6265,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T08:52:39.627Z",
-  "updated_at": "2026-07-30T07:35:26.770Z",
+  "updated_at": "2026-07-30T07:47:27.031Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -6300,14 +6305,8 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-07-30T07:26:15.627Z",
+  "last_evolved_at": "2026-07-30T07:40:39.627Z",
   "history": [
-    {
-      "year": 508,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
     {
       "year": 509,
       "type": "milestone",
@@ -9301,6 +9300,12 @@
       "type": "tech",
       "title": "科技突破",
       "description": "绿野镇进入电力！"
+    },
+    {
+      "year": 995,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
     }
   ]
 }
