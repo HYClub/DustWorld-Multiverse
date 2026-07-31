@@ -2,7 +2,7 @@
   "world_id": "world_mrszl5je_9ju4",
   "name": "地球",
   "era": "antiquity",
-  "year": 1104,
+  "year": 1105,
   "civilization": {
     "antiquity": {
       "civ": "han",
@@ -3810,7 +3810,7 @@
         "type": "ore",
         "x": 7,
         "y": 6,
-        "amount": 99.88
+        "amount": 99.94
       },
       {
         "type": "water",
@@ -3876,7 +3876,7 @@
       "x": 35,
       "y": 56,
       "level": 5,
-      "population": 701,
+      "population": 700,
       "max_population": 3000,
       "tech_level": 5,
       "culture": 4240,
@@ -3885,7 +3885,7 @@
       "stability": 0.7,
       "resources": {
         "food": 0,
-        "wood": 1150.44,
+        "wood": 1151.44,
         "ore": 8,
         "water": 0,
         "gold": 0
@@ -3919,7 +3919,7 @@
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 275.5600000000022,
+        "ore": 275.6200000000022,
         "water": 0,
         "gold": 0
       },
@@ -3942,42 +3942,32 @@
   ],
   "active_events": [
     {
-      "id": "EVT2446",
-      "type": "cultural_boom",
-      "participants": [
-        "SET001"
-      ],
-      "remaining_years": 1,
-      "duration": 10,
-      "description": "绿野镇迎来文化繁荣。"
-    },
-    {
-      "id": "EVT48166",
-      "type": "golden_age",
-      "participants": [
-        "SET001"
-      ],
-      "remaining_years": 1,
-      "duration": 3,
-      "description": "绿野镇进入黄金时代！"
-    },
-    {
       "id": "EVT39066",
       "type": "natural_disaster",
       "participants": [
         "SET001"
       ],
-      "remaining_years": 4,
+      "remaining_years": 3,
       "duration": 4,
       "description": "绿野镇遭受自然灾害。"
+    },
+    {
+      "id": "EVT2446",
+      "type": "cultural_boom",
+      "participants": [
+        "SET001"
+      ],
+      "remaining_years": 9,
+      "duration": 10,
+      "description": "绿野镇迎来文化繁荣。"
     }
   ],
   "trade_routes": [],
   "legacy": {
     "military": 5.599999999999999,
     "economic": 0,
-    "cultural": 795.9999999999969,
-    "scientific": 182.90000000000305
+    "cultural": 797.099999999997,
+    "scientific": 183.20000000000306
   },
   "milestones": [
     {
@@ -7004,10 +6994,20 @@
       "id": "year_1000",
       "name": "千年",
       "year": 1104
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 1105
+    },
+    {
+      "id": "year_1000",
+      "name": "千年",
+      "year": 1105
     }
   ],
   "stats": {
-    "total_population": 702,
+    "total_population": 701,
     "total_settlements": 2,
     "extinct_settlements": 0,
     "total_wars": 10,
@@ -7016,7 +7016,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T08:52:39.627Z",
-  "updated_at": "2026-07-31T09:50:27.928Z",
+  "updated_at": "2026-07-31T10:05:27.434Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -7056,38 +7056,8 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-07-31T09:50:15.627Z",
+  "last_evolved_at": "2026-07-31T10:04:39.627Z",
   "history": [
-    {
-      "year": 691,
-      "type": "cultural_boom",
-      "title": "新事件",
-      "description": "绿野镇迎来文化繁荣。"
-    },
-    {
-      "year": 691,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 692,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 693,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 694,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
     {
       "year": 695,
       "type": "milestone",
@@ -10054,6 +10024,36 @@
     },
     {
       "year": 1104,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 千年"
+    },
+    {
+      "year": 1105,
+      "type": "event",
+      "title": "事件结束",
+      "description": "绿野镇迎来文化繁荣。 结束。"
+    },
+    {
+      "year": 1105,
+      "type": "event",
+      "title": "事件结束",
+      "description": "绿野镇进入黄金时代！ 结束。"
+    },
+    {
+      "year": 1105,
+      "type": "cultural_boom",
+      "title": "新事件",
+      "description": "绿野镇迎来文化繁荣。"
+    },
+    {
+      "year": 1105,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 1105,
       "type": "milestone",
       "title": "里程碑",
       "description": "达成: 千年"
