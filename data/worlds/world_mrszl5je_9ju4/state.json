@@ -2,7 +2,7 @@
   "world_id": "world_mrszl5je_9ju4",
   "name": "地球",
   "era": "antiquity",
-  "year": 1107,
+  "year": 1108,
   "civilization": {
     "antiquity": {
       "civ": "han",
@@ -3876,16 +3876,16 @@
       "x": 35,
       "y": 56,
       "level": 5,
-      "population": 704,
+      "population": 709,
       "max_population": 3000,
       "tech_level": 5,
-      "culture": 4260,
+      "culture": 4270,
       "influence": 0,
       "health": 0.8,
       "stability": 0.7,
       "resources": {
         "food": 0,
-        "wood": 1153.44,
+        "wood": 1154.44,
         "ore": 8,
         "water": 0,
         "gold": 0
@@ -3919,7 +3919,7 @@
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 275.7400000000022,
+        "ore": 275.8000000000022,
         "water": 0,
         "gold": 0
       },
@@ -3942,14 +3942,14 @@
   ],
   "active_events": [
     {
-      "id": "EVT39066",
-      "type": "natural_disaster",
+      "id": "EVT2446",
+      "type": "cultural_boom",
       "participants": [
         "SET001"
       ],
-      "remaining_years": 1,
-      "duration": 4,
-      "description": "绿野镇遭受自然灾害。"
+      "remaining_years": 6,
+      "duration": 10,
+      "description": "绿野镇迎来文化繁荣。"
     },
     {
       "id": "EVT2446",
@@ -3957,7 +3957,7 @@
       "participants": [
         "SET001"
       ],
-      "remaining_years": 7,
+      "remaining_years": 9,
       "duration": 10,
       "description": "绿野镇迎来文化繁荣。"
     }
@@ -3966,8 +3966,8 @@
   "legacy": {
     "military": 5.599999999999999,
     "economic": 0,
-    "cultural": 799.299999999997,
-    "scientific": 183.80000000000308
+    "cultural": 800.399999999997,
+    "scientific": 184.1000000000031
   },
   "milestones": [
     {
@@ -7024,10 +7024,20 @@
       "id": "year_1000",
       "name": "千年",
       "year": 1107
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 1108
+    },
+    {
+      "id": "year_1000",
+      "name": "千年",
+      "year": 1108
     }
   ],
   "stats": {
-    "total_population": 705,
+    "total_population": 710,
     "total_settlements": 2,
     "extinct_settlements": 0,
     "total_wars": 10,
@@ -7036,7 +7046,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T08:52:39.627Z",
-  "updated_at": "2026-07-31T10:34:27.470Z",
+  "updated_at": "2026-07-31T10:48:27.454Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -7076,32 +7086,8 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-07-31T10:33:27.627Z",
+  "last_evolved_at": "2026-07-31T10:47:51.627Z",
   "history": [
-    {
-      "year": 699,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 700,
-      "type": "event",
-      "title": "事件结束",
-      "description": "绿野镇迎来文化繁荣。 结束。"
-    },
-    {
-      "year": 700,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 701,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
     {
       "year": 702,
       "type": "milestone",
@@ -10074,6 +10060,30 @@
     },
     {
       "year": 1107,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 千年"
+    },
+    {
+      "year": 1108,
+      "type": "event",
+      "title": "事件结束",
+      "description": "绿野镇遭受自然灾害。 结束。"
+    },
+    {
+      "year": 1108,
+      "type": "cultural_boom",
+      "title": "新事件",
+      "description": "绿野镇迎来文化繁荣。"
+    },
+    {
+      "year": 1108,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 1108,
       "type": "milestone",
       "title": "里程碑",
       "description": "达成: 千年"
