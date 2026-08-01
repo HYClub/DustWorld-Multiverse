@@ -2,7 +2,7 @@
   "world_id": "world_mrszl5je_9ju4",
   "name": "地球",
   "era": "antiquity",
-  "year": 1221,
+  "year": 1223,
   "civilization": {
     "antiquity": {
       "civ": "han",
@@ -3876,16 +3876,16 @@
       "x": 35,
       "y": 56,
       "level": 5,
-      "population": 1532,
+      "population": 1548,
       "max_population": 3000,
       "tech_level": 5,
-      "culture": 6260,
+      "culture": 6290,
       "influence": 0,
       "health": 0.8,
       "stability": 0.7,
       "resources": {
         "food": 0,
-        "wood": 1267.44,
+        "wood": 1269.44,
         "ore": 8,
         "water": 0,
         "gold": 0
@@ -3919,7 +3919,7 @@
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 282.5800000000025,
+        "ore": 282.7000000000025,
         "water": 0,
         "gold": 0
       },
@@ -3947,7 +3947,7 @@
       "participants": [
         "SET001"
       ],
-      "remaining_years": 1,
+      "remaining_years": 5,
       "duration": 10,
       "description": "绿野镇迎来文化繁荣。"
     },
@@ -3957,17 +3957,27 @@
       "participants": [
         "SET001"
       ],
-      "remaining_years": 7,
+      "remaining_years": 8,
       "duration": 10,
       "description": "绿野镇迎来文化繁荣。"
+    },
+    {
+      "id": "EVT48166",
+      "type": "golden_age",
+      "participants": [
+        "SET001"
+      ],
+      "remaining_years": 8,
+      "duration": 3,
+      "description": "绿野镇进入黄金时代！"
     }
   ],
   "trade_routes": [],
   "legacy": {
     "military": 5.999999999999997,
     "economic": 0,
-    "cultural": 924.6999999999996,
-    "scientific": 218.00000000000438
+    "cultural": 926.9999999999997,
+    "scientific": 218.6000000000044
   },
   "milestones": [
     {
@@ -8514,19 +8524,34 @@
       "id": "year_1000",
       "name": "千年",
       "year": 1221
+    },
+    {
+      "id": "pop_1000",
+      "name": "繁荣",
+      "year": 1222
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 1222
+    },
+    {
+      "id": "year_1000",
+      "name": "千年",
+      "year": 1222
     }
   ],
   "stats": {
-    "total_population": 1533,
+    "total_population": 1549,
     "total_settlements": 2,
     "extinct_settlements": 0,
     "total_wars": 11,
     "tech_breakthroughs": 6,
-    "golden_ages": 11,
+    "golden_ages": 12,
     "dark_ages": 0
   },
   "created_at": "2026-07-20T08:52:39.627Z",
-  "updated_at": "2026-08-01T14:01:27.161Z",
+  "updated_at": "2026-08-01T14:28:27.890Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -8566,44 +8591,8 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-08-01T13:55:03.627Z",
+  "last_evolved_at": "2026-08-01T14:23:51.627Z",
   "history": [
-    {
-      "year": 1028,
-      "type": "event",
-      "title": "事件结束",
-      "description": "风语村与绿野镇爆发战争！ 结束。"
-    },
-    {
-      "year": 1029,
-      "type": "cultural_boom",
-      "title": "新事件",
-      "description": "绿野镇迎来文化繁荣。"
-    },
-    {
-      "year": 1029,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 1029,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
-    {
-      "year": 1030,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 1030,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
     {
       "year": 1031,
       "type": "milestone",
@@ -11567,6 +11556,42 @@
       "type": "milestone",
       "title": "里程碑",
       "description": "达成: 千年"
+    },
+    {
+      "year": 1222,
+      "type": "event",
+      "title": "事件结束",
+      "description": "绿野镇迎来文化繁荣。 结束。"
+    },
+    {
+      "year": 1222,
+      "type": "cultural_boom",
+      "title": "新事件",
+      "description": "绿野镇迎来文化繁荣。"
+    },
+    {
+      "year": 1222,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 繁荣"
+    },
+    {
+      "year": 1222,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 1222,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 千年"
+    },
+    {
+      "year": 1223,
+      "type": "golden_age",
+      "title": "新事件",
+      "description": "绿野镇进入黄金时代！"
     }
   ]
 }
