@@ -2,7 +2,7 @@
   "world_id": "world_mrszl5je_9ju4",
   "name": "地球",
   "era": "antiquity",
-  "year": 1173,
+  "year": 1174,
   "civilization": {
     "antiquity": {
       "civ": "han",
@@ -3876,16 +3876,16 @@
       "x": 35,
       "y": 56,
       "level": 5,
-      "population": 1181,
+      "population": 1186,
       "max_population": 3000,
       "tech_level": 5,
-      "culture": 5410,
+      "culture": 5420,
       "influence": 0,
       "health": 0.8,
       "stability": 0.7,
       "resources": {
         "food": 0,
-        "wood": 1219.44,
+        "wood": 1220.44,
         "ore": 8,
         "water": 0,
         "gold": 0
@@ -3919,7 +3919,7 @@
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 279.7000000000024,
+        "ore": 279.7600000000024,
         "water": 0,
         "gold": 0
       },
@@ -3947,28 +3947,27 @@
       "participants": [
         "SET001"
       ],
-      "remaining_years": 4,
+      "remaining_years": 3,
       "duration": 10,
       "description": "绿野镇迎来文化繁荣。"
     },
     {
-      "id": "EVT99196",
-      "type": "war",
+      "id": "EVT2446",
+      "type": "cultural_boom",
       "participants": [
-        "SET002",
         "SET001"
       ],
-      "remaining_years": 1,
-      "duration": 6,
-      "description": "风语村与绿野镇爆发战争！"
+      "remaining_years": 9,
+      "duration": 10,
+      "description": "绿野镇迎来文化繁荣。"
     }
   ],
   "trade_routes": [],
   "legacy": {
     "military": 5.999999999999997,
     "economic": 0,
-    "cultural": 871.8999999999985,
-    "scientific": 203.60000000000383
+    "cultural": 872.9999999999985,
+    "scientific": 203.90000000000384
   },
   "milestones": [
     {
@@ -7795,10 +7794,25 @@
       "id": "year_1000",
       "name": "千年",
       "year": 1173
+    },
+    {
+      "id": "pop_1000",
+      "name": "繁荣",
+      "year": 1174
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 1174
+    },
+    {
+      "id": "year_1000",
+      "name": "千年",
+      "year": 1174
     }
   ],
   "stats": {
-    "total_population": 1182,
+    "total_population": 1187,
     "total_settlements": 2,
     "extinct_settlements": 0,
     "total_wars": 11,
@@ -7807,7 +7821,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T08:52:39.627Z",
-  "updated_at": "2026-08-01T02:24:27.364Z",
+  "updated_at": "2026-08-01T02:38:27.450Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -7847,38 +7861,8 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-08-01T02:23:51.627Z",
+  "last_evolved_at": "2026-08-01T02:38:15.627Z",
   "history": [
-    {
-      "year": 875,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 876,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 877,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 878,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 879,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
     {
       "year": 880,
       "type": "milestone",
@@ -10845,6 +10829,36 @@
     },
     {
       "year": 1173,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 千年"
+    },
+    {
+      "year": 1174,
+      "type": "event",
+      "title": "事件结束",
+      "description": "风语村与绿野镇爆发战争！ 结束。"
+    },
+    {
+      "year": 1174,
+      "type": "cultural_boom",
+      "title": "新事件",
+      "description": "绿野镇迎来文化繁荣。"
+    },
+    {
+      "year": 1174,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 繁荣"
+    },
+    {
+      "year": 1174,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 1174,
       "type": "milestone",
       "title": "里程碑",
       "description": "达成: 千年"
