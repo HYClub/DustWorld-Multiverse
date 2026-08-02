@@ -2,7 +2,7 @@
   "world_id": "world_mrt0jqd6_sa4k",
   "name": "魔法",
   "era": "exploration",
-  "year": 1249,
+  "year": 1259,
   "civilization": {
     "antiquity": {
       "civ": "insectoids",
@@ -3846,10 +3846,10 @@
       "x": 44,
       "y": 41,
       "level": 2,
-      "population": 1,
+      "population": 4,
       "max_population": 200,
       "tech_level": 3,
-      "culture": 140,
+      "culture": 150,
       "influence": 0,
       "health": 0.8,
       "stability": 0.7,
@@ -3858,7 +3858,7 @@
         "wood": 30,
         "ore": 8,
         "water": 0,
-        "gold": 3741
+        "gold": 3771
       },
       "buildings": [],
       "specialization": null,
@@ -3894,7 +3894,7 @@
         "wood": 30,
         "ore": 8,
         "water": 0,
-        "gold": 3741
+        "gold": 3771
       },
       "buildings": [],
       "specialization": "agriculture",
@@ -3926,7 +3926,7 @@
       "stability": 0.6,
       "resources": {
         "food": 0,
-        "wood": 445.1400000000021,
+        "wood": 445.7400000000021,
         "ore": 5,
         "water": 0,
         "gold": 0
@@ -3961,7 +3961,7 @@
       "stability": 0.6,
       "resources": {
         "food": 0,
-        "wood": 257.9200000000025,
+        "wood": 258.52000000000254,
         "ore": 5,
         "water": 0,
         "gold": 0
@@ -3983,7 +3983,18 @@
       "id": "SET004"
     }
   ],
-  "active_events": [],
+  "active_events": [
+    {
+      "id": "EVT76902",
+      "type": "cultural_boom",
+      "participants": [
+        "SET001"
+      ],
+      "remaining_years": 7,
+      "duration": 6,
+      "description": "碧水镇迎来文化繁荣。"
+    }
+  ],
   "trade_routes": [
     {
       "from": "SET001",
@@ -3993,9 +4004,9 @@
   ],
   "legacy": {
     "military": 2.800000000000001,
-    "economic": 99.34999999999657,
-    "cultural": 526.2999999999873,
-    "scientific": 692.8500000000081
+    "economic": 99.84999999999654,
+    "cultural": 530.2999999999871,
+    "scientific": 698.8500000000083
   },
   "milestones": [
     {
@@ -19167,10 +19178,30 @@
       "id": "year_1000",
       "name": "千年",
       "year": 1249
+    },
+    {
+      "id": "setts_3",
+      "name": "扩张",
+      "year": 1250
+    },
+    {
+      "id": "era_exploration",
+      "name": "远洋",
+      "year": 1250
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 1250
+    },
+    {
+      "id": "year_1000",
+      "name": "千年",
+      "year": 1250
     }
   ],
   "stats": {
-    "total_population": 4,
+    "total_population": 7,
     "total_settlements": 4,
     "extinct_settlements": 0,
     "total_wars": 4,
@@ -19179,7 +19210,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T09:19:32.922Z",
-  "updated_at": "2026-08-01T21:05:27.303Z",
+  "updated_at": "2026-08-02T04:43:27.217Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -19248,36 +19279,6 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "history": [
     {
-      "year": 1112,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 扩张"
-    },
-    {
-      "year": 1112,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 远洋"
-    },
-    {
-      "year": 1112,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 1112,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
-    {
-      "year": 1113,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 扩张"
-    },
-    {
       "year": 1113,
       "type": "milestone",
       "title": "里程碑",
@@ -22246,9 +22247,39 @@
       "type": "milestone",
       "title": "里程碑",
       "description": "达成: 千年"
+    },
+    {
+      "year": 1250,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 扩张"
+    },
+    {
+      "year": 1250,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 远洋"
+    },
+    {
+      "year": 1250,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 1250,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 千年"
+    },
+    {
+      "year": 1258,
+      "type": "cultural_boom",
+      "title": "新事件",
+      "description": "碧水镇迎来文化繁荣。"
     }
   ],
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-08-01T21:05:08.922Z"
+  "last_evolved_at": "2026-08-01T23:29:08.922Z"
 }
