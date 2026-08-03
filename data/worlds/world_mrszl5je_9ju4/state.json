@@ -2,7 +2,7 @@
   "world_id": "world_mrszl5je_9ju4",
   "name": "地球",
   "era": "antiquity",
-  "year": 1427,
+  "year": 1428,
   "civilization": {
     "antiquity": {
       "civ": "han",
@@ -3810,7 +3810,7 @@
         "type": "ore",
         "x": 7,
         "y": 6,
-        "amount": 68.93999999999993
+        "amount": 69.87999999999992
       },
       {
         "type": "water",
@@ -3876,7 +3876,7 @@
       "x": 35,
       "y": 56,
       "level": 5,
-      "population": 1167,
+      "population": 1166,
       "max_population": 3000,
       "tech_level": 5,
       "culture": 6980,
@@ -3885,7 +3885,7 @@
       "stability": 0.7,
       "resources": {
         "food": 0,
-        "wood": 1473.44,
+        "wood": 1474.44,
         "ore": 8,
         "water": 0,
         "gold": 0
@@ -3919,7 +3919,7 @@
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 467.68000000000285,
+        "ore": 467.74000000000285,
         "water": 0,
         "gold": 0
       },
@@ -3945,8 +3945,8 @@
   "legacy": {
     "military": 7.899999999999991,
     "economic": 0,
-    "cultural": 1202.400000000012,
-    "scientific": 279.8000000000067
+    "cultural": 1203.800000000012,
+    "scientific": 280.10000000000673
   },
   "milestones": [
     {
@@ -10848,10 +10848,25 @@
       "id": "year_1000",
       "name": "千年",
       "year": 1427
+    },
+    {
+      "id": "pop_1000",
+      "name": "繁荣",
+      "year": 1428
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 1428
+    },
+    {
+      "id": "year_1000",
+      "name": "千年",
+      "year": 1428
     }
   ],
   "stats": {
-    "total_population": 1168,
+    "total_population": 1167,
     "total_settlements": 2,
     "extinct_settlements": 0,
     "total_wars": 14,
@@ -10860,7 +10875,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T08:52:39.627Z",
-  "updated_at": "2026-08-03T15:22:04.675Z",
+  "updated_at": "2026-08-03T15:36:03.875Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -10900,26 +10915,8 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-08-03T15:21:27.627Z",
+  "last_evolved_at": "2026-08-03T15:35:51.627Z",
   "history": [
-    {
-      "year": 1221,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 繁荣"
-    },
-    {
-      "year": 1221,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 1221,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
     {
       "year": 1222,
       "type": "event",
@@ -13898,6 +13895,24 @@
     },
     {
       "year": 1427,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 千年"
+    },
+    {
+      "year": 1428,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 繁荣"
+    },
+    {
+      "year": 1428,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 1428,
       "type": "milestone",
       "title": "里程碑",
       "description": "达成: 千年"
