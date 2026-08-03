@@ -2,7 +2,7 @@
   "world_id": "world_mrt0jqd6_sa4k",
   "name": "魔法",
   "era": "exploration",
-  "year": 1383,
+  "year": 1385,
   "civilization": {
     "antiquity": {
       "civ": "insectoids",
@@ -3780,7 +3780,7 @@
         "type": "food",
         "x": 43,
         "y": 41,
-        "amount": 98.1399999999999
+        "amount": 99.94
       },
       {
         "type": "wood",
@@ -3858,7 +3858,7 @@
         "wood": 30,
         "ore": 8,
         "water": 0,
-        "gold": 4143
+        "gold": 4149
       },
       "buildings": [],
       "specialization": null,
@@ -3894,7 +3894,7 @@
         "wood": 30,
         "ore": 8,
         "water": 0,
-        "gold": 4143
+        "gold": 4149
       },
       "buildings": [],
       "specialization": "agriculture",
@@ -3926,7 +3926,7 @@
       "stability": 0.6,
       "resources": {
         "food": 0,
-        "wood": 453.1800000000024,
+        "wood": 453.3000000000024,
         "ore": 5,
         "water": 0,
         "gold": 0
@@ -3961,7 +3961,7 @@
       "stability": 0.6,
       "resources": {
         "food": 0,
-        "wood": 265.9600000000028,
+        "wood": 266.0800000000028,
         "ore": 5,
         "water": 0,
         "gold": 0
@@ -3993,9 +3993,9 @@
   ],
   "legacy": {
     "military": 3.5000000000000018,
-    "economic": 106.04999999999619,
-    "cultural": 579.8999999999843,
-    "scientific": 773.2500000000111
+    "economic": 106.14999999999618,
+    "cultural": 580.6999999999842,
+    "scientific": 774.4500000000112
   },
   "milestones": [
     {
@@ -20707,6 +20707,26 @@
       "id": "year_1000",
       "name": "千年",
       "year": 1383
+    },
+    {
+      "id": "setts_3",
+      "name": "扩张",
+      "year": 1384
+    },
+    {
+      "id": "era_exploration",
+      "name": "远洋",
+      "year": 1384
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 1384
+    },
+    {
+      "id": "year_1000",
+      "name": "千年",
+      "year": 1384
     }
   ],
   "stats": {
@@ -20719,7 +20739,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T09:19:32.922Z",
-  "updated_at": "2026-08-03T05:21:07.612Z",
+  "updated_at": "2026-08-03T05:45:04.000Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -20787,30 +20807,6 @@
   "creator": "HYClub",
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "history": [
-    {
-      "year": 1192,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 1192,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
-    {
-      "year": 1193,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 扩张"
-    },
-    {
-      "year": 1193,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 远洋"
-    },
     {
       "year": 1193,
       "type": "milestone",
@@ -23786,9 +23782,33 @@
       "type": "milestone",
       "title": "里程碑",
       "description": "达成: 千年"
+    },
+    {
+      "year": 1384,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 扩张"
+    },
+    {
+      "year": 1384,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 远洋"
+    },
+    {
+      "year": 1384,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 1384,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 千年"
     }
   ],
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-08-03T05:14:44.922Z"
+  "last_evolved_at": "2026-08-03T05:43:32.922Z"
 }
