@@ -2,7 +2,7 @@
   "world_id": "world_mrszl5je_9ju4",
   "name": "地球",
   "era": "antiquity",
-  "year": 1468,
+  "year": 1469,
   "civilization": {
     "antiquity": {
       "civ": "han",
@@ -3876,7 +3876,7 @@
       "x": 35,
       "y": 56,
       "level": 5,
-      "population": 1126,
+      "population": 1125,
       "max_population": 3000,
       "tech_level": 5,
       "culture": 6980,
@@ -3885,7 +3885,7 @@
       "stability": 0.7,
       "resources": {
         "food": 0,
-        "wood": 1514.44,
+        "wood": 1515.44,
         "ore": 8,
         "water": 0,
         "gold": 0
@@ -3919,7 +3919,7 @@
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 470.14000000000294,
+        "ore": 470.20000000000294,
         "water": 0,
         "gold": 0
       },
@@ -3945,8 +3945,8 @@
   "legacy": {
     "military": 7.899999999999991,
     "economic": 0,
-    "cultural": 1259.8000000000156,
-    "scientific": 292.1000000000072
+    "cultural": 1261.2000000000157,
+    "scientific": 292.4000000000072
   },
   "milestones": [
     {
@@ -11418,10 +11418,25 @@
       "id": "year_1000",
       "name": "千年",
       "year": 1468
+    },
+    {
+      "id": "pop_1000",
+      "name": "繁荣",
+      "year": 1469
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 1469
+    },
+    {
+      "id": "year_1000",
+      "name": "千年",
+      "year": 1469
     }
   ],
   "stats": {
-    "total_population": 1127,
+    "total_population": 1126,
     "total_settlements": 2,
     "extinct_settlements": 0,
     "total_wars": 14,
@@ -11430,7 +11445,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T08:52:39.627Z",
-  "updated_at": "2026-08-04T01:12:16.329Z",
+  "updated_at": "2026-08-04T01:27:15.664Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -11470,26 +11485,8 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-08-04T01:11:51.627Z",
+  "last_evolved_at": "2026-08-04T01:26:15.627Z",
   "history": [
-    {
-      "year": 1286,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 1286,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
-    {
-      "year": 1287,
-      "type": "event",
-      "title": "事件结束",
-      "description": "风语村迎来文化繁荣。 结束。"
-    },
     {
       "year": 1287,
       "type": "milestone",
@@ -14468,6 +14465,24 @@
     },
     {
       "year": 1468,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 千年"
+    },
+    {
+      "year": 1469,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 繁荣"
+    },
+    {
+      "year": 1469,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 1469,
       "type": "milestone",
       "title": "里程碑",
       "description": "达成: 千年"
