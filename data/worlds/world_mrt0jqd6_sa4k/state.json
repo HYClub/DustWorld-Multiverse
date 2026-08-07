@@ -2,7 +2,7 @@
   "world_id": "world_mrt0jqd6_sa4k",
   "name": "魔法",
   "era": "exploration",
-  "year": 1765,
+  "year": 1775,
   "civilization": {
     "antiquity": {
       "civ": "insectoids",
@@ -3846,10 +3846,10 @@
       "x": 44,
       "y": 41,
       "level": 2,
-      "population": 34,
+      "population": 27,
       "max_population": 200,
       "tech_level": 3,
-      "culture": 700,
+      "culture": 710,
       "influence": 0,
       "health": 0.8,
       "stability": 0.7,
@@ -3858,7 +3858,7 @@
         "wood": 30,
         "ore": 8,
         "water": 0,
-        "gold": 5289
+        "gold": 5319
       },
       "buildings": [],
       "specialization": null,
@@ -3894,7 +3894,7 @@
         "wood": 30,
         "ore": 8,
         "water": 0,
-        "gold": 5289
+        "gold": 5319
       },
       "buildings": [],
       "specialization": "agriculture",
@@ -3926,7 +3926,7 @@
       "stability": 0.6,
       "resources": {
         "food": 0,
-        "wood": 476.10000000000326,
+        "wood": 476.7000000000033,
         "ore": 5,
         "water": 0,
         "gold": 0
@@ -3961,7 +3961,7 @@
       "stability": 0.6,
       "resources": {
         "food": 0,
-        "wood": 288.8800000000037,
+        "wood": 289.4800000000037,
         "ore": 5,
         "water": 0,
         "gold": 0
@@ -3983,7 +3983,18 @@
       "id": "SET004"
     }
   ],
-  "active_events": [],
+  "active_events": [
+    {
+      "id": "EVT76902",
+      "type": "cultural_boom",
+      "participants": [
+        "SET001"
+      ],
+      "remaining_years": 7,
+      "duration": 6,
+      "description": "碧水镇迎来文化繁荣。"
+    }
+  ],
   "trade_routes": [
     {
       "from": "SET001",
@@ -3993,9 +4004,9 @@
   ],
   "legacy": {
     "military": 4.899999999999999,
-    "economic": 125.1499999999951,
-    "cultural": 732.6999999999756,
-    "scientific": 1002.4500000000198
+    "economic": 125.64999999999507,
+    "cultural": 736.6999999999754,
+    "scientific": 1008.45000000002
   },
   "milestones": [
     {
@@ -25707,10 +25718,30 @@
       "id": "year_1000",
       "name": "千年",
       "year": 1763
+    },
+    {
+      "id": "setts_3",
+      "name": "扩张",
+      "year": 1766
+    },
+    {
+      "id": "era_exploration",
+      "name": "远洋",
+      "year": 1766
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 1766
+    },
+    {
+      "id": "year_1000",
+      "name": "千年",
+      "year": 1766
     }
   ],
   "stats": {
-    "total_population": 37,
+    "total_population": 30,
     "total_settlements": 4,
     "extinct_settlements": 0,
     "total_wars": 7,
@@ -25719,7 +25750,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T09:19:32.922Z",
-  "updated_at": "2026-08-07T01:09:33.233Z",
+  "updated_at": "2026-08-07T05:33:56.477Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -25787,36 +25818,6 @@
   "creator": "HYClub",
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "history": [
-    {
-      "year": 1552,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 1552,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
-    {
-      "year": 1553,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 扩张"
-    },
-    {
-      "year": 1553,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 远洋"
-    },
-    {
-      "year": 1553,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
     {
       "year": 1553,
       "type": "milestone",
@@ -28786,9 +28787,39 @@
       "type": "milestone",
       "title": "里程碑",
       "description": "达成: 千年"
+    },
+    {
+      "year": 1766,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 扩张"
+    },
+    {
+      "year": 1766,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 远洋"
+    },
+    {
+      "year": 1766,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 1766,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 千年"
+    },
+    {
+      "year": 1774,
+      "type": "cultural_boom",
+      "title": "新事件",
+      "description": "碧水镇迎来文化繁荣。"
     }
   ],
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-08-07T00:55:32.922Z"
+  "last_evolved_at": "2026-08-07T03:19:32.922Z"
 }
