@@ -2,7 +2,7 @@
   "world_id": "world_mrszl5je_9ju4",
   "name": "地球",
   "era": "antiquity",
-  "year": 1838,
+  "year": 1839,
   "civilization": {
     "antiquity": {
       "civ": "han",
@@ -3810,7 +3810,7 @@
         "type": "ore",
         "x": 7,
         "y": 6,
-        "amount": 3.479999999999978
+        "amount": 0
       },
       {
         "type": "water",
@@ -3876,16 +3876,16 @@
       "x": 35,
       "y": 56,
       "level": 5,
-      "population": 1143,
+      "population": 1145,
       "max_population": 3000,
       "tech_level": 5,
-      "culture": 9100,
+      "culture": 9110,
       "influence": 0,
       "health": 0.8,
       "stability": 0.7,
       "resources": {
         "food": 0,
-        "wood": 1884.44,
+        "wood": 1885.44,
         "ore": 8,
         "water": 0,
         "gold": 0
@@ -3909,17 +3909,17 @@
       "x": 6,
       "y": 5,
       "level": 2,
-      "population": 93,
+      "population": 102,
       "max_population": 200,
       "tech_level": 3,
-      "culture": 890,
+      "culture": 910,
       "influence": 0,
       "health": 0.7,
       "stability": 0.6,
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 801.0400000000008,
+        "ore": 805.5200000000008,
         "water": 0,
         "gold": 0
       },
@@ -3947,7 +3947,7 @@
       "participants": [
         "SET002"
       ],
-      "remaining_years": 5,
+      "remaining_years": 4,
       "duration": 10,
       "description": "风语村进入黄金时代！"
     },
@@ -3957,7 +3957,7 @@
       "participants": [
         "SET001"
       ],
-      "remaining_years": 7,
+      "remaining_years": 6,
       "duration": 10,
       "description": "绿野镇迎来文化繁荣。"
     }
@@ -3966,8 +3966,8 @@
   "legacy": {
     "military": 11.799999999999978,
     "economic": 0,
-    "cultural": 1905.200000000033,
-    "scientific": 403.1000000000114
+    "cultural": 1907.500000000033,
+    "scientific": 403.4000000000114
   },
   "milestones": [
     {
@@ -14669,10 +14669,25 @@
       "id": "year_1000",
       "name": "千年",
       "year": 1838
+    },
+    {
+      "id": "pop_1000",
+      "name": "繁荣",
+      "year": 1839
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 1839
+    },
+    {
+      "id": "year_1000",
+      "name": "千年",
+      "year": 1839
     }
   ],
   "stats": {
-    "total_population": 1236,
+    "total_population": 1247,
     "total_settlements": 2,
     "extinct_settlements": 0,
     "total_wars": 20,
@@ -14681,7 +14696,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T08:52:39.627Z",
-  "updated_at": "2026-08-07T17:59:56.725Z",
+  "updated_at": "2026-08-07T18:14:56.539Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -14721,26 +14736,8 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-08-07T17:59:51.627Z",
+  "last_evolved_at": "2026-08-07T18:14:15.627Z",
   "history": [
-    {
-      "year": 1561,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 1561,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
-    {
-      "year": 1562,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 繁荣"
-    },
     {
       "year": 1562,
       "type": "milestone",
@@ -17719,6 +17716,24 @@
     },
     {
       "year": 1838,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 千年"
+    },
+    {
+      "year": 1839,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 繁荣"
+    },
+    {
+      "year": 1839,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 1839,
       "type": "milestone",
       "title": "里程碑",
       "description": "达成: 千年"
