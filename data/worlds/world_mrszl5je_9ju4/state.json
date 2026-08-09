@@ -2,7 +2,7 @@
   "world_id": "world_mrszl5je_9ju4",
   "name": "地球",
   "era": "antiquity",
-  "year": 2059,
+  "year": 2060,
   "civilization": {
     "antiquity": {
       "civ": "han",
@@ -3810,7 +3810,7 @@
         "type": "ore",
         "x": 7,
         "y": 6,
-        "amount": 11.599999999999998
+        "amount": 12.539999999999997
       },
       {
         "type": "water",
@@ -3876,7 +3876,7 @@
       "x": 35,
       "y": 56,
       "level": 5,
-      "population": 966,
+      "population": 965,
       "max_population": 3000,
       "tech_level": 5,
       "culture": 9870,
@@ -3885,7 +3885,7 @@
       "stability": 0.7,
       "resources": {
         "food": 0,
-        "wood": 2105.44,
+        "wood": 2106.44,
         "ore": 8,
         "water": 0,
         "gold": 0
@@ -3919,7 +3919,7 @@
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 1013.9200000000001,
+        "ore": 1013.98,
         "water": 0,
         "gold": 0
       },
@@ -3945,8 +3945,8 @@
   "legacy": {
     "military": 13.299999999999972,
     "economic": 0,
-    "cultural": 2431.400000000043,
-    "scientific": 469.4000000000139
+    "cultural": 2433.900000000043,
+    "scientific": 469.7000000000139
   },
   "milestones": [
     {
@@ -16648,10 +16648,20 @@
       "id": "year_1000",
       "name": "千年",
       "year": 2059
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 2060
+    },
+    {
+      "id": "year_1000",
+      "name": "千年",
+      "year": 2060
     }
   ],
   "stats": {
-    "total_population": 967,
+    "total_population": 966,
     "total_settlements": 2,
     "extinct_settlements": 0,
     "total_wars": 22,
@@ -16660,7 +16670,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T08:52:39.627Z",
-  "updated_at": "2026-08-09T23:02:40.952Z",
+  "updated_at": "2026-08-09T23:17:41.290Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -16700,20 +16710,8 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-08-09T23:02:15.627Z",
+  "last_evolved_at": "2026-08-09T23:16:39.627Z",
   "history": [
-    {
-      "year": 1785,
-      "type": "event",
-      "title": "事件结束",
-      "description": "风语村遭受自然灾害。 结束。"
-    },
-    {
-      "year": 1787,
-      "type": "event",
-      "title": "事件结束",
-      "description": "绿野镇迎来文化繁荣。 结束。"
-    },
     {
       "year": 1787,
       "type": "event",
@@ -19698,6 +19696,18 @@
     },
     {
       "year": 2059,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 千年"
+    },
+    {
+      "year": 2060,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 2060,
       "type": "milestone",
       "title": "里程碑",
       "description": "达成: 千年"
