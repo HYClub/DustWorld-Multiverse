@@ -2,7 +2,7 @@
   "world_id": "world_mrszl5je_9ju4",
   "name": "地球",
   "era": "antiquity",
-  "year": 2252,
+  "year": 2253,
   "civilization": {
     "antiquity": {
       "civ": "han",
@@ -3876,16 +3876,16 @@
       "x": 35,
       "y": 56,
       "level": 5,
-      "population": 782,
+      "population": 784,
       "max_population": 3000,
       "tech_level": 5,
-      "culture": 9900,
+      "culture": 9910,
       "influence": 0,
       "health": 0.8,
       "stability": 0.7,
       "resources": {
         "food": 0,
-        "wood": 2298.44,
+        "wood": 2299.44,
         "ore": 8,
         "water": 0,
         "gold": 0
@@ -3919,7 +3919,7 @@
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 1025.4999999999895,
+        "ore": 1025.5599999999895,
         "water": 0,
         "gold": 0
       },
@@ -3947,7 +3947,7 @@
       "participants": [
         "SET002"
       ],
-      "remaining_years": 4,
+      "remaining_years": 3,
       "duration": 9,
       "description": "风语村遭受自然灾害。"
     },
@@ -3957,7 +3957,7 @@
       "participants": [
         "SET001"
       ],
-      "remaining_years": 6,
+      "remaining_years": 5,
       "duration": 10,
       "description": "绿野镇迎来文化繁荣。"
     }
@@ -3966,8 +3966,8 @@
   "legacy": {
     "military": 13.299999999999972,
     "economic": 0,
-    "cultural": 2913.900000000043,
-    "scientific": 527.3000000000131
+    "cultural": 2916.400000000043,
+    "scientific": 527.6000000000131
   },
   "milestones": [
     {
@@ -18299,10 +18299,20 @@
       "id": "year_1000",
       "name": "千年",
       "year": 2252
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 2253
+    },
+    {
+      "id": "year_1000",
+      "name": "千年",
+      "year": 2253
     }
   ],
   "stats": {
-    "total_population": 783,
+    "total_population": 785,
     "total_settlements": 2,
     "extinct_settlements": 0,
     "total_wars": 22,
@@ -18311,7 +18321,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T08:52:39.627Z",
-  "updated_at": "2026-08-11T21:21:41.005Z",
+  "updated_at": "2026-08-11T21:36:40.646Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -18351,20 +18361,8 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-08-11T21:21:27.627Z",
+  "last_evolved_at": "2026-08-11T21:35:51.627Z",
   "history": [
-    {
-      "year": 1950,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
-    {
-      "year": 1959,
-      "type": "natural_disaster",
-      "title": "新事件",
-      "description": "风语村遭受自然灾害。"
-    },
     {
       "year": 1960,
       "type": "cultural_boom",
@@ -21349,6 +21347,18 @@
     },
     {
       "year": 2252,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 千年"
+    },
+    {
+      "year": 2253,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 2253,
       "type": "milestone",
       "title": "里程碑",
       "description": "达成: 千年"
