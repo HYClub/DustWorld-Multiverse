@@ -2,7 +2,7 @@
   "world_id": "world_mrszl5je_9ju4",
   "name": "地球",
   "era": "antiquity",
-  "year": 2233,
+  "year": 2234,
   "civilization": {
     "antiquity": {
       "civ": "han",
@@ -3876,7 +3876,7 @@
       "x": 35,
       "y": 56,
       "level": 5,
-      "population": 792,
+      "population": 791,
       "max_population": 3000,
       "tech_level": 5,
       "culture": 9870,
@@ -3885,7 +3885,7 @@
       "stability": 0.7,
       "resources": {
         "food": 0,
-        "wood": 2279.44,
+        "wood": 2280.44,
         "ore": 8,
         "water": 0,
         "gold": 0
@@ -3919,7 +3919,7 @@
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 1024.3599999999906,
+        "ore": 1024.4199999999905,
         "water": 0,
         "gold": 0
       },
@@ -3945,8 +3945,8 @@
   "legacy": {
     "military": 13.299999999999972,
     "economic": 0,
-    "cultural": 2866.400000000043,
-    "scientific": 521.600000000014
+    "cultural": 2868.900000000043,
+    "scientific": 521.900000000014
   },
   "milestones": [
     {
@@ -18178,10 +18178,20 @@
       "id": "year_1000",
       "name": "千年",
       "year": 2233
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 2234
+    },
+    {
+      "id": "year_1000",
+      "name": "千年",
+      "year": 2234
     }
   ],
   "stats": {
-    "total_population": 793,
+    "total_population": 792,
     "total_settlements": 2,
     "extinct_settlements": 0,
     "total_wars": 22,
@@ -18190,7 +18200,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T08:52:39.627Z",
-  "updated_at": "2026-08-11T16:48:41.439Z",
+  "updated_at": "2026-08-11T17:02:41.634Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -18230,20 +18240,8 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-08-11T16:47:51.627Z",
+  "last_evolved_at": "2026-08-11T17:02:15.627Z",
   "history": [
-    {
-      "year": 1939,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 1939,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
     {
       "year": 1940,
       "type": "milestone",
@@ -21228,6 +21226,18 @@
     },
     {
       "year": 2233,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 千年"
+    },
+    {
+      "year": 2234,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 2234,
       "type": "milestone",
       "title": "里程碑",
       "description": "达成: 千年"
