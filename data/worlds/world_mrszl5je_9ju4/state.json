@@ -2,7 +2,7 @@
   "world_id": "world_mrszl5je_9ju4",
   "name": "地球",
   "era": "antiquity",
-  "year": 2372,
+  "year": 2376,
   "civilization": {
     "antiquity": {
       "civ": "han",
@@ -3876,16 +3876,16 @@
       "x": 35,
       "y": 56,
       "level": 5,
-      "population": 1234,
+      "population": 1144,
       "max_population": 3000,
       "tech_level": 5,
-      "culture": 11440,
+      "culture": 11460,
       "influence": 0,
       "health": 0.8,
       "stability": 0.7,
       "resources": {
         "food": 0,
-        "wood": 2418.44,
+        "wood": 2422.44,
         "ore": 8,
         "water": 0,
         "gold": 0
@@ -3919,7 +3919,7 @@
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 1032.699999999983,
+        "ore": 1032.9399999999828,
         "water": 0,
         "gold": 0
       },
@@ -3940,35 +3940,13 @@
       "id": "SET002"
     }
   ],
-  "active_events": [
-    {
-      "id": "EVT2446",
-      "type": "cultural_boom",
-      "participants": [
-        "SET001"
-      ],
-      "remaining_years": 3,
-      "duration": 10,
-      "description": "绿野镇迎来文化繁荣。"
-    },
-    {
-      "id": "EVT54842",
-      "type": "war",
-      "participants": [
-        "SET001",
-        "SET002"
-      ],
-      "remaining_years": 3,
-      "duration": 3,
-      "description": "绿野镇与风语村爆发战争！"
-    }
-  ],
+  "active_events": [],
   "trade_routes": [],
   "legacy": {
-    "military": 15.299999999999965,
+    "military": 15.499999999999964,
     "economic": 0,
-    "cultural": 3213.900000000043,
-    "scientific": 563.3000000000077
+    "cultural": 3223.900000000043,
+    "scientific": 564.5000000000075
   },
   "milestones": [
     {
@@ -19445,10 +19423,25 @@
       "id": "year_1000",
       "name": "千年",
       "year": 2367
+    },
+    {
+      "id": "pop_1000",
+      "name": "繁荣",
+      "year": 2373
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 2373
+    },
+    {
+      "id": "year_1000",
+      "name": "千年",
+      "year": 2373
     }
   ],
   "stats": {
-    "total_population": 1235,
+    "total_population": 1145,
     "total_settlements": 2,
     "extinct_settlements": 0,
     "total_wars": 26,
@@ -19457,7 +19450,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T08:52:39.627Z",
-  "updated_at": "2026-08-13T02:10:42.082Z",
+  "updated_at": "2026-08-13T03:12:40.791Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -19497,38 +19490,8 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-08-13T02:09:27.627Z",
+  "last_evolved_at": "2026-08-13T03:07:03.627Z",
   "history": [
-    {
-      "year": 2114,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
-    {
-      "year": 2115,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 2115,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
-    {
-      "year": 2116,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 2116,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
     {
       "year": 2117,
       "type": "milestone",
@@ -22498,6 +22461,36 @@
       "type": "war",
       "title": "新事件",
       "description": "绿野镇与风语村爆发战争！"
+    },
+    {
+      "year": 2373,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 繁荣"
+    },
+    {
+      "year": 2373,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 2373,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 千年"
+    },
+    {
+      "year": 2375,
+      "type": "event",
+      "title": "事件结束",
+      "description": "绿野镇迎来文化繁荣。 结束。"
+    },
+    {
+      "year": 2375,
+      "type": "event",
+      "title": "事件结束",
+      "description": "绿野镇与风语村爆发战争！ 结束。"
     }
   ]
 }
