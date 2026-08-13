@@ -2,7 +2,7 @@
   "world_id": "world_mrszl5je_9ju4",
   "name": "地球",
   "era": "antiquity",
-  "year": 2365,
+  "year": 2366,
   "civilization": {
     "antiquity": {
       "civ": "han",
@@ -3876,16 +3876,16 @@
       "x": 35,
       "y": 56,
       "level": 5,
-      "population": 1257,
+      "population": 1262,
       "max_population": 3000,
       "tech_level": 5,
-      "culture": 11360,
+      "culture": 11370,
       "influence": 0,
       "health": 0.8,
       "stability": 0.7,
       "resources": {
         "food": 0,
-        "wood": 2411.44,
+        "wood": 2412.44,
         "ore": 8,
         "water": 0,
         "gold": 0
@@ -3919,7 +3919,7 @@
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 1032.2799999999834,
+        "ore": 1032.3399999999833,
         "water": 0,
         "gold": 0
       },
@@ -3942,14 +3942,14 @@
   ],
   "active_events": [
     {
-      "id": "EVT94830",
-      "type": "natural_disaster",
+      "id": "EVT2446",
+      "type": "cultural_boom",
       "participants": [
-        "SET002"
+        "SET001"
       ],
-      "remaining_years": 1,
-      "duration": 9,
-      "description": "风语村遭受自然灾害。"
+      "remaining_years": 2,
+      "duration": 10,
+      "description": "绿野镇迎来文化繁荣。"
     },
     {
       "id": "EVT2446",
@@ -3957,7 +3957,7 @@
       "participants": [
         "SET001"
       ],
-      "remaining_years": 3,
+      "remaining_years": 9,
       "duration": 10,
       "description": "绿野镇迎来文化繁荣。"
     }
@@ -3966,8 +3966,8 @@
   "legacy": {
     "military": 14.799999999999967,
     "economic": 0,
-    "cultural": 3196.400000000043,
-    "scientific": 561.200000000008
+    "cultural": 3198.900000000043,
+    "scientific": 561.500000000008
   },
   "milestones": [
     {
@@ -19414,10 +19414,25 @@
       "id": "year_1000",
       "name": "千年",
       "year": 2365
+    },
+    {
+      "id": "pop_1000",
+      "name": "繁荣",
+      "year": 2366
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 2366
+    },
+    {
+      "id": "year_1000",
+      "name": "千年",
+      "year": 2366
     }
   ],
   "stats": {
-    "total_population": 1258,
+    "total_population": 1263,
     "total_settlements": 2,
     "extinct_settlements": 0,
     "total_wars": 25,
@@ -19426,7 +19441,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T08:52:39.627Z",
-  "updated_at": "2026-08-13T00:29:41.409Z",
+  "updated_at": "2026-08-13T00:43:41.105Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -19466,38 +19481,8 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-08-13T00:28:39.627Z",
+  "last_evolved_at": "2026-08-13T00:43:03.627Z",
   "history": [
-    {
-      "year": 2109,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
-    {
-      "year": 2110,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 2110,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
-    {
-      "year": 2111,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 2111,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
     {
       "year": 2112,
       "type": "milestone",
@@ -22464,6 +22449,36 @@
     },
     {
       "year": 2365,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 千年"
+    },
+    {
+      "year": 2366,
+      "type": "event",
+      "title": "事件结束",
+      "description": "风语村遭受自然灾害。 结束。"
+    },
+    {
+      "year": 2366,
+      "type": "cultural_boom",
+      "title": "新事件",
+      "description": "绿野镇迎来文化繁荣。"
+    },
+    {
+      "year": 2366,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 繁荣"
+    },
+    {
+      "year": 2366,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 2366,
       "type": "milestone",
       "title": "里程碑",
       "description": "达成: 千年"
