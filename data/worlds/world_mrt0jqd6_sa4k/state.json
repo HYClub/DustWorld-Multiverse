@@ -2,7 +2,7 @@
   "world_id": "world_mrt0jqd6_sa4k",
   "name": "魔法",
   "era": "exploration",
-  "year": 2652,
+  "year": 2662,
   "civilization": {
     "antiquity": {
       "civ": "insectoids",
@@ -3816,13 +3816,13 @@
         "type": "food",
         "x": 34,
         "y": 31,
-        "amount": 70.17999999999996
+        "amount": 78.31999999999995
       },
       {
         "type": "wood",
         "x": 47,
         "y": 54,
-        "amount": 64.74000000000001
+        "amount": 46.00000000000001
       },
       {
         "type": "wood",
@@ -3846,7 +3846,7 @@
       "x": 44,
       "y": 41,
       "level": 3,
-      "population": 154,
+      "population": 144,
       "max_population": 500,
       "tech_level": 3,
       "culture": 2060,
@@ -3858,7 +3858,7 @@
         "wood": 30,
         "ore": 8,
         "water": 0,
-        "gold": 7972
+        "gold": 8012
       },
       "buildings": [],
       "specialization": "agriculture",
@@ -3882,7 +3882,7 @@
       "x": 33,
       "y": 32,
       "level": 3,
-      "population": 7,
+      "population": 1,
       "max_population": 500,
       "tech_level": 5,
       "culture": 590,
@@ -3894,7 +3894,7 @@
         "wood": 30,
         "ore": 8,
         "water": 0,
-        "gold": 7972
+        "gold": 8012
       },
       "buildings": [],
       "specialization": "agriculture",
@@ -3917,7 +3917,7 @@
       "x": 50,
       "y": 57,
       "level": 3,
-      "population": 53,
+      "population": 42,
       "max_population": 500,
       "tech_level": 5,
       "culture": 770,
@@ -3926,7 +3926,7 @@
       "stability": 0.6,
       "resources": {
         "food": 0,
-        "wood": 582.11999999999,
+        "wood": 610.85999999999,
         "ore": 5,
         "water": 0,
         "gold": 0
@@ -3952,7 +3952,7 @@
       "x": 20,
       "y": 6,
       "level": 2,
-      "population": 126,
+      "population": 116,
       "max_population": 200,
       "tech_level": 3,
       "culture": 350,
@@ -3961,7 +3961,7 @@
       "stability": 0.6,
       "resources": {
         "food": 0,
-        "wood": 508.70000000000556,
+        "wood": 518.7000000000055,
         "ore": 5,
         "water": 0,
         "gold": 0
@@ -3985,15 +3985,14 @@
   ],
   "active_events": [
     {
-      "id": "EVT12123",
-      "type": "war",
+      "id": "EVT63488",
+      "type": "natural_disaster",
       "participants": [
-        "SET004",
-        "SET003"
+        "SET002"
       ],
-      "remaining_years": 5,
-      "duration": 5,
-      "description": "贸易站与风语村爆发战争！"
+      "remaining_years": 8,
+      "duration": 8,
+      "description": "河畔城遭受自然灾害。"
     }
   ],
   "trade_routes": [
@@ -4004,10 +4003,10 @@
     }
   ],
   "legacy": {
-    "military": 10.399999999999979,
-    "economic": 169.50000000000438,
-    "cultural": 1094.3999999999671,
-    "scientific": 1535.3499999999458
+    "military": 10.799999999999978,
+    "economic": 170.0000000000045,
+    "cultural": 1099.3999999999671,
+    "scientific": 1541.8499999999467
   },
   "milestones": [
     {
@@ -37219,10 +37218,30 @@
       "id": "year_1000",
       "name": "千年",
       "year": 2643
+    },
+    {
+      "id": "setts_3",
+      "name": "扩张",
+      "year": 2653
+    },
+    {
+      "id": "era_exploration",
+      "name": "远洋",
+      "year": 2653
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 2653
+    },
+    {
+      "id": "year_1000",
+      "name": "千年",
+      "year": 2653
     }
   ],
   "stats": {
-    "total_population": 340,
+    "total_population": 303,
     "total_settlements": 4,
     "extinct_settlements": 0,
     "total_wars": 15,
@@ -37231,7 +37250,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T09:19:32.922Z",
-  "updated_at": "2026-08-16T16:08:57.305Z",
+  "updated_at": "2026-08-16T16:08:59.217Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -37299,42 +37318,6 @@
   "creator": "HYClub",
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "history": [
-    {
-      "year": 2434,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
-    {
-      "year": 2435,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 扩张"
-    },
-    {
-      "year": 2435,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 远洋"
-    },
-    {
-      "year": 2435,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 2435,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
-    {
-      "year": 2436,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 扩张"
-    },
     {
       "year": 2436,
       "type": "milestone",
@@ -40298,9 +40281,45 @@
       "type": "war",
       "title": "新事件",
       "description": "贸易站与风语村爆发战争！"
+    },
+    {
+      "year": 2653,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 扩张"
+    },
+    {
+      "year": 2653,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 远洋"
+    },
+    {
+      "year": 2653,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 2653,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 千年"
+    },
+    {
+      "year": 2657,
+      "type": "event",
+      "title": "事件结束",
+      "description": "贸易站与风语村爆发战争！ 结束。"
+    },
+    {
+      "year": 2662,
+      "type": "natural_disaster",
+      "title": "新事件",
+      "description": "河畔城遭受自然灾害。"
     }
   ],
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-08-15T21:48:20.922Z"
+  "last_evolved_at": "2026-08-16T00:12:20.922Z"
 }
