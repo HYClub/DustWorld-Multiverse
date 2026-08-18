@@ -2,7 +2,7 @@
   "world_id": "world_mrt0jqd6_sa4k",
   "name": "魔法",
   "era": "exploration",
-  "year": 2917,
+  "year": 2918,
   "civilization": {
     "antiquity": {
       "civ": "insectoids",
@@ -3816,13 +3816,13 @@
         "type": "food",
         "x": 34,
         "y": 31,
-        "amount": 89.61999999999988
+        "amount": 90.55999999999987
       },
       {
         "type": "wood",
         "x": 47,
         "y": 54,
-        "amount": 55.77999999999996
+        "amount": 56.719999999999956
       },
       {
         "type": "wood",
@@ -3846,7 +3846,7 @@
       "x": 44,
       "y": 41,
       "level": 3,
-      "population": 31,
+      "population": 30,
       "max_population": 500,
       "tech_level": 3,
       "culture": 2340,
@@ -3858,7 +3858,7 @@
         "wood": 30,
         "ore": 8,
         "water": 0,
-        "gold": 9032
+        "gold": 9036
       },
       "buildings": [],
       "specialization": "agriculture",
@@ -3894,7 +3894,7 @@
         "wood": 30,
         "ore": 8,
         "water": 0,
-        "gold": 9032
+        "gold": 9036
       },
       "buildings": [],
       "specialization": "agriculture",
@@ -3926,7 +3926,7 @@
       "stability": 0.6,
       "resources": {
         "food": 0,
-        "wood": 856.0799999999871,
+        "wood": 856.139999999987,
         "ore": 5,
         "water": 0,
         "gold": 0
@@ -3961,7 +3961,7 @@
       "stability": 0.6,
       "resources": {
         "food": 0,
-        "wood": 633.3199999999977,
+        "wood": 633.3799999999976,
         "ore": 5,
         "water": 0,
         "gold": 0
@@ -3993,9 +3993,9 @@
   ],
   "legacy": {
     "military": 15.89999999999996,
-    "economic": 182.7500000000074,
-    "cultural": 1250.9999999999452,
-    "scientific": 1707.59999999997
+    "economic": 182.8000000000074,
+    "cultural": 1251.599999999945,
+    "scientific": 1708.24999999997
   },
   "milestones": [
     {
@@ -39367,10 +39367,30 @@
       "id": "year_1000",
       "name": "千年",
       "year": 2917
+    },
+    {
+      "id": "setts_3",
+      "name": "扩张",
+      "year": 2918
+    },
+    {
+      "id": "era_exploration",
+      "name": "远洋",
+      "year": 2918
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 2918
+    },
+    {
+      "id": "year_1000",
+      "name": "千年",
+      "year": 2918
     }
   ],
   "stats": {
-    "total_population": 34,
+    "total_population": 33,
     "total_settlements": 4,
     "extinct_settlements": 0,
     "total_wars": 22,
@@ -39379,7 +39399,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T09:19:32.922Z",
-  "updated_at": "2026-08-18T13:25:15.702Z",
+  "updated_at": "2026-08-18T13:39:15.449Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -39447,30 +39467,6 @@
   "creator": "HYClub",
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "history": [
-    {
-      "year": 2633,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 2633,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
-    {
-      "year": 2634,
-      "type": "cultural_boom",
-      "title": "新事件",
-      "description": "贸易站迎来文化繁荣。"
-    },
-    {
-      "year": 2635,
-      "type": "war",
-      "title": "新事件",
-      "description": "河畔城与碧水镇爆发战争！"
-    },
     {
       "year": 2636,
       "type": "event",
@@ -42446,9 +42442,33 @@
       "type": "milestone",
       "title": "里程碑",
       "description": "达成: 千年"
+    },
+    {
+      "year": 2918,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 扩张"
+    },
+    {
+      "year": 2918,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 远洋"
+    },
+    {
+      "year": 2918,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 2918,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 千年"
     }
   ],
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-08-18T13:24:20.922Z"
+  "last_evolved_at": "2026-08-18T13:38:44.922Z"
 }
