@@ -2,7 +2,7 @@
   "world_id": "world_mrszl5je_9ju4",
   "name": "地球",
   "era": "antiquity",
-  "year": 2992,
+  "year": 2993,
   "civilization": {
     "antiquity": {
       "civ": "han",
@@ -3810,7 +3810,7 @@
         "type": "ore",
         "x": 7,
         "y": 6,
-        "amount": 3.1000000000000005
+        "amount": 3.7400000000000007
       },
       {
         "type": "water",
@@ -3876,7 +3876,7 @@
       "x": 35,
       "y": 56,
       "level": 5,
-      "population": 990,
+      "population": 989,
       "max_population": 3000,
       "tech_level": 5,
       "culture": 14100,
@@ -3885,7 +3885,7 @@
       "stability": 0.7,
       "resources": {
         "food": 0,
-        "wood": 3038.44,
+        "wood": 3039.44,
         "ore": 8,
         "water": 0,
         "gold": 0
@@ -3909,7 +3909,7 @@
       "x": 6,
       "y": 5,
       "level": 2,
-      "population": 6,
+      "population": 5,
       "max_population": 200,
       "tech_level": 3,
       "culture": 1870,
@@ -3919,7 +3919,7 @@
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 1512.0799999999688,
+        "ore": 1512.4399999999687,
         "water": 0,
         "gold": 0
       },
@@ -3945,8 +3945,8 @@
   "legacy": {
     "military": 20.20000000000002,
     "economic": 0,
-    "cultural": 5141.499999999988,
-    "scientific": 749.2999999999795
+    "cultural": 5145.499999999988,
+    "scientific": 749.5999999999794
   },
   "milestones": [
     {
@@ -23998,10 +23998,20 @@
       "id": "year_1000",
       "name": "千年",
       "year": 2992
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 2993
+    },
+    {
+      "id": "year_1000",
+      "name": "千年",
+      "year": 2993
     }
   ],
   "stats": {
-    "total_population": 996,
+    "total_population": 994,
     "total_settlements": 2,
     "extinct_settlements": 0,
     "total_wars": 32,
@@ -24010,7 +24020,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T08:52:39.627Z",
-  "updated_at": "2026-08-19T06:57:34.576Z",
+  "updated_at": "2026-08-19T07:12:34.617Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -24050,20 +24060,8 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-08-19T06:57:27.627Z",
+  "last_evolved_at": "2026-08-19T07:11:51.627Z",
   "history": [
-    {
-      "year": 2670,
-      "type": "event",
-      "title": "事件结束",
-      "description": "绿野镇爆发瘟疫。 结束。"
-    },
-    {
-      "year": 2673,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
     {
       "year": 2673,
       "type": "milestone",
@@ -27048,6 +27046,18 @@
     },
     {
       "year": 2992,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 千年"
+    },
+    {
+      "year": 2993,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 2993,
       "type": "milestone",
       "title": "里程碑",
       "description": "达成: 千年"
