@@ -2,7 +2,7 @@
   "world_id": "world_mrszl5je_9ju4",
   "name": "地球",
   "era": "antiquity",
-  "year": 3131,
+  "year": 3132,
   "civilization": {
     "antiquity": {
       "civ": "han",
@@ -3876,7 +3876,7 @@
       "x": 35,
       "y": 56,
       "level": 5,
-      "population": 851,
+      "population": 850,
       "max_population": 3000,
       "tech_level": 5,
       "culture": 14100,
@@ -3885,7 +3885,7 @@
       "stability": 0.7,
       "resources": {
         "food": 0,
-        "wood": 3177.44,
+        "wood": 3178.44,
         "ore": 8,
         "water": 0,
         "gold": 0
@@ -3919,7 +3919,7 @@
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 1521.3199999999613,
+        "ore": 1521.3799999999612,
         "water": 0,
         "gold": 0
       },
@@ -3945,8 +3945,8 @@
   "legacy": {
     "military": 20.20000000000002,
     "economic": 0,
-    "cultural": 5697.499999999988,
-    "scientific": 790.9999999999732
+    "cultural": 5701.499999999988,
+    "scientific": 791.2999999999731
   },
   "milestones": [
     {
@@ -25078,10 +25078,20 @@
       "id": "year_1000",
       "name": "千年",
       "year": 3131
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 3132
+    },
+    {
+      "id": "year_1000",
+      "name": "千年",
+      "year": 3132
     }
   ],
   "stats": {
-    "total_population": 852,
+    "total_population": 851,
     "total_settlements": 2,
     "extinct_settlements": 0,
     "total_wars": 32,
@@ -25090,7 +25100,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T08:52:39.627Z",
-  "updated_at": "2026-08-20T16:19:35.084Z",
+  "updated_at": "2026-08-20T16:33:35.209Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -25130,20 +25140,8 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-08-20T16:19:03.627Z",
+  "last_evolved_at": "2026-08-20T16:33:27.627Z",
   "history": [
-    {
-      "year": 2860,
-      "type": "cultural_boom",
-      "title": "新事件",
-      "description": "风语村迎来文化繁荣。"
-    },
-    {
-      "year": 2863,
-      "type": "event",
-      "title": "事件结束",
-      "description": "风语村迎来文化繁荣。 结束。"
-    },
     {
       "year": 2864,
       "type": "cultural_boom",
@@ -28128,6 +28126,18 @@
     },
     {
       "year": 3131,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 千年"
+    },
+    {
+      "year": 3132,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 3132,
       "type": "milestone",
       "title": "里程碑",
       "description": "达成: 千年"
