@@ -2,7 +2,7 @@
   "world_id": "world_mrszl5je_9ju4",
   "name": "地球",
   "era": "antiquity",
-  "year": 3125,
+  "year": 3128,
   "civilization": {
     "antiquity": {
       "civ": "han",
@@ -3876,7 +3876,7 @@
       "x": 35,
       "y": 56,
       "level": 5,
-      "population": 857,
+      "population": 854,
       "max_population": 3000,
       "tech_level": 5,
       "culture": 14100,
@@ -3885,7 +3885,7 @@
       "stability": 0.7,
       "resources": {
         "food": 0,
-        "wood": 3171.44,
+        "wood": 3174.44,
         "ore": 8,
         "water": 0,
         "gold": 0
@@ -3919,7 +3919,7 @@
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 1520.9599999999616,
+        "ore": 1521.1399999999614,
         "water": 0,
         "gold": 0
       },
@@ -3945,8 +3945,8 @@
   "legacy": {
     "military": 20.20000000000002,
     "economic": 0,
-    "cultural": 5673.499999999988,
-    "scientific": 789.1999999999734
+    "cultural": 5685.499999999988,
+    "scientific": 790.0999999999733
   },
   "milestones": [
     {
@@ -25038,10 +25038,20 @@
       "id": "year_1000",
       "name": "千年",
       "year": 3125
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 3126
+    },
+    {
+      "id": "year_1000",
+      "name": "千年",
+      "year": 3126
     }
   ],
   "stats": {
-    "total_population": 858,
+    "total_population": 855,
     "total_settlements": 2,
     "extinct_settlements": 0,
     "total_wars": 32,
@@ -25050,7 +25060,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T08:52:39.627Z",
-  "updated_at": "2026-08-20T14:53:36.251Z",
+  "updated_at": "2026-08-20T15:40:36.409Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -25090,20 +25100,8 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-08-20T14:52:39.627Z",
+  "last_evolved_at": "2026-08-20T15:35:51.627Z",
   "history": [
-    {
-      "year": 2848,
-      "type": "war",
-      "title": "新事件",
-      "description": "绿野镇与风语村爆发战争！"
-    },
-    {
-      "year": 2851,
-      "type": "event",
-      "title": "事件结束",
-      "description": "风语村遭受自然灾害。 结束。"
-    },
     {
       "year": 2853,
       "type": "event",
@@ -28088,6 +28086,18 @@
     },
     {
       "year": 3125,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 千年"
+    },
+    {
+      "year": 3126,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 3126,
       "type": "milestone",
       "title": "里程碑",
       "description": "达成: 千年"
