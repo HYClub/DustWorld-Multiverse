@@ -2,7 +2,7 @@
   "world_id": "world_mrszl5je_9ju4",
   "name": "地球",
   "era": "antiquity",
-  "year": 3088,
+  "year": 3089,
   "civilization": {
     "antiquity": {
       "civ": "han",
@@ -3810,7 +3810,7 @@
         "type": "ore",
         "x": 7,
         "y": 6,
-        "amount": 92.43999999999987
+        "amount": 93.37999999999987
       },
       {
         "type": "water",
@@ -3876,7 +3876,7 @@
       "x": 35,
       "y": 56,
       "level": 5,
-      "population": 894,
+      "population": 893,
       "max_population": 3000,
       "tech_level": 5,
       "culture": 14100,
@@ -3885,7 +3885,7 @@
       "stability": 0.7,
       "resources": {
         "food": 0,
-        "wood": 3134.44,
+        "wood": 3135.44,
         "ore": 8,
         "water": 0,
         "gold": 0
@@ -3919,7 +3919,7 @@
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 1518.7399999999636,
+        "ore": 1518.7999999999636,
         "water": 0,
         "gold": 0
       },
@@ -3945,8 +3945,8 @@
   "legacy": {
     "military": 20.20000000000002,
     "economic": 0,
-    "cultural": 5525.499999999988,
-    "scientific": 778.0999999999751
+    "cultural": 5529.499999999988,
+    "scientific": 778.3999999999751
   },
   "milestones": [
     {
@@ -24718,10 +24718,20 @@
       "id": "year_1000",
       "name": "千年",
       "year": 3088
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 3089
+    },
+    {
+      "id": "year_1000",
+      "name": "千年",
+      "year": 3089
     }
   ],
   "stats": {
-    "total_population": 895,
+    "total_population": 894,
     "total_settlements": 2,
     "extinct_settlements": 0,
     "total_wars": 32,
@@ -24730,7 +24740,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T08:52:39.627Z",
-  "updated_at": "2026-08-20T06:00:39.133Z",
+  "updated_at": "2026-08-20T06:14:34.598Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -24770,20 +24780,8 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-08-20T05:59:51.627Z",
+  "last_evolved_at": "2026-08-20T06:14:15.627Z",
   "history": [
-    {
-      "year": 2792,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
-    {
-      "year": 2793,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
     {
       "year": 2793,
       "type": "milestone",
@@ -27768,6 +27766,18 @@
     },
     {
       "year": 3088,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 千年"
+    },
+    {
+      "year": 3089,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 3089,
       "type": "milestone",
       "title": "里程碑",
       "description": "达成: 千年"
