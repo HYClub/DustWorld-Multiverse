@@ -2,7 +2,7 @@
   "world_id": "world_mrszl5je_9ju4",
   "name": "地球",
   "era": "antiquity",
-  "year": 3192,
+  "year": 3194,
   "civilization": {
     "antiquity": {
       "civ": "han",
@@ -3876,7 +3876,7 @@
       "x": 35,
       "y": 56,
       "level": 5,
-      "population": 592,
+      "population": 499,
       "max_population": 3000,
       "tech_level": 5,
       "culture": 14520,
@@ -3885,7 +3885,7 @@
       "stability": 0.7,
       "resources": {
         "food": 0,
-        "wood": 3238.44,
+        "wood": 3240.44,
         "ore": 8,
         "water": 0,
         "gold": 0
@@ -3909,7 +3909,7 @@
       "x": 6,
       "y": 5,
       "level": 2,
-      "population": 136,
+      "population": 134,
       "max_population": 200,
       "tech_level": 3,
       "culture": 2180,
@@ -3919,7 +3919,7 @@
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 1659.19999999996,
+        "ore": 1661.19999999996,
         "water": 0,
         "gold": 0
       },
@@ -3947,7 +3947,7 @@
       "participants": [
         "SET001"
       ],
-      "remaining_years": 5,
+      "remaining_years": 3,
       "duration": 9,
       "description": "绿野镇爆发瘟疫。"
     },
@@ -3957,7 +3957,7 @@
       "participants": [
         "SET002"
       ],
-      "remaining_years": 10,
+      "remaining_years": 8,
       "duration": 8,
       "description": "风语村爆发瘟疫。"
     }
@@ -3966,8 +3966,8 @@
   "legacy": {
     "military": 23.00000000000004,
     "economic": 0,
-    "cultural": 5947.799999999998,
-    "scientific": 809.2999999999704
+    "cultural": 5956.199999999998,
+    "scientific": 809.8999999999703
   },
   "milestones": [
     {
@@ -25229,10 +25229,20 @@
       "id": "year_1000",
       "name": "千年",
       "year": 3183
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 3193
+    },
+    {
+      "id": "year_1000",
+      "name": "千年",
+      "year": 3193
     }
   ],
   "stats": {
-    "total_population": 728,
+    "total_population": 633,
     "total_settlements": 2,
     "extinct_settlements": 0,
     "total_wars": 36,
@@ -25241,7 +25251,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T08:52:39.627Z",
-  "updated_at": "2026-08-21T07:26:20.124Z",
+  "updated_at": "2026-08-21T07:26:22.167Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -25281,20 +25291,8 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-08-21T06:57:27.627Z",
+  "last_evolved_at": "2026-08-21T07:26:15.627Z",
   "history": [
-    {
-      "year": 2897,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
-    {
-      "year": 2898,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 繁荣"
-    },
     {
       "year": 2898,
       "type": "milestone",
@@ -28282,6 +28280,18 @@
       "type": "plague",
       "title": "新事件",
       "description": "风语村爆发瘟疫。"
+    },
+    {
+      "year": 3193,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 3193,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 千年"
     }
   ]
 }
