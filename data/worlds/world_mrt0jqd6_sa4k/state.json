@@ -2,7 +2,7 @@
   "world_id": "world_mrt0jqd6_sa4k",
   "name": "魔法",
   "era": "exploration",
-  "year": 3280,
+  "year": 3281,
   "civilization": {
     "antiquity": {
       "civ": "insectoids",
@@ -3846,10 +3846,10 @@
       "x": 44,
       "y": 41,
       "level": 3,
-      "population": 45,
+      "population": 51,
       "max_population": 500,
       "tech_level": 3,
-      "culture": 2820,
+      "culture": 2830,
       "influence": 0,
       "health": 0.8,
       "stability": 0.7,
@@ -3858,7 +3858,7 @@
         "wood": 30,
         "ore": 8,
         "water": 0,
-        "gold": 10484
+        "gold": 10488
       },
       "buildings": [],
       "specialization": "agriculture",
@@ -3894,7 +3894,7 @@
         "wood": 30,
         "ore": 8,
         "water": 0,
-        "gold": 10484
+        "gold": 10488
       },
       "buildings": [],
       "specialization": "agriculture",
@@ -3926,7 +3926,7 @@
       "stability": 0.6,
       "resources": {
         "food": 0,
-        "wood": 990.6599999999706,
+        "wood": 990.7199999999706,
         "ore": 5,
         "water": 0,
         "gold": 0
@@ -3961,7 +3961,7 @@
       "stability": 0.6,
       "resources": {
         "food": 0,
-        "wood": 655.0999999999779,
+        "wood": 655.1599999999778,
         "ore": 5,
         "water": 0,
         "gold": 0
@@ -3990,7 +3990,7 @@
       "participants": [
         "SET001"
       ],
-      "remaining_years": 2,
+      "remaining_years": 1,
       "duration": 6,
       "description": "碧水镇迎来文化繁荣。"
     }
@@ -4004,9 +4004,9 @@
   ],
   "legacy": {
     "military": 17.999999999999986,
-    "economic": 200.90000000001152,
-    "cultural": 1468.7999999999122,
-    "scientific": 1943.550000000003
+    "economic": 200.95000000001153,
+    "cultural": 1469.399999999912,
+    "scientific": 1944.200000000003
   },
   "milestones": [
     {
@@ -43678,10 +43678,30 @@
       "id": "year_1000",
       "name": "千年",
       "year": 3280
+    },
+    {
+      "id": "setts_3",
+      "name": "扩张",
+      "year": 3281
+    },
+    {
+      "id": "era_exploration",
+      "name": "远洋",
+      "year": 3281
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 3281
+    },
+    {
+      "id": "year_1000",
+      "name": "千年",
+      "year": 3281
     }
   ],
   "stats": {
-    "total_population": 48,
+    "total_population": 54,
     "total_settlements": 4,
     "extinct_settlements": 0,
     "total_wars": 25,
@@ -43690,7 +43710,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T09:19:32.922Z",
-  "updated_at": "2026-08-22T04:32:18.075Z",
+  "updated_at": "2026-08-22T04:46:17.929Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -43758,30 +43778,6 @@
   "creator": "HYClub",
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "history": [
-    {
-      "year": 3055,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 远洋"
-    },
-    {
-      "year": 3055,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 3055,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
-    {
-      "year": 3056,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 扩张"
-    },
     {
       "year": 3056,
       "type": "milestone",
@@ -46757,9 +46753,33 @@
       "type": "milestone",
       "title": "里程碑",
       "description": "达成: 千年"
+    },
+    {
+      "year": 3281,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 扩张"
+    },
+    {
+      "year": 3281,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 远洋"
+    },
+    {
+      "year": 3281,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 3281,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 千年"
     }
   ],
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-08-22T04:31:32.922Z"
+  "last_evolved_at": "2026-08-22T04:45:56.922Z"
 }
