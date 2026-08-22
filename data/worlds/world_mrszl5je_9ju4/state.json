@@ -2,7 +2,7 @@
   "world_id": "world_mrszl5je_9ju4",
   "name": "地球",
   "era": "antiquity",
-  "year": 3322,
+  "year": 3325,
   "civilization": {
     "antiquity": {
       "civ": "han",
@@ -3810,7 +3810,7 @@
         "type": "ore",
         "x": 7,
         "y": 6,
-        "amount": 24.76000000000001
+        "amount": 26.920000000000012
       },
       {
         "type": "water",
@@ -3876,7 +3876,7 @@
       "x": 35,
       "y": 56,
       "level": 5,
-      "population": 334,
+      "population": 294,
       "max_population": 3000,
       "tech_level": 5,
       "culture": 15060,
@@ -3885,7 +3885,7 @@
       "stability": 0.7,
       "resources": {
         "food": 0,
-        "wood": 3368.44,
+        "wood": 3371.44,
         "ore": 8,
         "water": 0,
         "gold": 0
@@ -3909,17 +3909,17 @@
       "x": 6,
       "y": 5,
       "level": 2,
-      "population": 1,
+      "population": 13,
       "max_population": 200,
       "tech_level": 3,
-      "culture": 2180,
+      "culture": 2210,
       "influence": 0,
       "health": 0.7,
       "stability": 0.6,
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 1764.439999999959,
+        "ore": 1765.2799999999588,
         "water": 0,
         "gold": 0
       },
@@ -3942,23 +3942,12 @@
   ],
   "active_events": [
     {
-      "id": "EVT54842",
-      "type": "war",
-      "participants": [
-        "SET001",
-        "SET002"
-      ],
-      "remaining_years": 2,
-      "duration": 3,
-      "description": "绿野镇与风语村爆发战争！"
-    },
-    {
       "id": "EVT37988",
       "type": "plague",
       "participants": [
         "SET001"
       ],
-      "remaining_years": 8,
+      "remaining_years": 5,
       "duration": 9,
       "description": "绿野镇爆发瘟疫。"
     },
@@ -3968,17 +3957,17 @@
       "participants": [
         "SET002"
       ],
-      "remaining_years": 7,
+      "remaining_years": 4,
       "duration": 6,
       "description": "风语村迎来文化繁荣。"
     }
   ],
   "trade_routes": [],
   "legacy": {
-    "military": 25.800000000000068,
+    "military": 25.90000000000007,
     "economic": 0,
-    "cultural": 6497.499999999988,
-    "scientific": 848.2999999999645
+    "cultural": 6510.399999999989,
+    "scientific": 849.1999999999643
   },
   "milestones": [
     {
@@ -26020,10 +26009,20 @@
       "id": "year_1000",
       "name": "千年",
       "year": 3322
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 3323
+    },
+    {
+      "id": "year_1000",
+      "name": "千年",
+      "year": 3323
     }
   ],
   "stats": {
-    "total_population": 335,
+    "total_population": 307,
     "total_settlements": 2,
     "extinct_settlements": 0,
     "total_wars": 41,
@@ -26032,7 +26031,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T08:52:39.627Z",
-  "updated_at": "2026-08-22T14:20:18.057Z",
+  "updated_at": "2026-08-22T14:56:18.512Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -26072,26 +26071,8 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-08-22T14:09:27.627Z",
+  "last_evolved_at": "2026-08-22T14:52:39.627Z",
   "history": [
-    {
-      "year": 2980,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 2980,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
-    {
-      "year": 2981,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 繁荣"
-    },
     {
       "year": 2981,
       "type": "milestone",
@@ -29073,6 +29054,24 @@
       "type": "milestone",
       "title": "里程碑",
       "description": "达成: 千年"
+    },
+    {
+      "year": 3323,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 3323,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 千年"
+    },
+    {
+      "year": 3324,
+      "type": "event",
+      "title": "事件结束",
+      "description": "绿野镇与风语村爆发战争！ 结束。"
     }
   ]
 }
