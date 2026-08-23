@@ -2,7 +2,7 @@
   "world_id": "world_mrt0jqd6_sa4k",
   "name": "魔法",
   "era": "exploration",
-  "year": 3356,
+  "year": 3366,
   "civilization": {
     "antiquity": {
       "civ": "insectoids",
@@ -3792,7 +3792,7 @@
         "type": "ore",
         "x": 20,
         "y": 50,
-        "amount": 17.78000000000002
+        "amount": 0
       },
       {
         "type": "ore",
@@ -3816,13 +3816,13 @@
         "type": "food",
         "x": 34,
         "y": 31,
-        "amount": 10.100000000000023
+        "amount": 0
       },
       {
         "type": "wood",
         "x": 47,
         "y": 54,
-        "amount": 51.62000000000001
+        "amount": 25.920000000000023
       },
       {
         "type": "wood",
@@ -3846,10 +3846,10 @@
       "x": 44,
       "y": 41,
       "level": 3,
-      "population": 95,
+      "population": 105,
       "max_population": 500,
-      "tech_level": 4,
-      "culture": 3040,
+      "tech_level": 5,
+      "culture": 3080,
       "influence": 0,
       "health": 0.8,
       "stability": 0.7,
@@ -3858,7 +3858,7 @@
         "wood": 30,
         "ore": 8,
         "water": 0,
-        "gold": 10788
+        "gold": 10828
       },
       "buildings": [],
       "specialization": "agriculture",
@@ -3882,10 +3882,10 @@
       "x": 33,
       "y": 32,
       "level": 3,
-      "population": 53,
+      "population": 62,
       "max_population": 500,
       "tech_level": 5,
-      "culture": 1110,
+      "culture": 1140,
       "influence": 0,
       "health": 0.8,
       "stability": 0.7,
@@ -3894,7 +3894,7 @@
         "wood": 30,
         "ore": 8,
         "water": 0,
-        "gold": 10788
+        "gold": 10828
       },
       "buildings": [],
       "specialization": "agriculture",
@@ -3917,16 +3917,16 @@
       "x": 50,
       "y": 57,
       "level": 3,
-      "population": 30,
+      "population": 70,
       "max_population": 500,
       "tech_level": 5,
-      "culture": 1230,
+      "culture": 1330,
       "influence": 0,
       "health": 0.7,
       "stability": 0.6,
       "resources": {
         "food": 0,
-        "wood": 1073.8199999999683,
+        "wood": 1109.5199999999681,
         "ore": 5,
         "water": 0,
         "gold": 0
@@ -3952,16 +3952,16 @@
       "x": 20,
       "y": 6,
       "level": 2,
-      "population": 90,
+      "population": 134,
       "max_population": 200,
       "tech_level": 3,
-      "culture": 690,
+      "culture": 830,
       "influence": 0,
       "health": 0.7,
       "stability": 0.6,
       "resources": {
         "food": 0,
-        "wood": 810.2799999999768,
+        "wood": 820.2799999999768,
         "ore": 5,
         "water": 0,
         "gold": 0
@@ -3986,23 +3986,23 @@
       "name": "新大陆",
       "x": 21,
       "y": 53,
-      "level": 2,
-      "population": 133,
-      "max_population": 200,
+      "level": 3,
+      "population": 145,
+      "max_population": 500,
       "tech_level": 2,
-      "culture": 100,
+      "culture": 140,
       "influence": 0,
       "health": 0.7,
       "stability": 0.6,
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 103.22000000000001,
+        "ore": 131.00000000000006,
         "water": 0,
         "gold": 0
       },
       "buildings": [],
-      "specialization": null,
+      "specialization": "mining",
       "bonus_duration": 0,
       "curse_duration": 0,
       "discovery_bonus": 0,
@@ -4018,48 +4018,7 @@
       "id": "SET005"
     }
   ],
-  "active_events": [
-    {
-      "id": "EVT76902",
-      "type": "cultural_boom",
-      "participants": [
-        "SET002"
-      ],
-      "remaining_years": 4,
-      "duration": 6,
-      "description": "河畔城迎来文化繁荣。"
-    },
-    {
-      "id": "EVT92695",
-      "type": "cultural_boom",
-      "participants": [
-        "SET005"
-      ],
-      "remaining_years": 5,
-      "duration": 9,
-      "description": "新大陆迎来文化繁荣。"
-    },
-    {
-      "id": "EVT60619",
-      "type": "golden_age",
-      "participants": [
-        "SET004"
-      ],
-      "remaining_years": 8,
-      "duration": 8,
-      "description": "贸易站进入黄金时代！"
-    },
-    {
-      "id": "EVT47747",
-      "type": "golden_age",
-      "participants": [
-        "SET003"
-      ],
-      "remaining_years": 6,
-      "duration": 4,
-      "description": "风语村进入黄金时代！"
-    }
-  ],
+  "active_events": [],
   "trade_routes": [
     {
       "from": "SET001",
@@ -4069,9 +4028,9 @@
   ],
   "legacy": {
     "military": 19.400000000000006,
-    "economic": 204.70000000001238,
-    "cultural": 1519.8999999999123,
-    "scientific": 1995.4500000000075
+    "economic": 205.2000000000125,
+    "cultural": 1529.2999999999129,
+    "scientific": 2002.9000000000076
   },
   "milestones": [
     {
@@ -44323,19 +44282,39 @@
       "id": "year_1000",
       "name": "千年",
       "year": 3347
+    },
+    {
+      "id": "setts_3",
+      "name": "扩张",
+      "year": 3357
+    },
+    {
+      "id": "era_exploration",
+      "name": "远洋",
+      "year": 3357
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 3357
+    },
+    {
+      "id": "year_1000",
+      "name": "千年",
+      "year": 3357
     }
   ],
   "stats": {
-    "total_population": 401,
+    "total_population": 516,
     "total_settlements": 5,
     "extinct_settlements": 0,
     "total_wars": 27,
-    "tech_breakthroughs": 14,
-    "golden_ages": 9,
+    "tech_breakthroughs": 15,
+    "golden_ages": 10,
     "dark_ages": 0
   },
   "created_at": "2026-07-20T09:19:32.922Z",
-  "updated_at": "2026-08-23T09:19:17.715Z",
+  "updated_at": "2026-08-23T09:19:20.063Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -44403,78 +44382,6 @@
   "creator": "HYClub",
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "history": [
-    {
-      "year": 3107,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 远洋"
-    },
-    {
-      "year": 3107,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 3107,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
-    {
-      "year": 3108,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 扩张"
-    },
-    {
-      "year": 3108,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 远洋"
-    },
-    {
-      "year": 3108,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 3108,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
-    {
-      "year": 3109,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 扩张"
-    },
-    {
-      "year": 3109,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 远洋"
-    },
-    {
-      "year": 3109,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 3109,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
-    {
-      "year": 3110,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 扩张"
-    },
     {
       "year": 3110,
       "type": "milestone",
@@ -47402,9 +47309,81 @@
       "type": "golden_age",
       "title": "新事件",
       "description": "风语村进入黄金时代！"
+    },
+    {
+      "year": 3357,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 扩张"
+    },
+    {
+      "year": 3357,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 远洋"
+    },
+    {
+      "year": 3357,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 3357,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 千年"
+    },
+    {
+      "year": 3358,
+      "type": "tech",
+      "title": "科技突破",
+      "description": "碧水镇进入电力！"
+    },
+    {
+      "year": 3360,
+      "type": "event",
+      "title": "事件结束",
+      "description": "河畔城迎来文化繁荣。 结束。"
+    },
+    {
+      "year": 3361,
+      "type": "settlement",
+      "title": "聚落升级",
+      "description": "新大陆升级为城镇(mining)"
+    },
+    {
+      "year": 3361,
+      "type": "event",
+      "title": "事件结束",
+      "description": "新大陆迎来文化繁荣。 结束。"
+    },
+    {
+      "year": 3362,
+      "type": "event",
+      "title": "事件结束",
+      "description": "风语村进入黄金时代！ 结束。"
+    },
+    {
+      "year": 3363,
+      "type": "golden_age",
+      "title": "新事件",
+      "description": "碧水镇进入黄金时代！"
+    },
+    {
+      "year": 3364,
+      "type": "event",
+      "title": "事件结束",
+      "description": "贸易站进入黄金时代！ 结束。"
+    },
+    {
+      "year": 3366,
+      "type": "event",
+      "title": "事件结束",
+      "description": "碧水镇进入黄金时代！ 结束。"
     }
   ],
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-08-22T22:45:56.922Z"
+  "last_evolved_at": "2026-08-23T01:09:56.922Z"
 }
