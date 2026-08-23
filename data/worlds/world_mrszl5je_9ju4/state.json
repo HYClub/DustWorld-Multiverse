@@ -2,7 +2,7 @@
   "world_id": "world_mrszl5je_9ju4",
   "name": "地球",
   "era": "antiquity",
-  "year": 3436,
+  "year": 3446,
   "civilization": {
     "antiquity": {
       "civ": "han",
@@ -3810,7 +3810,7 @@
         "type": "ore",
         "x": 7,
         "y": 6,
-        "amount": 1.1400000000000003
+        "amount": 7.840000000000001
       },
       {
         "type": "water",
@@ -3876,7 +3876,7 @@
       "x": 35,
       "y": 56,
       "level": 5,
-      "population": 513,
+      "population": 503,
       "max_population": 3000,
       "tech_level": 5,
       "culture": 15980,
@@ -3885,7 +3885,7 @@
       "stability": 0.7,
       "resources": {
         "food": 0,
-        "wood": 3482.44,
+        "wood": 3492.44,
         "ore": 8,
         "water": 0,
         "gold": 0
@@ -3909,7 +3909,7 @@
       "x": 6,
       "y": 5,
       "level": 2,
-      "population": 10,
+      "population": 1,
       "max_population": 200,
       "tech_level": 3,
       "culture": 2450,
@@ -3919,7 +3919,7 @@
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 1902.059999999959,
+        "ore": 1905.3599999999587,
         "water": 0,
         "gold": 0
       },
@@ -3940,13 +3940,24 @@
       "id": "SET002"
     }
   ],
-  "active_events": [],
+  "active_events": [
+    {
+      "id": "EVT94830",
+      "type": "natural_disaster",
+      "participants": [
+        "SET002"
+      ],
+      "remaining_years": 8,
+      "duration": 9,
+      "description": "风语村遭受自然灾害。"
+    }
+  ],
   "trade_routes": [],
   "legacy": {
     "military": 29.300000000000097,
     "economic": 0,
-    "cultural": 7003.899999999989,
-    "scientific": 882.4999999999593
+    "cultural": 7048.899999999989,
+    "scientific": 885.4999999999588
   },
   "milestones": [
     {
@@ -26458,10 +26469,20 @@
       "id": "year_1000",
       "name": "千年",
       "year": 3433
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 3437
+    },
+    {
+      "id": "year_1000",
+      "name": "千年",
+      "year": 3437
     }
   ],
   "stats": {
-    "total_population": 523,
+    "total_population": 504,
     "total_settlements": 2,
     "extinct_settlements": 0,
     "total_wars": 48,
@@ -26470,7 +26491,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T08:52:39.627Z",
-  "updated_at": "2026-08-23T17:44:11.406Z",
+  "updated_at": "2026-08-23T20:41:11.691Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -26510,26 +26531,8 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-08-23T17:31:03.627Z",
+  "last_evolved_at": "2026-08-23T19:55:03.627Z",
   "history": [
-    {
-      "year": 3061,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 3061,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
-    {
-      "year": 3065,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
     {
       "year": 3065,
       "type": "milestone",
@@ -29511,6 +29514,24 @@
       "type": "milestone",
       "title": "里程碑",
       "description": "达成: 千年"
+    },
+    {
+      "year": 3437,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 3437,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 千年"
+    },
+    {
+      "year": 3446,
+      "type": "natural_disaster",
+      "title": "新事件",
+      "description": "风语村遭受自然灾害。"
     }
   ]
 }
