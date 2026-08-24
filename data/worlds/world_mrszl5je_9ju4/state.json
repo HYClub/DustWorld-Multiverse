@@ -2,7 +2,7 @@
   "world_id": "world_mrszl5je_9ju4",
   "name": "地球",
   "era": "antiquity",
-  "year": 3449,
+  "year": 3459,
   "civilization": {
     "antiquity": {
       "civ": "han",
@@ -3810,7 +3810,7 @@
         "type": "ore",
         "x": 7,
         "y": 6,
-        "amount": 10.659999999999998
+        "amount": 19.220000000000002
       },
       {
         "type": "water",
@@ -3876,16 +3876,16 @@
       "x": 35,
       "y": 56,
       "level": 5,
-      "population": 521,
+      "population": 560,
       "max_population": 3000,
       "tech_level": 5,
-      "culture": 16020,
+      "culture": 16200,
       "influence": 0,
       "health": 0.8,
       "stability": 0.7,
       "resources": {
         "food": 0,
-        "wood": 3495.44,
+        "wood": 3505.44,
         "ore": 8,
         "water": 0,
         "gold": 0
@@ -3909,17 +3909,17 @@
       "x": 6,
       "y": 5,
       "level": 2,
-      "population": 1,
+      "population": 28,
       "max_population": 200,
       "tech_level": 3,
-      "culture": 2450,
+      "culture": 2490,
       "influence": 0,
       "health": 0.7,
       "stability": 0.6,
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 1905.5399999999586,
+        "ore": 1906.9799999999582,
         "water": 0,
         "gold": 0
       },
@@ -3942,42 +3942,32 @@
   ],
   "active_events": [
     {
-      "id": "EVT94830",
+      "id": "EVT70529",
       "type": "natural_disaster",
+      "participants": [
+        "SET001"
+      ],
+      "remaining_years": 3,
+      "duration": 4,
+      "description": "绿野镇遭受自然灾害。"
+    },
+    {
+      "id": "EVT1451",
+      "type": "golden_age",
       "participants": [
         "SET002"
       ],
-      "remaining_years": 5,
-      "duration": 9,
-      "description": "风语村遭受自然灾害。"
-    },
-    {
-      "id": "EVT2446",
-      "type": "cultural_boom",
-      "participants": [
-        "SET001"
-      ],
-      "remaining_years": 7,
-      "duration": 10,
-      "description": "绿野镇迎来文化繁荣。"
-    },
-    {
-      "id": "EVT48166",
-      "type": "golden_age",
-      "participants": [
-        "SET001"
-      ],
-      "remaining_years": 7,
-      "duration": 3,
-      "description": "绿野镇进入黄金时代！"
+      "remaining_years": 1,
+      "duration": 4,
+      "description": "风语村进入黄金时代！"
     }
   ],
   "trade_routes": [],
   "legacy": {
     "military": 29.300000000000097,
     "economic": 0,
-    "cultural": 7062.599999999989,
-    "scientific": 886.3999999999587
+    "cultural": 7108.899999999991,
+    "scientific": 889.3999999999583
   },
   "milestones": [
     {
@@ -26509,19 +26499,29 @@
       "id": "year_1000",
       "name": "千年",
       "year": 3447
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 3450
+    },
+    {
+      "id": "year_1000",
+      "name": "千年",
+      "year": 3450
     }
   ],
   "stats": {
-    "total_population": 522,
+    "total_population": 588,
     "total_settlements": 2,
     "extinct_settlements": 0,
     "total_wars": 48,
     "tech_breakthroughs": 6,
-    "golden_ages": 46,
+    "golden_ages": 47,
     "dark_ages": 0
   },
   "created_at": "2026-07-20T08:52:39.627Z",
-  "updated_at": "2026-08-23T20:41:14.859Z",
+  "updated_at": "2026-08-24T00:06:10.220Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -26561,62 +26561,8 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-08-23T20:38:15.627Z",
+  "last_evolved_at": "2026-08-23T23:02:15.627Z",
   "history": [
-    {
-      "year": 3070,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
-    {
-      "year": 3073,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 3073,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
-    {
-      "year": 3074,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 3074,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
-    {
-      "year": 3075,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 3075,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
-    {
-      "year": 3076,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 3076,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
     {
       "year": 3077,
       "type": "milestone",
@@ -29562,6 +29508,60 @@
       "type": "golden_age",
       "title": "新事件",
       "description": "绿野镇进入黄金时代！"
+    },
+    {
+      "year": 3450,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 3450,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 千年"
+    },
+    {
+      "year": 3454,
+      "type": "event",
+      "title": "事件结束",
+      "description": "风语村遭受自然灾害。 结束。"
+    },
+    {
+      "year": 3455,
+      "type": "plague",
+      "title": "新事件",
+      "description": "风语村爆发瘟疫。"
+    },
+    {
+      "year": 3456,
+      "type": "event",
+      "title": "事件结束",
+      "description": "绿野镇迎来文化繁荣。 结束。"
+    },
+    {
+      "year": 3456,
+      "type": "event",
+      "title": "事件结束",
+      "description": "绿野镇进入黄金时代！ 结束。"
+    },
+    {
+      "year": 3456,
+      "type": "natural_disaster",
+      "title": "新事件",
+      "description": "绿野镇遭受自然灾害。"
+    },
+    {
+      "year": 3457,
+      "type": "golden_age",
+      "title": "新事件",
+      "description": "风语村进入黄金时代！"
+    },
+    {
+      "year": 3459,
+      "type": "event",
+      "title": "事件结束",
+      "description": "风语村爆发瘟疫。 结束。"
     }
   ]
 }
