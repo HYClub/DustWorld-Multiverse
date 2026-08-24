@@ -2,7 +2,7 @@
   "world_id": "world_mrszl5je_9ju4",
   "name": "地球",
   "era": "antiquity",
-  "year": 3533,
+  "year": 3534,
   "civilization": {
     "antiquity": {
       "civ": "han",
@@ -3810,7 +3810,7 @@
         "type": "ore",
         "x": 7,
         "y": 6,
-        "amount": 31.60000000000002
+        "amount": 32.54000000000002
       },
       {
         "type": "water",
@@ -3876,7 +3876,7 @@
       "x": 35,
       "y": 56,
       "level": 5,
-      "population": 556,
+      "population": 555,
       "max_population": 3000,
       "tech_level": 5,
       "culture": 16640,
@@ -3885,7 +3885,7 @@
       "stability": 0.7,
       "resources": {
         "food": 0,
-        "wood": 3579.44,
+        "wood": 3580.44,
         "ore": 8,
         "water": 0,
         "gold": 0
@@ -3919,7 +3919,7 @@
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 1968.5999999999567,
+        "ore": 1968.6599999999567,
         "water": 0,
         "gold": 0
       },
@@ -3945,8 +3945,8 @@
   "legacy": {
     "military": 31.400000000000116,
     "economic": 0,
-    "cultural": 7471.399999999973,
-    "scientific": 911.5999999999549
+    "cultural": 7476.399999999973,
+    "scientific": 911.8999999999548
   },
   "milestones": [
     {
@@ -26678,10 +26678,20 @@
       "id": "year_1000",
       "name": "千年",
       "year": 3528
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 3534
+    },
+    {
+      "id": "year_1000",
+      "name": "千年",
+      "year": 3534
     }
   ],
   "stats": {
-    "total_population": 557,
+    "total_population": 556,
     "total_settlements": 2,
     "extinct_settlements": 0,
     "total_wars": 51,
@@ -26690,7 +26700,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T08:52:39.627Z",
-  "updated_at": "2026-08-24T16:53:11.295Z",
+  "updated_at": "2026-08-24T17:03:09.863Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -26730,20 +26740,8 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-08-24T16:47:51.627Z",
+  "last_evolved_at": "2026-08-24T17:02:15.627Z",
   "history": [
-    {
-      "year": 3111,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 3111,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
     {
       "year": 3112,
       "type": "milestone",
@@ -29731,6 +29729,18 @@
       "type": "event",
       "title": "事件结束",
       "description": "绿野镇进入黄金时代！ 结束。"
+    },
+    {
+      "year": 3534,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 3534,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 千年"
     }
   ]
 }
