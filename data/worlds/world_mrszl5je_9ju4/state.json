@@ -2,7 +2,7 @@
   "world_id": "world_mrszl5je_9ju4",
   "name": "地球",
   "era": "antiquity",
-  "year": 3643,
+  "year": 3650,
   "civilization": {
     "antiquity": {
       "civ": "han",
@@ -3876,7 +3876,7 @@
       "x": 35,
       "y": 56,
       "level": 5,
-      "population": 731,
+      "population": 652,
       "max_population": 3000,
       "tech_level": 5,
       "culture": 17450,
@@ -3885,7 +3885,7 @@
       "stability": 0.7,
       "resources": {
         "food": 0,
-        "wood": 3689.44,
+        "wood": 3696.44,
         "ore": 8,
         "water": 0,
         "gold": 0
@@ -3909,7 +3909,7 @@
       "x": 6,
       "y": 5,
       "level": 2,
-      "population": 40,
+      "population": 33,
       "max_population": 200,
       "tech_level": 3,
       "culture": 2760,
@@ -3919,7 +3919,7 @@
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 2110.1999999999534,
+        "ore": 2117.1999999999534,
         "water": 0,
         "gold": 0
       },
@@ -3940,35 +3940,13 @@
       "id": "SET002"
     }
   ],
-  "active_events": [
-    {
-      "id": "EVT30970",
-      "type": "war",
-      "participants": [
-        "SET002",
-        "SET001"
-      ],
-      "remaining_years": 5,
-      "duration": 3,
-      "description": "风语村与绿野镇爆发战争！"
-    },
-    {
-      "id": "EVT64351",
-      "type": "plague",
-      "participants": [
-        "SET002"
-      ],
-      "remaining_years": 4,
-      "duration": 8,
-      "description": "风语村爆发瘟疫。"
-    }
-  ],
+  "active_events": [],
   "trade_routes": [],
   "legacy": {
-    "military": 34.400000000000155,
+    "military": 34.80000000000016,
     "economic": 0,
-    "cultural": 8039.299999999977,
-    "scientific": 944.5999999999499
+    "cultural": 8077.099999999975,
+    "scientific": 946.6999999999496
   },
   "milestones": [
     {
@@ -26980,10 +26958,20 @@
       "id": "year_1000",
       "name": "千年",
       "year": 3638
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 3644
+    },
+    {
+      "id": "year_1000",
+      "name": "千年",
+      "year": 3644
     }
   ],
   "stats": {
-    "total_population": 771,
+    "total_population": 685,
     "total_settlements": 2,
     "extinct_settlements": 0,
     "total_wars": 56,
@@ -26992,7 +26980,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T08:52:39.627Z",
-  "updated_at": "2026-08-25T19:25:10.830Z",
+  "updated_at": "2026-08-25T21:05:10.004Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -27032,32 +27020,8 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-08-25T19:11:51.627Z",
+  "last_evolved_at": "2026-08-25T20:52:39.627Z",
   "history": [
-    {
-      "year": 3195,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 3195,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
-    {
-      "year": 3196,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 3196,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
     {
       "year": 3197,
       "type": "event",
@@ -30033,6 +29997,30 @@
       "type": "plague",
       "title": "新事件",
       "description": "风语村爆发瘟疫。"
+    },
+    {
+      "year": 3644,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 3644,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 千年"
+    },
+    {
+      "year": 3647,
+      "type": "event",
+      "title": "事件结束",
+      "description": "风语村爆发瘟疫。 结束。"
+    },
+    {
+      "year": 3648,
+      "type": "event",
+      "title": "事件结束",
+      "description": "风语村与绿野镇爆发战争！ 结束。"
     }
   ]
 }
