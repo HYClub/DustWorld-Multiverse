@@ -2,7 +2,7 @@
   "world_id": "world_mrszl5je_9ju4",
   "name": "地球",
   "era": "antiquity",
-  "year": 3820,
+  "year": 3824,
   "civilization": {
     "antiquity": {
       "civ": "han",
@@ -3876,16 +3876,16 @@
       "x": 35,
       "y": 56,
       "level": 5,
-      "population": 415,
+      "population": 430,
       "max_population": 3000,
       "tech_level": 5,
-      "culture": 18130,
+      "culture": 18170,
       "influence": 0,
       "health": 0.8,
       "stability": 0.7,
       "resources": {
         "food": 0,
-        "wood": 3866.44,
+        "wood": 3870.44,
         "ore": 8,
         "water": 0,
         "gold": 0
@@ -3909,7 +3909,7 @@
       "x": 6,
       "y": 5,
       "level": 3,
-      "population": 199,
+      "population": 195,
       "max_population": 500,
       "tech_level": 4,
       "culture": 3280,
@@ -3919,7 +3919,7 @@
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 2287.1999999999484,
+        "ore": 2291.1999999999484,
         "water": 0,
         "gold": 0
       },
@@ -3947,17 +3947,39 @@
       "participants": [
         "SET001"
       ],
-      "remaining_years": 9,
+      "remaining_years": 5,
       "duration": 10,
       "description": "绿野镇迎来文化繁荣。"
+    },
+    {
+      "id": "EVT99196",
+      "type": "war",
+      "participants": [
+        "SET002",
+        "SET001"
+      ],
+      "remaining_years": 2,
+      "duration": 6,
+      "description": "风语村与绿野镇爆发战争！"
+    },
+    {
+      "id": "EVT30970",
+      "type": "war",
+      "participants": [
+        "SET002",
+        "SET001"
+      ],
+      "remaining_years": 6,
+      "duration": 3,
+      "description": "风语村与绿野镇爆发战争！"
     }
   ],
   "trade_routes": [],
   "legacy": {
-    "military": 39.00000000000022,
+    "military": 39.50000000000023,
     "economic": 0,
-    "cultural": 9012.599999999937,
-    "scientific": 998.0499999999423
+    "cultural": 9035.799999999934,
+    "scientific": 999.4499999999424
   },
   "milestones": [
     {
@@ -27589,19 +27611,29 @@
       "id": "year_1000",
       "name": "千年",
       "year": 3820
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 3821
+    },
+    {
+      "id": "year_1000",
+      "name": "千年",
+      "year": 3821
     }
   ],
   "stats": {
-    "total_population": 614,
+    "total_population": 625,
     "total_settlements": 2,
     "extinct_settlements": 0,
-    "total_wars": 63,
+    "total_wars": 65,
     "tech_breakthroughs": 7,
     "golden_ages": 58,
     "dark_ages": 0
   },
   "created_at": "2026-07-20T08:52:39.627Z",
-  "updated_at": "2026-08-27T13:41:08.197Z",
+  "updated_at": "2026-08-27T14:51:14.538Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -27641,32 +27673,8 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-08-27T13:40:39.627Z",
+  "last_evolved_at": "2026-08-27T14:38:15.627Z",
   "history": [
-    {
-      "year": 3326,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
-    {
-      "year": 3327,
-      "type": "cultural_boom",
-      "title": "新事件",
-      "description": "风语村迎来文化繁荣。"
-    },
-    {
-      "year": 3328,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 3328,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
     {
       "year": 3329,
       "type": "event",
@@ -30642,6 +30650,30 @@
       "type": "milestone",
       "title": "里程碑",
       "description": "达成: 千年"
+    },
+    {
+      "year": 3821,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 3821,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 千年"
+    },
+    {
+      "year": 3822,
+      "type": "war",
+      "title": "新事件",
+      "description": "风语村与绿野镇爆发战争！"
+    },
+    {
+      "year": 3823,
+      "type": "war",
+      "title": "新事件",
+      "description": "风语村与绿野镇爆发战争！"
     }
   ]
 }
