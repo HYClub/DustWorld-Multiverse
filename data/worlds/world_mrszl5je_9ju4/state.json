@@ -2,7 +2,7 @@
   "world_id": "world_mrszl5je_9ju4",
   "name": "地球",
   "era": "antiquity",
-  "year": 3872,
+  "year": 3882,
   "civilization": {
     "antiquity": {
       "civ": "han",
@@ -3876,7 +3876,7 @@
       "x": 35,
       "y": 56,
       "level": 5,
-      "population": 208,
+      "population": 198,
       "max_population": 3000,
       "tech_level": 5,
       "culture": 18290,
@@ -3885,7 +3885,7 @@
       "stability": 0.7,
       "resources": {
         "food": 0,
-        "wood": 3918.44,
+        "wood": 3928.44,
         "ore": 8,
         "water": 0,
         "gold": 0
@@ -3909,7 +3909,7 @@
       "x": 6,
       "y": 5,
       "level": 3,
-      "population": 172,
+      "population": 126,
       "max_population": 500,
       "tech_level": 4,
       "culture": 3640,
@@ -3919,7 +3919,7 @@
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 2339.1999999999484,
+        "ore": 2349.1999999999484,
         "water": 0,
         "gold": 0
       },
@@ -3942,24 +3942,13 @@
   ],
   "active_events": [
     {
-      "id": "EVT30970",
-      "type": "war",
-      "participants": [
-        "SET002",
-        "SET001"
-      ],
-      "remaining_years": 1,
-      "duration": 3,
-      "description": "风语村与绿野镇爆发战争！"
-    },
-    {
-      "id": "EVT94830",
+      "id": "EVT15784",
       "type": "natural_disaster",
       "participants": [
         "SET002"
       ],
-      "remaining_years": 5,
-      "duration": 9,
+      "remaining_years": 3,
+      "duration": 7,
       "description": "风语村遭受自然灾害。"
     }
   ],
@@ -3967,8 +3956,8 @@
   "legacy": {
     "military": 43.00000000000028,
     "economic": 0,
-    "cultural": 9318.299999999914,
-    "scientific": 1016.2499999999435
+    "cultural": 9377.29999999991,
+    "scientific": 1019.7499999999437
   },
   "milestones": [
     {
@@ -27790,10 +27779,20 @@
       "id": "year_1000",
       "name": "千年",
       "year": 3864
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 3873
+    },
+    {
+      "id": "year_1000",
+      "name": "千年",
+      "year": 3873
     }
   ],
   "stats": {
-    "total_population": 380,
+    "total_population": 324,
     "total_settlements": 2,
     "extinct_settlements": 0,
     "total_wars": 70,
@@ -27802,7 +27801,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T08:52:39.627Z",
-  "updated_at": "2026-08-28T02:11:10.168Z",
+  "updated_at": "2026-08-28T08:00:12.235Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -27842,38 +27841,8 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-08-28T02:09:27.627Z",
+  "last_evolved_at": "2026-08-28T04:33:27.627Z",
   "history": [
-    {
-      "year": 3362,
-      "type": "golden_age",
-      "title": "新事件",
-      "description": "绿野镇进入黄金时代！"
-    },
-    {
-      "year": 3365,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 3365,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
-    {
-      "year": 3366,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 3366,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
     {
       "year": 3367,
       "type": "event",
@@ -30843,6 +30812,36 @@
       "type": "event",
       "title": "事件结束",
       "description": "绿野镇迎来文化繁荣。 结束。"
+    },
+    {
+      "year": 3873,
+      "type": "event",
+      "title": "事件结束",
+      "description": "风语村与绿野镇爆发战争！ 结束。"
+    },
+    {
+      "year": 3873,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 3873,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 千年"
+    },
+    {
+      "year": 3877,
+      "type": "event",
+      "title": "事件结束",
+      "description": "风语村遭受自然灾害。 结束。"
+    },
+    {
+      "year": 3880,
+      "type": "natural_disaster",
+      "title": "新事件",
+      "description": "风语村遭受自然灾害。"
     }
   ]
 }
