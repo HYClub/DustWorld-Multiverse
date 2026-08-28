@@ -2,7 +2,7 @@
   "world_id": "world_mrt0jqd6_sa4k",
   "name": "魔法",
   "era": "exploration",
-  "year": 3890,
+  "year": 3894,
   "civilization": {
     "antiquity": {
       "civ": "insectoids",
@@ -3780,7 +3780,7 @@
         "type": "food",
         "x": 43,
         "y": 41,
-        "amount": 76.49999999999991
+        "amount": 80.2599999999999
       },
       {
         "type": "wood",
@@ -3822,13 +3822,13 @@
         "type": "wood",
         "x": 47,
         "y": 54,
-        "amount": 35.7199999999999
+        "amount": 29.339999999999897
       },
       {
         "type": "wood",
         "x": 51,
         "y": 31,
-        "amount": 32.18000000000001
+        "amount": 20.460000000000008
       },
       {
         "type": "ore",
@@ -3858,7 +3858,7 @@
         "wood": 30,
         "ore": 8,
         "water": 0,
-        "gold": 12989
+        "gold": 13021
       },
       "buildings": [],
       "specialization": "agriculture",
@@ -3883,10 +3883,10 @@
       "x": 33,
       "y": 32,
       "level": 3,
-      "population": 207,
+      "population": 210,
       "max_population": 500,
       "tech_level": 5,
-      "culture": 2720,
+      "culture": 2740,
       "influence": 0,
       "health": 0.8,
       "stability": 0.7,
@@ -3895,7 +3895,7 @@
         "wood": 30,
         "ore": 8,
         "water": 0,
-        "gold": 12924
+        "gold": 12940
       },
       "buildings": [],
       "specialization": "agriculture",
@@ -3918,16 +3918,16 @@
       "x": 50,
       "y": 57,
       "level": 3,
-      "population": 41,
+      "population": 42,
       "max_population": 500,
       "tech_level": 5,
-      "culture": 2100,
+      "culture": 2110,
       "influence": 0,
       "health": 0.7,
       "stability": 0.6,
       "resources": {
         "food": 0,
-        "wood": 1623.7199999999639,
+        "wood": 1634.099999999964,
         "ore": 5,
         "water": 0,
         "gold": 0
@@ -3953,16 +3953,16 @@
       "x": 20,
       "y": 6,
       "level": 4,
-      "population": 485,
+      "population": 499,
       "max_population": 1000,
       "tech_level": 6,
-      "culture": 2940,
+      "culture": 2970,
       "influence": 0,
       "health": 0.7,
       "stability": 0.6,
       "resources": {
         "food": 0,
-        "wood": 1344.2799999999768,
+        "wood": 1348.2799999999768,
         "ore": 5,
         "water": 0,
         "gold": 0
@@ -3988,7 +3988,7 @@
       "x": 21,
       "y": 53,
       "level": 3,
-      "population": 272,
+      "population": 268,
       "max_population": 500,
       "tech_level": 5,
       "culture": 1470,
@@ -3998,7 +3998,7 @@
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 655,
+        "ore": 659,
         "water": 0,
         "gold": 0
       },
@@ -4023,10 +4023,10 @@
       "x": 49,
       "y": 39,
       "level": 3,
-      "population": 148,
+      "population": 144,
       "max_population": 500,
       "tech_level": 5,
-      "culture": 181,
+      "culture": 183,
       "influence": 0,
       "health": 0.7,
       "stability": 0.6,
@@ -4035,7 +4035,7 @@
         "wood": 20,
         "ore": 5,
         "water": 0,
-        "gold": 122
+        "gold": 150
       },
       "buildings": [],
       "specialization": "agriculture",
@@ -4061,7 +4061,7 @@
       "x": 52,
       "y": 28,
       "level": 2,
-      "population": 67,
+      "population": 63,
       "max_population": 200,
       "tech_level": 4,
       "culture": 0,
@@ -4070,10 +4070,10 @@
       "stability": 0.6,
       "resources": {
         "food": 0,
-        "wood": 106.82,
+        "wood": 122.53999999999999,
         "ore": 5,
         "water": 0,
-        "gold": 57
+        "gold": 69
       },
       "buildings": [],
       "specialization": null,
@@ -4094,48 +4094,7 @@
       "id": "SET007"
     }
   ],
-  "active_events": [
-    {
-      "id": "EVT76902",
-      "type": "cultural_boom",
-      "participants": [
-        "SET002"
-      ],
-      "remaining_years": 3,
-      "duration": 6,
-      "description": "河畔城迎来文化繁荣。"
-    },
-    {
-      "id": "EVT97624",
-      "type": "cultural_boom",
-      "participants": [
-        "SET003"
-      ],
-      "remaining_years": 2,
-      "duration": 7,
-      "description": "风语村迎来文化繁荣。"
-    },
-    {
-      "id": "EVT65692",
-      "type": "cultural_boom",
-      "participants": [
-        "SET004"
-      ],
-      "remaining_years": 4,
-      "duration": 3,
-      "description": "贸易站迎来文化繁荣。"
-    },
-    {
-      "id": "EVT20029",
-      "type": "natural_disaster",
-      "participants": [
-        "SET003"
-      ],
-      "remaining_years": 1,
-      "duration": 10,
-      "description": "风语村遭受自然灾害。"
-    }
-  ],
+  "active_events": [],
   "trade_routes": [
     {
       "from": "SET001",
@@ -4155,9 +4114,9 @@
   ],
   "legacy": {
     "military": 33.900000000000205,
-    "economic": 233.4000000000183,
-    "cultural": 2944.99999999992,
-    "scientific": 2485.500000000009
+    "economic": 234.00000000001833,
+    "cultural": 2960.5999999999203,
+    "scientific": 2489.70000000001
   },
   "milestones": [
     {
@@ -47804,10 +47763,35 @@
       "id": "year_1000",
       "name": "千年",
       "year": 3881
+    },
+    {
+      "id": "pop_1000",
+      "name": "繁荣",
+      "year": 3891
+    },
+    {
+      "id": "setts_3",
+      "name": "扩张",
+      "year": 3891
+    },
+    {
+      "id": "era_exploration",
+      "name": "远洋",
+      "year": 3891
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 3891
+    },
+    {
+      "id": "year_1000",
+      "name": "千年",
+      "year": 3891
     }
   ],
   "stats": {
-    "total_population": 1221,
+    "total_population": 1227,
     "total_settlements": 7,
     "extinct_settlements": 0,
     "total_wars": 48,
@@ -47816,7 +47800,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T09:19:32.922Z",
-  "updated_at": "2026-08-28T08:00:31.692Z",
+  "updated_at": "2026-08-28T08:00:36.616Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -47884,60 +47868,6 @@
   "creator": "HYClub",
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "history": [
-    {
-      "year": 3654,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 远洋"
-    },
-    {
-      "year": 3654,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 3654,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
-    {
-      "year": 3655,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 繁荣"
-    },
-    {
-      "year": 3655,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 扩张"
-    },
-    {
-      "year": 3655,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 远洋"
-    },
-    {
-      "year": 3655,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 3655,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
-    {
-      "year": 3656,
-      "type": "event",
-      "title": "事件结束",
-      "description": "河畔城迎来文化繁荣。 结束。"
-    },
     {
       "year": 3661,
       "type": "cultural_boom",
@@ -50883,9 +50813,63 @@
       "type": "event",
       "title": "事件结束",
       "description": "河畔城遭受自然灾害。 结束。"
+    },
+    {
+      "year": 3891,
+      "type": "event",
+      "title": "事件结束",
+      "description": "风语村遭受自然灾害。 结束。"
+    },
+    {
+      "year": 3891,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 繁荣"
+    },
+    {
+      "year": 3891,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 扩张"
+    },
+    {
+      "year": 3891,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 远洋"
+    },
+    {
+      "year": 3891,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 3891,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 千年"
+    },
+    {
+      "year": 3892,
+      "type": "event",
+      "title": "事件结束",
+      "description": "风语村迎来文化繁荣。 结束。"
+    },
+    {
+      "year": 3893,
+      "type": "event",
+      "title": "事件结束",
+      "description": "河畔城迎来文化繁荣。 结束。"
+    },
+    {
+      "year": 3894,
+      "type": "event",
+      "title": "事件结束",
+      "description": "贸易站迎来文化繁荣。 结束。"
     }
   ],
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-08-28T06:55:32.922Z"
+  "last_evolved_at": "2026-08-28T07:53:08.922Z"
 }
