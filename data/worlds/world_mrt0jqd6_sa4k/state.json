@@ -2,7 +2,7 @@
   "world_id": "world_mrt0jqd6_sa4k",
   "name": "魔法",
   "era": "exploration",
-  "year": 3981,
+  "year": 3991,
   "civilization": {
     "antiquity": {
       "civ": "insectoids",
@@ -3822,7 +3822,7 @@
         "type": "wood",
         "x": 47,
         "y": 54,
-        "amount": 27.65999999999992
+        "amount": 14.559999999999924
       },
       {
         "type": "wood",
@@ -3846,7 +3846,7 @@
       "x": 44,
       "y": 41,
       "level": 3,
-      "population": 49,
+      "population": 39,
       "max_population": 500,
       "tech_level": 5,
       "culture": 4040,
@@ -3858,7 +3858,7 @@
         "wood": 30,
         "ore": 8,
         "water": 0,
-        "gold": 13717
+        "gold": 13797
       },
       "buildings": [],
       "specialization": "agriculture",
@@ -3883,7 +3883,7 @@
       "x": 33,
       "y": 32,
       "level": 3,
-      "population": 135,
+      "population": 108,
       "max_population": 500,
       "tech_level": 5,
       "culture": 2780,
@@ -3895,7 +3895,7 @@
         "wood": 30,
         "ore": 8,
         "water": 0,
-        "gold": 13288
+        "gold": 13328
       },
       "buildings": [],
       "specialization": "agriculture",
@@ -3918,7 +3918,7 @@
       "x": 50,
       "y": 57,
       "level": 3,
-      "population": 43,
+      "population": 33,
       "max_population": 500,
       "tech_level": 5,
       "culture": 2260,
@@ -3927,7 +3927,7 @@
       "stability": 0.6,
       "resources": {
         "food": 0,
-        "wood": 1722.7799999999631,
+        "wood": 1745.879999999963,
         "ore": 5,
         "water": 0,
         "gold": 0
@@ -3953,7 +3953,7 @@
       "x": 20,
       "y": 6,
       "level": 4,
-      "population": 389,
+      "population": 370,
       "max_population": 1000,
       "tech_level": 6,
       "culture": 3120,
@@ -3962,7 +3962,7 @@
       "stability": 0.6,
       "resources": {
         "food": 0,
-        "wood": 1435.2799999999768,
+        "wood": 1445.2799999999768,
         "ore": 5,
         "water": 0,
         "gold": 0
@@ -3988,7 +3988,7 @@
       "x": 21,
       "y": 53,
       "level": 3,
-      "population": 181,
+      "population": 171,
       "max_population": 500,
       "tech_level": 5,
       "culture": 1470,
@@ -3998,7 +3998,7 @@
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 746,
+        "ore": 756,
         "water": 0,
         "gold": 0
       },
@@ -4023,10 +4023,10 @@
       "x": 49,
       "y": 39,
       "level": 3,
-      "population": 137,
+      "population": 164,
       "max_population": 500,
       "tech_level": 5,
-      "culture": 406.5,
+      "culture": 481.5,
       "influence": 0,
       "health": 0.7,
       "stability": 0.6,
@@ -4035,7 +4035,7 @@
         "wood": 20,
         "ore": 5,
         "water": 0,
-        "gold": 769
+        "gold": 849
       },
       "buildings": [],
       "specialization": "agriculture",
@@ -4061,7 +4061,7 @@
       "x": 52,
       "y": 28,
       "level": 3,
-      "population": 346,
+      "population": 296,
       "max_population": 500,
       "tech_level": 4,
       "culture": 710,
@@ -4070,10 +4070,10 @@
       "stability": 0.6,
       "resources": {
         "food": 0,
-        "wood": 229.99999999999997,
+        "wood": 239.99999999999997,
         "ore": 5,
         "water": 0,
-        "gold": 340
+        "gold": 380
       },
       "buildings": [],
       "specialization": "agriculture",
@@ -4094,40 +4094,7 @@
       "id": "SET007"
     }
   ],
-  "active_events": [
-    {
-      "id": "EVT92695",
-      "type": "war",
-      "participants": [
-        "SET006",
-        "SET004"
-      ],
-      "remaining_years": 3,
-      "duration": 9,
-      "description": "要塞镇与贸易站爆发战争！"
-    },
-    {
-      "id": "EVT92393",
-      "type": "natural_disaster",
-      "participants": [
-        "SET002"
-      ],
-      "remaining_years": 9,
-      "duration": 7,
-      "description": "河畔城遭受自然灾害。"
-    },
-    {
-      "id": "EVT32027",
-      "type": "war",
-      "participants": [
-        "SET007",
-        "SET003"
-      ],
-      "remaining_years": 8,
-      "duration": 5,
-      "description": "王国都与风语村爆发战争！"
-    }
-  ],
+  "active_events": [],
   "trade_routes": [
     {
       "from": "SET001",
@@ -4146,10 +4113,10 @@
     }
   ],
   "legacy": {
-    "military": 37.30000000000025,
-    "economic": 247.05000000001883,
-    "cultural": 3318.9999999999186,
-    "scientific": 2581.0500000000256
+    "military": 38.200000000000266,
+    "economic": 248.55000000001888,
+    "cultural": 3364.9999999999177,
+    "scientific": 2591.5500000000275
   },
   "milestones": [
     {
@@ -48421,10 +48388,35 @@
       "id": "year_1000",
       "name": "千年",
       "year": 3972
+    },
+    {
+      "id": "pop_1000",
+      "name": "繁荣",
+      "year": 3982
+    },
+    {
+      "id": "setts_3",
+      "name": "扩张",
+      "year": 3982
+    },
+    {
+      "id": "era_exploration",
+      "name": "远洋",
+      "year": 3982
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 3982
+    },
+    {
+      "id": "year_1000",
+      "name": "千年",
+      "year": 3982
     }
   ],
   "stats": {
-    "total_population": 1280,
+    "total_population": 1181,
     "total_settlements": 7,
     "extinct_settlements": 0,
     "total_wars": 54,
@@ -48433,7 +48425,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T09:19:32.922Z",
-  "updated_at": "2026-08-29T08:35:50.383Z",
+  "updated_at": "2026-08-29T08:35:52.630Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -48501,66 +48493,6 @@
   "creator": "HYClub",
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "history": [
-    {
-      "year": 3736,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 3736,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
-    {
-      "year": 3737,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 繁荣"
-    },
-    {
-      "year": 3737,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 扩张"
-    },
-    {
-      "year": 3737,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 远洋"
-    },
-    {
-      "year": 3737,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 3737,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
-    {
-      "year": 3738,
-      "type": "event",
-      "title": "事件结束",
-      "description": "贸易站迎来文化繁荣。 结束。"
-    },
-    {
-      "year": 3743,
-      "type": "cultural_boom",
-      "title": "新事件",
-      "description": "河畔城迎来文化繁荣。"
-    },
-    {
-      "year": 3744,
-      "type": "cultural_boom",
-      "title": "新事件",
-      "description": "贸易站迎来文化繁荣。"
-    },
     {
       "year": 3746,
       "type": "golden_age",
@@ -51500,9 +51432,69 @@
       "type": "war",
       "title": "新事件",
       "description": "王国都与风语村爆发战争！"
+    },
+    {
+      "year": 3982,
+      "type": "cultural_boom",
+      "title": "新事件",
+      "description": "要塞镇迎来文化繁荣。"
+    },
+    {
+      "year": 3982,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 繁荣"
+    },
+    {
+      "year": 3982,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 扩张"
+    },
+    {
+      "year": 3982,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 远洋"
+    },
+    {
+      "year": 3982,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 3982,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 千年"
+    },
+    {
+      "year": 3984,
+      "type": "event",
+      "title": "事件结束",
+      "description": "要塞镇与贸易站爆发战争！ 结束。"
+    },
+    {
+      "year": 3989,
+      "type": "event",
+      "title": "事件结束",
+      "description": "王国都与风语村爆发战争！ 结束。"
+    },
+    {
+      "year": 3990,
+      "type": "event",
+      "title": "事件结束",
+      "description": "河畔城遭受自然灾害。 结束。"
+    },
+    {
+      "year": 3990,
+      "type": "event",
+      "title": "事件结束",
+      "description": "要塞镇迎来文化繁荣。 结束。"
     }
   ],
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-08-29T04:45:56.922Z"
+  "last_evolved_at": "2026-08-29T07:09:56.922Z"
 }
