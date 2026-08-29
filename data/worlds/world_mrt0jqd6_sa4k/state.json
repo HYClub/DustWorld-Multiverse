@@ -2,7 +2,7 @@
   "world_id": "world_mrt0jqd6_sa4k",
   "name": "魔法",
   "era": "exploration",
-  "year": 4051,
+  "year": 4052,
   "civilization": {
     "antiquity": {
       "civ": "insectoids",
@@ -3780,7 +3780,7 @@
         "type": "food",
         "x": 43,
         "y": 41,
-        "amount": 27.580000000000013
+        "amount": 28.520000000000014
       },
       {
         "type": "wood",
@@ -3822,7 +3822,7 @@
         "type": "wood",
         "x": 47,
         "y": 54,
-        "amount": 39.27999999999993
+        "amount": 40.21999999999993
       },
       {
         "type": "wood",
@@ -3858,7 +3858,7 @@
         "wood": 30,
         "ore": 8,
         "water": 0,
-        "gold": 14277
+        "gold": 14285
       },
       "buildings": [],
       "specialization": "agriculture",
@@ -3883,7 +3883,7 @@
       "x": 33,
       "y": 32,
       "level": 3,
-      "population": 43,
+      "population": 42,
       "max_population": 500,
       "tech_level": 5,
       "culture": 2780,
@@ -3895,7 +3895,7 @@
         "wood": 30,
         "ore": 8,
         "water": 0,
-        "gold": 13568
+        "gold": 13572
       },
       "buildings": [],
       "specialization": "agriculture",
@@ -3927,7 +3927,7 @@
       "stability": 0.6,
       "resources": {
         "food": 0,
-        "wood": 1781.1599999999614,
+        "wood": 1781.2199999999614,
         "ore": 5,
         "water": 0,
         "gold": 0
@@ -3953,7 +3953,7 @@
       "x": 20,
       "y": 6,
       "level": 4,
-      "population": 310,
+      "population": 309,
       "max_population": 1000,
       "tech_level": 6,
       "culture": 3120,
@@ -3962,7 +3962,7 @@
       "stability": 0.6,
       "resources": {
         "food": 0,
-        "wood": 1505.2799999999768,
+        "wood": 1506.2799999999768,
         "ore": 5,
         "water": 0,
         "gold": 0
@@ -3988,7 +3988,7 @@
       "x": 21,
       "y": 53,
       "level": 3,
-      "population": 111,
+      "population": 110,
       "max_population": 500,
       "tech_level": 5,
       "culture": 1470,
@@ -3998,7 +3998,7 @@
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 816,
+        "ore": 817,
         "water": 0,
         "gold": 0
       },
@@ -4023,10 +4023,10 @@
       "x": 49,
       "y": 39,
       "level": 3,
-      "population": 104,
+      "population": 103,
       "max_population": 500,
       "tech_level": 5,
-      "culture": 511.5,
+      "culture": 512,
       "influence": 0,
       "health": 0.7,
       "stability": 0.6,
@@ -4035,7 +4035,7 @@
         "wood": 20,
         "ore": 5,
         "water": 0,
-        "gold": 1329
+        "gold": 1337
       },
       "buildings": [],
       "specialization": "agriculture",
@@ -4061,7 +4061,7 @@
       "x": 52,
       "y": 28,
       "level": 3,
-      "population": 224,
+      "population": 223,
       "max_population": 500,
       "tech_level": 4,
       "culture": 710,
@@ -4070,10 +4070,10 @@
       "stability": 0.6,
       "resources": {
         "food": 0,
-        "wood": 300,
+        "wood": 301,
         "ore": 5,
         "water": 0,
-        "gold": 620
+        "gold": 624
       },
       "buildings": [],
       "specialization": "agriculture",
@@ -4114,9 +4114,9 @@
   ],
   "legacy": {
     "military": 38.50000000000027,
-    "economic": 257.55000000001894,
-    "cultural": 3640.9999999999122,
-    "scientific": 2654.5500000000384
+    "economic": 257.7000000000189,
+    "cultural": 3645.599999999912,
+    "scientific": 2655.6000000000386
   },
   "milestones": [
     {
@@ -49353,10 +49353,30 @@
       "id": "year_1000",
       "name": "千年",
       "year": 4051
+    },
+    {
+      "id": "setts_3",
+      "name": "扩张",
+      "year": 4052
+    },
+    {
+      "id": "era_exploration",
+      "name": "远洋",
+      "year": 4052
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 4052
+    },
+    {
+      "id": "year_1000",
+      "name": "千年",
+      "year": 4052
     }
   ],
   "stats": {
-    "total_population": 794,
+    "total_population": 789,
     "total_settlements": 7,
     "extinct_settlements": 0,
     "total_wars": 55,
@@ -49365,7 +49385,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T09:19:32.922Z",
-  "updated_at": "2026-08-29T21:34:42.358Z",
+  "updated_at": "2026-08-29T21:48:42.492Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -49433,30 +49453,6 @@
   "creator": "HYClub",
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "history": [
-    {
-      "year": 3839,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 远洋"
-    },
-    {
-      "year": 3839,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 3839,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
-    {
-      "year": 3840,
-      "type": "cultural_boom",
-      "title": "新事件",
-      "description": "新大陆迎来文化繁荣。"
-    },
     {
       "year": 3841,
       "type": "war",
@@ -52432,9 +52428,33 @@
       "type": "milestone",
       "title": "里程碑",
       "description": "达成: 千年"
+    },
+    {
+      "year": 4052,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 扩张"
+    },
+    {
+      "year": 4052,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 远洋"
+    },
+    {
+      "year": 4052,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 4052,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 千年"
     }
   ],
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-08-29T21:33:56.922Z"
+  "last_evolved_at": "2026-08-29T21:48:20.922Z"
 }
