@@ -2,7 +2,7 @@
   "world_id": "world_mrszl5je_9ju4",
   "name": "地球",
   "era": "antiquity",
-  "year": 4013,
+  "year": 4016,
   "civilization": {
     "antiquity": {
       "civ": "han",
@@ -3876,7 +3876,7 @@
       "x": 35,
       "y": 56,
       "level": 5,
-      "population": 218,
+      "population": 215,
       "max_population": 3000,
       "tech_level": 5,
       "culture": 19080,
@@ -3885,7 +3885,7 @@
       "stability": 0.7,
       "resources": {
         "food": 0,
-        "wood": 4059.44,
+        "wood": 4062.44,
         "ore": 8,
         "water": 0,
         "gold": 0
@@ -3909,17 +3909,17 @@
       "x": 6,
       "y": 5,
       "level": 3,
-      "population": 200,
+      "population": 221,
       "max_population": 500,
       "tech_level": 4,
-      "culture": 4250,
+      "culture": 4310,
       "influence": 0,
       "health": 0.7,
       "stability": 0.6,
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 2480.1999999999484,
+        "ore": 2483.1999999999484,
         "water": 0,
         "gold": 0
       },
@@ -3947,17 +3947,39 @@
       "participants": [
         "SET002"
       ],
-      "remaining_years": 8,
+      "remaining_years": 5,
       "duration": 7,
       "description": "风语村进入黄金时代！"
+    },
+    {
+      "id": "EVT99196",
+      "type": "war",
+      "participants": [
+        "SET002",
+        "SET001"
+      ],
+      "remaining_years": 3,
+      "duration": 6,
+      "description": "风语村与绿野镇爆发战争！"
+    },
+    {
+      "id": "EVT30970",
+      "type": "war",
+      "participants": [
+        "SET002",
+        "SET001"
+      ],
+      "remaining_years": 7,
+      "duration": 3,
+      "description": "风语村与绿野镇爆发战争！"
     }
   ],
   "trade_routes": [],
   "legacy": {
-    "military": 50.20000000000038,
+    "military": 50.500000000000384,
     "economic": 0,
-    "cultural": 10194.499999999878,
-    "scientific": 1065.5999999999333
+    "cultural": 10213.999999999878,
+    "scientific": 1066.649999999933
   },
   "milestones": [
     {
@@ -28169,19 +28191,29 @@
       "id": "year_1000",
       "name": "千年",
       "year": 4013
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 4014
+    },
+    {
+      "id": "year_1000",
+      "name": "千年",
+      "year": 4014
     }
   ],
   "stats": {
-    "total_population": 418,
+    "total_population": 436,
     "total_settlements": 2,
     "extinct_settlements": 0,
-    "total_wars": 82,
+    "total_wars": 84,
     "tech_breakthroughs": 7,
     "golden_ages": 65,
     "dark_ages": 0
   },
   "created_at": "2026-07-20T08:52:39.627Z",
-  "updated_at": "2026-08-29T12:00:55.815Z",
+  "updated_at": "2026-08-29T12:44:43.365Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -28221,32 +28253,8 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-08-29T11:59:51.627Z",
+  "last_evolved_at": "2026-08-29T12:43:03.627Z",
   "history": [
-    {
-      "year": 3530,
-      "type": "event",
-      "title": "事件结束",
-      "description": "风语村遭受自然灾害。 结束。"
-    },
-    {
-      "year": 3532,
-      "type": "event",
-      "title": "事件结束",
-      "description": "绿野镇迎来文化繁荣。 结束。"
-    },
-    {
-      "year": 3532,
-      "type": "event",
-      "title": "事件结束",
-      "description": "绿野镇进入黄金时代！ 结束。"
-    },
-    {
-      "year": 3534,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
     {
       "year": 3534,
       "type": "milestone",
@@ -31222,6 +31230,30 @@
       "type": "milestone",
       "title": "里程碑",
       "description": "达成: 千年"
+    },
+    {
+      "year": 4014,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 4014,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 千年"
+    },
+    {
+      "year": 4015,
+      "type": "war",
+      "title": "新事件",
+      "description": "风语村与绿野镇爆发战争！"
+    },
+    {
+      "year": 4016,
+      "type": "war",
+      "title": "新事件",
+      "description": "风语村与绿野镇爆发战争！"
     }
   ]
 }
