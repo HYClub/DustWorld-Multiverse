@@ -2,7 +2,7 @@
   "world_id": "world_mrszl5je_9ju4",
   "name": "地球",
   "era": "antiquity",
-  "year": 4038,
+  "year": 4039,
   "civilization": {
     "antiquity": {
       "civ": "han",
@@ -3876,16 +3876,16 @@
       "x": 35,
       "y": 56,
       "level": 5,
-      "population": 207,
+      "population": 209,
       "max_population": 3000,
       "tech_level": 5,
-      "culture": 19210,
+      "culture": 19220,
       "influence": 0,
       "health": 0.8,
       "stability": 0.7,
       "resources": {
         "food": 0,
-        "wood": 4084.44,
+        "wood": 4085.44,
         "ore": 8,
         "water": 0,
         "gold": 0
@@ -3909,7 +3909,7 @@
       "x": 6,
       "y": 5,
       "level": 3,
-      "population": 222,
+      "population": 221,
       "max_population": 500,
       "tech_level": 4,
       "culture": 4390,
@@ -3919,7 +3919,7 @@
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 2505.1999999999484,
+        "ore": 2506.1999999999484,
         "water": 0,
         "gold": 0
       },
@@ -3947,7 +3947,7 @@
       "participants": [
         "SET001"
       ],
-      "remaining_years": 4,
+      "remaining_years": 3,
       "duration": 10,
       "description": "绿野镇迎来文化繁荣。"
     }
@@ -3956,8 +3956,8 @@
   "legacy": {
     "military": 51.300000000000395,
     "economic": 0,
-    "cultural": 10356.999999999878,
-    "scientific": 1074.349999999931
+    "cultural": 10363.499999999878,
+    "scientific": 1074.699999999931
   },
   "milestones": [
     {
@@ -28359,10 +28359,20 @@
       "id": "year_1000",
       "name": "千年",
       "year": 4038
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 4039
+    },
+    {
+      "id": "year_1000",
+      "name": "千年",
+      "year": 4039
     }
   ],
   "stats": {
-    "total_population": 429,
+    "total_population": 430,
     "total_settlements": 2,
     "extinct_settlements": 0,
     "total_wars": 84,
@@ -28371,7 +28381,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T08:52:39.627Z",
-  "updated_at": "2026-08-29T18:00:58.398Z",
+  "updated_at": "2026-08-29T18:14:42.507Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -28411,20 +28421,8 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-08-29T17:59:51.627Z",
+  "last_evolved_at": "2026-08-29T18:14:15.627Z",
   "history": [
-    {
-      "year": 3591,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
-    {
-      "year": 3592,
-      "type": "golden_age",
-      "title": "新事件",
-      "description": "绿野镇进入黄金时代！"
-    },
     {
       "year": 3594,
       "type": "event",
@@ -31409,6 +31407,18 @@
     },
     {
       "year": 4038,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 千年"
+    },
+    {
+      "year": 4039,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 4039,
       "type": "milestone",
       "title": "里程碑",
       "description": "达成: 千年"
