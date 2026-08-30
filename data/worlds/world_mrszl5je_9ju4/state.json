@@ -2,7 +2,7 @@
   "world_id": "world_mrszl5je_9ju4",
   "name": "地球",
   "era": "antiquity",
-  "year": 4085,
+  "year": 4086,
   "civilization": {
     "antiquity": {
       "civ": "han",
@@ -3876,7 +3876,7 @@
       "x": 35,
       "y": 56,
       "level": 5,
-      "population": 310,
+      "population": 289,
       "max_population": 3000,
       "tech_level": 5,
       "culture": 19700,
@@ -3885,7 +3885,7 @@
       "stability": 0.7,
       "resources": {
         "food": 0,
-        "wood": 4131.4400000000005,
+        "wood": 4132.4400000000005,
         "ore": 8,
         "water": 0,
         "gold": 0
@@ -3909,7 +3909,7 @@
       "x": 6,
       "y": 5,
       "level": 3,
-      "population": 175,
+      "population": 174,
       "max_population": 500,
       "tech_level": 4,
       "culture": 4390,
@@ -3919,7 +3919,7 @@
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 2552.1999999999484,
+        "ore": 2553.1999999999484,
         "water": 0,
         "gold": 0
       },
@@ -3942,32 +3942,12 @@
   ],
   "active_events": [
     {
-      "id": "EVT2446",
-      "type": "cultural_boom",
-      "participants": [
-        "SET001"
-      ],
-      "remaining_years": 1,
-      "duration": 10,
-      "description": "绿野镇迎来文化繁荣。"
-    },
-    {
-      "id": "EVT48166",
-      "type": "golden_age",
-      "participants": [
-        "SET001"
-      ],
-      "remaining_years": 1,
-      "duration": 3,
-      "description": "绿野镇进入黄金时代！"
-    },
-    {
       "id": "EVT39066",
       "type": "natural_disaster",
       "participants": [
         "SET001"
       ],
-      "remaining_years": 4,
+      "remaining_years": 3,
       "duration": 4,
       "description": "绿野镇遭受自然灾害。"
     }
@@ -3976,8 +3956,8 @@
   "legacy": {
     "military": 52.100000000000406,
     "economic": 0,
-    "cultural": 10663.299999999881,
-    "scientific": 1090.7999999999267
+    "cultural": 10669.899999999881,
+    "scientific": 1091.1499999999266
   },
   "milestones": [
     {
@@ -28669,10 +28649,20 @@
       "id": "year_1000",
       "name": "千年",
       "year": 4077
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 4086
+    },
+    {
+      "id": "year_1000",
+      "name": "千年",
+      "year": 4086
     }
   ],
   "stats": {
-    "total_population": 485,
+    "total_population": 463,
     "total_settlements": 2,
     "extinct_settlements": 0,
     "total_wars": 86,
@@ -28681,7 +28671,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T08:52:39.627Z",
-  "updated_at": "2026-08-30T05:30:44.780Z",
+  "updated_at": "2026-08-30T05:31:41.516Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -28721,32 +28711,8 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-08-30T05:16:39.627Z",
+  "last_evolved_at": "2026-08-30T05:31:03.627Z",
   "history": [
-    {
-      "year": 3666,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
-    {
-      "year": 3669,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 3669,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
-    {
-      "year": 3670,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
     {
       "year": 3670,
       "type": "milestone",
@@ -31722,6 +31688,30 @@
       "type": "natural_disaster",
       "title": "新事件",
       "description": "绿野镇遭受自然灾害。"
+    },
+    {
+      "year": 4086,
+      "type": "event",
+      "title": "事件结束",
+      "description": "绿野镇迎来文化繁荣。 结束。"
+    },
+    {
+      "year": 4086,
+      "type": "event",
+      "title": "事件结束",
+      "description": "绿野镇进入黄金时代！ 结束。"
+    },
+    {
+      "year": 4086,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 4086,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 千年"
     }
   ]
 }
