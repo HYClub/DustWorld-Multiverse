@@ -2,7 +2,7 @@
   "world_id": "world_mrszl5je_9ju4",
   "name": "地球",
   "era": "antiquity",
-  "year": 4104,
+  "year": 4105,
   "civilization": {
     "antiquity": {
       "civ": "han",
@@ -3876,16 +3876,16 @@
       "x": 35,
       "y": 56,
       "level": 5,
-      "population": 276,
+      "population": 278,
       "max_population": 3000,
       "tech_level": 5,
-      "culture": 19840,
+      "culture": 19850,
       "influence": 0,
       "health": 0.8,
       "stability": 0.7,
       "resources": {
         "food": 0,
-        "wood": 4150.4400000000005,
+        "wood": 4151.4400000000005,
         "ore": 8,
         "water": 0,
         "gold": 0
@@ -3909,7 +3909,7 @@
       "x": 6,
       "y": 5,
       "level": 3,
-      "population": 156,
+      "population": 155,
       "max_population": 500,
       "tech_level": 4,
       "culture": 4390,
@@ -3919,7 +3919,7 @@
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 2571.1999999999484,
+        "ore": 2572.1999999999484,
         "water": 0,
         "gold": 0
       },
@@ -3947,7 +3947,7 @@
       "participants": [
         "SET001"
       ],
-      "remaining_years": 3,
+      "remaining_years": 2,
       "duration": 10,
       "description": "绿野镇迎来文化繁荣。"
     }
@@ -3956,8 +3956,8 @@
   "legacy": {
     "military": 52.100000000000406,
     "economic": 0,
-    "cultural": 10788.699999999888,
-    "scientific": 1097.449999999925
+    "cultural": 10795.299999999888,
+    "scientific": 1097.799999999925
   },
   "milestones": [
     {
@@ -28839,10 +28839,20 @@
       "id": "year_1000",
       "name": "千年",
       "year": 4104
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 4105
+    },
+    {
+      "id": "year_1000",
+      "name": "千年",
+      "year": 4105
     }
   ],
   "stats": {
-    "total_population": 432,
+    "total_population": 433,
     "total_settlements": 2,
     "extinct_settlements": 0,
     "total_wars": 86,
@@ -28851,7 +28861,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T08:52:39.627Z",
-  "updated_at": "2026-08-30T09:50:42.608Z",
+  "updated_at": "2026-08-30T10:05:42.755Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -28891,20 +28901,8 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-08-30T09:50:15.627Z",
+  "last_evolved_at": "2026-08-30T10:04:39.627Z",
   "history": [
-    {
-      "year": 3706,
-      "type": "war",
-      "title": "新事件",
-      "description": "绿野镇与风语村爆发战争！"
-    },
-    {
-      "year": 3708,
-      "type": "event",
-      "title": "事件结束",
-      "description": "绿野镇迎来文化繁荣。 结束。"
-    },
     {
       "year": 3709,
       "type": "milestone",
@@ -31889,6 +31887,18 @@
     },
     {
       "year": 4104,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 千年"
+    },
+    {
+      "year": 4105,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 4105,
       "type": "milestone",
       "title": "里程碑",
       "description": "达成: 千年"
