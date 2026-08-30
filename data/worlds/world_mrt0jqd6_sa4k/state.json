@@ -2,7 +2,7 @@
   "world_id": "world_mrt0jqd6_sa4k",
   "name": "魔法",
   "era": "exploration",
-  "year": 4159,
+  "year": 4160,
   "civilization": {
     "antiquity": {
       "civ": "insectoids",
@@ -3810,13 +3810,13 @@
         "type": "luxury",
         "x": 52,
         "y": 36,
-        "amount": 11.599999999999998
+        "amount": 12.539999999999997
       },
       {
         "type": "food",
         "x": 34,
         "y": 31,
-        "amount": 68.93999999999993
+        "amount": 69.87999999999992
       },
       {
         "type": "wood",
@@ -3858,7 +3858,7 @@
         "wood": 30,
         "ore": 8,
         "water": 0,
-        "gold": 15141
+        "gold": 15149
       },
       "buildings": [],
       "specialization": "agriculture",
@@ -3895,7 +3895,7 @@
         "wood": 30,
         "ore": 8,
         "water": 0,
-        "gold": 14000
+        "gold": 14004
       },
       "buildings": [],
       "specialization": "agriculture",
@@ -3927,7 +3927,7 @@
       "stability": 0.6,
       "resources": {
         "food": 0,
-        "wood": 1787.6399999999555,
+        "wood": 1787.6999999999555,
         "ore": 5,
         "water": 0,
         "gold": 0
@@ -3953,7 +3953,7 @@
       "x": 20,
       "y": 6,
       "level": 4,
-      "population": 202,
+      "population": 201,
       "max_population": 1000,
       "tech_level": 6,
       "culture": 3120,
@@ -3962,7 +3962,7 @@
       "stability": 0.6,
       "resources": {
         "food": 0,
-        "wood": 1613.2799999999768,
+        "wood": 1614.2799999999768,
         "ore": 5,
         "water": 0,
         "gold": 0
@@ -3988,7 +3988,7 @@
       "x": 21,
       "y": 53,
       "level": 3,
-      "population": 72,
+      "population": 71,
       "max_population": 500,
       "tech_level": 5,
       "culture": 1630,
@@ -3998,7 +3998,7 @@
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 924,
+        "ore": 925,
         "water": 0,
         "gold": 0
       },
@@ -4026,7 +4026,7 @@
       "population": 1,
       "max_population": 500,
       "tech_level": 5,
-      "culture": 565.5,
+      "culture": 566,
       "influence": 0,
       "health": 0.7,
       "stability": 0.6,
@@ -4035,7 +4035,7 @@
         "wood": 20,
         "ore": 5,
         "water": 0,
-        "gold": 2193
+        "gold": 2201
       },
       "buildings": [],
       "specialization": "agriculture",
@@ -4061,7 +4061,7 @@
       "x": 52,
       "y": 28,
       "level": 3,
-      "population": 107,
+      "population": 106,
       "max_population": 500,
       "tech_level": 4,
       "culture": 710,
@@ -4070,10 +4070,10 @@
       "stability": 0.6,
       "resources": {
         "food": 0,
-        "wood": 408,
+        "wood": 409,
         "ore": 5,
         "water": 0,
-        "gold": 1052
+        "gold": 1056
       },
       "buildings": [],
       "specialization": "agriculture",
@@ -4114,9 +4114,9 @@
   ],
   "legacy": {
     "military": 38.800000000000274,
-    "economic": 273.7500000000165,
-    "cultural": 4145.599999999896,
-    "scientific": 2767.950000000058
+    "economic": 273.90000000001646,
+    "cultural": 4150.299999999896,
+    "scientific": 2769.000000000058
   },
   "milestones": [
     {
@@ -51153,10 +51153,30 @@
       "id": "year_1000",
       "name": "千年",
       "year": 4159
+    },
+    {
+      "id": "setts_3",
+      "name": "扩张",
+      "year": 4160
+    },
+    {
+      "id": "era_exploration",
+      "name": "远洋",
+      "year": 4160
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 4160
+    },
+    {
+      "id": "year_1000",
+      "name": "千年",
+      "year": 4160
     }
   ],
   "stats": {
-    "total_population": 385,
+    "total_population": 382,
     "total_settlements": 7,
     "extinct_settlements": 0,
     "total_wars": 56,
@@ -51165,7 +51185,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T09:19:32.922Z",
-  "updated_at": "2026-08-30T23:29:41.980Z",
+  "updated_at": "2026-08-30T23:43:42.435Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -51233,30 +51253,6 @@
   "creator": "HYClub",
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "history": [
-    {
-      "year": 4015,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 4015,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
-    {
-      "year": 4016,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 扩张"
-    },
-    {
-      "year": 4016,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 远洋"
-    },
     {
       "year": 4016,
       "type": "milestone",
@@ -54232,9 +54228,33 @@
       "type": "milestone",
       "title": "里程碑",
       "description": "达成: 千年"
+    },
+    {
+      "year": 4160,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 扩张"
+    },
+    {
+      "year": 4160,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 远洋"
+    },
+    {
+      "year": 4160,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 4160,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 千年"
     }
   ],
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-08-30T23:29:08.922Z"
+  "last_evolved_at": "2026-08-30T23:43:32.922Z"
 }
