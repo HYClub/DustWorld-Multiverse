@@ -2,7 +2,7 @@
   "world_id": "world_mrszl5je_9ju4",
   "name": "地球",
   "era": "antiquity",
-  "year": 4498,
+  "year": 4507,
   "civilization": {
     "antiquity": {
       "civ": "han",
@@ -3876,7 +3876,7 @@
       "x": 35,
       "y": 56,
       "level": 5,
-      "population": 202,
+      "population": 163,
       "max_population": 3000,
       "tech_level": 5,
       "culture": 21820,
@@ -3885,7 +3885,7 @@
       "stability": 0.7,
       "resources": {
         "food": 0,
-        "wood": 4544.4400000000005,
+        "wood": 4553.4400000000005,
         "ore": 8,
         "water": 0,
         "gold": 0
@@ -3909,7 +3909,7 @@
       "x": 6,
       "y": 5,
       "level": 3,
-      "population": 97,
+      "population": 88,
       "max_population": 500,
       "tech_level": 4,
       "culture": 5600,
@@ -3919,7 +3919,7 @@
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 2965.1999999999484,
+        "ore": 2974.1999999999484,
         "water": 0,
         "gold": 0
       },
@@ -3940,24 +3940,13 @@
       "id": "SET002"
     }
   ],
-  "active_events": [
-    {
-      "id": "EVT39066",
-      "type": "natural_disaster",
-      "participants": [
-        "SET001"
-      ],
-      "remaining_years": 6,
-      "duration": 4,
-      "description": "绿野镇遭受自然灾害。"
-    }
-  ],
+  "active_events": [],
   "trade_routes": [],
   "legacy": {
     "military": 68.40000000000049,
     "economic": 0,
-    "cultural": 13457.199999999944,
-    "scientific": 1235.3499999998892
+    "cultural": 13520.199999999944,
+    "scientific": 1238.4999999998884
   },
   "milestones": [
     {
@@ -30729,10 +30718,20 @@
       "id": "year_1000",
       "name": "千年",
       "year": 4498
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 4499
+    },
+    {
+      "id": "year_1000",
+      "name": "千年",
+      "year": 4499
     }
   ],
   "stats": {
-    "total_population": 299,
+    "total_population": 251,
     "total_settlements": 2,
     "extinct_settlements": 0,
     "total_wars": 116,
@@ -30741,7 +30740,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T08:52:39.627Z",
-  "updated_at": "2026-09-03T08:24:42.371Z",
+  "updated_at": "2026-09-03T10:37:43.054Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -30781,26 +30780,8 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-09-03T08:23:51.627Z",
+  "last_evolved_at": "2026-09-03T10:33:27.627Z",
   "history": [
-    {
-      "year": 4127,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 4127,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
-    {
-      "year": 4128,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
     {
       "year": 4128,
       "type": "milestone",
@@ -33782,6 +33763,24 @@
       "type": "milestone",
       "title": "里程碑",
       "description": "达成: 千年"
+    },
+    {
+      "year": 4499,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 4499,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 千年"
+    },
+    {
+      "year": 4504,
+      "type": "event",
+      "title": "事件结束",
+      "description": "绿野镇遭受自然灾害。 结束。"
     }
   ]
 }
