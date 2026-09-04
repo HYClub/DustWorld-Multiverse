@@ -2,7 +2,7 @@
   "world_id": "world_mrt0jqd6_sa4k",
   "name": "魔法",
   "era": "exploration",
-  "year": 4602,
+  "year": 4603,
   "civilization": {
     "antiquity": {
       "civ": "insectoids",
@@ -3816,13 +3816,13 @@
         "type": "food",
         "x": 34,
         "y": 31,
-        "amount": 75.32000000000001
+        "amount": 75.24000000000001
       },
       {
         "type": "wood",
         "x": 47,
         "y": 54,
-        "amount": 99.4
+        "amount": 99.46
       },
       {
         "type": "wood",
@@ -3858,7 +3858,7 @@
         "wood": 30,
         "ore": 8,
         "water": 0,
-        "gold": 18685
+        "gold": 18693
       },
       "buildings": [],
       "specialization": "agriculture",
@@ -3883,7 +3883,7 @@
       "x": 33,
       "y": 32,
       "level": 3,
-      "population": 18,
+      "population": 17,
       "max_population": 500,
       "tech_level": 5,
       "culture": 3310,
@@ -3895,7 +3895,7 @@
         "wood": 30,
         "ore": 8,
         "water": 0,
-        "gold": 15772
+        "gold": 15776
       },
       "buildings": [],
       "specialization": "agriculture",
@@ -3918,7 +3918,7 @@
       "x": 50,
       "y": 57,
       "level": 3,
-      "population": 9,
+      "population": 8,
       "max_population": 500,
       "tech_level": 5,
       "culture": 2750,
@@ -3927,7 +3927,7 @@
       "stability": 0.6,
       "resources": {
         "food": 0,
-        "wood": 1993.3199999999429,
+        "wood": 1993.8599999999428,
         "ore": 5,
         "water": 0,
         "gold": 0
@@ -3953,7 +3953,7 @@
       "x": 20,
       "y": 6,
       "level": 4,
-      "population": 378,
+      "population": 377,
       "max_population": 1000,
       "tech_level": 6,
       "culture": 4350,
@@ -3962,7 +3962,7 @@
       "stability": 0.6,
       "resources": {
         "food": 0,
-        "wood": 2056.279999999977,
+        "wood": 2057.279999999977,
         "ore": 5,
         "water": 0,
         "gold": 0
@@ -3988,7 +3988,7 @@
       "x": 21,
       "y": 53,
       "level": 3,
-      "population": 169,
+      "population": 168,
       "max_population": 500,
       "tech_level": 5,
       "culture": 2220,
@@ -3998,7 +3998,7 @@
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 1218.6399999999853,
+        "ore": 1219.6399999999853,
         "water": 0,
         "gold": 0
       },
@@ -4023,10 +4023,10 @@
       "x": 49,
       "y": 39,
       "level": 3,
-      "population": 61,
+      "population": 60,
       "max_population": 500,
       "tech_level": 5,
-      "culture": 1607,
+      "culture": 1607.5,
       "influence": 0,
       "health": 0.7,
       "stability": 0.6,
@@ -4035,7 +4035,7 @@
         "wood": 20,
         "ore": 5,
         "water": 0,
-        "gold": 5737
+        "gold": 5745
       },
       "buildings": [],
       "specialization": "agriculture",
@@ -4061,19 +4061,19 @@
       "x": 52,
       "y": 28,
       "level": 4,
-      "population": 477,
+      "population": 526,
       "max_population": 1000,
       "tech_level": 4,
-      "culture": 2120,
+      "culture": 2220,
       "influence": 0,
       "health": 0.7,
       "stability": 0.6,
       "resources": {
         "food": 0,
-        "wood": 850.9999999999943,
+        "wood": 851.9999999999943,
         "ore": 5,
         "water": 0,
-        "gold": 2824
+        "gold": 2828
       },
       "buildings": [],
       "specialization": "agriculture",
@@ -4101,7 +4101,17 @@
       "participants": [
         "SET007"
       ],
-      "remaining_years": 2,
+      "remaining_years": 1,
+      "duration": 9,
+      "description": "王国都进入黄金时代！"
+    },
+    {
+      "id": "EVT57365",
+      "type": "golden_age",
+      "participants": [
+        "SET007"
+      ],
+      "remaining_years": 3,
       "duration": 9,
       "description": "王国都进入黄金时代！"
     },
@@ -4131,17 +4141,7 @@
       "participants": [
         "SET007"
       ],
-      "remaining_years": 6,
-      "duration": 9,
-      "description": "王国都进入黄金时代！"
-    },
-    {
-      "id": "EVT57365",
-      "type": "golden_age",
-      "participants": [
-        "SET007"
-      ],
-      "remaining_years": 9,
+      "remaining_years": 8,
       "duration": 9,
       "description": "王国都进入黄金时代！"
     }
@@ -4165,9 +4165,9 @@
   ],
   "legacy": {
     "military": 45.100000000000364,
-    "economic": 340.2000000000064,
-    "cultural": 6410.599999999948,
-    "scientific": 3233.1000000001386
+    "economic": 340.3500000000064,
+    "cultural": 6417.399999999948,
+    "scientific": 3234.150000000139
   },
   "milestones": [
     {
@@ -54479,10 +54479,35 @@
       "id": "year_1000",
       "name": "千年",
       "year": 4602
+    },
+    {
+      "id": "pop_1000",
+      "name": "繁荣",
+      "year": 4603
+    },
+    {
+      "id": "setts_3",
+      "name": "扩张",
+      "year": 4603
+    },
+    {
+      "id": "era_exploration",
+      "name": "远洋",
+      "year": 4603
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 4603
+    },
+    {
+      "id": "year_1000",
+      "name": "千年",
+      "year": 4603
     }
   ],
   "stats": {
-    "total_population": 1113,
+    "total_population": 1157,
     "total_settlements": 7,
     "extinct_settlements": 0,
     "total_wars": 73,
@@ -54491,7 +54516,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T09:19:32.922Z",
-  "updated_at": "2026-09-04T09:48:31.053Z",
+  "updated_at": "2026-09-04T10:03:29.301Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -54559,36 +54584,6 @@
   "creator": "HYClub",
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "history": [
-    {
-      "year": 4325,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 扩张"
-    },
-    {
-      "year": 4325,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 远洋"
-    },
-    {
-      "year": 4325,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 4325,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
-    {
-      "year": 4326,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 扩张"
-    },
     {
       "year": 4326,
       "type": "milestone",
@@ -57558,9 +57553,39 @@
       "type": "milestone",
       "title": "里程碑",
       "description": "达成: 千年"
+    },
+    {
+      "year": 4603,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 繁荣"
+    },
+    {
+      "year": 4603,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 扩张"
+    },
+    {
+      "year": 4603,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 远洋"
+    },
+    {
+      "year": 4603,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 4603,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 千年"
     }
   ],
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-09-04T09:48:20.922Z"
+  "last_evolved_at": "2026-09-04T10:02:44.922Z"
 }
