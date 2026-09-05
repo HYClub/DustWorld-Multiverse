@@ -2,7 +2,7 @@
   "world_id": "world_mrszl5je_9ju4",
   "name": "地球",
   "era": "antiquity",
-  "year": 4702,
+  "year": 4710,
   "civilization": {
     "antiquity": {
       "civ": "han",
@@ -3876,16 +3876,16 @@
       "x": 35,
       "y": 56,
       "level": 5,
-      "population": 180,
+      "population": 184,
       "max_population": 3000,
       "tech_level": 5,
-      "culture": 22550,
+      "culture": 22600,
       "influence": 0,
       "health": 0.8,
       "stability": 0.7,
       "resources": {
         "food": 0,
-        "wood": 4748.4400000000005,
+        "wood": 4756.4400000000005,
         "ore": 8,
         "water": 0,
         "gold": 0
@@ -3909,7 +3909,7 @@
       "x": 6,
       "y": 5,
       "level": 3,
-      "population": 296,
+      "population": 288,
       "max_population": 500,
       "tech_level": 4,
       "culture": 6840,
@@ -3919,7 +3919,7 @@
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 3169.1999999999484,
+        "ore": 3177.1999999999484,
         "water": 0,
         "gold": 0
       },
@@ -3942,22 +3942,32 @@
   ],
   "active_events": [
     {
-      "id": "EVT39066",
-      "type": "natural_disaster",
+      "id": "EVT76528",
+      "type": "cultural_boom",
       "participants": [
         "SET001"
       ],
-      "remaining_years": 3,
-      "duration": 4,
-      "description": "绿野镇遭受自然灾害。"
+      "remaining_years": 1,
+      "duration": 8,
+      "description": "绿野镇迎来文化繁荣。"
+    },
+    {
+      "id": "EVT37988",
+      "type": "plague",
+      "participants": [
+        "SET001"
+      ],
+      "remaining_years": 7,
+      "duration": 9,
+      "description": "绿野镇爆发瘟疫。"
     }
   ],
   "trade_routes": [],
   "legacy": {
     "military": 77.20000000000029,
     "economic": 0,
-    "cultural": 14929.499999999898,
-    "scientific": 1306.7499999998706
+    "cultural": 14990.299999999901,
+    "scientific": 1309.54999999987
   },
   "milestones": [
     {
@@ -31369,10 +31379,20 @@
       "id": "year_1000",
       "name": "千年",
       "year": 4702
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 4703
+    },
+    {
+      "id": "year_1000",
+      "name": "千年",
+      "year": 4703
     }
   ],
   "stats": {
-    "total_population": 476,
+    "total_population": 472,
     "total_settlements": 2,
     "extinct_settlements": 0,
     "total_wars": 132,
@@ -31381,7 +31401,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T08:52:39.627Z",
-  "updated_at": "2026-09-05T09:21:31.480Z",
+  "updated_at": "2026-09-05T11:19:31.317Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -31421,38 +31441,8 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-09-05T09:21:27.627Z",
+  "last_evolved_at": "2026-09-05T11:16:39.627Z",
   "history": [
-    {
-      "year": 4264,
-      "type": "war",
-      "title": "新事件",
-      "description": "风语村与绿野镇爆发战争！"
-    },
-    {
-      "year": 4265,
-      "type": "war",
-      "title": "新事件",
-      "description": "风语村与绿野镇爆发战争！"
-    },
-    {
-      "year": 4268,
-      "type": "event",
-      "title": "事件结束",
-      "description": "风语村与绿野镇爆发战争！ 结束。"
-    },
-    {
-      "year": 4268,
-      "type": "natural_disaster",
-      "title": "新事件",
-      "description": "风语村遭受自然灾害。"
-    },
-    {
-      "year": 4269,
-      "type": "event",
-      "title": "事件结束",
-      "description": "绿野镇迎来文化繁荣。 结束。"
-    },
     {
       "year": 4269,
       "type": "cultural_boom",
@@ -34422,6 +34412,36 @@
       "type": "milestone",
       "title": "里程碑",
       "description": "达成: 千年"
+    },
+    {
+      "year": 4703,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 4703,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 千年"
+    },
+    {
+      "year": 4705,
+      "type": "event",
+      "title": "事件结束",
+      "description": "绿野镇遭受自然灾害。 结束。"
+    },
+    {
+      "year": 4705,
+      "type": "cultural_boom",
+      "title": "新事件",
+      "description": "绿野镇迎来文化繁荣。"
+    },
+    {
+      "year": 4707,
+      "type": "plague",
+      "title": "新事件",
+      "description": "绿野镇爆发瘟疫。"
     }
   ]
 }
