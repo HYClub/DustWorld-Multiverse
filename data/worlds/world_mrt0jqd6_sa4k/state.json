@@ -2,7 +2,7 @@
   "world_id": "world_mrt0jqd6_sa4k",
   "name": "魔法",
   "era": "exploration",
-  "year": 4899,
+  "year": 4900,
   "civilization": {
     "antiquity": {
       "civ": "insectoids",
@@ -3780,7 +3780,7 @@
         "type": "food",
         "x": 43,
         "y": 41,
-        "amount": 97.24000000000001
+        "amount": 97.16000000000001
       },
       {
         "type": "wood",
@@ -3810,13 +3810,13 @@
         "type": "luxury",
         "x": 52,
         "y": 36,
-        "amount": 14.940000000000007
+        "amount": 12.400000000000006
       },
       {
         "type": "food",
         "x": 34,
         "y": 31,
-        "amount": 77.06
+        "amount": 77.7
       },
       {
         "type": "wood",
@@ -3846,7 +3846,7 @@
       "x": 44,
       "y": 41,
       "level": 3,
-      "population": 18,
+      "population": 17,
       "max_population": 500,
       "tech_level": 5,
       "culture": 4180,
@@ -3858,7 +3858,7 @@
         "wood": 30,
         "ore": 8,
         "water": 0,
-        "gold": 21061
+        "gold": 21069
       },
       "buildings": [],
       "specialization": "agriculture",
@@ -3883,7 +3883,7 @@
       "x": 33,
       "y": 32,
       "level": 3,
-      "population": 6,
+      "population": 5,
       "max_population": 500,
       "tech_level": 5,
       "culture": 3490,
@@ -3895,7 +3895,7 @@
         "wood": 30,
         "ore": 8,
         "water": 0,
-        "gold": 16960
+        "gold": 16964
       },
       "buildings": [],
       "specialization": "agriculture",
@@ -3927,7 +3927,7 @@
       "stability": 0.6,
       "resources": {
         "food": 0,
-        "wood": 2061.83999999993,
+        "wood": 2061.89999999993,
         "ore": 5,
         "water": 0,
         "gold": 0
@@ -3953,7 +3953,7 @@
       "x": 20,
       "y": 6,
       "level": 4,
-      "population": 188,
+      "population": 187,
       "max_population": 1000,
       "tech_level": 6,
       "culture": 4820,
@@ -3962,7 +3962,7 @@
       "stability": 0.6,
       "resources": {
         "food": 0,
-        "wood": 2353.279999999977,
+        "wood": 2354.279999999977,
         "ore": 5,
         "water": 0,
         "gold": 0
@@ -3988,7 +3988,7 @@
       "x": 21,
       "y": 53,
       "level": 3,
-      "population": 268,
+      "population": 267,
       "max_population": 500,
       "tech_level": 5,
       "culture": 3120,
@@ -3998,7 +3998,7 @@
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 1515.6399999999853,
+        "ore": 1516.6399999999853,
         "water": 0,
         "gold": 0
       },
@@ -4023,10 +4023,10 @@
       "x": 49,
       "y": 39,
       "level": 3,
-      "population": 59,
+      "population": 58,
       "max_population": 500,
       "tech_level": 5,
-      "culture": 2025.5,
+      "culture": 2026,
       "influence": 0,
       "health": 0.7,
       "stability": 0.6,
@@ -4035,7 +4035,7 @@
         "wood": 20,
         "ore": 5,
         "water": 0,
-        "gold": 8401
+        "gold": 8410
       },
       "buildings": [],
       "specialization": "agriculture",
@@ -4061,7 +4061,7 @@
       "x": 52,
       "y": 28,
       "level": 5,
-      "population": 415,
+      "population": 414,
       "max_population": 3000,
       "tech_level": 5,
       "culture": 3090,
@@ -4070,10 +4070,10 @@
       "stability": 0.6,
       "resources": {
         "food": 0,
-        "wood": 1147.9999999999943,
+        "wood": 1148.9999999999943,
         "ore": 5,
         "water": 0,
-        "gold": 4300
+        "gold": 4305
       },
       "buildings": [],
       "specialization": "agriculture",
@@ -4114,9 +4114,9 @@
   ],
   "legacy": {
     "military": 49.70000000000043,
-    "economic": 384.74999999999966,
-    "cultural": 8569.29999999993,
-    "scientific": 3545.950000000187
+    "economic": 384.89999999999964,
+    "cultural": 8577.19999999993,
+    "scientific": 3547.050000000187
   },
   "milestones": [
     {
@@ -56303,10 +56303,30 @@
       "id": "year_1000",
       "name": "千年",
       "year": 4899
+    },
+    {
+      "id": "setts_3",
+      "name": "扩张",
+      "year": 4900
+    },
+    {
+      "id": "era_exploration",
+      "name": "远洋",
+      "year": 4900
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 4900
+    },
+    {
+      "id": "year_1000",
+      "name": "千年",
+      "year": 4900
     }
   ],
   "stats": {
-    "total_population": 955,
+    "total_population": 949,
     "total_settlements": 7,
     "extinct_settlements": 0,
     "total_wars": 86,
@@ -56315,7 +56335,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T09:19:32.922Z",
-  "updated_at": "2026-09-07T09:05:30.974Z",
+  "updated_at": "2026-09-07T09:20:35.300Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -56383,30 +56403,6 @@
   "creator": "HYClub",
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "history": [
-    {
-      "year": 4604,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 4604,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
-    {
-      "year": 4605,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 繁荣"
-    },
-    {
-      "year": 4605,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 扩张"
-    },
     {
       "year": 4605,
       "type": "milestone",
@@ -59382,9 +59378,33 @@
       "type": "milestone",
       "title": "里程碑",
       "description": "达成: 千年"
+    },
+    {
+      "year": 4900,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 扩张"
+    },
+    {
+      "year": 4900,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 远洋"
+    },
+    {
+      "year": 4900,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 4900,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 千年"
     }
   ],
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-09-07T09:05:08.922Z"
+  "last_evolved_at": "2026-09-07T09:19:32.922Z"
 }
