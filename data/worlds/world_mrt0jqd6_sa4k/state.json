@@ -2,7 +2,7 @@
   "world_id": "world_mrt0jqd6_sa4k",
   "name": "魔法",
   "era": "exploration",
-  "year": 5021,
+  "year": 5030,
   "civilization": {
     "antiquity": {
       "civ": "insectoids",
@@ -3780,7 +3780,7 @@
         "type": "food",
         "x": 43,
         "y": 41,
-        "amount": 55.83999999999998
+        "amount": 48.639999999999986
       },
       {
         "type": "wood",
@@ -3810,7 +3810,7 @@
         "type": "luxury",
         "x": 52,
         "y": 36,
-        "amount": 27.099999999999987
+        "amount": 24.759999999999987
       },
       {
         "type": "food",
@@ -3846,7 +3846,7 @@
       "x": 44,
       "y": 41,
       "level": 3,
-      "population": 34,
+      "population": 25,
       "max_population": 500,
       "tech_level": 5,
       "culture": 4430,
@@ -3858,7 +3858,7 @@
         "wood": 30,
         "ore": 8,
         "water": 0,
-        "gold": 22037
+        "gold": 22109
       },
       "buildings": [],
       "specialization": "agriculture",
@@ -3895,7 +3895,7 @@
         "wood": 30,
         "ore": 8,
         "water": 0,
-        "gold": 17448
+        "gold": 17484
       },
       "buildings": [],
       "specialization": "agriculture",
@@ -3927,7 +3927,7 @@
       "stability": 0.6,
       "resources": {
         "food": 0,
-        "wood": 2117.6999999999252,
+        "wood": 2118.2399999999247,
         "ore": 5,
         "water": 0,
         "gold": 0
@@ -3953,16 +3953,16 @@
       "x": 20,
       "y": 6,
       "level": 4,
-      "population": 143,
+      "population": 162,
       "max_population": 1000,
       "tech_level": 6,
-      "culture": 4950,
+      "culture": 5000,
       "influence": 0,
       "health": 0.7,
       "stability": 0.6,
       "resources": {
         "food": 0,
-        "wood": 2475.279999999977,
+        "wood": 2484.279999999977,
         "ore": 5,
         "water": 0,
         "gold": 0
@@ -3988,7 +3988,7 @@
       "x": 21,
       "y": 53,
       "level": 3,
-      "population": 198,
+      "population": 189,
       "max_population": 500,
       "tech_level": 5,
       "culture": 3280,
@@ -3998,7 +3998,7 @@
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 1637.6399999999853,
+        "ore": 1646.6399999999853,
         "water": 0,
         "gold": 0
       },
@@ -4023,10 +4023,10 @@
       "x": 49,
       "y": 39,
       "level": 3,
-      "population": 25,
+      "population": 16,
       "max_population": 500,
       "tech_level": 5,
-      "culture": 2196.5,
+      "culture": 2201,
       "influence": 0,
       "health": 0.7,
       "stability": 0.6,
@@ -4035,7 +4035,7 @@
         "wood": 20,
         "ore": 5,
         "water": 0,
-        "gold": 9499
+        "gold": 9580
       },
       "buildings": [],
       "specialization": "agriculture",
@@ -4061,19 +4061,19 @@
       "x": 52,
       "y": 28,
       "level": 5,
-      "population": 311,
+      "population": 351,
       "max_population": 3000,
       "tech_level": 6,
-      "culture": 3170,
+      "culture": 3270,
       "influence": 0,
       "health": 0.7,
       "stability": 0.6,
       "resources": {
         "food": 0,
-        "wood": 1269.9999999999943,
+        "wood": 1278.9999999999943,
         "ore": 5,
         "water": 0,
-        "gold": 4910
+        "gold": 4955
       },
       "buildings": [],
       "specialization": "agriculture",
@@ -4096,25 +4096,14 @@
   ],
   "active_events": [
     {
-      "id": "EVT11200",
-      "type": "golden_age",
+      "id": "EVT13939",
+      "type": "cultural_boom",
       "participants": [
-        "SET007"
+        "SET004"
       ],
-      "remaining_years": 6,
-      "duration": 4,
-      "description": "王国都进入黄金时代！"
-    },
-    {
-      "id": "EVT20239",
-      "type": "war",
-      "participants": [
-        "SET007",
-        "SET005"
-      ],
-      "remaining_years": 5,
-      "duration": 6,
-      "description": "王国都与新大陆爆发战争！"
+      "remaining_years": 4,
+      "duration": 5,
+      "description": "贸易站迎来文化繁荣。"
     }
   ],
   "trade_routes": [
@@ -4135,10 +4124,10 @@
     }
   ],
   "legacy": {
-    "military": 51.600000000000456,
-    "economic": 403.0499999999969,
-    "cultural": 9558.89999999995,
-    "scientific": 3682.7000000001854
+    "military": 52.00000000000046,
+    "economic": 404.3999999999967,
+    "cultural": 9634.499999999947,
+    "scientific": 3693.050000000186
   },
   "milestones": [
     {
@@ -56965,10 +56954,30 @@
       "id": "year_1000",
       "name": "千年",
       "year": 5021
+    },
+    {
+      "id": "setts_3",
+      "name": "扩张",
+      "year": 5022
+    },
+    {
+      "id": "era_exploration",
+      "name": "远洋",
+      "year": 5022
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 5022
+    },
+    {
+      "id": "year_1000",
+      "name": "千年",
+      "year": 5022
     }
   ],
   "stats": {
-    "total_population": 713,
+    "total_population": 745,
     "total_settlements": 7,
     "extinct_settlements": 0,
     "total_wars": 90,
@@ -56977,7 +56986,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T09:19:32.922Z",
-  "updated_at": "2026-09-08T14:22:31.142Z",
+  "updated_at": "2026-09-08T16:34:40.658Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -57045,48 +57054,6 @@
   "creator": "HYClub",
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "history": [
-    {
-      "year": 4685,
-      "type": "plague",
-      "title": "新事件",
-      "description": "风语村爆发瘟疫。"
-    },
-    {
-      "year": 4686,
-      "type": "natural_disaster",
-      "title": "新事件",
-      "description": "风语村遭受自然灾害。"
-    },
-    {
-      "year": 4689,
-      "type": "event",
-      "title": "事件结束",
-      "description": "风语村爆发瘟疫。 结束。"
-    },
-    {
-      "year": 4689,
-      "type": "event",
-      "title": "事件结束",
-      "description": "风语村遭受自然灾害。 结束。"
-    },
-    {
-      "year": 4689,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 繁荣"
-    },
-    {
-      "year": 4689,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 扩张"
-    },
-    {
-      "year": 4689,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 远洋"
-    },
     {
       "year": 4689,
       "type": "milestone",
@@ -60044,9 +60011,51 @@
       "type": "milestone",
       "title": "里程碑",
       "description": "达成: 千年"
+    },
+    {
+      "year": 5022,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 扩张"
+    },
+    {
+      "year": 5022,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 远洋"
+    },
+    {
+      "year": 5022,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 5022,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 千年"
+    },
+    {
+      "year": 5025,
+      "type": "cultural_boom",
+      "title": "新事件",
+      "description": "贸易站迎来文化繁荣。"
+    },
+    {
+      "year": 5026,
+      "type": "event",
+      "title": "事件结束",
+      "description": "王国都与新大陆爆发战争！ 结束。"
+    },
+    {
+      "year": 5027,
+      "type": "event",
+      "title": "事件结束",
+      "description": "王国都进入黄金时代！ 结束。"
     }
   ],
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-09-08T14:21:56.922Z"
+  "last_evolved_at": "2026-09-08T16:31:32.922Z"
 }
