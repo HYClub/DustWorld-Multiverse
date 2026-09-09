@@ -2,7 +2,7 @@
   "world_id": "world_mrt0jqd6_sa4k",
   "name": "魔法",
   "era": "exploration",
-  "year": 5077,
+  "year": 5078,
   "civilization": {
     "antiquity": {
       "civ": "insectoids",
@@ -3780,7 +3780,7 @@
         "type": "food",
         "x": 43,
         "y": 41,
-        "amount": 13.44
+        "amount": 11.92
       },
       {
         "type": "wood",
@@ -3846,7 +3846,7 @@
       "x": 44,
       "y": 41,
       "level": 3,
-      "population": 42,
+      "population": 41,
       "max_population": 500,
       "tech_level": 5,
       "culture": 4560,
@@ -3858,7 +3858,7 @@
         "wood": 30,
         "ore": 8,
         "water": 0,
-        "gold": 22485
+        "gold": 22493
       },
       "buildings": [],
       "specialization": "agriculture",
@@ -3895,7 +3895,7 @@
         "wood": 30,
         "ore": 8,
         "water": 0,
-        "gold": 17672
+        "gold": 17676
       },
       "buildings": [],
       "specialization": "agriculture",
@@ -3927,7 +3927,7 @@
       "stability": 0.6,
       "resources": {
         "food": 0,
-        "wood": 2121.059999999922,
+        "wood": 2121.119999999922,
         "ore": 5,
         "water": 0,
         "gold": 0
@@ -3953,7 +3953,7 @@
       "x": 20,
       "y": 6,
       "level": 4,
-      "population": 195,
+      "population": 194,
       "max_population": 1000,
       "tech_level": 6,
       "culture": 5160,
@@ -3962,7 +3962,7 @@
       "stability": 0.6,
       "resources": {
         "food": 0,
-        "wood": 2531.279999999977,
+        "wood": 2532.279999999977,
         "ore": 5,
         "water": 0,
         "gold": 0
@@ -3988,7 +3988,7 @@
       "x": 21,
       "y": 53,
       "level": 3,
-      "population": 142,
+      "population": 141,
       "max_population": 500,
       "tech_level": 5,
       "culture": 3280,
@@ -3998,7 +3998,7 @@
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 1693.6399999999853,
+        "ore": 1694.6399999999853,
         "water": 0,
         "gold": 0
       },
@@ -4023,10 +4023,10 @@
       "x": 49,
       "y": 39,
       "level": 3,
-      "population": 42,
+      "population": 41,
       "max_population": 500,
       "tech_level": 5,
-      "culture": 2374.5,
+      "culture": 2375,
       "influence": 0,
       "health": 0.7,
       "stability": 0.6,
@@ -4035,7 +4035,7 @@
         "wood": 20,
         "ore": 5,
         "water": 0,
-        "gold": 10003
+        "gold": 10012
       },
       "buildings": [],
       "specialization": "agriculture",
@@ -4061,7 +4061,7 @@
       "x": 52,
       "y": 28,
       "level": 5,
-      "population": 304,
+      "population": 303,
       "max_population": 3000,
       "tech_level": 6,
       "culture": 3270,
@@ -4070,10 +4070,10 @@
       "stability": 0.6,
       "resources": {
         "food": 0,
-        "wood": 1325.9999999999943,
+        "wood": 1326.9999999999943,
         "ore": 5,
         "water": 0,
-        "gold": 5190
+        "gold": 5195
       },
       "buildings": [],
       "specialization": "agriculture",
@@ -4094,7 +4094,18 @@
       "id": "SET007"
     }
   ],
-  "active_events": [],
+  "active_events": [
+    {
+      "id": "EVT96710",
+      "type": "natural_disaster",
+      "participants": [
+        "SET006"
+      ],
+      "remaining_years": 3,
+      "duration": 10,
+      "description": "要塞镇遭受自然灾害。"
+    }
+  ],
   "trade_routes": [
     {
       "from": "SET001",
@@ -4114,9 +4125,9 @@
   ],
   "legacy": {
     "military": 52.70000000000047,
-    "economic": 411.4499999999956,
-    "cultural": 10035.399999999952,
-    "scientific": 3747.1000000001904
+    "economic": 411.5999999999956,
+    "cultural": 10043.999999999953,
+    "scientific": 3748.2500000001905
   },
   "milestones": [
     {
@@ -57243,10 +57254,30 @@
       "id": "year_1000",
       "name": "千年",
       "year": 5072
+    },
+    {
+      "id": "setts_3",
+      "name": "扩张",
+      "year": 5078
+    },
+    {
+      "id": "era_exploration",
+      "name": "远洋",
+      "year": 5078
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 5078
+    },
+    {
+      "id": "year_1000",
+      "name": "千年",
+      "year": 5078
     }
   ],
   "stats": {
-    "total_population": 727,
+    "total_population": 722,
     "total_settlements": 7,
     "extinct_settlements": 0,
     "total_wars": 91,
@@ -57255,7 +57286,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T09:19:32.922Z",
-  "updated_at": "2026-09-09T03:53:33.007Z",
+  "updated_at": "2026-09-09T04:03:30.239Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -57323,36 +57354,6 @@
   "creator": "HYClub",
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "history": [
-    {
-      "year": 4742,
-      "type": "golden_age",
-      "title": "新事件",
-      "description": "新大陆进入黄金时代！"
-    },
-    {
-      "year": 4743,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 扩张"
-    },
-    {
-      "year": 4743,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 远洋"
-    },
-    {
-      "year": 4743,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 4743,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
     {
       "year": 4744,
       "type": "milestone",
@@ -60322,9 +60323,39 @@
       "type": "event",
       "title": "事件结束",
       "description": "碧水镇迎来文化繁荣。 结束。"
+    },
+    {
+      "year": 5078,
+      "type": "natural_disaster",
+      "title": "新事件",
+      "description": "要塞镇遭受自然灾害。"
+    },
+    {
+      "year": 5078,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 扩张"
+    },
+    {
+      "year": 5078,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 远洋"
+    },
+    {
+      "year": 5078,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 5078,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 千年"
     }
   ],
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-09-09T03:48:20.922Z"
+  "last_evolved_at": "2026-09-09T04:02:44.922Z"
 }
