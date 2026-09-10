@@ -2,7 +2,7 @@
   "world_id": "world_mrt0jqd6_sa4k",
   "name": "魔法",
   "era": "exploration",
-  "year": 5196,
+  "year": 5204,
   "civilization": {
     "antiquity": {
       "civ": "insectoids",
@@ -3792,7 +3792,7 @@
         "type": "ore",
         "x": 20,
         "y": 50,
-        "amount": 0
+        "amount": 0.040000000000000036
       },
       {
         "type": "ore",
@@ -3822,7 +3822,7 @@
         "type": "wood",
         "x": 47,
         "y": 54,
-        "amount": 99.64
+        "amount": 99.94
       },
       {
         "type": "wood",
@@ -3846,7 +3846,7 @@
       "x": 44,
       "y": 41,
       "level": 3,
-      "population": 87,
+      "population": 79,
       "max_population": 500,
       "tech_level": 5,
       "culture": 4900,
@@ -3858,7 +3858,7 @@
         "wood": 30,
         "ore": 8,
         "water": 0,
-        "gold": 23437
+        "gold": 23501
       },
       "buildings": [],
       "specialization": "agriculture",
@@ -3895,7 +3895,7 @@
         "wood": 30,
         "ore": 8,
         "water": 0,
-        "gold": 18148
+        "gold": 18180
       },
       "buildings": [],
       "specialization": "agriculture",
@@ -3918,7 +3918,7 @@
       "x": 50,
       "y": 57,
       "level": 3,
-      "population": 5,
+      "population": 1,
       "max_population": 500,
       "tech_level": 5,
       "culture": 3040,
@@ -3927,7 +3927,7 @@
       "stability": 0.6,
       "resources": {
         "food": 0,
-        "wood": 2134.739999999916,
+        "wood": 2135.8199999999156,
         "ore": 5,
         "water": 0,
         "gold": 0
@@ -3953,7 +3953,7 @@
       "x": 20,
       "y": 6,
       "level": 4,
-      "population": 179,
+      "population": 162,
       "max_population": 1000,
       "tech_level": 6,
       "culture": 5360,
@@ -3962,7 +3962,7 @@
       "stability": 0.6,
       "resources": {
         "food": 0,
-        "wood": 2650.279999999977,
+        "wood": 2658.279999999977,
         "ore": 5,
         "water": 0,
         "gold": 0
@@ -3988,7 +3988,7 @@
       "x": 21,
       "y": 53,
       "level": 3,
-      "population": 23,
+      "population": 15,
       "max_population": 500,
       "tech_level": 5,
       "culture": 3280,
@@ -3998,7 +3998,7 @@
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 1812.6399999999853,
+        "ore": 1820.5999999999854,
         "water": 0,
         "gold": 0
       },
@@ -4023,10 +4023,10 @@
       "x": 49,
       "y": 39,
       "level": 3,
-      "population": 108,
+      "population": 109,
       "max_population": 500,
       "tech_level": 5,
-      "culture": 2794,
+      "culture": 2818,
       "influence": 0,
       "health": 0.7,
       "stability": 0.6,
@@ -4035,7 +4035,7 @@
         "wood": 20,
         "ore": 5,
         "water": 0,
-        "gold": 11074
+        "gold": 11146
       },
       "buildings": [],
       "specialization": "agriculture",
@@ -4061,7 +4061,7 @@
       "x": 52,
       "y": 28,
       "level": 5,
-      "population": 412,
+      "population": 380,
       "max_population": 3000,
       "tech_level": 6,
       "culture": 3770,
@@ -4070,10 +4070,10 @@
       "stability": 0.6,
       "resources": {
         "food": 0,
-        "wood": 1444.9999999999943,
+        "wood": 1452.9999999999943,
         "ore": 5,
         "water": 0,
-        "gold": 5785
+        "gold": 5825
       },
       "buildings": [],
       "specialization": "agriculture",
@@ -4096,34 +4096,24 @@
   ],
   "active_events": [
     {
-      "id": "EVT12123",
-      "type": "cultural_boom",
-      "participants": [
-        "SET006"
-      ],
-      "remaining_years": 3,
-      "duration": 5,
-      "description": "要塞镇迎来文化繁荣。"
-    },
-    {
-      "id": "EVT63616",
+      "id": "EVT64961",
       "type": "natural_disaster",
       "participants": [
-        "SET004"
+        "SET007"
       ],
       "remaining_years": 3,
-      "duration": 6,
-      "description": "贸易站遭受自然灾害。"
+      "duration": 10,
+      "description": "王国都遭受自然灾害。"
     },
     {
-      "id": "EVT64860",
-      "type": "plague",
+      "id": "EVT180",
+      "type": "natural_disaster",
       "participants": [
-        "SET004"
+        "SET003"
       ],
-      "remaining_years": 7,
-      "duration": 4,
-      "description": "贸易站爆发瘟疫。"
+      "remaining_years": 8,
+      "duration": 9,
+      "description": "风语村遭受自然灾害。"
     }
   ],
   "trade_routes": [
@@ -4145,9 +4135,9 @@
   ],
   "legacy": {
     "military": 53.80000000000049,
-    "economic": 429.2999999999929,
-    "cultural": 11089.199999999953,
-    "scientific": 3883.9500000002013
+    "economic": 430.4999999999927,
+    "cultural": 11162.79999999996,
+    "scientific": 3893.150000000202
   },
   "milestones": [
     {
@@ -57834,10 +57824,30 @@
       "id": "year_1000",
       "name": "千年",
       "year": 5187
+    },
+    {
+      "id": "setts_3",
+      "name": "扩张",
+      "year": 5197
+    },
+    {
+      "id": "era_exploration",
+      "name": "远洋",
+      "year": 5197
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 5197
+    },
+    {
+      "id": "year_1000",
+      "name": "千年",
+      "year": 5197
     }
   ],
   "stats": {
-    "total_population": 815,
+    "total_population": 747,
     "total_settlements": 7,
     "extinct_settlements": 0,
     "total_wars": 93,
@@ -57846,7 +57856,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T09:19:32.922Z",
-  "updated_at": "2026-09-10T10:30:02.817Z",
+  "updated_at": "2026-09-10T10:30:05.221Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -57914,60 +57924,6 @@
   "creator": "HYClub",
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "history": [
-    {
-      "year": 4855,
-      "type": "event",
-      "title": "事件结束",
-      "description": "碧水镇迎来文化繁荣。 结束。"
-    },
-    {
-      "year": 4855,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 扩张"
-    },
-    {
-      "year": 4855,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 远洋"
-    },
-    {
-      "year": 4855,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 4855,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
-    {
-      "year": 4858,
-      "type": "cultural_boom",
-      "title": "新事件",
-      "description": "贸易站迎来文化繁荣。"
-    },
-    {
-      "year": 4859,
-      "type": "event",
-      "title": "事件结束",
-      "description": "贸易站迎来文化繁荣。 结束。"
-    },
-    {
-      "year": 4860,
-      "type": "cultural_boom",
-      "title": "新事件",
-      "description": "要塞镇迎来文化繁荣。"
-    },
-    {
-      "year": 4861,
-      "type": "cultural_boom",
-      "title": "新事件",
-      "description": "贸易站迎来文化繁荣。"
-    },
     {
       "year": 4863,
       "type": "cultural_boom",
@@ -60913,9 +60869,63 @@
       "type": "event",
       "title": "事件结束",
       "description": "王国都进入黄金时代！ 结束。"
+    },
+    {
+      "year": 5197,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 扩张"
+    },
+    {
+      "year": 5197,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 远洋"
+    },
+    {
+      "year": 5197,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 5197,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 千年"
+    },
+    {
+      "year": 5199,
+      "type": "event",
+      "title": "事件结束",
+      "description": "要塞镇迎来文化繁荣。 结束。"
+    },
+    {
+      "year": 5199,
+      "type": "event",
+      "title": "事件结束",
+      "description": "贸易站遭受自然灾害。 结束。"
+    },
+    {
+      "year": 5200,
+      "type": "natural_disaster",
+      "title": "新事件",
+      "description": "王国都遭受自然灾害。"
+    },
+    {
+      "year": 5203,
+      "type": "event",
+      "title": "事件结束",
+      "description": "贸易站爆发瘟疫。 结束。"
+    },
+    {
+      "year": 5203,
+      "type": "natural_disaster",
+      "title": "新事件",
+      "description": "风语村遭受自然灾害。"
     }
   ],
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-09-10T08:21:56.922Z"
+  "last_evolved_at": "2026-09-10T10:17:08.922Z"
 }
