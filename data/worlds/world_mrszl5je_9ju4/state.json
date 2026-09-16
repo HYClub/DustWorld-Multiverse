@@ -2,7 +2,7 @@
   "world_id": "world_mrszl5je_9ju4",
   "name": "地球",
   "era": "antiquity",
-  "year": 5780,
+  "year": 5781,
   "civilization": {
     "antiquity": {
       "civ": "han",
@@ -3876,7 +3876,7 @@
       "x": 35,
       "y": 56,
       "level": 5,
-      "population": 108,
+      "population": 107,
       "max_population": 3000,
       "tech_level": 5,
       "culture": 26970,
@@ -3885,7 +3885,7 @@
       "stability": 0.7,
       "resources": {
         "food": 0,
-        "wood": 5826.4400000000005,
+        "wood": 5827.4400000000005,
         "ore": 8,
         "water": 0,
         "gold": 0
@@ -3909,17 +3909,17 @@
       "x": 6,
       "y": 5,
       "level": 4,
-      "population": 436,
+      "population": 441,
       "max_population": 1000,
       "tech_level": 5,
-      "culture": 14580,
+      "culture": 14600,
       "influence": 0,
       "health": 0.7,
       "stability": 0.6,
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 4247.199999999948,
+        "ore": 4248.199999999948,
         "water": 0,
         "gold": 0
       },
@@ -3947,7 +3947,7 @@
       "participants": [
         "SET002"
       ],
-      "remaining_years": 4,
+      "remaining_years": 3,
       "duration": 7,
       "description": "风语村进入黄金时代！"
     },
@@ -3957,7 +3957,7 @@
       "participants": [
         "SET001"
       ],
-      "remaining_years": 8,
+      "remaining_years": 7,
       "duration": 4,
       "description": "绿野镇遭受自然灾害。"
     }
@@ -3966,8 +3966,8 @@
   "legacy": {
     "military": 122.39999999999908,
     "economic": 0,
-    "cultural": 25890.99999999998,
-    "scientific": 1714.5999999998837
+    "cultural": 25903.99999999998,
+    "scientific": 1714.9999999998838
   },
   "milestones": [
     {
@@ -33819,10 +33819,20 @@
       "id": "year_1000",
       "name": "千年",
       "year": 5775
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 5781
+    },
+    {
+      "id": "year_1000",
+      "name": "千年",
+      "year": 5781
     }
   ],
   "stats": {
-    "total_population": 544,
+    "total_population": 548,
     "total_settlements": 2,
     "extinct_settlements": 0,
     "total_wars": 211,
@@ -33831,7 +33841,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T08:52:39.627Z",
-  "updated_at": "2026-09-16T04:09:17.286Z",
+  "updated_at": "2026-09-16T04:19:13.726Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -33871,20 +33881,8 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-09-16T04:04:39.627Z",
+  "last_evolved_at": "2026-09-16T04:19:03.627Z",
   "history": [
-    {
-      "year": 5249,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
-    {
-      "year": 5250,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
     {
       "year": 5250,
       "type": "milestone",
@@ -36872,6 +36870,18 @@
       "type": "natural_disaster",
       "title": "新事件",
       "description": "绿野镇遭受自然灾害。"
+    },
+    {
+      "year": 5781,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 5781,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 千年"
     }
   ]
 }
