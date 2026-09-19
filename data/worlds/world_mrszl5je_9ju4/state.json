@@ -2,7 +2,7 @@
   "world_id": "world_mrszl5je_9ju4",
   "name": "地球",
   "era": "antiquity",
-  "year": 6051,
+  "year": 6061,
   "civilization": {
     "antiquity": {
       "civ": "han",
@@ -3876,16 +3876,16 @@
       "x": 35,
       "y": 56,
       "level": 5,
-      "population": 261,
+      "population": 290,
       "max_population": 3000,
       "tech_level": 5,
-      "culture": 28950,
+      "culture": 29030,
       "influence": 0,
       "health": 0.8,
       "stability": 0.7,
       "resources": {
         "food": 0,
-        "wood": 6097.440000000001,
+        "wood": 6107.440000000001,
         "ore": 8,
         "water": 0,
         "gold": 0
@@ -3909,7 +3909,7 @@
       "x": 6,
       "y": 5,
       "level": 4,
-      "population": 98,
+      "population": 75,
       "max_population": 1000,
       "tech_level": 5,
       "culture": 15390,
@@ -3919,7 +3919,7 @@
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 4518.199999999948,
+        "ore": 4528.199999999948,
         "water": 0,
         "gold": 0
       },
@@ -3942,22 +3942,22 @@
   ],
   "active_events": [
     {
-      "id": "EVT2446",
-      "type": "cultural_boom",
+      "id": "EVT94830",
+      "type": "natural_disaster",
       "participants": [
-        "SET001"
+        "SET002"
       ],
-      "remaining_years": 9,
-      "duration": 10,
-      "description": "绿野镇迎来文化繁荣。"
+      "remaining_years": 4,
+      "duration": 9,
+      "description": "风语村遭受自然灾害。"
     }
   ],
   "trade_routes": [],
   "legacy": {
-    "military": 128.9999999999989,
+    "military": 130.09999999999883,
     "economic": 0,
-    "cultural": 29541.500000000062,
-    "scientific": 1822.9999999999084
+    "cultural": 29680.500000000076,
+    "scientific": 1826.9999999999093
   },
   "milestones": [
     {
@@ -35169,19 +35169,29 @@
       "id": "year_1000",
       "name": "千年",
       "year": 6051
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 6052
+    },
+    {
+      "id": "year_1000",
+      "name": "千年",
+      "year": 6052
     }
   ],
   "stats": {
-    "total_population": 359,
+    "total_population": 365,
     "total_settlements": 2,
     "extinct_settlements": 0,
-    "total_wars": 223,
+    "total_wars": 225,
     "tech_breakthroughs": 8,
     "golden_ages": 139,
     "dark_ages": 0
   },
   "created_at": "2026-07-20T08:52:39.627Z",
-  "updated_at": "2026-09-18T21:07:37.300Z",
+  "updated_at": "2026-09-19T00:08:37.864Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -35221,56 +35231,8 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-09-18T21:07:03.627Z",
+  "last_evolved_at": "2026-09-18T23:31:03.627Z",
   "history": [
-    {
-      "year": 5653,
-      "type": "natural_disaster",
-      "title": "新事件",
-      "description": "绿野镇遭受自然灾害。"
-    },
-    {
-      "year": 5655,
-      "type": "golden_age",
-      "title": "新事件",
-      "description": "风语村进入黄金时代！"
-    },
-    {
-      "year": 5656,
-      "type": "golden_age",
-      "title": "新事件",
-      "description": "风语村进入黄金时代！"
-    },
-    {
-      "year": 5657,
-      "type": "event",
-      "title": "事件结束",
-      "description": "风语村进入黄金时代！ 结束。"
-    },
-    {
-      "year": 5657,
-      "type": "natural_disaster",
-      "title": "新事件",
-      "description": "绿野镇遭受自然灾害。"
-    },
-    {
-      "year": 5658,
-      "type": "event",
-      "title": "事件结束",
-      "description": "风语村进入黄金时代！ 结束。"
-    },
-    {
-      "year": 5658,
-      "type": "cultural_boom",
-      "title": "新事件",
-      "description": "风语村迎来文化繁荣。"
-    },
-    {
-      "year": 5658,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
     {
       "year": 5658,
       "type": "milestone",
@@ -38222,6 +38184,54 @@
       "type": "milestone",
       "title": "里程碑",
       "description": "达成: 千年"
+    },
+    {
+      "year": 6052,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 6052,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 千年"
+    },
+    {
+      "year": 6053,
+      "type": "war",
+      "title": "新事件",
+      "description": "风语村与绿野镇爆发战争！"
+    },
+    {
+      "year": 6054,
+      "type": "war",
+      "title": "新事件",
+      "description": "风语村与绿野镇爆发战争！"
+    },
+    {
+      "year": 6057,
+      "type": "event",
+      "title": "事件结束",
+      "description": "风语村与绿野镇爆发战争！ 结束。"
+    },
+    {
+      "year": 6057,
+      "type": "natural_disaster",
+      "title": "新事件",
+      "description": "风语村遭受自然灾害。"
+    },
+    {
+      "year": 6060,
+      "type": "event",
+      "title": "事件结束",
+      "description": "绿野镇迎来文化繁荣。 结束。"
+    },
+    {
+      "year": 6061,
+      "type": "event",
+      "title": "事件结束",
+      "description": "风语村与绿野镇爆发战争！ 结束。"
     }
   ]
 }
