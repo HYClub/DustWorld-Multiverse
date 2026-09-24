@@ -2,7 +2,7 @@
   "world_id": "world_mrszl5je_9ju4",
   "name": "地球",
   "era": "antiquity",
-  "year": 6572,
+  "year": 6573,
   "civilization": {
     "antiquity": {
       "civ": "han",
@@ -3876,7 +3876,7 @@
       "x": 35,
       "y": 56,
       "level": 5,
-      "population": 771,
+      "population": 770,
       "max_population": 3000,
       "tech_level": 5,
       "culture": 32090,
@@ -3885,7 +3885,7 @@
       "stability": 0.7,
       "resources": {
         "food": 0,
-        "wood": 6618.440000000001,
+        "wood": 6619.440000000001,
         "ore": 8,
         "water": 0,
         "gold": 0
@@ -3909,17 +3909,17 @@
       "x": 6,
       "y": 5,
       "level": 4,
-      "population": 44,
+      "population": 49,
       "max_population": 1000,
       "tech_level": 6,
-      "culture": 16830,
+      "culture": 16840,
       "influence": 0,
       "health": 0.7,
       "stability": 0.6,
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 5039.199999999957,
+        "ore": 5040.199999999957,
         "water": 0,
         "gold": 0
       },
@@ -3942,33 +3942,32 @@
   ],
   "active_events": [
     {
-      "id": "EVT39066",
-      "type": "war",
-      "participants": [
-        "SET001",
-        "SET002"
-      ],
-      "remaining_years": 1,
-      "duration": 4,
-      "description": "绿野镇与风语村爆发战争！"
-    },
-    {
       "id": "EVT265",
       "type": "cultural_boom",
       "participants": [
         "SET002"
       ],
-      "remaining_years": 8,
+      "remaining_years": 7,
       "duration": 6,
       "description": "风语村迎来文化繁荣。"
+    },
+    {
+      "id": "EVT2446",
+      "type": "cultural_boom",
+      "participants": [
+        "SET001"
+      ],
+      "remaining_years": 9,
+      "duration": 10,
+      "description": "绿野镇迎来文化繁荣。"
     }
   ],
   "trade_routes": [],
   "legacy": {
     "military": 143.19999999999808,
     "economic": 0,
-    "cultural": 37281.00000000013,
-    "scientific": 2046.449999999942
+    "cultural": 37296.800000000134,
+    "scientific": 2046.899999999942
   },
   "milestones": [
     {
@@ -37400,10 +37399,20 @@
       "id": "year_1000",
       "name": "千年",
       "year": 6572
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 6573
+    },
+    {
+      "id": "year_1000",
+      "name": "千年",
+      "year": 6573
     }
   ],
   "stats": {
-    "total_population": 815,
+    "total_population": 819,
     "total_settlements": 2,
     "extinct_settlements": 0,
     "total_wars": 247,
@@ -37412,7 +37421,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T08:52:39.627Z",
-  "updated_at": "2026-09-24T02:09:32.000Z",
+  "updated_at": "2026-09-24T02:24:32.855Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -37452,32 +37461,8 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-09-24T02:09:27.627Z",
+  "last_evolved_at": "2026-09-24T02:23:51.627Z",
   "history": [
-    {
-      "year": 6137,
-      "type": "event",
-      "title": "事件结束",
-      "description": "绿野镇迎来文化繁荣。 结束。"
-    },
-    {
-      "year": 6138,
-      "type": "cultural_boom",
-      "title": "新事件",
-      "description": "风语村迎来文化繁荣。"
-    },
-    {
-      "year": 6139,
-      "type": "event",
-      "title": "事件结束",
-      "description": "风语村与绿野镇爆发战争！ 结束。"
-    },
-    {
-      "year": 6143,
-      "type": "event",
-      "title": "事件结束",
-      "description": "风语村与绿野镇爆发战争！ 结束。"
-    },
     {
       "year": 6144,
       "type": "milestone",
@@ -40450,6 +40435,30 @@
     },
     {
       "year": 6572,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 千年"
+    },
+    {
+      "year": 6573,
+      "type": "event",
+      "title": "事件结束",
+      "description": "绿野镇与风语村爆发战争！ 结束。"
+    },
+    {
+      "year": 6573,
+      "type": "cultural_boom",
+      "title": "新事件",
+      "description": "绿野镇迎来文化繁荣。"
+    },
+    {
+      "year": 6573,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 6573,
       "type": "milestone",
       "title": "里程碑",
       "description": "达成: 千年"
