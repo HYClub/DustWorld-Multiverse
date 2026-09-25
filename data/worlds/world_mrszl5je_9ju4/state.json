@@ -2,7 +2,7 @@
   "world_id": "world_mrszl5je_9ju4",
   "name": "地球",
   "era": "antiquity",
-  "year": 6669,
+  "year": 6678,
   "civilization": {
     "antiquity": {
       "civ": "han",
@@ -3876,7 +3876,7 @@
       "x": 35,
       "y": 56,
       "level": 5,
-      "population": 754,
+      "population": 745,
       "max_population": 3000,
       "tech_level": 5,
       "culture": 33460,
@@ -3885,7 +3885,7 @@
       "stability": 0.7,
       "resources": {
         "food": 0,
-        "wood": 6715.440000000001,
+        "wood": 6724.440000000001,
         "ore": 8,
         "water": 0,
         "gold": 0
@@ -3909,7 +3909,7 @@
       "x": 6,
       "y": 5,
       "level": 4,
-      "population": 31,
+      "population": 22,
       "max_population": 1000,
       "tech_level": 6,
       "culture": 16990,
@@ -3919,7 +3919,7 @@
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 5136.199999999957,
+        "ore": 5145.199999999957,
         "water": 0,
         "gold": 0
       },
@@ -3945,8 +3945,8 @@
   "legacy": {
     "military": 146.1999999999979,
     "economic": 0,
-    "cultural": 38841.300000000076,
-    "scientific": 2090.0999999999253
+    "cultural": 38988.0000000001,
+    "scientific": 2094.1499999999237
   },
   "milestones": [
     {
@@ -37798,10 +37798,20 @@
       "id": "year_1000",
       "name": "千年",
       "year": 6669
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 6670
+    },
+    {
+      "id": "year_1000",
+      "name": "千年",
+      "year": 6670
     }
   ],
   "stats": {
-    "total_population": 785,
+    "total_population": 767,
     "total_settlements": 2,
     "extinct_settlements": 0,
     "total_wars": 251,
@@ -37810,7 +37820,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T08:52:39.627Z",
-  "updated_at": "2026-09-25T01:26:31.357Z",
+  "updated_at": "2026-09-25T03:45:31.250Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -37850,20 +37860,8 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-09-25T01:26:15.627Z",
+  "last_evolved_at": "2026-09-25T03:35:51.627Z",
   "history": [
-    {
-      "year": 6282,
-      "type": "event",
-      "title": "事件结束",
-      "description": "风语村进入黄金时代！ 结束。"
-    },
-    {
-      "year": 6283,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
     {
       "year": 6283,
       "type": "milestone",
@@ -40848,6 +40846,18 @@
     },
     {
       "year": 6669,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 千年"
+    },
+    {
+      "year": 6670,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 6670,
       "type": "milestone",
       "title": "里程碑",
       "description": "达成: 千年"
