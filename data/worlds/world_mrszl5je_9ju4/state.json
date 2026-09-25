@@ -2,7 +2,7 @@
   "world_id": "world_mrszl5je_9ju4",
   "name": "地球",
   "era": "antiquity",
-  "year": 6731,
+  "year": 6733,
   "civilization": {
     "antiquity": {
       "civ": "han",
@@ -3810,7 +3810,7 @@
         "type": "ore",
         "x": 7,
         "y": 6,
-        "amount": 36.980000000000004
+        "amount": 38.86
       },
       {
         "type": "water",
@@ -3876,16 +3876,16 @@
       "x": 35,
       "y": 56,
       "level": 5,
-      "population": 692,
+      "population": 696,
       "max_population": 3000,
       "tech_level": 5,
-      "culture": 33460,
+      "culture": 33470,
       "influence": 0,
       "health": 0.8,
       "stability": 0.7,
       "resources": {
         "food": 0,
-        "wood": 6777.440000000001,
+        "wood": 6779.440000000001,
         "ore": 8,
         "water": 0,
         "gold": 0
@@ -3919,7 +3919,7 @@
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 5161.219999999969,
+        "ore": 5161.33999999997,
         "water": 0,
         "gold": 0
       },
@@ -3947,17 +3947,37 @@
       "participants": [
         "SET002"
       ],
-      "remaining_years": 8,
+      "remaining_years": 6,
       "duration": 9,
       "description": "风语村遭受自然灾害。"
+    },
+    {
+      "id": "EVT2446",
+      "type": "cultural_boom",
+      "participants": [
+        "SET001"
+      ],
+      "remaining_years": 8,
+      "duration": 10,
+      "description": "绿野镇迎来文化繁荣。"
+    },
+    {
+      "id": "EVT48166",
+      "type": "golden_age",
+      "participants": [
+        "SET001"
+      ],
+      "remaining_years": 8,
+      "duration": 3,
+      "description": "绿野镇进入黄金时代！"
     }
   ],
   "trade_routes": [],
   "legacy": {
     "military": 146.1999999999979,
     "economic": 0,
-    "cultural": 39851.900000000256,
-    "scientific": 2117.999999999914
+    "cultural": 39884.60000000026,
+    "scientific": 2118.8999999999137
   },
   "milestones": [
     {
@@ -38089,19 +38109,29 @@
       "id": "year_1000",
       "name": "千年",
       "year": 6722
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 6732
+    },
+    {
+      "id": "year_1000",
+      "name": "千年",
+      "year": 6732
     }
   ],
   "stats": {
-    "total_population": 693,
+    "total_population": 697,
     "total_settlements": 2,
     "extinct_settlements": 0,
     "total_wars": 251,
     "tech_breakthroughs": 9,
-    "golden_ages": 163,
+    "golden_ages": 164,
     "dark_ages": 0
   },
   "created_at": "2026-07-20T08:52:39.627Z",
-  "updated_at": "2026-09-25T16:53:33.125Z",
+  "updated_at": "2026-09-25T16:53:35.383Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -38141,32 +38171,8 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-09-25T16:19:03.627Z",
+  "last_evolved_at": "2026-09-25T16:47:51.627Z",
   "history": [
-    {
-      "year": 6335,
-      "type": "cultural_boom",
-      "title": "新事件",
-      "description": "风语村迎来文化繁荣。"
-    },
-    {
-      "year": 6336,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 6336,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
-    {
-      "year": 6338,
-      "type": "event",
-      "title": "事件结束",
-      "description": "绿野镇与风语村爆发战争！ 结束。"
-    },
     {
       "year": 6342,
       "type": "cultural_boom",
@@ -41142,6 +41148,30 @@
       "type": "natural_disaster",
       "title": "新事件",
       "description": "风语村遭受自然灾害。"
+    },
+    {
+      "year": 6732,
+      "type": "cultural_boom",
+      "title": "新事件",
+      "description": "绿野镇迎来文化繁荣。"
+    },
+    {
+      "year": 6732,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 6732,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 千年"
+    },
+    {
+      "year": 6733,
+      "type": "golden_age",
+      "title": "新事件",
+      "description": "绿野镇进入黄金时代！"
     }
   ]
 }
