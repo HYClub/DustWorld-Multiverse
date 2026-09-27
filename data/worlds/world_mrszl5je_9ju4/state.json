@@ -2,7 +2,7 @@
   "world_id": "world_mrszl5je_9ju4",
   "name": "地球",
   "era": "antiquity",
-  "year": 6930,
+  "year": 6931,
   "civilization": {
     "antiquity": {
       "civ": "han",
@@ -3876,16 +3876,16 @@
       "x": 35,
       "y": 56,
       "level": 5,
-      "population": 950,
+      "population": 964,
       "max_population": 3000,
       "tech_level": 5,
-      "culture": 35570,
+      "culture": 35600,
       "influence": 0,
       "health": 0.8,
       "stability": 0.7,
       "resources": {
         "food": 0,
-        "wood": 6976.440000000001,
+        "wood": 6977.440000000001,
         "ore": 8,
         "water": 0,
         "gold": 0
@@ -3909,17 +3909,17 @@
       "x": 6,
       "y": 5,
       "level": 4,
-      "population": 249,
+      "population": 258,
       "max_population": 1000,
       "tech_level": 6,
-      "culture": 17740,
+      "culture": 17760,
       "influence": 0,
       "health": 0.7,
       "stability": 0.6,
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 5397.199999999991,
+        "ore": 5398.199999999991,
         "water": 0,
         "gold": 0
       },
@@ -3947,7 +3947,7 @@
       "participants": [
         "SET002"
       ],
-      "remaining_years": 2,
+      "remaining_years": 1,
       "duration": 7,
       "description": "风语村进入黄金时代！"
     },
@@ -3957,7 +3957,7 @@
       "participants": [
         "SET001"
       ],
-      "remaining_years": 2,
+      "remaining_years": 1,
       "duration": 10,
       "description": "绿野镇迎来文化繁荣。"
     },
@@ -3967,7 +3967,7 @@
       "participants": [
         "SET001"
       ],
-      "remaining_years": 2,
+      "remaining_years": 1,
       "duration": 3,
       "description": "绿野镇进入黄金时代！"
     },
@@ -3977,7 +3977,7 @@
       "participants": [
         "SET001"
       ],
-      "remaining_years": 5,
+      "remaining_years": 4,
       "duration": 4,
       "description": "绿野镇遭受自然灾害。"
     }
@@ -3986,8 +3986,8 @@
   "legacy": {
     "military": 149.29999999999774,
     "economic": 0,
-    "cultural": 43186.00000000029,
-    "scientific": 2207.549999999878
+    "cultural": 43203.40000000029,
+    "scientific": 2207.9999999998777
   },
   "milestones": [
     {
@@ -38979,10 +38979,25 @@
       "id": "year_1000",
       "name": "千年",
       "year": 6930
+    },
+    {
+      "id": "pop_1000",
+      "name": "繁荣",
+      "year": 6931
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 6931
+    },
+    {
+      "id": "year_1000",
+      "name": "千年",
+      "year": 6931
     }
   ],
   "stats": {
-    "total_population": 1199,
+    "total_population": 1222,
     "total_settlements": 2,
     "extinct_settlements": 0,
     "total_wars": 255,
@@ -38991,7 +39006,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T08:52:39.627Z",
-  "updated_at": "2026-09-27T16:05:26.066Z",
+  "updated_at": "2026-09-27T16:19:24.395Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -39031,26 +39046,8 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-09-27T16:04:39.627Z",
+  "last_evolved_at": "2026-09-27T16:19:03.627Z",
   "history": [
-    {
-      "year": 6507,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 6507,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
-    {
-      "year": 6508,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
     {
       "year": 6508,
       "type": "milestone",
@@ -42029,6 +42026,24 @@
     },
     {
       "year": 6930,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 千年"
+    },
+    {
+      "year": 6931,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 繁荣"
+    },
+    {
+      "year": 6931,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 6931,
       "type": "milestone",
       "title": "里程碑",
       "description": "达成: 千年"
