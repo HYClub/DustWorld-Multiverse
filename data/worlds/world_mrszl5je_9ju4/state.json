@@ -2,7 +2,7 @@
   "world_id": "world_mrszl5je_9ju4",
   "name": "地球",
   "era": "antiquity",
-  "year": 7150,
+  "year": 7151,
   "civilization": {
     "antiquity": {
       "civ": "han",
@@ -3876,7 +3876,7 @@
       "x": 35,
       "y": 56,
       "level": 5,
-      "population": 1122,
+      "population": 1121,
       "max_population": 3000,
       "tech_level": 5,
       "culture": 37500,
@@ -3885,7 +3885,7 @@
       "stability": 0.7,
       "resources": {
         "food": 0,
-        "wood": 7196.440000000001,
+        "wood": 7197.440000000001,
         "ore": 8,
         "water": 0,
         "gold": 0
@@ -3909,7 +3909,7 @@
       "x": 6,
       "y": 5,
       "level": 4,
-      "population": 185,
+      "population": 177,
       "max_population": 1000,
       "tech_level": 6,
       "culture": 18210,
@@ -3919,7 +3919,7 @@
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 5617.199999999991,
+        "ore": 5618.199999999991,
         "water": 0,
         "gold": 0
       },
@@ -3942,43 +3942,23 @@
   ],
   "active_events": [
     {
-      "id": "EVT2446",
-      "type": "cultural_boom",
-      "participants": [
-        "SET001"
-      ],
-      "remaining_years": 1,
-      "duration": 10,
-      "description": "绿野镇迎来文化繁荣。"
-    },
-    {
-      "id": "EVT48166",
-      "type": "golden_age",
-      "participants": [
-        "SET001"
-      ],
-      "remaining_years": 1,
-      "duration": 3,
-      "description": "绿野镇进入黄金时代！"
-    },
-    {
       "id": "EVT39066",
       "type": "war",
       "participants": [
         "SET001",
         "SET002"
       ],
-      "remaining_years": 4,
+      "remaining_years": 3,
       "duration": 4,
       "description": "绿野镇与风语村爆发战争！"
     }
   ],
   "trade_routes": [],
   "legacy": {
-    "military": 155.49999999999739,
+    "military": 155.59999999999738,
     "economic": 0,
-    "cultural": 47069.10000000052,
-    "scientific": 2306.549999999838
+    "cultural": 47087.10000000052,
+    "scientific": 2306.9999999998377
   },
   "milestones": [
     {
@@ -40440,10 +40420,25 @@
       "id": "year_1000",
       "name": "千年",
       "year": 7142
+    },
+    {
+      "id": "pop_1000",
+      "name": "繁荣",
+      "year": 7151
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 7151
+    },
+    {
+      "id": "year_1000",
+      "name": "千年",
+      "year": 7151
     }
   ],
   "stats": {
-    "total_population": 1307,
+    "total_population": 1298,
     "total_settlements": 2,
     "extinct_settlements": 0,
     "total_wars": 265,
@@ -40452,7 +40447,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T08:52:39.627Z",
-  "updated_at": "2026-09-29T20:59:25.732Z",
+  "updated_at": "2026-09-29T21:07:23.132Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -40492,38 +40487,8 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-09-29T20:52:39.627Z",
+  "last_evolved_at": "2026-09-29T21:07:03.627Z",
   "history": [
-    {
-      "year": 6842,
-      "type": "event",
-      "title": "事件结束",
-      "description": "绿野镇迎来文化繁荣。 结束。"
-    },
-    {
-      "year": 6842,
-      "type": "event",
-      "title": "事件结束",
-      "description": "绿野镇进入黄金时代！ 结束。"
-    },
-    {
-      "year": 6842,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 繁荣"
-    },
-    {
-      "year": 6842,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 6842,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
     {
       "year": 6843,
       "type": "milestone",
@@ -43493,6 +43458,36 @@
       "type": "event",
       "title": "事件结束",
       "description": "风语村遭受自然灾害。 结束。"
+    },
+    {
+      "year": 7151,
+      "type": "event",
+      "title": "事件结束",
+      "description": "绿野镇迎来文化繁荣。 结束。"
+    },
+    {
+      "year": 7151,
+      "type": "event",
+      "title": "事件结束",
+      "description": "绿野镇进入黄金时代！ 结束。"
+    },
+    {
+      "year": 7151,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 繁荣"
+    },
+    {
+      "year": 7151,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 7151,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 千年"
     }
   ]
 }
