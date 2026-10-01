@@ -2,7 +2,7 @@
   "world_id": "world_mrszl5je_9ju4",
   "name": "地球",
   "era": "antiquity",
-  "year": 7315,
+  "year": 7316,
   "civilization": {
     "antiquity": {
       "civ": "han",
@@ -3876,7 +3876,7 @@
       "x": 35,
       "y": 56,
       "level": 5,
-      "population": 1471,
+      "population": 1470,
       "max_population": 3000,
       "tech_level": 5,
       "culture": 39040,
@@ -3885,7 +3885,7 @@
       "stability": 0.7,
       "resources": {
         "food": 0,
-        "wood": 7361.440000000001,
+        "wood": 7362.440000000001,
         "ore": 8,
         "water": 0,
         "gold": 0
@@ -3909,7 +3909,7 @@
       "x": 6,
       "y": 5,
       "level": 4,
-      "population": 146,
+      "population": 145,
       "max_population": 1000,
       "tech_level": 6,
       "culture": 18550,
@@ -3919,7 +3919,7 @@
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 5782.199999999991,
+        "ore": 5783.199999999991,
         "water": 0,
         "gold": 0
       },
@@ -3945,8 +3945,8 @@
   "legacy": {
     "military": 157.79999999999725,
     "economic": 0,
-    "cultural": 50106.40000000044,
-    "scientific": 2380.799999999808
+    "cultural": 50125.20000000044,
+    "scientific": 2381.2499999998076
   },
   "milestones": [
     {
@@ -41158,10 +41158,25 @@
       "id": "year_1000",
       "name": "千年",
       "year": 7315
+    },
+    {
+      "id": "pop_1000",
+      "name": "繁荣",
+      "year": 7316
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 7316
+    },
+    {
+      "id": "year_1000",
+      "name": "千年",
+      "year": 7316
     }
   ],
   "stats": {
-    "total_population": 1617,
+    "total_population": 1615,
     "total_settlements": 2,
     "extinct_settlements": 0,
     "total_wars": 268,
@@ -41170,7 +41185,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T08:52:39.627Z",
-  "updated_at": "2026-10-01T12:29:30.478Z",
+  "updated_at": "2026-10-01T12:43:27.326Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -41210,26 +41225,8 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-10-01T12:28:39.627Z",
+  "last_evolved_at": "2026-10-01T12:43:03.627Z",
   "history": [
-    {
-      "year": 6953,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 繁荣"
-    },
-    {
-      "year": 6953,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 6953,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
     {
       "year": 6954,
       "type": "milestone",
@@ -44208,6 +44205,24 @@
     },
     {
       "year": 7315,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 千年"
+    },
+    {
+      "year": 7316,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 繁荣"
+    },
+    {
+      "year": 7316,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 7316,
       "type": "milestone",
       "title": "里程碑",
       "description": "达成: 千年"
