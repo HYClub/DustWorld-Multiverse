@@ -2,7 +2,7 @@
   "world_id": "world_mrszl5je_9ju4",
   "name": "地球",
   "era": "antiquity",
-  "year": 7377,
+  "year": 7379,
   "civilization": {
     "antiquity": {
       "civ": "han",
@@ -3876,16 +3876,16 @@
       "x": 35,
       "y": 56,
       "level": 5,
-      "population": 1670,
+      "population": 1686,
       "max_population": 3000,
       "tech_level": 5,
-      "culture": 39590,
+      "culture": 39630,
       "influence": 0,
       "health": 0.8,
       "stability": 0.7,
       "resources": {
         "food": 0,
-        "wood": 7423.440000000001,
+        "wood": 7425.440000000001,
         "ore": 8,
         "water": 0,
         "gold": 0
@@ -3909,7 +3909,7 @@
       "x": 6,
       "y": 5,
       "level": 4,
-      "population": 178,
+      "population": 176,
       "max_population": 1000,
       "tech_level": 6,
       "culture": 18820,
@@ -3919,7 +3919,7 @@
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 5844.199999999991,
+        "ore": 5846.199999999991,
         "water": 0,
         "gold": 0
       },
@@ -3947,7 +3947,7 @@
       "participants": [
         "SET001"
       ],
-      "remaining_years": 3,
+      "remaining_years": 1,
       "duration": 10,
       "description": "绿野镇迎来文化繁荣。"
     },
@@ -3957,17 +3957,28 @@
       "participants": [
         "SET001"
       ],
-      "remaining_years": 6,
+      "remaining_years": 4,
       "duration": 10,
       "description": "绿野镇迎来文化繁荣。"
+    },
+    {
+      "id": "EVT99196",
+      "type": "war",
+      "participants": [
+        "SET002",
+        "SET001"
+      ],
+      "remaining_years": 4,
+      "duration": 6,
+      "description": "风语村与绿野镇爆发战争！"
     }
   ],
   "trade_routes": [],
   "legacy": {
-    "military": 159.69999999999715,
+    "military": 159.79999999999714,
     "economic": 0,
-    "cultural": 51276.70000000055,
-    "scientific": 2408.6999999997965
+    "cultural": 51314.50000000055,
+    "scientific": 2409.599999999796
   },
   "milestones": [
     {
@@ -41569,19 +41580,34 @@
       "id": "year_1000",
       "name": "千年",
       "year": 7377
+    },
+    {
+      "id": "pop_1000",
+      "name": "繁荣",
+      "year": 7378
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 7378
+    },
+    {
+      "id": "year_1000",
+      "name": "千年",
+      "year": 7378
     }
   ],
   "stats": {
-    "total_population": 1848,
+    "total_population": 1862,
     "total_settlements": 2,
     "extinct_settlements": 0,
-    "total_wars": 271,
+    "total_wars": 272,
     "tech_breakthroughs": 9,
     "golden_ages": 189,
     "dark_ages": 0
   },
   "created_at": "2026-07-20T08:52:39.627Z",
-  "updated_at": "2026-10-02T03:22:23.897Z",
+  "updated_at": "2026-10-02T03:59:25.554Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -41621,32 +41647,8 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-10-02T03:21:27.627Z",
+  "last_evolved_at": "2026-10-02T03:50:15.627Z",
   "history": [
-    {
-      "year": 7041,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 7041,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
-    {
-      "year": 7042,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 繁荣"
-    },
-    {
-      "year": 7042,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
     {
       "year": 7042,
       "type": "milestone",
@@ -44622,6 +44624,30 @@
       "type": "milestone",
       "title": "里程碑",
       "description": "达成: 千年"
+    },
+    {
+      "year": 7378,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 繁荣"
+    },
+    {
+      "year": 7378,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 7378,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 千年"
+    },
+    {
+      "year": 7379,
+      "type": "war",
+      "title": "新事件",
+      "description": "风语村与绿野镇爆发战争！"
     }
   ]
 }
