@@ -2,7 +2,7 @@
   "world_id": "world_mrszl5je_9ju4",
   "name": "地球",
   "era": "antiquity",
-  "year": 7757,
+  "year": 7761,
   "civilization": {
     "antiquity": {
       "civ": "han",
@@ -3876,7 +3876,7 @@
       "x": 35,
       "y": 56,
       "level": 5,
-      "population": 1137,
+      "population": 1092,
       "max_population": 3000,
       "tech_level": 5,
       "culture": 43380,
@@ -3885,7 +3885,7 @@
       "stability": 0.7,
       "resources": {
         "food": 0,
-        "wood": 7803.440000000001,
+        "wood": 7807.440000000001,
         "ore": 8,
         "water": 0,
         "gold": 0
@@ -3909,17 +3909,17 @@
       "x": 6,
       "y": 5,
       "level": 4,
-      "population": 313,
+      "population": 336,
       "max_population": 1000,
       "tech_level": 6,
-      "culture": 20340,
+      "culture": 20420,
       "influence": 0,
       "health": 0.7,
       "stability": 0.6,
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 6224.199999999991,
+        "ore": 6228.199999999991,
         "water": 0,
         "gold": 0
       },
@@ -3942,22 +3942,12 @@
   ],
   "active_events": [
     {
-      "id": "EVT39066",
-      "type": "natural_disaster",
-      "participants": [
-        "SET001"
-      ],
-      "remaining_years": 3,
-      "duration": 4,
-      "description": "绿野镇遭受自然灾害。"
-    },
-    {
       "id": "EVT37632",
       "type": "golden_age",
       "participants": [
         "SET002"
       ],
-      "remaining_years": 6,
+      "remaining_years": 2,
       "duration": 10,
       "description": "风语村进入黄金时代！"
     },
@@ -3967,7 +3957,7 @@
       "participants": [
         "SET001"
       ],
-      "remaining_years": 6,
+      "remaining_years": 2,
       "duration": 8,
       "description": "绿野镇遭受自然灾害。"
     }
@@ -3976,8 +3966,8 @@
   "legacy": {
     "military": 166.89999999999674,
     "economic": 0,
-    "cultural": 58754.00000000062,
-    "scientific": 2579.6999999997274
+    "cultural": 58838.80000000061,
+    "scientific": 2581.4999999997267
   },
   "milestones": [
     {
@@ -43259,10 +43249,25 @@
       "id": "year_1000",
       "name": "千年",
       "year": 7748
+    },
+    {
+      "id": "pop_1000",
+      "name": "繁荣",
+      "year": 7758
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 7758
+    },
+    {
+      "id": "year_1000",
+      "name": "千年",
+      "year": 7758
     }
   ],
   "stats": {
-    "total_population": 1450,
+    "total_population": 1428,
     "total_settlements": 2,
     "extinct_settlements": 0,
     "total_wars": 283,
@@ -43271,7 +43276,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T08:52:39.627Z",
-  "updated_at": "2026-10-05T23:39:44.412Z",
+  "updated_at": "2026-10-05T23:39:46.630Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -43311,32 +43316,8 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-10-05T22:33:27.627Z",
+  "last_evolved_at": "2026-10-05T23:31:03.627Z",
   "history": [
-    {
-      "year": 7380,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
-    {
-      "year": 7381,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 繁荣"
-    },
-    {
-      "year": 7381,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 7381,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
     {
       "year": 7382,
       "type": "milestone",
@@ -46312,6 +46293,30 @@
       "type": "event",
       "title": "事件结束",
       "description": "风语村进入黄金时代！ 结束。"
+    },
+    {
+      "year": 7758,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 繁荣"
+    },
+    {
+      "year": 7758,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 7758,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 千年"
+    },
+    {
+      "year": 7760,
+      "type": "event",
+      "title": "事件结束",
+      "description": "绿野镇遭受自然灾害。 结束。"
     }
   ]
 }
