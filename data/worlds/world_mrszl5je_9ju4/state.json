@@ -2,7 +2,7 @@
   "world_id": "world_mrszl5je_9ju4",
   "name": "地球",
   "era": "antiquity",
-  "year": 7802,
+  "year": 7812,
   "civilization": {
     "antiquity": {
       "civ": "han",
@@ -3876,16 +3876,16 @@
       "x": 35,
       "y": 56,
       "level": 5,
-      "population": 1022,
+      "population": 1079,
       "max_population": 3000,
       "tech_level": 5,
-      "culture": 43630,
+      "culture": 43760,
       "influence": 0,
       "health": 0.8,
       "stability": 0.7,
       "resources": {
         "food": 0,
-        "wood": 7848.440000000001,
+        "wood": 7858.440000000001,
         "ore": 8,
         "water": 0,
         "gold": 0
@@ -3909,17 +3909,17 @@
       "x": 6,
       "y": 5,
       "level": 4,
-      "population": 351,
+      "population": 343,
       "max_population": 1000,
       "tech_level": 6,
-      "culture": 20590,
+      "culture": 20630,
       "influence": 0,
       "health": 0.7,
       "stability": 0.6,
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 6269.199999999991,
+        "ore": 6279.199999999991,
         "water": 0,
         "gold": 0
       },
@@ -3942,32 +3942,32 @@
   ],
   "active_events": [
     {
-      "id": "EVT2446",
-      "type": "cultural_boom",
+      "id": "EVT69118",
+      "type": "golden_age",
       "participants": [
-        "SET001"
+        "SET002"
       ],
-      "remaining_years": 6,
-      "duration": 10,
-      "description": "绿野镇迎来文化繁荣。"
+      "remaining_years": 8,
+      "duration": 7,
+      "description": "风语村进入黄金时代！"
     },
     {
-      "id": "EVT2446",
+      "id": "EVT265",
       "type": "cultural_boom",
       "participants": [
-        "SET001"
+        "SET002"
       ],
-      "remaining_years": 9,
-      "duration": 10,
-      "description": "绿野镇迎来文化繁荣。"
+      "remaining_years": 10,
+      "duration": 6,
+      "description": "风语村迎来文化繁荣。"
     }
   ],
   "trade_routes": [],
   "legacy": {
-    "military": 167.6999999999967,
+    "military": 168.79999999999663,
     "economic": 0,
-    "cultural": 59710.30000000062,
-    "scientific": 2599.9499999997192
+    "cultural": 59923.600000000646,
+    "scientific": 2604.4499999997174
   },
   "milestones": [
     {
@@ -43474,19 +43474,34 @@
       "id": "year_1000",
       "name": "千年",
       "year": 7802
+    },
+    {
+      "id": "pop_1000",
+      "name": "繁荣",
+      "year": 7803
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 7803
+    },
+    {
+      "id": "year_1000",
+      "name": "千年",
+      "year": 7803
     }
   ],
   "stats": {
-    "total_population": 1373,
+    "total_population": 1422,
     "total_settlements": 2,
     "extinct_settlements": 0,
-    "total_wars": 284,
+    "total_wars": 286,
     "tech_breakthroughs": 9,
-    "golden_ages": 213,
+    "golden_ages": 214,
     "dark_ages": 0
   },
   "created_at": "2026-07-20T08:52:39.627Z",
-  "updated_at": "2026-10-06T09:21:46.537Z",
+  "updated_at": "2026-10-06T13:14:52.031Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -43526,74 +43541,8 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-10-06T09:21:27.627Z",
+  "last_evolved_at": "2026-10-06T11:45:27.627Z",
   "history": [
-    {
-      "year": 7409,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
-    {
-      "year": 7410,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 繁荣"
-    },
-    {
-      "year": 7410,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 7410,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
-    {
-      "year": 7411,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 繁荣"
-    },
-    {
-      "year": 7411,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 7411,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
-    {
-      "year": 7418,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 繁荣"
-    },
-    {
-      "year": 7418,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 7418,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
-    {
-      "year": 7419,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 繁荣"
-    },
     {
       "year": 7419,
       "type": "milestone",
@@ -46527,6 +46476,72 @@
       "type": "milestone",
       "title": "里程碑",
       "description": "达成: 千年"
+    },
+    {
+      "year": 7803,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 繁荣"
+    },
+    {
+      "year": 7803,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 7803,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 千年"
+    },
+    {
+      "year": 7804,
+      "type": "war",
+      "title": "新事件",
+      "description": "风语村与绿野镇爆发战争！"
+    },
+    {
+      "year": 7805,
+      "type": "war",
+      "title": "新事件",
+      "description": "风语村与绿野镇爆发战争！"
+    },
+    {
+      "year": 7808,
+      "type": "event",
+      "title": "事件结束",
+      "description": "绿野镇迎来文化繁荣。 结束。"
+    },
+    {
+      "year": 7808,
+      "type": "event",
+      "title": "事件结束",
+      "description": "风语村与绿野镇爆发战争！ 结束。"
+    },
+    {
+      "year": 7810,
+      "type": "golden_age",
+      "title": "新事件",
+      "description": "风语村进入黄金时代！"
+    },
+    {
+      "year": 7811,
+      "type": "event",
+      "title": "事件结束",
+      "description": "绿野镇迎来文化繁荣。 结束。"
+    },
+    {
+      "year": 7812,
+      "type": "event",
+      "title": "事件结束",
+      "description": "风语村与绿野镇爆发战争！ 结束。"
+    },
+    {
+      "year": 7812,
+      "type": "cultural_boom",
+      "title": "新事件",
+      "description": "风语村迎来文化繁荣。"
     }
   ]
 }
