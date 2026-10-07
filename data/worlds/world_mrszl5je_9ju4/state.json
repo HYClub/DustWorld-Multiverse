@@ -2,7 +2,7 @@
   "world_id": "world_mrszl5je_9ju4",
   "name": "地球",
   "era": "antiquity",
-  "year": 7860,
+  "year": 7863,
   "civilization": {
     "antiquity": {
       "civ": "han",
@@ -3876,16 +3876,16 @@
       "x": 35,
       "y": 56,
       "level": 5,
-      "population": 432,
+      "population": 402,
       "max_population": 3000,
       "tech_level": 5,
-      "culture": 43920,
+      "culture": 43960,
       "influence": 0,
       "health": 0.8,
       "stability": 0.7,
       "resources": {
         "food": 0,
-        "wood": 7906.440000000001,
+        "wood": 7909.440000000001,
         "ore": 8,
         "water": 0,
         "gold": 0
@@ -3909,7 +3909,7 @@
       "x": 6,
       "y": 5,
       "level": 4,
-      "population": 442,
+      "population": 439,
       "max_population": 1000,
       "tech_level": 6,
       "culture": 21100,
@@ -3919,7 +3919,7 @@
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 6327.199999999991,
+        "ore": 6330.199999999991,
         "water": 0,
         "gold": 0
       },
@@ -3947,17 +3947,37 @@
       "participants": [
         "SET001"
       ],
-      "remaining_years": 6,
+      "remaining_years": 3,
       "duration": 5,
       "description": "绿野镇爆发瘟疫。"
+    },
+    {
+      "id": "EVT2446",
+      "type": "cultural_boom",
+      "participants": [
+        "SET001"
+      ],
+      "remaining_years": 7,
+      "duration": 10,
+      "description": "绿野镇迎来文化繁荣。"
+    },
+    {
+      "id": "EVT48166",
+      "type": "golden_age",
+      "participants": [
+        "SET001"
+      ],
+      "remaining_years": 7,
+      "duration": 3,
+      "description": "绿野镇进入黄金时代！"
     }
   ],
   "trade_routes": [],
   "legacy": {
     "military": 172.7999999999964,
     "economic": 0,
-    "cultural": 60950.800000000716,
-    "scientific": 2626.0499999997087
+    "cultural": 61015.20000000072,
+    "scientific": 2627.399999999708
   },
   "milestones": [
     {
@@ -43719,19 +43739,29 @@
       "id": "year_1000",
       "name": "千年",
       "year": 7851
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 7861
+    },
+    {
+      "id": "year_1000",
+      "name": "千年",
+      "year": 7861
     }
   ],
   "stats": {
-    "total_population": 874,
+    "total_population": 841,
     "total_settlements": 2,
     "extinct_settlements": 0,
     "total_wars": 293,
     "tech_breakthroughs": 9,
-    "golden_ages": 214,
+    "golden_ages": 215,
     "dark_ages": 0
   },
   "created_at": "2026-07-20T08:52:39.627Z",
-  "updated_at": "2026-10-07T00:04:43.120Z",
+  "updated_at": "2026-10-07T00:04:45.869Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -43771,32 +43801,8 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-10-06T23:16:39.627Z",
+  "last_evolved_at": "2026-10-06T23:59:51.627Z",
   "history": [
-    {
-      "year": 7461,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 7461,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
-    {
-      "year": 7470,
-      "type": "natural_disaster",
-      "title": "新事件",
-      "description": "风语村遭受自然灾害。"
-    },
-    {
-      "year": 7471,
-      "type": "cultural_boom",
-      "title": "新事件",
-      "description": "绿野镇迎来文化繁荣。"
-    },
     {
       "year": 7471,
       "type": "milestone",
@@ -46772,6 +46778,30 @@
       "type": "event",
       "title": "事件结束",
       "description": "绿野镇与风语村爆发战争！ 结束。"
+    },
+    {
+      "year": 7861,
+      "type": "cultural_boom",
+      "title": "新事件",
+      "description": "绿野镇迎来文化繁荣。"
+    },
+    {
+      "year": 7861,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 7861,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 千年"
+    },
+    {
+      "year": 7862,
+      "type": "golden_age",
+      "title": "新事件",
+      "description": "绿野镇进入黄金时代！"
     }
   ]
 }
