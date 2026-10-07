@@ -2,7 +2,7 @@
   "world_id": "world_mrszl5je_9ju4",
   "name": "地球",
   "era": "antiquity",
-  "year": 7938,
+  "year": 7939,
   "civilization": {
     "antiquity": {
       "civ": "han",
@@ -3876,7 +3876,7 @@
       "x": 35,
       "y": 56,
       "level": 5,
-      "population": 445,
+      "population": 444,
       "max_population": 3000,
       "tech_level": 5,
       "culture": 44360,
@@ -3885,7 +3885,7 @@
       "stability": 0.7,
       "resources": {
         "food": 0,
-        "wood": 7984.440000000001,
+        "wood": 7985.440000000001,
         "ore": 8,
         "water": 0,
         "gold": 0
@@ -3909,7 +3909,7 @@
       "x": 6,
       "y": 5,
       "level": 4,
-      "population": 421,
+      "population": 420,
       "max_population": 1000,
       "tech_level": 6,
       "culture": 21280,
@@ -3919,7 +3919,7 @@
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 6405.199999999991,
+        "ore": 6406.199999999991,
         "water": 0,
         "gold": 0
       },
@@ -3942,32 +3942,32 @@
   ],
   "active_events": [
     {
-      "id": "EVT18449",
-      "type": "cultural_boom",
-      "participants": [
-        "SET002"
-      ],
-      "remaining_years": 1,
-      "duration": 6,
-      "description": "风语村迎来文化繁荣。"
-    },
-    {
       "id": "EVT39066",
       "type": "natural_disaster",
       "participants": [
         "SET001"
       ],
-      "remaining_years": 6,
+      "remaining_years": 5,
       "duration": 4,
       "description": "绿野镇遭受自然灾害。"
+    },
+    {
+      "id": "EVT2446",
+      "type": "cultural_boom",
+      "participants": [
+        "SET001"
+      ],
+      "remaining_years": 9,
+      "duration": 10,
+      "description": "绿野镇迎来文化繁荣。"
     }
   ],
   "trade_routes": [],
   "legacy": {
     "military": 173.59999999999636,
     "economic": 0,
-    "cultural": 62629.200000000696,
-    "scientific": 2661.1499999996945
+    "cultural": 62650.800000000694,
+    "scientific": 2661.5999999996943
   },
   "milestones": [
     {
@@ -44109,10 +44109,20 @@
       "id": "year_1000",
       "name": "千年",
       "year": 7938
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 7939
+    },
+    {
+      "id": "year_1000",
+      "name": "千年",
+      "year": 7939
     }
   ],
   "stats": {
-    "total_population": 866,
+    "total_population": 864,
     "total_settlements": 2,
     "extinct_settlements": 0,
     "total_wars": 294,
@@ -44121,7 +44131,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T08:52:39.627Z",
-  "updated_at": "2026-10-07T18:01:29.325Z",
+  "updated_at": "2026-10-07T18:14:45.817Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -44161,32 +44171,8 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-10-07T17:59:51.627Z",
+  "last_evolved_at": "2026-10-07T18:14:15.627Z",
   "history": [
-    {
-      "year": 7535,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 繁荣"
-    },
-    {
-      "year": 7535,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 五百年"
-    },
-    {
-      "year": 7535,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 千年"
-    },
-    {
-      "year": 7536,
-      "type": "golden_age",
-      "title": "新事件",
-      "description": "绿野镇进入黄金时代！"
-    },
     {
       "year": 7537,
       "type": "event",
@@ -47159,6 +47145,30 @@
     },
     {
       "year": 7938,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 千年"
+    },
+    {
+      "year": 7939,
+      "type": "event",
+      "title": "事件结束",
+      "description": "风语村迎来文化繁荣。 结束。"
+    },
+    {
+      "year": 7939,
+      "type": "cultural_boom",
+      "title": "新事件",
+      "description": "绿野镇迎来文化繁荣。"
+    },
+    {
+      "year": 7939,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 7939,
       "type": "milestone",
       "title": "里程碑",
       "description": "达成: 千年"
