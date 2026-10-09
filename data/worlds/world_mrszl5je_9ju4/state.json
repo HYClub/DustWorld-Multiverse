@@ -2,7 +2,7 @@
   "world_id": "world_mrszl5je_9ju4",
   "name": "地球",
   "era": "antiquity",
-  "year": 8111,
+  "year": 8112,
   "civilization": {
     "antiquity": {
       "civ": "han",
@@ -3876,7 +3876,7 @@
       "x": 35,
       "y": 56,
       "level": 5,
-      "population": 529,
+      "population": 528,
       "max_population": 3000,
       "tech_level": 5,
       "culture": 45740,
@@ -3885,7 +3885,7 @@
       "stability": 0.7,
       "resources": {
         "food": 0,
-        "wood": 8157.440000000001,
+        "wood": 8158.440000000001,
         "ore": 8,
         "water": 0,
         "gold": 0
@@ -3909,7 +3909,7 @@
       "x": 6,
       "y": 5,
       "level": 4,
-      "population": 400,
+      "population": 399,
       "max_population": 1000,
       "tech_level": 6,
       "culture": 21900,
@@ -3919,7 +3919,7 @@
       "resources": {
         "food": 0,
         "wood": 20,
-        "ore": 6578.199999999991,
+        "ore": 6579.199999999991,
         "water": 0,
         "gold": 0
       },
@@ -3942,33 +3942,32 @@
   ],
   "active_events": [
     {
-      "id": "EVT265",
-      "type": "war",
-      "participants": [
-        "SET002",
-        "SET001"
-      ],
-      "remaining_years": 1,
-      "duration": 6,
-      "description": "风语村与绿野镇爆发战争！"
-    },
-    {
       "id": "EVT39066",
       "type": "natural_disaster",
       "participants": [
         "SET001"
       ],
-      "remaining_years": 5,
+      "remaining_years": 4,
       "duration": 4,
       "description": "绿野镇遭受自然灾害。"
+    },
+    {
+      "id": "EVT2446",
+      "type": "cultural_boom",
+      "participants": [
+        "SET001"
+      ],
+      "remaining_years": 9,
+      "duration": 10,
+      "description": "绿野镇迎来文化繁荣。"
     }
   ],
   "trade_routes": [],
   "legacy": {
     "military": 180.19999999999598,
     "economic": 0,
-    "cultural": 66434.20000000084,
-    "scientific": 2738.999999999663
+    "cultural": 66456.60000000084,
+    "scientific": 2739.449999999663
   },
   "milestones": [
     {
@@ -44940,10 +44939,20 @@
       "id": "year_1000",
       "name": "千年",
       "year": 8111
+    },
+    {
+      "id": "year_500",
+      "name": "五百年",
+      "year": 8112
+    },
+    {
+      "id": "year_1000",
+      "name": "千年",
+      "year": 8112
     }
   ],
   "stats": {
-    "total_population": 929,
+    "total_population": 927,
     "total_settlements": 2,
     "extinct_settlements": 0,
     "total_wars": 305,
@@ -44952,7 +44961,7 @@
     "dark_ages": 0
   },
   "created_at": "2026-07-20T08:52:39.627Z",
-  "updated_at": "2026-10-09T11:31:47.379Z",
+  "updated_at": "2026-10-09T11:45:46.852Z",
   "config": {
     "map_size": "medium",
     "world_shape": "continent",
@@ -44992,32 +45001,8 @@
   "creator_avatar": "https://avatars.githubusercontent.com/u/41766656?v=4",
   "liked_by": [],
   "likes": 0,
-  "last_evolved_at": "2026-10-09T11:31:03.627Z",
+  "last_evolved_at": "2026-10-09T11:45:27.627Z",
   "history": [
-    {
-      "year": 7757,
-      "type": "event",
-      "title": "事件结束",
-      "description": "绿野镇迎来文化繁荣。 结束。"
-    },
-    {
-      "year": 7757,
-      "type": "event",
-      "title": "事件结束",
-      "description": "绿野镇进入黄金时代！ 结束。"
-    },
-    {
-      "year": 7757,
-      "type": "event",
-      "title": "事件结束",
-      "description": "风语村进入黄金时代！ 结束。"
-    },
-    {
-      "year": 7758,
-      "type": "milestone",
-      "title": "里程碑",
-      "description": "达成: 繁荣"
-    },
     {
       "year": 7758,
       "type": "milestone",
@@ -47990,6 +47975,30 @@
     },
     {
       "year": 8111,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 千年"
+    },
+    {
+      "year": 8112,
+      "type": "event",
+      "title": "事件结束",
+      "description": "风语村与绿野镇爆发战争！ 结束。"
+    },
+    {
+      "year": 8112,
+      "type": "cultural_boom",
+      "title": "新事件",
+      "description": "绿野镇迎来文化繁荣。"
+    },
+    {
+      "year": 8112,
+      "type": "milestone",
+      "title": "里程碑",
+      "description": "达成: 五百年"
+    },
+    {
+      "year": 8112,
       "type": "milestone",
       "title": "里程碑",
       "description": "达成: 千年"
